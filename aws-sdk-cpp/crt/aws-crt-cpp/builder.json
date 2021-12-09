@@ -1,0 +1,21 @@
+{
+    "name": "aws-crt-cpp",
+    "!cmake_args": [
+        "-DPERFORM_HEADER_CHECK_CXX=ON",
+        "-DS2N_NO_PQ_ASM=ON",
+        "-DAWS_WARNINGS_ARE_ERRORS=ON"
+    ],
+    "hosts": {
+        "manylinux": {
+            "architectures": {
+                "x86": {
+                    "!yum_compiler_packages": []
+                }
+            }
+        }
+    },
+    "test_steps": [
+        "test",
+        "elasticurl-tests"
+    ]
+}
