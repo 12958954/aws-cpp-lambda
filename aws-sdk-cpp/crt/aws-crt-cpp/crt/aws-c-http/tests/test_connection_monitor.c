@@ -107,7 +107,8 @@ static int s_init_monitor_test(struct aws_allocator *allocator, struct aws_crt_s
     s_test_context.test_channel.channel_shutdown = s_testing_channel_shutdown_callback;
     s_test_context.test_channel.channel_shutdown_user_data = &s_test_context;
 
-    struct aws_http1_connection_options http1_options = AWS_HTTP1_CONNECTION_OPTIONS_INIT;
+    struct aws_http1_connection_options http1_options;
+    AWS_ZERO_STRUCT(http1_options);
     struct aws_http_connection *connection =
         aws_http_connection_new_http1_1_client(allocator, true, SIZE_MAX, &http1_options);
     ASSERT_NOT_NULL(connection);
@@ -233,9 +234,10 @@ static int s_do_http_monitoring_test(
     return AWS_OP_SUCCESS;
 }
 
-static struct aws_http_connection_monitoring_options s_test_options = {.allowable_throughput_failure_interval_seconds =
-                                                                           1,
-                                                                       .minimum_throughput_bytes_per_second = 1000};
+static struct aws_http_connection_monitoring_options s_test_options = {
+    .allowable_throughput_failure_interval_seconds = 1,
+    .minimum_throughput_bytes_per_second = 1000,
+};
 
 /*
  * A test where the combined read and write throughput stays above the threshold
@@ -282,12 +284,52 @@ static struct http_monitor_test_stats_event s_test_rw_above_events[] = {
         .expected_throughput = 1000,
     },
 };
+
+struct observer_cb_data {
+    bool invoked;
+    size_t nonce;
+    size_t number_of_stats;
+    struct aws_crt_statistics_socket socket_stats;
+    struct aws_crt_statistics_http1_channel http_stats;
+};
+static void s_observer_cb(size_t connection_nonce, const struct aws_array_list *stats, void *user_data) {
+    struct observer_cb_data *cb_data = user_data;
+    cb_data->invoked = true;
+    cb_data->nonce = connection_nonce;
+    cb_data->number_of_stats = aws_array_list_length(stats);
+
+    for (size_t i = 0; i < cb_data->number_of_stats; ++i) {
+        struct aws_crt_statistics_base *base_ptr = NULL;
+        aws_array_list_get_at(stats, (void **)&base_ptr, i);
+
+        if (base_ptr->category == AWSCRT_STAT_CAT_SOCKET) {
+            cb_data->socket_stats = *(struct aws_crt_statistics_socket *)base_ptr;
+        }
+
+        if (base_ptr->category == AWSCRT_STAT_CAT_HTTP1_CHANNEL) {
+            cb_data->http_stats = *(struct aws_crt_statistics_http1_channel *)base_ptr;
+        }
+    }
+}
 static int s_test_http_connection_monitor_rw_above(struct aws_allocator *allocator, void *ctx) {
     (void)ctx;
 
+    struct observer_cb_data cb_data;
+    AWS_ZERO_STRUCT(cb_data);
+    s_test_options.statistics_observer_fn = s_observer_cb;
+    s_test_options.statistics_observer_user_data = &cb_data;
     int result = s_do_http_monitoring_test(
         allocator, &s_test_options, s_test_rw_above_events, AWS_ARRAY_SIZE(s_test_rw_above_events));
     ASSERT_TRUE(result == AWS_OP_SUCCESS);
+    ASSERT_TRUE(cb_data.invoked);
+    ASSERT_TRUE(cb_data.nonce > 0);
+    ASSERT_UINT_EQUALS(2U, cb_data.number_of_stats);
+    ASSERT_UINT_EQUALS(s_test_rw_above_events[0].socket_stats.bytes_written, cb_data.socket_stats.bytes_written);
+    ASSERT_UINT_EQUALS(s_test_rw_above_events[0].socket_stats.bytes_read, cb_data.socket_stats.bytes_read);
+    ASSERT_UINT_EQUALS(
+        s_test_rw_above_events[0].http_stats.current_outgoing_stream_id, cb_data.http_stats.current_outgoing_stream_id);
+    ASSERT_UINT_EQUALS(
+        s_test_rw_above_events[0].http_stats.current_incoming_stream_id, cb_data.http_stats.current_incoming_stream_id);
 
     return AWS_OP_SUCCESS;
 }

@@ -51,6 +51,7 @@ option(BUILD_DEPS "Build third-party dependencies" ON)
 option(USE_OPENSSL "Set this if you want to use your system's OpenSSL 1.0.2/1.1.1 compatible libcrypto" ON)
 option(ENABLE_CURL_LOGGING "If enabled, Curl's internal log will be piped to SDK's logger" ON)
 option(ENABLE_HTTP_CLIENT_TESTING "If enabled, corresponding http client test suites will be built and run" OFF)
+option(ENABLE_FUNCTIONAL_TESTING "If enabled, clients might be generated based on dummy models, and run functional tests as part of unit tests: aws-cpp-sdk-core-tests" OFF)
 option(CUSTOM_MEMORY_MANAGEMENT "If set to ON, generates the sdk project files with custom memory management enabled, otherwise disables it" OFF)
 option(REGENERATE_CLIENTS "If set to ON, all clients being built on this run will be regenerated from the api definitions, this option involves some setup of python, java 8+, and maven" OFF)
 option(ENABLE_VIRTUAL_OPERATIONS "This option usually works with REGENERATE_CLIENTS. \
@@ -61,7 +62,11 @@ option(ENABLE_VIRTUAL_OPERATIONS "This option usually works with REGENERATE_CLIE
 
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
 set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
-set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Release build by default.")
+
+get_property(is_multi_config GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
+if (NOT ${is_multi_config})
+  set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Release build by default.")
+endif()
 
 #From https://stackoverflow.com/questions/18968979/how-to-get-colorized-output-with-cmake
 if(NOT WIN32)

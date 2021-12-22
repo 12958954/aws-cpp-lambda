@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/LoggingInfo.h>
+#include <aws/ssm/model/MaintenanceWindowTaskCutoffBehavior.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/MaintenanceWindowTaskParameterValueExpression.h>
 #include <utility>
@@ -231,7 +232,7 @@ namespace Model
 
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
      * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
      * value&gt;</code>.</p>
@@ -239,7 +240,7 @@ namespace Model
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
      * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
      * value&gt;</code>.</p>
@@ -247,7 +248,7 @@ namespace Model
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
      * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
      * value&gt;</code>.</p>
@@ -255,7 +256,7 @@ namespace Model
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
      * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
      * value&gt;</code>.</p>
@@ -263,7 +264,7 @@ namespace Model
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
      * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
      * value&gt;</code>.</p>
@@ -271,7 +272,7 @@ namespace Model
     inline MaintenanceWindowTask& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
      * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
      * value&gt;</code>.</p>
@@ -279,7 +280,7 @@ namespace Model
     inline MaintenanceWindowTask& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
      * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
      * value&gt;</code>.</p>
@@ -287,7 +288,7 @@ namespace Model
     inline MaintenanceWindowTask& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
      * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
      * value&gt;</code>.</p>
@@ -746,6 +747,43 @@ namespace Model
      */
     inline MaintenanceWindowTask& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline const MaintenanceWindowTaskCutoffBehavior& GetCutoffBehavior() const{ return m_cutoffBehavior; }
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline bool CutoffBehaviorHasBeenSet() const { return m_cutoffBehaviorHasBeenSet; }
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline void SetCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { m_cutoffBehaviorHasBeenSet = true; m_cutoffBehavior = value; }
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline void SetCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { m_cutoffBehaviorHasBeenSet = true; m_cutoffBehavior = std::move(value); }
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline MaintenanceWindowTask& WithCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { SetCutoffBehavior(value); return *this;}
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline MaintenanceWindowTask& WithCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { SetCutoffBehavior(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_windowId;
@@ -786,6 +824,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    MaintenanceWindowTaskCutoffBehavior m_cutoffBehavior;
+    bool m_cutoffBehaviorHasBeenSet;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ class Node:
 
 
 class DependencyNode(Node):
-    def __init__(self, fyle, **style):
+    def __init__(self, fyle, truncate=30, **style):
         self.file = fyle
         self.id = hash(fyle)
 
@@ -45,8 +45,8 @@ class DependencyNode(Node):
 
         self.style = style
 
-        if len(path.name) + len(ext) > 20:
-            self.style["label"] = path.name[:(19 - len(ext))] + "…" + ext
+        if len(path.name) + len(ext) > truncate:
+            self.style["label"] = path.name[:(truncate - 1 - len(ext))] + "…" + ext
         else:
             self.style["label"] = path.name
 
@@ -68,13 +68,13 @@ class DependencyNode(Node):
 
 
 class CommandNode(Node):
-    def __init__(self, command, **style):
+    def __init__(self, command, truncate=30, **style):
         self.command = command
         self.id = hash(command)
         self.style = style
 
-        if len(command) > 15:
-            self.style["label"] = command[:14] + "…"
+        if len(command) > truncate:
+            self.style["label"] = command[:truncate-1] + "…"
         else:
             self.style["label"] = command
         self.style["shape"] = "box"
@@ -135,8 +135,11 @@ class SinglePipelineGraph:
     def build(self):
         for job in self.iter_jobs():
             args = job["wrapper_arguments"]
+            cmd_label = args.get("description", args["command"])
+            if not cmd_label:
+                cmd_label = args["command"]
             cmd_node = self._make_cmd_node(
-                job["complete"], job.get("outcome", None), args["command"])
+                job["complete"], job.get("outcome", None), cmd_label)
             self.nodes.add(cmd_node)
 
             for inputt in args.get("inputs") or []:
@@ -150,7 +153,8 @@ class SinglePipelineGraph:
                 self.edges.add(lib.graph.Edge(src=cmd_node, dst=out_node))
 
 
-    def _make_cmd_node(self, complete, outcome, command):
+    @staticmethod
+    def _make_cmd_node(complete, outcome, command):
         cmd_style = {"style": "filled"}
         if complete and outcome == "success":
             cmd_style["fillcolor"] = "#90caf9"
@@ -216,7 +220,11 @@ class Graph:
         for job in self.iter_jobs():
             args = job["wrapper_arguments"]
 
-            cmd_node = CommandNode(args["command"])
+            cmd_label = args.get("description", args["command"])
+            if not cmd_label:
+                cmd_label = args["command"]
+
+            cmd_node = CommandNode(cmd_label)
             nodes.add(cmd_node)
             if args["outputs"]:
                 for output in args["outputs"]:
@@ -236,7 +244,7 @@ class Graph:
 
 
 
-def print_graph(args):
+async def print_graph(args):
     lib.litani.add_jobs_to_cache()
     run = lib.litani_report.get_run_data(lib.litani.get_cache_dir())
 

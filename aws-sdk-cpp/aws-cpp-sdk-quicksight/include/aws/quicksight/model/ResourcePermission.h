@@ -44,7 +44,7 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
      * QuickSight ARN. Use this option only to share resources (templates) across
      * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
@@ -56,7 +56,7 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
      * QuickSight ARN. Use this option only to share resources (templates) across
      * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
@@ -68,7 +68,7 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
      * QuickSight ARN. Use this option only to share resources (templates) across
      * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
@@ -80,7 +80,7 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
      * QuickSight ARN. Use this option only to share resources (templates) across
      * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
@@ -92,7 +92,7 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
      * QuickSight ARN. Use this option only to share resources (templates) across
      * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
@@ -104,7 +104,7 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
      * QuickSight ARN. Use this option only to share resources (templates) across
      * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
@@ -116,7 +116,7 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
      * QuickSight ARN. Use this option only to share resources (templates) across
      * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
@@ -128,7 +128,7 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account; root: This is an IAM ARN rather than a
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
      * QuickSight ARN. Use this option only to share resources (templates) across
      * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */

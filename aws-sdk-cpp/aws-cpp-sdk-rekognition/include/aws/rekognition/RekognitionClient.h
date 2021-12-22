@@ -13,15 +13,18 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rekognition/model/CompareFacesResult.h>
 #include <aws/rekognition/model/CreateCollectionResult.h>
+#include <aws/rekognition/model/CreateDatasetResult.h>
 #include <aws/rekognition/model/CreateProjectResult.h>
 #include <aws/rekognition/model/CreateProjectVersionResult.h>
 #include <aws/rekognition/model/CreateStreamProcessorResult.h>
 #include <aws/rekognition/model/DeleteCollectionResult.h>
+#include <aws/rekognition/model/DeleteDatasetResult.h>
 #include <aws/rekognition/model/DeleteFacesResult.h>
 #include <aws/rekognition/model/DeleteProjectResult.h>
 #include <aws/rekognition/model/DeleteProjectVersionResult.h>
 #include <aws/rekognition/model/DeleteStreamProcessorResult.h>
 #include <aws/rekognition/model/DescribeCollectionResult.h>
+#include <aws/rekognition/model/DescribeDatasetResult.h>
 #include <aws/rekognition/model/DescribeProjectVersionsResult.h>
 #include <aws/rekognition/model/DescribeProjectsResult.h>
 #include <aws/rekognition/model/DescribeStreamProcessorResult.h>
@@ -31,6 +34,7 @@
 #include <aws/rekognition/model/DetectModerationLabelsResult.h>
 #include <aws/rekognition/model/DetectProtectiveEquipmentResult.h>
 #include <aws/rekognition/model/DetectTextResult.h>
+#include <aws/rekognition/model/DistributeDatasetEntriesResult.h>
 #include <aws/rekognition/model/GetCelebrityInfoResult.h>
 #include <aws/rekognition/model/GetCelebrityRecognitionResult.h>
 #include <aws/rekognition/model/GetContentModerationResult.h>
@@ -42,6 +46,8 @@
 #include <aws/rekognition/model/GetTextDetectionResult.h>
 #include <aws/rekognition/model/IndexFacesResult.h>
 #include <aws/rekognition/model/ListCollectionsResult.h>
+#include <aws/rekognition/model/ListDatasetEntriesResult.h>
+#include <aws/rekognition/model/ListDatasetLabelsResult.h>
 #include <aws/rekognition/model/ListFacesResult.h>
 #include <aws/rekognition/model/ListStreamProcessorsResult.h>
 #include <aws/rekognition/model/ListTagsForResourceResult.h>
@@ -62,6 +68,7 @@
 #include <aws/rekognition/model/StopStreamProcessorResult.h>
 #include <aws/rekognition/model/TagResourceResult.h>
 #include <aws/rekognition/model/UntagResourceResult.h>
+#include <aws/rekognition/model/UpdateDatasetEntriesResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -103,15 +110,18 @@ namespace Model
 {
         class CompareFacesRequest;
         class CreateCollectionRequest;
+        class CreateDatasetRequest;
         class CreateProjectRequest;
         class CreateProjectVersionRequest;
         class CreateStreamProcessorRequest;
         class DeleteCollectionRequest;
+        class DeleteDatasetRequest;
         class DeleteFacesRequest;
         class DeleteProjectRequest;
         class DeleteProjectVersionRequest;
         class DeleteStreamProcessorRequest;
         class DescribeCollectionRequest;
+        class DescribeDatasetRequest;
         class DescribeProjectVersionsRequest;
         class DescribeProjectsRequest;
         class DescribeStreamProcessorRequest;
@@ -121,6 +131,7 @@ namespace Model
         class DetectModerationLabelsRequest;
         class DetectProtectiveEquipmentRequest;
         class DetectTextRequest;
+        class DistributeDatasetEntriesRequest;
         class GetCelebrityInfoRequest;
         class GetCelebrityRecognitionRequest;
         class GetContentModerationRequest;
@@ -132,6 +143,8 @@ namespace Model
         class GetTextDetectionRequest;
         class IndexFacesRequest;
         class ListCollectionsRequest;
+        class ListDatasetEntriesRequest;
+        class ListDatasetLabelsRequest;
         class ListFacesRequest;
         class ListStreamProcessorsRequest;
         class ListTagsForResourceRequest;
@@ -152,18 +165,22 @@ namespace Model
         class StopStreamProcessorRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateDatasetEntriesRequest;
 
         typedef Aws::Utils::Outcome<CompareFacesResult, RekognitionError> CompareFacesOutcome;
         typedef Aws::Utils::Outcome<CreateCollectionResult, RekognitionError> CreateCollectionOutcome;
+        typedef Aws::Utils::Outcome<CreateDatasetResult, RekognitionError> CreateDatasetOutcome;
         typedef Aws::Utils::Outcome<CreateProjectResult, RekognitionError> CreateProjectOutcome;
         typedef Aws::Utils::Outcome<CreateProjectVersionResult, RekognitionError> CreateProjectVersionOutcome;
         typedef Aws::Utils::Outcome<CreateStreamProcessorResult, RekognitionError> CreateStreamProcessorOutcome;
         typedef Aws::Utils::Outcome<DeleteCollectionResult, RekognitionError> DeleteCollectionOutcome;
+        typedef Aws::Utils::Outcome<DeleteDatasetResult, RekognitionError> DeleteDatasetOutcome;
         typedef Aws::Utils::Outcome<DeleteFacesResult, RekognitionError> DeleteFacesOutcome;
         typedef Aws::Utils::Outcome<DeleteProjectResult, RekognitionError> DeleteProjectOutcome;
         typedef Aws::Utils::Outcome<DeleteProjectVersionResult, RekognitionError> DeleteProjectVersionOutcome;
         typedef Aws::Utils::Outcome<DeleteStreamProcessorResult, RekognitionError> DeleteStreamProcessorOutcome;
         typedef Aws::Utils::Outcome<DescribeCollectionResult, RekognitionError> DescribeCollectionOutcome;
+        typedef Aws::Utils::Outcome<DescribeDatasetResult, RekognitionError> DescribeDatasetOutcome;
         typedef Aws::Utils::Outcome<DescribeProjectVersionsResult, RekognitionError> DescribeProjectVersionsOutcome;
         typedef Aws::Utils::Outcome<DescribeProjectsResult, RekognitionError> DescribeProjectsOutcome;
         typedef Aws::Utils::Outcome<DescribeStreamProcessorResult, RekognitionError> DescribeStreamProcessorOutcome;
@@ -173,6 +190,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DetectModerationLabelsResult, RekognitionError> DetectModerationLabelsOutcome;
         typedef Aws::Utils::Outcome<DetectProtectiveEquipmentResult, RekognitionError> DetectProtectiveEquipmentOutcome;
         typedef Aws::Utils::Outcome<DetectTextResult, RekognitionError> DetectTextOutcome;
+        typedef Aws::Utils::Outcome<DistributeDatasetEntriesResult, RekognitionError> DistributeDatasetEntriesOutcome;
         typedef Aws::Utils::Outcome<GetCelebrityInfoResult, RekognitionError> GetCelebrityInfoOutcome;
         typedef Aws::Utils::Outcome<GetCelebrityRecognitionResult, RekognitionError> GetCelebrityRecognitionOutcome;
         typedef Aws::Utils::Outcome<GetContentModerationResult, RekognitionError> GetContentModerationOutcome;
@@ -184,6 +202,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetTextDetectionResult, RekognitionError> GetTextDetectionOutcome;
         typedef Aws::Utils::Outcome<IndexFacesResult, RekognitionError> IndexFacesOutcome;
         typedef Aws::Utils::Outcome<ListCollectionsResult, RekognitionError> ListCollectionsOutcome;
+        typedef Aws::Utils::Outcome<ListDatasetEntriesResult, RekognitionError> ListDatasetEntriesOutcome;
+        typedef Aws::Utils::Outcome<ListDatasetLabelsResult, RekognitionError> ListDatasetLabelsOutcome;
         typedef Aws::Utils::Outcome<ListFacesResult, RekognitionError> ListFacesOutcome;
         typedef Aws::Utils::Outcome<ListStreamProcessorsResult, RekognitionError> ListStreamProcessorsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, RekognitionError> ListTagsForResourceOutcome;
@@ -204,18 +224,22 @@ namespace Model
         typedef Aws::Utils::Outcome<StopStreamProcessorResult, RekognitionError> StopStreamProcessorOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, RekognitionError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, RekognitionError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateDatasetEntriesResult, RekognitionError> UpdateDatasetEntriesOutcome;
 
         typedef std::future<CompareFacesOutcome> CompareFacesOutcomeCallable;
         typedef std::future<CreateCollectionOutcome> CreateCollectionOutcomeCallable;
+        typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
         typedef std::future<CreateProjectVersionOutcome> CreateProjectVersionOutcomeCallable;
         typedef std::future<CreateStreamProcessorOutcome> CreateStreamProcessorOutcomeCallable;
         typedef std::future<DeleteCollectionOutcome> DeleteCollectionOutcomeCallable;
+        typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
         typedef std::future<DeleteFacesOutcome> DeleteFacesOutcomeCallable;
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
         typedef std::future<DeleteProjectVersionOutcome> DeleteProjectVersionOutcomeCallable;
         typedef std::future<DeleteStreamProcessorOutcome> DeleteStreamProcessorOutcomeCallable;
         typedef std::future<DescribeCollectionOutcome> DescribeCollectionOutcomeCallable;
+        typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
         typedef std::future<DescribeProjectVersionsOutcome> DescribeProjectVersionsOutcomeCallable;
         typedef std::future<DescribeProjectsOutcome> DescribeProjectsOutcomeCallable;
         typedef std::future<DescribeStreamProcessorOutcome> DescribeStreamProcessorOutcomeCallable;
@@ -225,6 +249,7 @@ namespace Model
         typedef std::future<DetectModerationLabelsOutcome> DetectModerationLabelsOutcomeCallable;
         typedef std::future<DetectProtectiveEquipmentOutcome> DetectProtectiveEquipmentOutcomeCallable;
         typedef std::future<DetectTextOutcome> DetectTextOutcomeCallable;
+        typedef std::future<DistributeDatasetEntriesOutcome> DistributeDatasetEntriesOutcomeCallable;
         typedef std::future<GetCelebrityInfoOutcome> GetCelebrityInfoOutcomeCallable;
         typedef std::future<GetCelebrityRecognitionOutcome> GetCelebrityRecognitionOutcomeCallable;
         typedef std::future<GetContentModerationOutcome> GetContentModerationOutcomeCallable;
@@ -236,6 +261,8 @@ namespace Model
         typedef std::future<GetTextDetectionOutcome> GetTextDetectionOutcomeCallable;
         typedef std::future<IndexFacesOutcome> IndexFacesOutcomeCallable;
         typedef std::future<ListCollectionsOutcome> ListCollectionsOutcomeCallable;
+        typedef std::future<ListDatasetEntriesOutcome> ListDatasetEntriesOutcomeCallable;
+        typedef std::future<ListDatasetLabelsOutcome> ListDatasetLabelsOutcomeCallable;
         typedef std::future<ListFacesOutcome> ListFacesOutcomeCallable;
         typedef std::future<ListStreamProcessorsOutcome> ListStreamProcessorsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -256,21 +283,25 @@ namespace Model
         typedef std::future<StopStreamProcessorOutcome> StopStreamProcessorOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateDatasetEntriesOutcome> UpdateDatasetEntriesOutcomeCallable;
 } // namespace Model
 
   class RekognitionClient;
 
     typedef std::function<void(const RekognitionClient*, const Model::CompareFacesRequest&, const Model::CompareFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompareFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateCollectionRequest&, const Model::CreateCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCollectionResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateProjectVersionRequest&, const Model::CreateProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateStreamProcessorRequest&, const Model::CreateStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamProcessorResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteCollectionRequest&, const Model::DeleteCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCollectionResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteFacesRequest&, const Model::DeleteFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteProjectVersionRequest&, const Model::DeleteProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteStreamProcessorRequest&, const Model::DeleteStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamProcessorResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DescribeCollectionRequest&, const Model::DescribeCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCollectionResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DescribeProjectVersionsRequest&, const Model::DescribeProjectVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectVersionsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DescribeProjectsRequest&, const Model::DescribeProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DescribeStreamProcessorRequest&, const Model::DescribeStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamProcessorResponseReceivedHandler;
@@ -280,6 +311,7 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::DetectModerationLabelsRequest&, const Model::DetectModerationLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectModerationLabelsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectProtectiveEquipmentRequest&, const Model::DetectProtectiveEquipmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectProtectiveEquipmentResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectTextRequest&, const Model::DetectTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectTextResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DistributeDatasetEntriesRequest&, const Model::DistributeDatasetEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DistributeDatasetEntriesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetCelebrityInfoRequest&, const Model::GetCelebrityInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCelebrityInfoResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetCelebrityRecognitionRequest&, const Model::GetCelebrityRecognitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCelebrityRecognitionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetContentModerationRequest&, const Model::GetContentModerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContentModerationResponseReceivedHandler;
@@ -291,6 +323,8 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::GetTextDetectionRequest&, const Model::GetTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTextDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::IndexFacesRequest&, const Model::IndexFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IndexFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListCollectionsRequest&, const Model::ListCollectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCollectionsResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::ListDatasetEntriesRequest&, const Model::ListDatasetEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetEntriesResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::ListDatasetLabelsRequest&, const Model::ListDatasetLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetLabelsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListFacesRequest&, const Model::ListFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListStreamProcessorsRequest&, const Model::ListStreamProcessorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamProcessorsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -311,6 +345,7 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::StopStreamProcessorRequest&, const Model::StopStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamProcessorResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::UpdateDatasetEntriesRequest&, const Model::UpdateDatasetEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatasetEntriesResponseReceivedHandler;
 
   /**
    * <p>This is the Amazon Rekognition API reference.</p>
@@ -361,7 +396,7 @@ namespace Model
          * a PNG or JPEG file. </p> <p>In response, the operation returns an array of face
          * matches ordered by similarity score in descending order. For each face match,
          * the response provides a bounding box of the face, facial landmarks, pose details
-         * (pitch, role, and yaw), quality (brightness and sharpness), and confidence value
+         * (pitch, roll, and yaw), quality (brightness and sharpness), and confidence value
          * (indicating the level of confidence that the bounding box contains a face). The
          * response also provides a similarity score, which indicates how closely the faces
          * match. </p>  <p>By default, only faces with a similarity score of greater
@@ -411,7 +446,7 @@ namespace Model
          * a PNG or JPEG file. </p> <p>In response, the operation returns an array of face
          * matches ordered by similarity score in descending order. For each face match,
          * the response provides a bounding box of the face, facial landmarks, pose details
-         * (pitch, role, and yaw), quality (brightness and sharpness), and confidence value
+         * (pitch, roll, and yaw), quality (brightness and sharpness), and confidence value
          * (indicating the level of confidence that the bounding box contains a face). The
          * response also provides a similarity score, which indicates how closely the faces
          * match. </p>  <p>By default, only faces with a similarity score of greater
@@ -463,7 +498,7 @@ namespace Model
          * a PNG or JPEG file. </p> <p>In response, the operation returns an array of face
          * matches ordered by similarity score in descending order. For each face match,
          * the response provides a bounding box of the face, facial landmarks, pose details
-         * (pitch, role, and yaw), quality (brightness and sharpness), and confidence value
+         * (pitch, roll, and yaw), quality (brightness and sharpness), and confidence value
          * (indicating the level of confidence that the bounding box contains a face). The
          * response also provides a similarity score, which indicates how closely the faces
          * match. </p>  <p>By default, only faces with a similarity score of greater
@@ -552,9 +587,94 @@ namespace Model
         virtual void CreateCollectionAsync(const Model::CreateCollectionRequest& request, const CreateCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Amazon Rekognition Custom Labels project. A project is a
-         * logical grouping of resources (images, Labels, models) and operations (training,
-         * evaluation and detection). </p> <p>This operation requires permissions to
+         * <p>Creates a new Amazon Rekognition Custom Labels dataset. You can create a
+         * dataset by using an Amazon Sagemaker format manifest file or by copying an
+         * existing Amazon Rekognition Custom Labels dataset.</p> <p>To create a training
+         * dataset for a project, specify <code>train</code> for the value of
+         * <code>DatasetType</code>. To create the test dataset for a project, specify
+         * <code>test</code> for the value of <code>DatasetType</code>. </p> <p>The
+         * response from <code>CreateDataset</code> is the Amazon Resource Name (ARN) for
+         * the dataset. Creating a dataset takes a while to complete. Use
+         * <a>DescribeDataset</a> to check the current status. The dataset created
+         * successfully if the value of <code>Status</code> is
+         * <code>CREATE_COMPLETE</code>. </p> <p>To check if any non-terminal errors
+         * occurred, call <a>ListDatasetEntries</a> and check for the presence of
+         * <code>errors</code> lists in the JSON Lines.</p> <p>Dataset creation fails if a
+         * terminal error occurs (<code>Status</code> = <code>CREATE_FAILED</code>).
+         * Currently, you can't access the terminal error information. </p> <p>For more
+         * information, see Creating dataset in the <i>Amazon Rekognition Custom Labels
+         * Developer Guide</i>.</p> <p>This operation requires permissions to perform the
+         * <code>rekognition:CreateDataset</code> action. If you want to copy an existing
+         * dataset, you also require permission to perform the
+         * <code>rekognition:ListDatasetEntries</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
+
+        /**
+         * <p>Creates a new Amazon Rekognition Custom Labels dataset. You can create a
+         * dataset by using an Amazon Sagemaker format manifest file or by copying an
+         * existing Amazon Rekognition Custom Labels dataset.</p> <p>To create a training
+         * dataset for a project, specify <code>train</code> for the value of
+         * <code>DatasetType</code>. To create the test dataset for a project, specify
+         * <code>test</code> for the value of <code>DatasetType</code>. </p> <p>The
+         * response from <code>CreateDataset</code> is the Amazon Resource Name (ARN) for
+         * the dataset. Creating a dataset takes a while to complete. Use
+         * <a>DescribeDataset</a> to check the current status. The dataset created
+         * successfully if the value of <code>Status</code> is
+         * <code>CREATE_COMPLETE</code>. </p> <p>To check if any non-terminal errors
+         * occurred, call <a>ListDatasetEntries</a> and check for the presence of
+         * <code>errors</code> lists in the JSON Lines.</p> <p>Dataset creation fails if a
+         * terminal error occurs (<code>Status</code> = <code>CREATE_FAILED</code>).
+         * Currently, you can't access the terminal error information. </p> <p>For more
+         * information, see Creating dataset in the <i>Amazon Rekognition Custom Labels
+         * Developer Guide</i>.</p> <p>This operation requires permissions to perform the
+         * <code>rekognition:CreateDataset</code> action. If you want to copy an existing
+         * dataset, you also require permission to perform the
+         * <code>rekognition:ListDatasetEntries</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateDataset">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const Model::CreateDatasetRequest& request) const;
+
+        /**
+         * <p>Creates a new Amazon Rekognition Custom Labels dataset. You can create a
+         * dataset by using an Amazon Sagemaker format manifest file or by copying an
+         * existing Amazon Rekognition Custom Labels dataset.</p> <p>To create a training
+         * dataset for a project, specify <code>train</code> for the value of
+         * <code>DatasetType</code>. To create the test dataset for a project, specify
+         * <code>test</code> for the value of <code>DatasetType</code>. </p> <p>The
+         * response from <code>CreateDataset</code> is the Amazon Resource Name (ARN) for
+         * the dataset. Creating a dataset takes a while to complete. Use
+         * <a>DescribeDataset</a> to check the current status. The dataset created
+         * successfully if the value of <code>Status</code> is
+         * <code>CREATE_COMPLETE</code>. </p> <p>To check if any non-terminal errors
+         * occurred, call <a>ListDatasetEntries</a> and check for the presence of
+         * <code>errors</code> lists in the JSON Lines.</p> <p>Dataset creation fails if a
+         * terminal error occurs (<code>Status</code> = <code>CREATE_FAILED</code>).
+         * Currently, you can't access the terminal error information. </p> <p>For more
+         * information, see Creating dataset in the <i>Amazon Rekognition Custom Labels
+         * Developer Guide</i>.</p> <p>This operation requires permissions to perform the
+         * <code>rekognition:CreateDataset</code> action. If you want to copy an existing
+         * dataset, you also require permission to perform the
+         * <code>rekognition:ListDatasetEntries</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateDataset">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new Amazon Rekognition Custom Labels project. A project is a group
+         * of resources (datasets, model versions) that you use to create and manage Amazon
+         * Rekognition Custom Labels models. </p> <p>This operation requires permissions to
          * perform the <code>rekognition:CreateProject</code> action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">AWS
@@ -563,9 +683,9 @@ namespace Model
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon Rekognition Custom Labels project. A project is a
-         * logical grouping of resources (images, Labels, models) and operations (training,
-         * evaluation and detection). </p> <p>This operation requires permissions to
+         * <p>Creates a new Amazon Rekognition Custom Labels project. A project is a group
+         * of resources (datasets, model versions) that you use to create and manage Amazon
+         * Rekognition Custom Labels models. </p> <p>This operation requires permissions to
          * perform the <code>rekognition:CreateProject</code> action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">AWS
@@ -576,9 +696,9 @@ namespace Model
         virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon Rekognition Custom Labels project. A project is a
-         * logical grouping of resources (images, Labels, models) and operations (training,
-         * evaluation and detection). </p> <p>This operation requires permissions to
+         * <p>Creates a new Amazon Rekognition Custom Labels project. A project is a group
+         * of resources (datasets, model versions) that you use to create and manage Amazon
+         * Rekognition Custom Labels models. </p> <p>This operation requires permissions to
          * perform the <code>rekognition:CreateProject</code> action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">AWS
@@ -590,17 +710,31 @@ namespace Model
 
         /**
          * <p>Creates a new version of a model and begins training. Models are managed as
-         * part of an Amazon Rekognition Custom Labels project. You can specify one
-         * training dataset and one testing dataset. The response from
+         * part of an Amazon Rekognition Custom Labels project. The response from
          * <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the
-         * version of the model. </p> <p>Training takes a while to complete. You can get
-         * the current status by calling <a>DescribeProjectVersions</a>.</p> <p>Once
-         * training has successfully completed, call <a>DescribeProjectVersions</a> to get
-         * the training results and evaluate the model. </p> <p>After evaluating the model,
-         * you start the model by calling <a>StartProjectVersion</a>.</p> <p>This operation
-         * requires permissions to perform the
-         * <code>rekognition:CreateProjectVersion</code> action.</p><p><h3>See Also:</h3>  
-         * <a
+         * version of the model. </p> <p>Training uses the training and test datasets
+         * associated with the project. For more information, see Creating training and
+         * test dataset in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+         * </p>  <p>You can train a modelin a project that doesn't have associated
+         * datasets by specifying manifest files in the <code>TrainingData</code> and
+         * <code>TestingData</code> fields. </p> <p>If you open the console after training
+         * a model with manifest files, Amazon Rekognition Custom Labels creates the
+         * datasets for you using the most recent manifest files. You can no longer train a
+         * model version for the project by specifying manifest files. </p> <p>Instead of
+         * training with a project without associated datasets, we recommend that you use
+         * the manifest files to create training and test datasets for the project.</p>
+         *  <p>Training takes a while to complete. You can get the current status by
+         * calling <a>DescribeProjectVersions</a>. Training completed successfully if the
+         * value of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>.</p>
+         * <p>If training fails, see Debugging a failed model training in the <i>Amazon
+         * Rekognition Custom Labels</i> developer guide. </p> <p>Once training has
+         * successfully completed, call <a>DescribeProjectVersions</a> to get the training
+         * results and evaluate the model. For more information, see Improving a trained
+         * Amazon Rekognition Custom Labels model in the <i>Amazon Rekognition Custom
+         * Labels</i> developers guide. </p> <p>After evaluating the model, you start the
+         * model by calling <a>StartProjectVersion</a>.</p> <p>This operation requires
+         * permissions to perform the <code>rekognition:CreateProjectVersion</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">AWS
          * API Reference</a></p>
          */
@@ -608,17 +742,31 @@ namespace Model
 
         /**
          * <p>Creates a new version of a model and begins training. Models are managed as
-         * part of an Amazon Rekognition Custom Labels project. You can specify one
-         * training dataset and one testing dataset. The response from
+         * part of an Amazon Rekognition Custom Labels project. The response from
          * <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the
-         * version of the model. </p> <p>Training takes a while to complete. You can get
-         * the current status by calling <a>DescribeProjectVersions</a>.</p> <p>Once
-         * training has successfully completed, call <a>DescribeProjectVersions</a> to get
-         * the training results and evaluate the model. </p> <p>After evaluating the model,
-         * you start the model by calling <a>StartProjectVersion</a>.</p> <p>This operation
-         * requires permissions to perform the
-         * <code>rekognition:CreateProjectVersion</code> action.</p><p><h3>See Also:</h3>  
-         * <a
+         * version of the model. </p> <p>Training uses the training and test datasets
+         * associated with the project. For more information, see Creating training and
+         * test dataset in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+         * </p>  <p>You can train a modelin a project that doesn't have associated
+         * datasets by specifying manifest files in the <code>TrainingData</code> and
+         * <code>TestingData</code> fields. </p> <p>If you open the console after training
+         * a model with manifest files, Amazon Rekognition Custom Labels creates the
+         * datasets for you using the most recent manifest files. You can no longer train a
+         * model version for the project by specifying manifest files. </p> <p>Instead of
+         * training with a project without associated datasets, we recommend that you use
+         * the manifest files to create training and test datasets for the project.</p>
+         *  <p>Training takes a while to complete. You can get the current status by
+         * calling <a>DescribeProjectVersions</a>. Training completed successfully if the
+         * value of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>.</p>
+         * <p>If training fails, see Debugging a failed model training in the <i>Amazon
+         * Rekognition Custom Labels</i> developer guide. </p> <p>Once training has
+         * successfully completed, call <a>DescribeProjectVersions</a> to get the training
+         * results and evaluate the model. For more information, see Improving a trained
+         * Amazon Rekognition Custom Labels model in the <i>Amazon Rekognition Custom
+         * Labels</i> developers guide. </p> <p>After evaluating the model, you start the
+         * model by calling <a>StartProjectVersion</a>.</p> <p>This operation requires
+         * permissions to perform the <code>rekognition:CreateProjectVersion</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">AWS
          * API Reference</a></p>
          *
@@ -628,17 +776,31 @@ namespace Model
 
         /**
          * <p>Creates a new version of a model and begins training. Models are managed as
-         * part of an Amazon Rekognition Custom Labels project. You can specify one
-         * training dataset and one testing dataset. The response from
+         * part of an Amazon Rekognition Custom Labels project. The response from
          * <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the
-         * version of the model. </p> <p>Training takes a while to complete. You can get
-         * the current status by calling <a>DescribeProjectVersions</a>.</p> <p>Once
-         * training has successfully completed, call <a>DescribeProjectVersions</a> to get
-         * the training results and evaluate the model. </p> <p>After evaluating the model,
-         * you start the model by calling <a>StartProjectVersion</a>.</p> <p>This operation
-         * requires permissions to perform the
-         * <code>rekognition:CreateProjectVersion</code> action.</p><p><h3>See Also:</h3>  
-         * <a
+         * version of the model. </p> <p>Training uses the training and test datasets
+         * associated with the project. For more information, see Creating training and
+         * test dataset in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+         * </p>  <p>You can train a modelin a project that doesn't have associated
+         * datasets by specifying manifest files in the <code>TrainingData</code> and
+         * <code>TestingData</code> fields. </p> <p>If you open the console after training
+         * a model with manifest files, Amazon Rekognition Custom Labels creates the
+         * datasets for you using the most recent manifest files. You can no longer train a
+         * model version for the project by specifying manifest files. </p> <p>Instead of
+         * training with a project without associated datasets, we recommend that you use
+         * the manifest files to create training and test datasets for the project.</p>
+         *  <p>Training takes a while to complete. You can get the current status by
+         * calling <a>DescribeProjectVersions</a>. Training completed successfully if the
+         * value of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>.</p>
+         * <p>If training fails, see Debugging a failed model training in the <i>Amazon
+         * Rekognition Custom Labels</i> developer guide. </p> <p>Once training has
+         * successfully completed, call <a>DescribeProjectVersions</a> to get the training
+         * results and evaluate the model. For more information, see Improving a trained
+         * Amazon Rekognition Custom Labels model in the <i>Amazon Rekognition Custom
+         * Labels</i> developers guide. </p> <p>After evaluating the model, you start the
+         * model by calling <a>StartProjectVersion</a>.</p> <p>This operation requires
+         * permissions to perform the <code>rekognition:CreateProjectVersion</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">AWS
          * API Reference</a></p>
          *
@@ -754,6 +916,58 @@ namespace Model
         virtual void DeleteCollectionAsync(const Model::DeleteCollectionRequest& request, const DeleteCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an existing Amazon Rekognition Custom Labels dataset. Deleting a
+         * dataset might take while. Use <a>DescribeDataset</a> to check the current
+         * status. The dataset is still deleting if the value of <code>Status</code> is
+         * <code>DELETE_IN_PROGRESS</code>. If you try to access the dataset after it is
+         * deleted, you get a <code>ResourceNotFoundException</code> exception. </p> <p>You
+         * can't delete a dataset while it is creating (<code>Status</code> =
+         * <code>CREATE_IN_PROGRESS</code>) or if the dataset is updating
+         * (<code>Status</code> = <code>UPDATE_IN_PROGRESS</code>).</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:DeleteDataset</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
+
+        /**
+         * <p>Deletes an existing Amazon Rekognition Custom Labels dataset. Deleting a
+         * dataset might take while. Use <a>DescribeDataset</a> to check the current
+         * status. The dataset is still deleting if the value of <code>Status</code> is
+         * <code>DELETE_IN_PROGRESS</code>. If you try to access the dataset after it is
+         * deleted, you get a <code>ResourceNotFoundException</code> exception. </p> <p>You
+         * can't delete a dataset while it is creating (<code>Status</code> =
+         * <code>CREATE_IN_PROGRESS</code>) or if the dataset is updating
+         * (<code>Status</code> = <code>UPDATE_IN_PROGRESS</code>).</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:DeleteDataset</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteDataset">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const Model::DeleteDatasetRequest& request) const;
+
+        /**
+         * <p>Deletes an existing Amazon Rekognition Custom Labels dataset. Deleting a
+         * dataset might take while. Use <a>DescribeDataset</a> to check the current
+         * status. The dataset is still deleting if the value of <code>Status</code> is
+         * <code>DELETE_IN_PROGRESS</code>. If you try to access the dataset after it is
+         * deleted, you get a <code>ResourceNotFoundException</code> exception. </p> <p>You
+         * can't delete a dataset while it is creating (<code>Status</code> =
+         * <code>CREATE_IN_PROGRESS</code>) or if the dataset is updating
+         * (<code>Status</code> = <code>UPDATE_IN_PROGRESS</code>).</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:DeleteDataset</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteDataset">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDatasetAsync(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes faces from a collection. You specify a collection ID and an array of
          * face IDs to remove from the collection.</p> <p>This operation requires
          * permissions to perform the <code>rekognition:DeleteFaces</code>
@@ -790,9 +1004,12 @@ namespace Model
         /**
          * <p>Deletes an Amazon Rekognition Custom Labels project. To delete a project you
          * must first delete all models associated with the project. To delete a model, see
-         * <a>DeleteProjectVersion</a>.</p> <p>This operation requires permissions to
-         * perform the <code>rekognition:DeleteProject</code> action. </p><p><h3>See
-         * Also:</h3>   <a
+         * <a>DeleteProjectVersion</a>.</p> <p> <code>DeleteProject</code> is an
+         * asynchronous operation. To check if the project is deleted, call
+         * <a>DescribeProjects</a>. The project is deleted when the project no longer
+         * appears in the response.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DeleteProject</code> action. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">AWS
          * API Reference</a></p>
          */
@@ -801,9 +1018,12 @@ namespace Model
         /**
          * <p>Deletes an Amazon Rekognition Custom Labels project. To delete a project you
          * must first delete all models associated with the project. To delete a model, see
-         * <a>DeleteProjectVersion</a>.</p> <p>This operation requires permissions to
-         * perform the <code>rekognition:DeleteProject</code> action. </p><p><h3>See
-         * Also:</h3>   <a
+         * <a>DeleteProjectVersion</a>.</p> <p> <code>DeleteProject</code> is an
+         * asynchronous operation. To check if the project is deleted, call
+         * <a>DescribeProjects</a>. The project is deleted when the project no longer
+         * appears in the response.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DeleteProject</code> action. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">AWS
          * API Reference</a></p>
          *
@@ -814,9 +1034,12 @@ namespace Model
         /**
          * <p>Deletes an Amazon Rekognition Custom Labels project. To delete a project you
          * must first delete all models associated with the project. To delete a model, see
-         * <a>DeleteProjectVersion</a>.</p> <p>This operation requires permissions to
-         * perform the <code>rekognition:DeleteProject</code> action. </p><p><h3>See
-         * Also:</h3>   <a
+         * <a>DeleteProjectVersion</a>.</p> <p> <code>DeleteProject</code> is an
+         * asynchronous operation. To check if the project is deleted, call
+         * <a>DescribeProjects</a>. The project is deleted when the project no longer
+         * appears in the response.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DeleteProject</code> action. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">AWS
          * API Reference</a></p>
          *
@@ -942,24 +1165,61 @@ namespace Model
         virtual void DescribeCollectionAsync(const Model::DescribeCollectionRequest& request, const DescribeCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists and describes the models in an Amazon Rekognition Custom Labels
-         * project. You can specify up to 10 model versions in
-         * <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for
-         * all models are returned.</p> <p>This operation requires permissions to perform
-         * the <code>rekognition:DescribeProjectVersions</code> action.</p><p><h3>See
+         * <p> Describes an Amazon Rekognition Custom Labels dataset. You can get
+         * information such as the current status of a dataset and statistics about the
+         * images and labels in a dataset. </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:DescribeDataset</code> action.</p><p><h3>See
          * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
+
+        /**
+         * <p> Describes an Amazon Rekognition Custom Labels dataset. You can get
+         * information such as the current status of a dataset and statistics about the
+         * images and labels in a dataset. </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:DescribeDataset</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeDataset">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const Model::DescribeDatasetRequest& request) const;
+
+        /**
+         * <p> Describes an Amazon Rekognition Custom Labels dataset. You can get
+         * information such as the current status of a dataset and statistics about the
+         * images and labels in a dataset. </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:DescribeDataset</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeDataset">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDatasetAsync(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists and describes the versions of a model in an Amazon Rekognition Custom
+         * Labels project. You can specify up to 10 model versions in
+         * <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for
+         * all model versions in the project are returned.</p> <p>This operation requires
+         * permissions to perform the <code>rekognition:DescribeProjectVersions</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeProjectVersionsOutcome DescribeProjectVersions(const Model::DescribeProjectVersionsRequest& request) const;
 
         /**
-         * <p>Lists and describes the models in an Amazon Rekognition Custom Labels
-         * project. You can specify up to 10 model versions in
+         * <p>Lists and describes the versions of a model in an Amazon Rekognition Custom
+         * Labels project. You can specify up to 10 model versions in
          * <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for
-         * all models are returned.</p> <p>This operation requires permissions to perform
-         * the <code>rekognition:DescribeProjectVersions</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * all model versions in the project are returned.</p> <p>This operation requires
+         * permissions to perform the <code>rekognition:DescribeProjectVersions</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">AWS
          * API Reference</a></p>
          *
@@ -968,12 +1228,12 @@ namespace Model
         virtual Model::DescribeProjectVersionsOutcomeCallable DescribeProjectVersionsCallable(const Model::DescribeProjectVersionsRequest& request) const;
 
         /**
-         * <p>Lists and describes the models in an Amazon Rekognition Custom Labels
-         * project. You can specify up to 10 model versions in
+         * <p>Lists and describes the versions of a model in an Amazon Rekognition Custom
+         * Labels project. You can specify up to 10 model versions in
          * <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for
-         * all models are returned.</p> <p>This operation requires permissions to perform
-         * the <code>rekognition:DescribeProjectVersions</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * all model versions in the project are returned.</p> <p>This operation requires
+         * permissions to perform the <code>rekognition:DescribeProjectVersions</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">AWS
          * API Reference</a></p>
          *
@@ -982,8 +1242,8 @@ namespace Model
         virtual void DescribeProjectVersionsAsync(const Model::DescribeProjectVersionsRequest& request, const DescribeProjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists and gets information about your Amazon Rekognition Custom Labels
-         * projects.</p> <p>This operation requires permissions to perform the
+         * <p>Gets information about your Amazon Rekognition Custom Labels projects. </p>
+         * <p>This operation requires permissions to perform the
          * <code>rekognition:DescribeProjects</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">AWS
          * API Reference</a></p>
@@ -991,8 +1251,8 @@ namespace Model
         virtual Model::DescribeProjectsOutcome DescribeProjects(const Model::DescribeProjectsRequest& request) const;
 
         /**
-         * <p>Lists and gets information about your Amazon Rekognition Custom Labels
-         * projects.</p> <p>This operation requires permissions to perform the
+         * <p>Gets information about your Amazon Rekognition Custom Labels projects. </p>
+         * <p>This operation requires permissions to perform the
          * <code>rekognition:DescribeProjects</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">AWS
          * API Reference</a></p>
@@ -1002,8 +1262,8 @@ namespace Model
         virtual Model::DescribeProjectsOutcomeCallable DescribeProjectsCallable(const Model::DescribeProjectsRequest& request) const;
 
         /**
-         * <p>Lists and gets information about your Amazon Rekognition Custom Labels
-         * projects.</p> <p>This operation requires permissions to perform the
+         * <p>Gets information about your Amazon Rekognition Custom Labels projects. </p>
+         * <p>This operation requires permissions to perform the
          * <code>rekognition:DescribeProjects</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">AWS
          * API Reference</a></p>
@@ -1058,20 +1318,26 @@ namespace Model
          * (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the
          * label name (<code>Name</code>), the level of confidence that the image contains
          * the object (<code>Confidence</code>), and object location information, if it
-         * exists, for the label on the image (<code>Geometry</code>). </p> <p>During
-         * training model calculates a threshold value that determines if a prediction for
-         * a label is true. By default, <code>DetectCustomLabels</code> doesn't return
-         * labels whose confidence value is below the model's calculated threshold value.
-         * To filter labels that are returned, specify a value for
-         * <code>MinConfidence</code> that is higher than the model's calculated threshold.
-         * You can get the model's calculated threshold from the model's training results
-         * shown in the Amazon Rekognition Custom Labels console. To get all labels,
-         * regardless of confidence, specify a <code>MinConfidence</code> value of 0. </p>
-         * <p>You can also add the <code>MaxResults</code> parameter to limit the number of
-         * labels returned. </p> <p>This is a stateless API operation. That is, the
-         * operation does not persist any data.</p> <p>This operation requires permissions
-         * to perform the <code>rekognition:DetectCustomLabels</code> action.
-         * </p><p><h3>See Also:</h3>   <a
+         * exists, for the label on the image (<code>Geometry</code>). </p> <p>To filter
+         * labels that are returned, specify a value for <code>MinConfidence</code>.
+         * <code>DetectCustomLabelsLabels</code> only returns labels with a confidence
+         * that's higher than the specified value. The value of <code>MinConfidence</code>
+         * maps to the assumed threshold values created during training. For more
+         * information, see <i>Assumed threshold</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. Amazon Rekognition Custom Labels metrics expresses an
+         * assumed threshold as a floating point value between 0-1. The range of
+         * <code>MinConfidence</code> normalizes the threshold value to a percentage value
+         * (0-100). Confidence responses from <code>DetectCustomLabels</code> are also
+         * returned as a percentage. You can use <code>MinConfidence</code> to change the
+         * precision and recall or your model. For more information, see <i>Analyzing an
+         * image</i> in the Amazon Rekognition Custom Labels Developer Guide. </p> <p>If
+         * you don't specify a value for <code>MinConfidence</code>,
+         * <code>DetectCustomLabels</code> returns labels based on the assumed threshold of
+         * each label.</p> <p>This is a stateless API operation. That is, the operation
+         * does not persist any data.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DetectCustomLabels</code> action. </p> <p>For more
+         * information, see <i>Analyzing an image</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">AWS
          * API Reference</a></p>
          */
@@ -1089,20 +1355,26 @@ namespace Model
          * (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the
          * label name (<code>Name</code>), the level of confidence that the image contains
          * the object (<code>Confidence</code>), and object location information, if it
-         * exists, for the label on the image (<code>Geometry</code>). </p> <p>During
-         * training model calculates a threshold value that determines if a prediction for
-         * a label is true. By default, <code>DetectCustomLabels</code> doesn't return
-         * labels whose confidence value is below the model's calculated threshold value.
-         * To filter labels that are returned, specify a value for
-         * <code>MinConfidence</code> that is higher than the model's calculated threshold.
-         * You can get the model's calculated threshold from the model's training results
-         * shown in the Amazon Rekognition Custom Labels console. To get all labels,
-         * regardless of confidence, specify a <code>MinConfidence</code> value of 0. </p>
-         * <p>You can also add the <code>MaxResults</code> parameter to limit the number of
-         * labels returned. </p> <p>This is a stateless API operation. That is, the
-         * operation does not persist any data.</p> <p>This operation requires permissions
-         * to perform the <code>rekognition:DetectCustomLabels</code> action.
-         * </p><p><h3>See Also:</h3>   <a
+         * exists, for the label on the image (<code>Geometry</code>). </p> <p>To filter
+         * labels that are returned, specify a value for <code>MinConfidence</code>.
+         * <code>DetectCustomLabelsLabels</code> only returns labels with a confidence
+         * that's higher than the specified value. The value of <code>MinConfidence</code>
+         * maps to the assumed threshold values created during training. For more
+         * information, see <i>Assumed threshold</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. Amazon Rekognition Custom Labels metrics expresses an
+         * assumed threshold as a floating point value between 0-1. The range of
+         * <code>MinConfidence</code> normalizes the threshold value to a percentage value
+         * (0-100). Confidence responses from <code>DetectCustomLabels</code> are also
+         * returned as a percentage. You can use <code>MinConfidence</code> to change the
+         * precision and recall or your model. For more information, see <i>Analyzing an
+         * image</i> in the Amazon Rekognition Custom Labels Developer Guide. </p> <p>If
+         * you don't specify a value for <code>MinConfidence</code>,
+         * <code>DetectCustomLabels</code> returns labels based on the assumed threshold of
+         * each label.</p> <p>This is a stateless API operation. That is, the operation
+         * does not persist any data.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DetectCustomLabels</code> action. </p> <p>For more
+         * information, see <i>Analyzing an image</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">AWS
          * API Reference</a></p>
          *
@@ -1122,20 +1394,26 @@ namespace Model
          * (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the
          * label name (<code>Name</code>), the level of confidence that the image contains
          * the object (<code>Confidence</code>), and object location information, if it
-         * exists, for the label on the image (<code>Geometry</code>). </p> <p>During
-         * training model calculates a threshold value that determines if a prediction for
-         * a label is true. By default, <code>DetectCustomLabels</code> doesn't return
-         * labels whose confidence value is below the model's calculated threshold value.
-         * To filter labels that are returned, specify a value for
-         * <code>MinConfidence</code> that is higher than the model's calculated threshold.
-         * You can get the model's calculated threshold from the model's training results
-         * shown in the Amazon Rekognition Custom Labels console. To get all labels,
-         * regardless of confidence, specify a <code>MinConfidence</code> value of 0. </p>
-         * <p>You can also add the <code>MaxResults</code> parameter to limit the number of
-         * labels returned. </p> <p>This is a stateless API operation. That is, the
-         * operation does not persist any data.</p> <p>This operation requires permissions
-         * to perform the <code>rekognition:DetectCustomLabels</code> action.
-         * </p><p><h3>See Also:</h3>   <a
+         * exists, for the label on the image (<code>Geometry</code>). </p> <p>To filter
+         * labels that are returned, specify a value for <code>MinConfidence</code>.
+         * <code>DetectCustomLabelsLabels</code> only returns labels with a confidence
+         * that's higher than the specified value. The value of <code>MinConfidence</code>
+         * maps to the assumed threshold values created during training. For more
+         * information, see <i>Assumed threshold</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. Amazon Rekognition Custom Labels metrics expresses an
+         * assumed threshold as a floating point value between 0-1. The range of
+         * <code>MinConfidence</code> normalizes the threshold value to a percentage value
+         * (0-100). Confidence responses from <code>DetectCustomLabels</code> are also
+         * returned as a percentage. You can use <code>MinConfidence</code> to change the
+         * precision and recall or your model. For more information, see <i>Analyzing an
+         * image</i> in the Amazon Rekognition Custom Labels Developer Guide. </p> <p>If
+         * you don't specify a value for <code>MinConfidence</code>,
+         * <code>DetectCustomLabels</code> returns labels based on the assumed threshold of
+         * each label.</p> <p>This is a stateless API operation. That is, the operation
+         * does not persist any data.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DetectCustomLabels</code> action. </p> <p>For more
+         * information, see <i>Analyzing an image</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">AWS
          * API Reference</a></p>
          *
@@ -1529,22 +1807,21 @@ namespace Model
          * <code>DetectText</code> operation returns text in an array of
          * <a>TextDetection</a> elements, <code>TextDetections</code>. Each
          * <code>TextDetection</code> element provides information about a single word or
-         * line of text that was detected in the image. </p> <p>A word is one or more ISO
-         * basic latin script characters that are not separated by spaces.
-         * <code>DetectText</code> can detect up to 100 words in an image.</p> <p>A line is
-         * a string of equally spaced words. A line isn't necessarily a complete sentence.
-         * For example, a driver's license number is detected as a line. A line ends when
-         * there is no aligned text after it. Also, a line ends when there is a large gap
-         * between words, relative to the length of the words. This means, depending on the
-         * gap between words, Amazon Rekognition may detect multiple lines in text aligned
-         * in the same direction. Periods don't represent the end of a line. If a sentence
-         * spans multiple lines, the <code>DetectText</code> operation returns multiple
-         * lines.</p> <p>To determine whether a <code>TextDetection</code> element is a
-         * line of text or a word, use the <code>TextDetection</code> object
-         * <code>Type</code> field. </p> <p>To be detected, text must be within +/- 90
-         * degrees orientation of the horizontal axis.</p> <p>For more information, see
-         * DetectText in the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>  
-         * <a
+         * line of text that was detected in the image. </p> <p>A word is one or more
+         * script characters that are not separated by spaces. <code>DetectText</code> can
+         * detect up to 100 words in an image.</p> <p>A line is a string of equally spaced
+         * words. A line isn't necessarily a complete sentence. For example, a driver's
+         * license number is detected as a line. A line ends when there is no aligned text
+         * after it. Also, a line ends when there is a large gap between words, relative to
+         * the length of the words. This means, depending on the gap between words, Amazon
+         * Rekognition may detect multiple lines in text aligned in the same direction.
+         * Periods don't represent the end of a line. If a sentence spans multiple lines,
+         * the <code>DetectText</code> operation returns multiple lines.</p> <p>To
+         * determine whether a <code>TextDetection</code> element is a line of text or a
+         * word, use the <code>TextDetection</code> object <code>Type</code> field. </p>
+         * <p>To be detected, text must be within +/- 90 degrees orientation of the
+         * horizontal axis.</p> <p>For more information, see DetectText in the Amazon
+         * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">AWS
          * API Reference</a></p>
          */
@@ -1560,22 +1837,21 @@ namespace Model
          * <code>DetectText</code> operation returns text in an array of
          * <a>TextDetection</a> elements, <code>TextDetections</code>. Each
          * <code>TextDetection</code> element provides information about a single word or
-         * line of text that was detected in the image. </p> <p>A word is one or more ISO
-         * basic latin script characters that are not separated by spaces.
-         * <code>DetectText</code> can detect up to 100 words in an image.</p> <p>A line is
-         * a string of equally spaced words. A line isn't necessarily a complete sentence.
-         * For example, a driver's license number is detected as a line. A line ends when
-         * there is no aligned text after it. Also, a line ends when there is a large gap
-         * between words, relative to the length of the words. This means, depending on the
-         * gap between words, Amazon Rekognition may detect multiple lines in text aligned
-         * in the same direction. Periods don't represent the end of a line. If a sentence
-         * spans multiple lines, the <code>DetectText</code> operation returns multiple
-         * lines.</p> <p>To determine whether a <code>TextDetection</code> element is a
-         * line of text or a word, use the <code>TextDetection</code> object
-         * <code>Type</code> field. </p> <p>To be detected, text must be within +/- 90
-         * degrees orientation of the horizontal axis.</p> <p>For more information, see
-         * DetectText in the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>  
-         * <a
+         * line of text that was detected in the image. </p> <p>A word is one or more
+         * script characters that are not separated by spaces. <code>DetectText</code> can
+         * detect up to 100 words in an image.</p> <p>A line is a string of equally spaced
+         * words. A line isn't necessarily a complete sentence. For example, a driver's
+         * license number is detected as a line. A line ends when there is no aligned text
+         * after it. Also, a line ends when there is a large gap between words, relative to
+         * the length of the words. This means, depending on the gap between words, Amazon
+         * Rekognition may detect multiple lines in text aligned in the same direction.
+         * Periods don't represent the end of a line. If a sentence spans multiple lines,
+         * the <code>DetectText</code> operation returns multiple lines.</p> <p>To
+         * determine whether a <code>TextDetection</code> element is a line of text or a
+         * word, use the <code>TextDetection</code> object <code>Type</code> field. </p>
+         * <p>To be detected, text must be within +/- 90 degrees orientation of the
+         * horizontal axis.</p> <p>For more information, see DetectText in the Amazon
+         * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">AWS
          * API Reference</a></p>
          *
@@ -1593,22 +1869,21 @@ namespace Model
          * <code>DetectText</code> operation returns text in an array of
          * <a>TextDetection</a> elements, <code>TextDetections</code>. Each
          * <code>TextDetection</code> element provides information about a single word or
-         * line of text that was detected in the image. </p> <p>A word is one or more ISO
-         * basic latin script characters that are not separated by spaces.
-         * <code>DetectText</code> can detect up to 100 words in an image.</p> <p>A line is
-         * a string of equally spaced words. A line isn't necessarily a complete sentence.
-         * For example, a driver's license number is detected as a line. A line ends when
-         * there is no aligned text after it. Also, a line ends when there is a large gap
-         * between words, relative to the length of the words. This means, depending on the
-         * gap between words, Amazon Rekognition may detect multiple lines in text aligned
-         * in the same direction. Periods don't represent the end of a line. If a sentence
-         * spans multiple lines, the <code>DetectText</code> operation returns multiple
-         * lines.</p> <p>To determine whether a <code>TextDetection</code> element is a
-         * line of text or a word, use the <code>TextDetection</code> object
-         * <code>Type</code> field. </p> <p>To be detected, text must be within +/- 90
-         * degrees orientation of the horizontal axis.</p> <p>For more information, see
-         * DetectText in the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>  
-         * <a
+         * line of text that was detected in the image. </p> <p>A word is one or more
+         * script characters that are not separated by spaces. <code>DetectText</code> can
+         * detect up to 100 words in an image.</p> <p>A line is a string of equally spaced
+         * words. A line isn't necessarily a complete sentence. For example, a driver's
+         * license number is detected as a line. A line ends when there is no aligned text
+         * after it. Also, a line ends when there is a large gap between words, relative to
+         * the length of the words. This means, depending on the gap between words, Amazon
+         * Rekognition may detect multiple lines in text aligned in the same direction.
+         * Periods don't represent the end of a line. If a sentence spans multiple lines,
+         * the <code>DetectText</code> operation returns multiple lines.</p> <p>To
+         * determine whether a <code>TextDetection</code> element is a line of text or a
+         * word, use the <code>TextDetection</code> object <code>Type</code> field. </p>
+         * <p>To be detected, text must be within +/- 90 degrees orientation of the
+         * horizontal axis.</p> <p>For more information, see DetectText in the Amazon
+         * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">AWS
          * API Reference</a></p>
          *
@@ -1617,8 +1892,78 @@ namespace Model
         virtual void DetectTextAsync(const Model::DetectTextRequest& request, const DetectTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the name and additional information about a celebrity based on his or
-         * her Amazon Rekognition ID. The additional information is returned as an array of
+         * <p>Distributes the entries (images) in a training dataset across the training
+         * dataset and the test dataset for a project.
+         * <code>DistributeDatasetEntries</code> moves 20% of the training dataset images
+         * to the test dataset. An entry is a JSON Line that describes an image. </p>
+         * <p>You supply the Amazon Resource Names (ARN) of a project's training dataset
+         * and test dataset. The training dataset must contain the images that you want to
+         * split. The test dataset must be empty. The datasets must belong to the same
+         * project. To create training and test datasets for a project, call
+         * <a>CreateDataset</a>.</p> <p>Distributing a dataset takes a while to complete.
+         * To check the status call <code>DescribeDataset</code>. The operation is complete
+         * when the <code>Status</code> field for the training dataset and the test dataset
+         * is <code>UPDATE_COMPLETE</code>. If the dataset split fails, the value of
+         * <code>Status</code> is <code>UPDATE_FAILED</code>.</p> <p>This operation
+         * requires permissions to perform the
+         * <code>rekognition:DistributeDatasetEntries</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DistributeDatasetEntries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DistributeDatasetEntriesOutcome DistributeDatasetEntries(const Model::DistributeDatasetEntriesRequest& request) const;
+
+        /**
+         * <p>Distributes the entries (images) in a training dataset across the training
+         * dataset and the test dataset for a project.
+         * <code>DistributeDatasetEntries</code> moves 20% of the training dataset images
+         * to the test dataset. An entry is a JSON Line that describes an image. </p>
+         * <p>You supply the Amazon Resource Names (ARN) of a project's training dataset
+         * and test dataset. The training dataset must contain the images that you want to
+         * split. The test dataset must be empty. The datasets must belong to the same
+         * project. To create training and test datasets for a project, call
+         * <a>CreateDataset</a>.</p> <p>Distributing a dataset takes a while to complete.
+         * To check the status call <code>DescribeDataset</code>. The operation is complete
+         * when the <code>Status</code> field for the training dataset and the test dataset
+         * is <code>UPDATE_COMPLETE</code>. If the dataset split fails, the value of
+         * <code>Status</code> is <code>UPDATE_FAILED</code>.</p> <p>This operation
+         * requires permissions to perform the
+         * <code>rekognition:DistributeDatasetEntries</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DistributeDatasetEntries">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DistributeDatasetEntriesOutcomeCallable DistributeDatasetEntriesCallable(const Model::DistributeDatasetEntriesRequest& request) const;
+
+        /**
+         * <p>Distributes the entries (images) in a training dataset across the training
+         * dataset and the test dataset for a project.
+         * <code>DistributeDatasetEntries</code> moves 20% of the training dataset images
+         * to the test dataset. An entry is a JSON Line that describes an image. </p>
+         * <p>You supply the Amazon Resource Names (ARN) of a project's training dataset
+         * and test dataset. The training dataset must contain the images that you want to
+         * split. The test dataset must be empty. The datasets must belong to the same
+         * project. To create training and test datasets for a project, call
+         * <a>CreateDataset</a>.</p> <p>Distributing a dataset takes a while to complete.
+         * To check the status call <code>DescribeDataset</code>. The operation is complete
+         * when the <code>Status</code> field for the training dataset and the test dataset
+         * is <code>UPDATE_COMPLETE</code>. If the dataset split fails, the value of
+         * <code>Status</code> is <code>UPDATE_FAILED</code>.</p> <p>This operation
+         * requires permissions to perform the
+         * <code>rekognition:DistributeDatasetEntries</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DistributeDatasetEntries">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DistributeDatasetEntriesAsync(const Model::DistributeDatasetEntriesRequest& request, const DistributeDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the name and additional information about a celebrity based on their
+         * Amazon Rekognition ID. The additional information is returned as an array of
          * URLs. If there is no additional information about the celebrity, this list is
          * empty.</p> <p>For more information, see Recognizing Celebrities in an Image in
          * the Amazon Rekognition Developer Guide.</p> <p>This operation requires
@@ -1630,8 +1975,8 @@ namespace Model
         virtual Model::GetCelebrityInfoOutcome GetCelebrityInfo(const Model::GetCelebrityInfoRequest& request) const;
 
         /**
-         * <p>Gets the name and additional information about a celebrity based on his or
-         * her Amazon Rekognition ID. The additional information is returned as an array of
+         * <p>Gets the name and additional information about a celebrity based on their
+         * Amazon Rekognition ID. The additional information is returned as an array of
          * URLs. If there is no additional information about the celebrity, this list is
          * empty.</p> <p>For more information, see Recognizing Celebrities in an Image in
          * the Amazon Rekognition Developer Guide.</p> <p>This operation requires
@@ -1645,8 +1990,8 @@ namespace Model
         virtual Model::GetCelebrityInfoOutcomeCallable GetCelebrityInfoCallable(const Model::GetCelebrityInfoRequest& request) const;
 
         /**
-         * <p>Gets the name and additional information about a celebrity based on his or
-         * her Amazon Rekognition ID. The additional information is returned as an array of
+         * <p>Gets the name and additional information about a celebrity based on their
+         * Amazon Rekognition ID. The additional information is returned as an array of
          * URLs. If there is no additional information about the celebrity, this list is
          * empty.</p> <p>For more information, see Recognizing Celebrities in an Image in
          * the Amazon Rekognition Developer Guide.</p> <p>This operation requires
@@ -1664,8 +2009,8 @@ namespace Model
          * analysis started by <a>StartCelebrityRecognition</a>.</p> <p>Celebrity
          * recognition in a video is an asynchronous operation. Analysis is started by a
          * call to <a>StartCelebrityRecognition</a> which returns a job identifier
-         * (<code>JobId</code>). When the celebrity recognition operation finishes, Amazon
-         * Rekognition Video publishes a completion status to the Amazon Simple
+         * (<code>JobId</code>). </p> <p>When the celebrity recognition operation finishes,
+         * Amazon Rekognition Video publishes a completion status to the Amazon Simple
          * Notification Service topic registered in the initial call to
          * <code>StartCelebrityRecognition</code>. To get the results of the celebrity
          * recognition analysis, first check that the status value published to the Amazon
@@ -1678,18 +2023,22 @@ namespace Model
          * time(s) they are detected in an array (<code>Celebrities</code>) of
          * <a>CelebrityRecognition</a> objects. Each <code>CelebrityRecognition</code>
          * contains information about the celebrity in a <a>CelebrityDetail</a> object and
-         * the time, <code>Timestamp</code>, the celebrity was detected. </p>  <p>
-         * <code>GetCelebrityRecognition</code> only returns the default facial attributes
-         * (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
-         * <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed
-         * in the <code>Face</code> object of the following response syntax are not
-         * returned. For more information, see FaceDetail in the Amazon Rekognition
-         * Developer Guide. </p>  <p>By default, the <code>Celebrities</code> array
-         * is sorted by time (milliseconds from the start of the video). You can also sort
-         * the array by celebrity by specifying the value <code>ID</code> in the
-         * <code>SortBy</code> input parameter.</p> <p>The <code>CelebrityDetail</code>
-         * object includes the celebrity identifer and additional information urls. If you
-         * don't store the additional information urls, you can get them later by calling
+         * the time, <code>Timestamp</code>, the celebrity was detected. This
+         * <a>CelebrityDetail</a> object stores information about the detected celebrity's
+         * face attributes, a face bounding box, known gender, the celebrity's name, and a
+         * confidence estimate.</p>  <p> <code>GetCelebrityRecognition</code> only
+         * returns the default facial attributes (<code>BoundingBox</code>,
+         * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
+         * <code>Quality</code>). The <code>BoundingBox</code> field only applies to the
+         * detected face instance. The other facial attributes listed in the
+         * <code>Face</code> object of the following response syntax are not returned. For
+         * more information, see FaceDetail in the Amazon Rekognition Developer Guide. </p>
+         *  <p>By default, the <code>Celebrities</code> array is sorted by time
+         * (milliseconds from the start of the video). You can also sort the array by
+         * celebrity by specifying the value <code>ID</code> in the <code>SortBy</code>
+         * input parameter.</p> <p>The <code>CelebrityDetail</code> object includes the
+         * celebrity identifer and additional information urls. If you don't store the
+         * additional information urls, you can get them later by calling
          * <a>GetCelebrityInfo</a> with the celebrity identifer.</p> <p>No information is
          * returned for faces not recognized as celebrities.</p> <p>Use MaxResults
          * parameter to limit the number of labels returned. If there are more results than
@@ -1709,8 +2058,8 @@ namespace Model
          * analysis started by <a>StartCelebrityRecognition</a>.</p> <p>Celebrity
          * recognition in a video is an asynchronous operation. Analysis is started by a
          * call to <a>StartCelebrityRecognition</a> which returns a job identifier
-         * (<code>JobId</code>). When the celebrity recognition operation finishes, Amazon
-         * Rekognition Video publishes a completion status to the Amazon Simple
+         * (<code>JobId</code>). </p> <p>When the celebrity recognition operation finishes,
+         * Amazon Rekognition Video publishes a completion status to the Amazon Simple
          * Notification Service topic registered in the initial call to
          * <code>StartCelebrityRecognition</code>. To get the results of the celebrity
          * recognition analysis, first check that the status value published to the Amazon
@@ -1723,18 +2072,22 @@ namespace Model
          * time(s) they are detected in an array (<code>Celebrities</code>) of
          * <a>CelebrityRecognition</a> objects. Each <code>CelebrityRecognition</code>
          * contains information about the celebrity in a <a>CelebrityDetail</a> object and
-         * the time, <code>Timestamp</code>, the celebrity was detected. </p>  <p>
-         * <code>GetCelebrityRecognition</code> only returns the default facial attributes
-         * (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
-         * <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed
-         * in the <code>Face</code> object of the following response syntax are not
-         * returned. For more information, see FaceDetail in the Amazon Rekognition
-         * Developer Guide. </p>  <p>By default, the <code>Celebrities</code> array
-         * is sorted by time (milliseconds from the start of the video). You can also sort
-         * the array by celebrity by specifying the value <code>ID</code> in the
-         * <code>SortBy</code> input parameter.</p> <p>The <code>CelebrityDetail</code>
-         * object includes the celebrity identifer and additional information urls. If you
-         * don't store the additional information urls, you can get them later by calling
+         * the time, <code>Timestamp</code>, the celebrity was detected. This
+         * <a>CelebrityDetail</a> object stores information about the detected celebrity's
+         * face attributes, a face bounding box, known gender, the celebrity's name, and a
+         * confidence estimate.</p>  <p> <code>GetCelebrityRecognition</code> only
+         * returns the default facial attributes (<code>BoundingBox</code>,
+         * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
+         * <code>Quality</code>). The <code>BoundingBox</code> field only applies to the
+         * detected face instance. The other facial attributes listed in the
+         * <code>Face</code> object of the following response syntax are not returned. For
+         * more information, see FaceDetail in the Amazon Rekognition Developer Guide. </p>
+         *  <p>By default, the <code>Celebrities</code> array is sorted by time
+         * (milliseconds from the start of the video). You can also sort the array by
+         * celebrity by specifying the value <code>ID</code> in the <code>SortBy</code>
+         * input parameter.</p> <p>The <code>CelebrityDetail</code> object includes the
+         * celebrity identifer and additional information urls. If you don't store the
+         * additional information urls, you can get them later by calling
          * <a>GetCelebrityInfo</a> with the celebrity identifer.</p> <p>No information is
          * returned for faces not recognized as celebrities.</p> <p>Use MaxResults
          * parameter to limit the number of labels returned. If there are more results than
@@ -1756,8 +2109,8 @@ namespace Model
          * analysis started by <a>StartCelebrityRecognition</a>.</p> <p>Celebrity
          * recognition in a video is an asynchronous operation. Analysis is started by a
          * call to <a>StartCelebrityRecognition</a> which returns a job identifier
-         * (<code>JobId</code>). When the celebrity recognition operation finishes, Amazon
-         * Rekognition Video publishes a completion status to the Amazon Simple
+         * (<code>JobId</code>). </p> <p>When the celebrity recognition operation finishes,
+         * Amazon Rekognition Video publishes a completion status to the Amazon Simple
          * Notification Service topic registered in the initial call to
          * <code>StartCelebrityRecognition</code>. To get the results of the celebrity
          * recognition analysis, first check that the status value published to the Amazon
@@ -1770,18 +2123,22 @@ namespace Model
          * time(s) they are detected in an array (<code>Celebrities</code>) of
          * <a>CelebrityRecognition</a> objects. Each <code>CelebrityRecognition</code>
          * contains information about the celebrity in a <a>CelebrityDetail</a> object and
-         * the time, <code>Timestamp</code>, the celebrity was detected. </p>  <p>
-         * <code>GetCelebrityRecognition</code> only returns the default facial attributes
-         * (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
-         * <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed
-         * in the <code>Face</code> object of the following response syntax are not
-         * returned. For more information, see FaceDetail in the Amazon Rekognition
-         * Developer Guide. </p>  <p>By default, the <code>Celebrities</code> array
-         * is sorted by time (milliseconds from the start of the video). You can also sort
-         * the array by celebrity by specifying the value <code>ID</code> in the
-         * <code>SortBy</code> input parameter.</p> <p>The <code>CelebrityDetail</code>
-         * object includes the celebrity identifer and additional information urls. If you
-         * don't store the additional information urls, you can get them later by calling
+         * the time, <code>Timestamp</code>, the celebrity was detected. This
+         * <a>CelebrityDetail</a> object stores information about the detected celebrity's
+         * face attributes, a face bounding box, known gender, the celebrity's name, and a
+         * confidence estimate.</p>  <p> <code>GetCelebrityRecognition</code> only
+         * returns the default facial attributes (<code>BoundingBox</code>,
+         * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
+         * <code>Quality</code>). The <code>BoundingBox</code> field only applies to the
+         * detected face instance. The other facial attributes listed in the
+         * <code>Face</code> object of the following response syntax are not returned. For
+         * more information, see FaceDetail in the Amazon Rekognition Developer Guide. </p>
+         *  <p>By default, the <code>Celebrities</code> array is sorted by time
+         * (milliseconds from the start of the video). You can also sort the array by
+         * celebrity by specifying the value <code>ID</code> in the <code>SortBy</code>
+         * input parameter.</p> <p>The <code>CelebrityDetail</code> object includes the
+         * celebrity identifer and additional information urls. If you don't store the
+         * additional information urls, you can get them later by calling
          * <a>GetCelebrityInfo</a> with the celebrity identifer.</p> <p>No information is
          * returned for faces not recognized as celebrities.</p> <p>Use MaxResults
          * parameter to limit the number of labels returned. If there are more results than
@@ -2774,6 +3131,113 @@ namespace Model
         virtual void ListCollectionsAsync(const Model::ListCollectionsRequest& request, const ListCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Lists the entries (images) within a dataset. An entry is a JSON Line that
+         * contains the information for a single image, including the image location,
+         * assigned labels, and object location bounding boxes. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-manifest-files.html">Creating
+         * a manifest file</a>.</p> <p>JSON Lines in the response include information about
+         * non-terminal errors found in the dataset. Non terminal errors are reported in
+         * <code>errors</code> lists within each JSON Line. The same information is
+         * reported in the training and testing validation result manifests that Amazon
+         * Rekognition Custom Labels creates during model training. </p> <p>You can filter
+         * the response in variety of ways, such as choosing which labels to return and
+         * returning JSON Lines created after a specific date. </p> <p>This operation
+         * requires permissions to perform the <code>rekognition:ListDatasetEntries</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetEntries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDatasetEntriesOutcome ListDatasetEntries(const Model::ListDatasetEntriesRequest& request) const;
+
+        /**
+         * <p> Lists the entries (images) within a dataset. An entry is a JSON Line that
+         * contains the information for a single image, including the image location,
+         * assigned labels, and object location bounding boxes. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-manifest-files.html">Creating
+         * a manifest file</a>.</p> <p>JSON Lines in the response include information about
+         * non-terminal errors found in the dataset. Non terminal errors are reported in
+         * <code>errors</code> lists within each JSON Line. The same information is
+         * reported in the training and testing validation result manifests that Amazon
+         * Rekognition Custom Labels creates during model training. </p> <p>You can filter
+         * the response in variety of ways, such as choosing which labels to return and
+         * returning JSON Lines created after a specific date. </p> <p>This operation
+         * requires permissions to perform the <code>rekognition:ListDatasetEntries</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetEntries">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDatasetEntriesOutcomeCallable ListDatasetEntriesCallable(const Model::ListDatasetEntriesRequest& request) const;
+
+        /**
+         * <p> Lists the entries (images) within a dataset. An entry is a JSON Line that
+         * contains the information for a single image, including the image location,
+         * assigned labels, and object location bounding boxes. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-manifest-files.html">Creating
+         * a manifest file</a>.</p> <p>JSON Lines in the response include information about
+         * non-terminal errors found in the dataset. Non terminal errors are reported in
+         * <code>errors</code> lists within each JSON Line. The same information is
+         * reported in the training and testing validation result manifests that Amazon
+         * Rekognition Custom Labels creates during model training. </p> <p>You can filter
+         * the response in variety of ways, such as choosing which labels to return and
+         * returning JSON Lines created after a specific date. </p> <p>This operation
+         * requires permissions to perform the <code>rekognition:ListDatasetEntries</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetEntries">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDatasetEntriesAsync(const Model::ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels
+         * to describe images. For more information, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-labeling-images.html">Labeling
+         * images</a>. </p> <p> Lists the labels in a dataset. Amazon Rekognition Custom
+         * Labels uses labels to describe images. For more information, see Labeling images
+         * in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetLabels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDatasetLabelsOutcome ListDatasetLabels(const Model::ListDatasetLabelsRequest& request) const;
+
+        /**
+         * <p>Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels
+         * to describe images. For more information, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-labeling-images.html">Labeling
+         * images</a>. </p> <p> Lists the labels in a dataset. Amazon Rekognition Custom
+         * Labels uses labels to describe images. For more information, see Labeling images
+         * in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetLabels">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDatasetLabelsOutcomeCallable ListDatasetLabelsCallable(const Model::ListDatasetLabelsRequest& request) const;
+
+        /**
+         * <p>Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels
+         * to describe images. For more information, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-labeling-images.html">Labeling
+         * images</a>. </p> <p> Lists the labels in a dataset. Amazon Rekognition Custom
+         * Labels uses labels to describe images. For more information, see Labeling images
+         * in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetLabels">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDatasetLabelsAsync(const Model::ListDatasetLabelsRequest& request, const ListDatasetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns metadata for faces in the specified collection. This metadata
          * includes information such as the bounding box coordinates, the confidence (that
          * the bounding box contains a face), and face ID. For an example, see Listing
@@ -2879,18 +3343,19 @@ namespace Model
          * <p>Returns an array of celebrities recognized in the input image. For more
          * information, see Recognizing Celebrities in the Amazon Rekognition Developer
          * Guide. </p> <p> <code>RecognizeCelebrities</code> returns the 64 largest faces
-         * in the image. It lists recognized celebrities in the <code>CelebrityFaces</code>
-         * array and unrecognized faces in the <code>UnrecognizedFaces</code> array.
-         * <code>RecognizeCelebrities</code> doesn't return celebrities whose faces aren't
-         * among the largest 64 faces in the image.</p> <p>For each celebrity recognized,
-         * <code>RecognizeCelebrities</code> returns a <code>Celebrity</code> object. The
-         * <code>Celebrity</code> object contains the celebrity name, ID, URL links to
-         * additional information, match confidence, and a <code>ComparedFace</code> object
-         * that you can use to locate the celebrity's face on the image.</p> <p>Amazon
-         * Rekognition doesn't retain information about which images a celebrity has been
-         * recognized in. Your application must store this information and use the
-         * <code>Celebrity</code> ID property as a unique identifier for the celebrity. If
-         * you don't store the celebrity name or additional information URLs returned by
+         * in the image. It lists the recognized celebrities in the
+         * <code>CelebrityFaces</code> array and any unrecognized faces in the
+         * <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code> doesn't
+         * return celebrities whose faces aren't among the largest 64 faces in the
+         * image.</p> <p>For each celebrity recognized, <code>RecognizeCelebrities</code>
+         * returns a <code>Celebrity</code> object. The <code>Celebrity</code> object
+         * contains the celebrity name, ID, URL links to additional information, match
+         * confidence, and a <code>ComparedFace</code> object that you can use to locate
+         * the celebrity's face on the image.</p> <p>Amazon Rekognition doesn't retain
+         * information about which images a celebrity has been recognized in. Your
+         * application must store this information and use the <code>Celebrity</code> ID
+         * property as a unique identifier for the celebrity. If you don't store the
+         * celebrity name or additional information URLs returned by
          * <code>RecognizeCelebrities</code>, you will need the ID to identify the
          * celebrity in a call to the <a>GetCelebrityInfo</a> operation.</p> <p>You pass
          * the input image either as base64-encoded image bytes or as a reference to an
@@ -2910,18 +3375,19 @@ namespace Model
          * <p>Returns an array of celebrities recognized in the input image. For more
          * information, see Recognizing Celebrities in the Amazon Rekognition Developer
          * Guide. </p> <p> <code>RecognizeCelebrities</code> returns the 64 largest faces
-         * in the image. It lists recognized celebrities in the <code>CelebrityFaces</code>
-         * array and unrecognized faces in the <code>UnrecognizedFaces</code> array.
-         * <code>RecognizeCelebrities</code> doesn't return celebrities whose faces aren't
-         * among the largest 64 faces in the image.</p> <p>For each celebrity recognized,
-         * <code>RecognizeCelebrities</code> returns a <code>Celebrity</code> object. The
-         * <code>Celebrity</code> object contains the celebrity name, ID, URL links to
-         * additional information, match confidence, and a <code>ComparedFace</code> object
-         * that you can use to locate the celebrity's face on the image.</p> <p>Amazon
-         * Rekognition doesn't retain information about which images a celebrity has been
-         * recognized in. Your application must store this information and use the
-         * <code>Celebrity</code> ID property as a unique identifier for the celebrity. If
-         * you don't store the celebrity name or additional information URLs returned by
+         * in the image. It lists the recognized celebrities in the
+         * <code>CelebrityFaces</code> array and any unrecognized faces in the
+         * <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code> doesn't
+         * return celebrities whose faces aren't among the largest 64 faces in the
+         * image.</p> <p>For each celebrity recognized, <code>RecognizeCelebrities</code>
+         * returns a <code>Celebrity</code> object. The <code>Celebrity</code> object
+         * contains the celebrity name, ID, URL links to additional information, match
+         * confidence, and a <code>ComparedFace</code> object that you can use to locate
+         * the celebrity's face on the image.</p> <p>Amazon Rekognition doesn't retain
+         * information about which images a celebrity has been recognized in. Your
+         * application must store this information and use the <code>Celebrity</code> ID
+         * property as a unique identifier for the celebrity. If you don't store the
+         * celebrity name or additional information URLs returned by
          * <code>RecognizeCelebrities</code>, you will need the ID to identify the
          * celebrity in a call to the <a>GetCelebrityInfo</a> operation.</p> <p>You pass
          * the input image either as base64-encoded image bytes or as a reference to an
@@ -2943,18 +3409,19 @@ namespace Model
          * <p>Returns an array of celebrities recognized in the input image. For more
          * information, see Recognizing Celebrities in the Amazon Rekognition Developer
          * Guide. </p> <p> <code>RecognizeCelebrities</code> returns the 64 largest faces
-         * in the image. It lists recognized celebrities in the <code>CelebrityFaces</code>
-         * array and unrecognized faces in the <code>UnrecognizedFaces</code> array.
-         * <code>RecognizeCelebrities</code> doesn't return celebrities whose faces aren't
-         * among the largest 64 faces in the image.</p> <p>For each celebrity recognized,
-         * <code>RecognizeCelebrities</code> returns a <code>Celebrity</code> object. The
-         * <code>Celebrity</code> object contains the celebrity name, ID, URL links to
-         * additional information, match confidence, and a <code>ComparedFace</code> object
-         * that you can use to locate the celebrity's face on the image.</p> <p>Amazon
-         * Rekognition doesn't retain information about which images a celebrity has been
-         * recognized in. Your application must store this information and use the
-         * <code>Celebrity</code> ID property as a unique identifier for the celebrity. If
-         * you don't store the celebrity name or additional information URLs returned by
+         * in the image. It lists the recognized celebrities in the
+         * <code>CelebrityFaces</code> array and any unrecognized faces in the
+         * <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code> doesn't
+         * return celebrities whose faces aren't among the largest 64 faces in the
+         * image.</p> <p>For each celebrity recognized, <code>RecognizeCelebrities</code>
+         * returns a <code>Celebrity</code> object. The <code>Celebrity</code> object
+         * contains the celebrity name, ID, URL links to additional information, match
+         * confidence, and a <code>ComparedFace</code> object that you can use to locate
+         * the celebrity's face on the image.</p> <p>Amazon Rekognition doesn't retain
+         * information about which images a celebrity has been recognized in. Your
+         * application must store this information and use the <code>Celebrity</code> ID
+         * property as a unique identifier for the celebrity. If you don't store the
+         * celebrity name or additional information URLs returned by
          * <code>RecognizeCelebrities</code>, you will need the ID to identify the
          * celebrity in a call to the <a>GetCelebrityInfo</a> operation.</p> <p>You pass
          * the input image either as base64-encoded image bytes or as a reference to an
@@ -3903,21 +4370,115 @@ namespace Model
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Adds or updates one or more entries (images) in a dataset. An entry is a JSON
+         * Line which contains the information for a single image, including the image
+         * location, assigned labels, and object location bounding boxes. For more
+         * information, see Image-Level labels in manifest files and Object localization in
+         * manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+         * </p> <p>If the <code>source-ref</code> field in the JSON line references an
+         * existing image, the existing image in the dataset is updated. If
+         * <code>source-ref</code> field doesn't reference an existing image, the image is
+         * added as a new image to the dataset. </p> <p>You specify the changes that you
+         * want to make in the <code>Changes</code> input parameter. There isn't a limit to
+         * the number JSON Lines that you can change, but the size of <code>Changes</code>
+         * must be less than 5MB.</p> <p> <code>UpdateDatasetEntries</code> returns
+         * immediatly, but the dataset update might take a while to complete. Use
+         * <a>DescribeDataset</a> to check the current status. The dataset updated
+         * successfully if the value of <code>Status</code> is
+         * <code>UPDATE_COMPLETE</code>. </p> <p>To check if any non-terminal errors
+         * occured, call <a>ListDatasetEntries</a> and check for the presence of
+         * <code>errors</code> lists in the JSON Lines.</p> <p>Dataset update fails if a
+         * terminal error occurs (<code>Status</code> = <code>UPDATE_FAILED</code>).
+         * Currently, you can't access the terminal error information from the Amazon
+         * Rekognition Custom Labels SDK. </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:UpdateDatasetEntries</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateDatasetEntries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDatasetEntriesOutcome UpdateDatasetEntries(const Model::UpdateDatasetEntriesRequest& request) const;
+
+        /**
+         * <p>Adds or updates one or more entries (images) in a dataset. An entry is a JSON
+         * Line which contains the information for a single image, including the image
+         * location, assigned labels, and object location bounding boxes. For more
+         * information, see Image-Level labels in manifest files and Object localization in
+         * manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+         * </p> <p>If the <code>source-ref</code> field in the JSON line references an
+         * existing image, the existing image in the dataset is updated. If
+         * <code>source-ref</code> field doesn't reference an existing image, the image is
+         * added as a new image to the dataset. </p> <p>You specify the changes that you
+         * want to make in the <code>Changes</code> input parameter. There isn't a limit to
+         * the number JSON Lines that you can change, but the size of <code>Changes</code>
+         * must be less than 5MB.</p> <p> <code>UpdateDatasetEntries</code> returns
+         * immediatly, but the dataset update might take a while to complete. Use
+         * <a>DescribeDataset</a> to check the current status. The dataset updated
+         * successfully if the value of <code>Status</code> is
+         * <code>UPDATE_COMPLETE</code>. </p> <p>To check if any non-terminal errors
+         * occured, call <a>ListDatasetEntries</a> and check for the presence of
+         * <code>errors</code> lists in the JSON Lines.</p> <p>Dataset update fails if a
+         * terminal error occurs (<code>Status</code> = <code>UPDATE_FAILED</code>).
+         * Currently, you can't access the terminal error information from the Amazon
+         * Rekognition Custom Labels SDK. </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:UpdateDatasetEntries</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateDatasetEntries">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDatasetEntriesOutcomeCallable UpdateDatasetEntriesCallable(const Model::UpdateDatasetEntriesRequest& request) const;
+
+        /**
+         * <p>Adds or updates one or more entries (images) in a dataset. An entry is a JSON
+         * Line which contains the information for a single image, including the image
+         * location, assigned labels, and object location bounding boxes. For more
+         * information, see Image-Level labels in manifest files and Object localization in
+         * manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+         * </p> <p>If the <code>source-ref</code> field in the JSON line references an
+         * existing image, the existing image in the dataset is updated. If
+         * <code>source-ref</code> field doesn't reference an existing image, the image is
+         * added as a new image to the dataset. </p> <p>You specify the changes that you
+         * want to make in the <code>Changes</code> input parameter. There isn't a limit to
+         * the number JSON Lines that you can change, but the size of <code>Changes</code>
+         * must be less than 5MB.</p> <p> <code>UpdateDatasetEntries</code> returns
+         * immediatly, but the dataset update might take a while to complete. Use
+         * <a>DescribeDataset</a> to check the current status. The dataset updated
+         * successfully if the value of <code>Status</code> is
+         * <code>UPDATE_COMPLETE</code>. </p> <p>To check if any non-terminal errors
+         * occured, call <a>ListDatasetEntries</a> and check for the presence of
+         * <code>errors</code> lists in the JSON Lines.</p> <p>Dataset update fails if a
+         * terminal error occurs (<code>Status</code> = <code>UPDATE_FAILED</code>).
+         * Currently, you can't access the terminal error information from the Amazon
+         * Rekognition Custom Labels SDK. </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:UpdateDatasetEntries</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateDatasetEntries">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDatasetEntriesAsync(const Model::UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CompareFacesAsyncHelper(const Model::CompareFacesRequest& request, const CompareFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCollectionAsyncHelper(const Model::CreateCollectionRequest& request, const CreateCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDatasetAsyncHelper(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProjectVersionAsyncHelper(const Model::CreateProjectVersionRequest& request, const CreateProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStreamProcessorAsyncHelper(const Model::CreateStreamProcessorRequest& request, const CreateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCollectionAsyncHelper(const Model::DeleteCollectionRequest& request, const DeleteCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDatasetAsyncHelper(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFacesAsyncHelper(const Model::DeleteFacesRequest& request, const DeleteFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProjectVersionAsyncHelper(const Model::DeleteProjectVersionRequest& request, const DeleteProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStreamProcessorAsyncHelper(const Model::DeleteStreamProcessorRequest& request, const DeleteStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCollectionAsyncHelper(const Model::DescribeCollectionRequest& request, const DescribeCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDatasetAsyncHelper(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProjectVersionsAsyncHelper(const Model::DescribeProjectVersionsRequest& request, const DescribeProjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProjectsAsyncHelper(const Model::DescribeProjectsRequest& request, const DescribeProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStreamProcessorAsyncHelper(const Model::DescribeStreamProcessorRequest& request, const DescribeStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3927,6 +4488,7 @@ namespace Model
         void DetectModerationLabelsAsyncHelper(const Model::DetectModerationLabelsRequest& request, const DetectModerationLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectProtectiveEquipmentAsyncHelper(const Model::DetectProtectiveEquipmentRequest& request, const DetectProtectiveEquipmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectTextAsyncHelper(const Model::DetectTextRequest& request, const DetectTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DistributeDatasetEntriesAsyncHelper(const Model::DistributeDatasetEntriesRequest& request, const DistributeDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCelebrityInfoAsyncHelper(const Model::GetCelebrityInfoRequest& request, const GetCelebrityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCelebrityRecognitionAsyncHelper(const Model::GetCelebrityRecognitionRequest& request, const GetCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetContentModerationAsyncHelper(const Model::GetContentModerationRequest& request, const GetContentModerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3938,6 +4500,8 @@ namespace Model
         void GetTextDetectionAsyncHelper(const Model::GetTextDetectionRequest& request, const GetTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void IndexFacesAsyncHelper(const Model::IndexFacesRequest& request, const IndexFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCollectionsAsyncHelper(const Model::ListCollectionsRequest& request, const ListCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDatasetEntriesAsyncHelper(const Model::ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDatasetLabelsAsyncHelper(const Model::ListDatasetLabelsRequest& request, const ListDatasetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFacesAsyncHelper(const Model::ListFacesRequest& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStreamProcessorsAsyncHelper(const Model::ListStreamProcessorsRequest& request, const ListStreamProcessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3958,6 +4522,7 @@ namespace Model
         void StopStreamProcessorAsyncHelper(const Model::StopStreamProcessorRequest& request, const StopStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDatasetEntriesAsyncHelper(const Model::UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

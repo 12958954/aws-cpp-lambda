@@ -20,6 +20,7 @@
 #include <aws/lambda/model/ImageConfigResponse.h>
 #include <aws/lambda/model/Layer.h>
 #include <aws/lambda/model/FileSystemConfig.h>
+#include <aws/lambda/model/Architecture.h>
 #include <utility>
 
 namespace Aws
@@ -520,43 +521,43 @@ namespace Model
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArn = value; }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArn = std::move(value); }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline void SetKMSKeyArn(const char* value) { m_kMSKeyArn.assign(value); }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline UpdateFunctionCodeResult& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline UpdateFunctionCodeResult& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline UpdateFunctionCodeResult& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 
@@ -588,37 +589,37 @@ namespace Model
 
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline const Aws::String& GetMasterArn() const{ return m_masterArn; }
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline void SetMasterArn(const Aws::String& value) { m_masterArn = value; }
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline void SetMasterArn(Aws::String&& value) { m_masterArn = std::move(value); }
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline void SetMasterArn(const char* value) { m_masterArn.assign(value); }
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline UpdateFunctionCodeResult& WithMasterArn(const Aws::String& value) { SetMasterArn(value); return *this;}
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline UpdateFunctionCodeResult& WithMasterArn(Aws::String&& value) { SetMasterArn(std::move(value)); return *this;}
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline UpdateFunctionCodeResult& WithMasterArn(const char* value) { SetMasterArn(value); return *this;}
 
@@ -1078,6 +1079,56 @@ namespace Model
      */
     inline UpdateFunctionCodeResult& WithSigningJobArn(const char* value) { SetSigningJobArn(value); return *this;}
 
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline const Aws::Vector<Architecture>& GetArchitectures() const{ return m_architectures; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline void SetArchitectures(const Aws::Vector<Architecture>& value) { m_architectures = value; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline void SetArchitectures(Aws::Vector<Architecture>&& value) { m_architectures = std::move(value); }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline UpdateFunctionCodeResult& WithArchitectures(const Aws::Vector<Architecture>& value) { SetArchitectures(value); return *this;}
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline UpdateFunctionCodeResult& WithArchitectures(Aws::Vector<Architecture>&& value) { SetArchitectures(std::move(value)); return *this;}
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline UpdateFunctionCodeResult& AddArchitectures(const Architecture& value) { m_architectures.push_back(value); return *this; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline UpdateFunctionCodeResult& AddArchitectures(Architecture&& value) { m_architectures.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_functionName;
@@ -1141,6 +1192,8 @@ namespace Model
     Aws::String m_signingProfileVersionArn;
 
     Aws::String m_signingJobArn;
+
+    Aws::Vector<Architecture> m_architectures;
   };
 
 } // namespace Model

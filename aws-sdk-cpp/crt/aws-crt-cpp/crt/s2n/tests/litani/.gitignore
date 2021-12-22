@@ -1,6 +1,11 @@
-test/tests/*/logs
-test/tests/*/output
+test/output
+test/e2e/output
+
 .litani_cache_dir
-doc/index.html
-doc/litani-flow.svg
+
+doc/tmp
+doc/out
+
 __pycache__/
+
+build.ninja

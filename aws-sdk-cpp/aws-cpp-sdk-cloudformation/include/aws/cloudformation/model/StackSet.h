@@ -12,6 +12,7 @@
 #include <aws/cloudformation/model/StackSetDriftDetectionDetails.h>
 #include <aws/cloudformation/model/AutoDeployment.h>
 #include <aws/cloudformation/model/PermissionModels.h>
+#include <aws/cloudformation/model/ManagedExecution.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Tag.h>
@@ -33,10 +34,10 @@ namespace Model
 
   /**
    * <p>A structure that contains information about a stack set. A stack set enables
-   * you to provision stacks into accounts and across Regions by using a single
-   * CloudFormation template. In the stack set, you specify the template to use, as
-   * well as any parameters and capabilities that the template requires.
-   * </p><p><h3>See Also:</h3>   <a
+   * you to provision stacks into Amazon Web Services accounts and across Regions by
+   * using a single CloudFormation template. In the stack set, you specify the
+   * template to use, as well as any parameters and capabilities that the template
+   * requires. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSet">AWS
    * API Reference</a></p>
    */
@@ -305,9 +306,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -315,9 +316,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -325,9 +326,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -335,9 +336,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -345,9 +346,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -355,9 +356,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -365,9 +366,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -375,9 +376,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -866,6 +867,43 @@ namespace Model
      */
     inline StackSet& AddOrganizationalUnitIds(const char* value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline const ManagedExecution& GetManagedExecution() const{ return m_managedExecution; }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline bool ManagedExecutionHasBeenSet() const { return m_managedExecutionHasBeenSet; }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline void SetManagedExecution(const ManagedExecution& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = value; }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline void SetManagedExecution(ManagedExecution&& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = std::move(value); }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline StackSet& WithManagedExecution(const ManagedExecution& value) { SetManagedExecution(value); return *this;}
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline StackSet& WithManagedExecution(ManagedExecution&& value) { SetManagedExecution(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stackSetName;
@@ -912,6 +950,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_organizationalUnitIds;
     bool m_organizationalUnitIdsHasBeenSet;
+
+    ManagedExecution m_managedExecution;
+    bool m_managedExecutionHasBeenSet;
   };
 
 } // namespace Model

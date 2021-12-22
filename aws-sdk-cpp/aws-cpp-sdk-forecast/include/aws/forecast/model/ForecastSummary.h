@@ -165,6 +165,27 @@ namespace Model
 
 
     /**
+     * <p>Whether the Forecast was created from an AutoPredictor.</p>
+     */
+    inline bool GetCreatedUsingAutoPredictor() const{ return m_createdUsingAutoPredictor; }
+
+    /**
+     * <p>Whether the Forecast was created from an AutoPredictor.</p>
+     */
+    inline bool CreatedUsingAutoPredictorHasBeenSet() const { return m_createdUsingAutoPredictorHasBeenSet; }
+
+    /**
+     * <p>Whether the Forecast was created from an AutoPredictor.</p>
+     */
+    inline void SetCreatedUsingAutoPredictor(bool value) { m_createdUsingAutoPredictorHasBeenSet = true; m_createdUsingAutoPredictor = value; }
+
+    /**
+     * <p>Whether the Forecast was created from an AutoPredictor.</p>
+     */
+    inline ForecastSummary& WithCreatedUsingAutoPredictor(bool value) { SetCreatedUsingAutoPredictor(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the dataset group that provided the data
      * used to train the predictor.</p>
      */
@@ -458,6 +479,9 @@ namespace Model
 
     Aws::String m_predictorArn;
     bool m_predictorArnHasBeenSet;
+
+    bool m_createdUsingAutoPredictor;
+    bool m_createdUsingAutoPredictorHasBeenSet;
 
     Aws::String m_datasetGroupArn;
     bool m_datasetGroupArnHasBeenSet;

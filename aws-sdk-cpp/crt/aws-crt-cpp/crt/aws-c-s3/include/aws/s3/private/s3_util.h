@@ -12,7 +12,16 @@
 #include <aws/common/byte_buf.h>
 #include <aws/s3/s3.h>
 
-#define ASSERT_SYNCED_DATA_LOCK_HELD(object) AWS_ASSERT(aws_mutex_try_lock(&(object)->synced_data.lock) == AWS_OP_ERR)
+#if DEBUG_BUILD
+#    define ASSERT_SYNCED_DATA_LOCK_HELD(object)                                                                       \
+        {                                                                                                              \
+            int cached_error = aws_last_error();                                                                       \
+            AWS_ASSERT(aws_mutex_try_lock(&(object)->synced_data.lock) == AWS_OP_ERR);                                 \
+            aws_raise_error(cached_error);                                                                             \
+        }
+#else
+#    define ASSERT_SYNCED_DATA_LOCK_HELD(object)
+#endif
 #define KB_TO_BYTES(kb) ((kb)*1024)
 #define MB_TO_BYTES(mb) ((mb)*1024 * 1024)
 
@@ -40,6 +49,9 @@ struct aws_cached_signing_config_aws {
 };
 
 AWS_EXTERN_C_BEGIN
+
+AWS_S3_API
+extern const struct aws_byte_cursor g_content_md5_header_name;
 
 AWS_S3_API
 extern const struct aws_byte_cursor g_s3_client_version;

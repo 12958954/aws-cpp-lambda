@@ -36,6 +36,7 @@
 #include <aws/route53resolver/model/GetFirewallRuleGroupResult.h>
 #include <aws/route53resolver/model/GetFirewallRuleGroupAssociationResult.h>
 #include <aws/route53resolver/model/GetFirewallRuleGroupPolicyResult.h>
+#include <aws/route53resolver/model/GetResolverConfigResult.h>
 #include <aws/route53resolver/model/GetResolverDnssecConfigResult.h>
 #include <aws/route53resolver/model/GetResolverEndpointResult.h>
 #include <aws/route53resolver/model/GetResolverQueryLogConfigResult.h>
@@ -51,6 +52,7 @@
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsResult.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupsResult.h>
 #include <aws/route53resolver/model/ListFirewallRulesResult.h>
+#include <aws/route53resolver/model/ListResolverConfigsResult.h>
 #include <aws/route53resolver/model/ListResolverDnssecConfigsResult.h>
 #include <aws/route53resolver/model/ListResolverEndpointIpAddressesResult.h>
 #include <aws/route53resolver/model/ListResolverEndpointsResult.h>
@@ -68,6 +70,7 @@
 #include <aws/route53resolver/model/UpdateFirewallDomainsResult.h>
 #include <aws/route53resolver/model/UpdateFirewallRuleResult.h>
 #include <aws/route53resolver/model/UpdateFirewallRuleGroupAssociationResult.h>
+#include <aws/route53resolver/model/UpdateResolverConfigResult.h>
 #include <aws/route53resolver/model/UpdateResolverDnssecConfigResult.h>
 #include <aws/route53resolver/model/UpdateResolverEndpointResult.h>
 #include <aws/route53resolver/model/UpdateResolverRuleResult.h>
@@ -135,6 +138,7 @@ namespace Model
         class GetFirewallRuleGroupRequest;
         class GetFirewallRuleGroupAssociationRequest;
         class GetFirewallRuleGroupPolicyRequest;
+        class GetResolverConfigRequest;
         class GetResolverDnssecConfigRequest;
         class GetResolverEndpointRequest;
         class GetResolverQueryLogConfigRequest;
@@ -150,6 +154,7 @@ namespace Model
         class ListFirewallRuleGroupAssociationsRequest;
         class ListFirewallRuleGroupsRequest;
         class ListFirewallRulesRequest;
+        class ListResolverConfigsRequest;
         class ListResolverDnssecConfigsRequest;
         class ListResolverEndpointIpAddressesRequest;
         class ListResolverEndpointsRequest;
@@ -167,6 +172,7 @@ namespace Model
         class UpdateFirewallDomainsRequest;
         class UpdateFirewallRuleRequest;
         class UpdateFirewallRuleGroupAssociationRequest;
+        class UpdateResolverConfigRequest;
         class UpdateResolverDnssecConfigRequest;
         class UpdateResolverEndpointRequest;
         class UpdateResolverRuleRequest;
@@ -196,6 +202,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetFirewallRuleGroupResult, Route53ResolverError> GetFirewallRuleGroupOutcome;
         typedef Aws::Utils::Outcome<GetFirewallRuleGroupAssociationResult, Route53ResolverError> GetFirewallRuleGroupAssociationOutcome;
         typedef Aws::Utils::Outcome<GetFirewallRuleGroupPolicyResult, Route53ResolverError> GetFirewallRuleGroupPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetResolverConfigResult, Route53ResolverError> GetResolverConfigOutcome;
         typedef Aws::Utils::Outcome<GetResolverDnssecConfigResult, Route53ResolverError> GetResolverDnssecConfigOutcome;
         typedef Aws::Utils::Outcome<GetResolverEndpointResult, Route53ResolverError> GetResolverEndpointOutcome;
         typedef Aws::Utils::Outcome<GetResolverQueryLogConfigResult, Route53ResolverError> GetResolverQueryLogConfigOutcome;
@@ -211,6 +218,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListFirewallRuleGroupAssociationsResult, Route53ResolverError> ListFirewallRuleGroupAssociationsOutcome;
         typedef Aws::Utils::Outcome<ListFirewallRuleGroupsResult, Route53ResolverError> ListFirewallRuleGroupsOutcome;
         typedef Aws::Utils::Outcome<ListFirewallRulesResult, Route53ResolverError> ListFirewallRulesOutcome;
+        typedef Aws::Utils::Outcome<ListResolverConfigsResult, Route53ResolverError> ListResolverConfigsOutcome;
         typedef Aws::Utils::Outcome<ListResolverDnssecConfigsResult, Route53ResolverError> ListResolverDnssecConfigsOutcome;
         typedef Aws::Utils::Outcome<ListResolverEndpointIpAddressesResult, Route53ResolverError> ListResolverEndpointIpAddressesOutcome;
         typedef Aws::Utils::Outcome<ListResolverEndpointsResult, Route53ResolverError> ListResolverEndpointsOutcome;
@@ -228,6 +236,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateFirewallDomainsResult, Route53ResolverError> UpdateFirewallDomainsOutcome;
         typedef Aws::Utils::Outcome<UpdateFirewallRuleResult, Route53ResolverError> UpdateFirewallRuleOutcome;
         typedef Aws::Utils::Outcome<UpdateFirewallRuleGroupAssociationResult, Route53ResolverError> UpdateFirewallRuleGroupAssociationOutcome;
+        typedef Aws::Utils::Outcome<UpdateResolverConfigResult, Route53ResolverError> UpdateResolverConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateResolverDnssecConfigResult, Route53ResolverError> UpdateResolverDnssecConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateResolverEndpointResult, Route53ResolverError> UpdateResolverEndpointOutcome;
         typedef Aws::Utils::Outcome<UpdateResolverRuleResult, Route53ResolverError> UpdateResolverRuleOutcome;
@@ -257,6 +266,7 @@ namespace Model
         typedef std::future<GetFirewallRuleGroupOutcome> GetFirewallRuleGroupOutcomeCallable;
         typedef std::future<GetFirewallRuleGroupAssociationOutcome> GetFirewallRuleGroupAssociationOutcomeCallable;
         typedef std::future<GetFirewallRuleGroupPolicyOutcome> GetFirewallRuleGroupPolicyOutcomeCallable;
+        typedef std::future<GetResolverConfigOutcome> GetResolverConfigOutcomeCallable;
         typedef std::future<GetResolverDnssecConfigOutcome> GetResolverDnssecConfigOutcomeCallable;
         typedef std::future<GetResolverEndpointOutcome> GetResolverEndpointOutcomeCallable;
         typedef std::future<GetResolverQueryLogConfigOutcome> GetResolverQueryLogConfigOutcomeCallable;
@@ -272,6 +282,7 @@ namespace Model
         typedef std::future<ListFirewallRuleGroupAssociationsOutcome> ListFirewallRuleGroupAssociationsOutcomeCallable;
         typedef std::future<ListFirewallRuleGroupsOutcome> ListFirewallRuleGroupsOutcomeCallable;
         typedef std::future<ListFirewallRulesOutcome> ListFirewallRulesOutcomeCallable;
+        typedef std::future<ListResolverConfigsOutcome> ListResolverConfigsOutcomeCallable;
         typedef std::future<ListResolverDnssecConfigsOutcome> ListResolverDnssecConfigsOutcomeCallable;
         typedef std::future<ListResolverEndpointIpAddressesOutcome> ListResolverEndpointIpAddressesOutcomeCallable;
         typedef std::future<ListResolverEndpointsOutcome> ListResolverEndpointsOutcomeCallable;
@@ -289,6 +300,7 @@ namespace Model
         typedef std::future<UpdateFirewallDomainsOutcome> UpdateFirewallDomainsOutcomeCallable;
         typedef std::future<UpdateFirewallRuleOutcome> UpdateFirewallRuleOutcomeCallable;
         typedef std::future<UpdateFirewallRuleGroupAssociationOutcome> UpdateFirewallRuleGroupAssociationOutcomeCallable;
+        typedef std::future<UpdateResolverConfigOutcome> UpdateResolverConfigOutcomeCallable;
         typedef std::future<UpdateResolverDnssecConfigOutcome> UpdateResolverDnssecConfigOutcomeCallable;
         typedef std::future<UpdateResolverEndpointOutcome> UpdateResolverEndpointOutcomeCallable;
         typedef std::future<UpdateResolverRuleOutcome> UpdateResolverRuleOutcomeCallable;
@@ -321,6 +333,7 @@ namespace Model
     typedef std::function<void(const Route53ResolverClient*, const Model::GetFirewallRuleGroupRequest&, const Model::GetFirewallRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFirewallRuleGroupResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::GetFirewallRuleGroupAssociationRequest&, const Model::GetFirewallRuleGroupAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFirewallRuleGroupAssociationResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::GetFirewallRuleGroupPolicyRequest&, const Model::GetFirewallRuleGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFirewallRuleGroupPolicyResponseReceivedHandler;
+    typedef std::function<void(const Route53ResolverClient*, const Model::GetResolverConfigRequest&, const Model::GetResolverConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResolverConfigResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::GetResolverDnssecConfigRequest&, const Model::GetResolverDnssecConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResolverDnssecConfigResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::GetResolverEndpointRequest&, const Model::GetResolverEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResolverEndpointResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::GetResolverQueryLogConfigRequest&, const Model::GetResolverQueryLogConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResolverQueryLogConfigResponseReceivedHandler;
@@ -336,6 +349,7 @@ namespace Model
     typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewallRuleGroupAssociationsRequest&, const Model::ListFirewallRuleGroupAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFirewallRuleGroupAssociationsResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewallRuleGroupsRequest&, const Model::ListFirewallRuleGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFirewallRuleGroupsResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewallRulesRequest&, const Model::ListFirewallRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFirewallRulesResponseReceivedHandler;
+    typedef std::function<void(const Route53ResolverClient*, const Model::ListResolverConfigsRequest&, const Model::ListResolverConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolverConfigsResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::ListResolverDnssecConfigsRequest&, const Model::ListResolverDnssecConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolverDnssecConfigsResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::ListResolverEndpointIpAddressesRequest&, const Model::ListResolverEndpointIpAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolverEndpointIpAddressesResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::ListResolverEndpointsRequest&, const Model::ListResolverEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolverEndpointsResponseReceivedHandler;
@@ -353,6 +367,7 @@ namespace Model
     typedef std::function<void(const Route53ResolverClient*, const Model::UpdateFirewallDomainsRequest&, const Model::UpdateFirewallDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallDomainsResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::UpdateFirewallRuleRequest&, const Model::UpdateFirewallRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallRuleResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::UpdateFirewallRuleGroupAssociationRequest&, const Model::UpdateFirewallRuleGroupAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallRuleGroupAssociationResponseReceivedHandler;
+    typedef std::function<void(const Route53ResolverClient*, const Model::UpdateResolverConfigRequest&, const Model::UpdateResolverConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResolverConfigResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::UpdateResolverDnssecConfigRequest&, const Model::UpdateResolverDnssecConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResolverDnssecConfigResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::UpdateResolverEndpointRequest&, const Model::UpdateResolverEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResolverEndpointResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::UpdateResolverRuleRequest&, const Model::UpdateResolverRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResolverRuleResponseReceivedHandler;
@@ -367,8 +382,8 @@ namespace Model
    * connection:</p> <p> <b>Forward DNS queries from resolvers on your network to
    * Route 53 Resolver</b> </p> <p>DNS resolvers on your network can forward DNS
    * queries to Resolver in a specified VPC. This allows your DNS resolvers to easily
-   * resolve domain names for AWS resources such as EC2 instances or records in a
-   * Route 53 private hosted zone. For more information, see <a
+   * resolve domain names for Amazon Web Services resources such as EC2 instances or
+   * records in a Route 53 private hosted zone. For more information, see <a
    * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc">How
    * DNS Resolvers on Your Network Forward DNS Queries to Route 53 Resolver</a> in
    * the <i>Amazon Route 53 Developer Guide</i>.</p> <p> <b>Conditionally forward
@@ -715,11 +730,12 @@ namespace Model
          * configuration.</p> <p>To specify which VPCs you want to log queries for, you use
          * <code>AssociateResolverQueryLogConfig</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>.
-         * </p> <p>You can optionally use AWS Resource Access Manager (AWS RAM) to share a
-         * query logging configuration with other AWS accounts. The other accounts can then
-         * associate VPCs with the configuration. The query logs that Resolver creates for
-         * a configuration include all DNS queries that originate in all VPCs that are
-         * associated with the configuration.</p><p><h3>See Also:</h3>   <a
+         * </p> <p>You can optionally use Resource Access Manager (RAM) to share a query
+         * logging configuration with other Amazon Web Services accounts. The other
+         * accounts can then associate VPCs with the configuration. The query logs that
+         * Resolver creates for a configuration include all DNS queries that originate in
+         * all VPCs that are associated with the configuration.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverQueryLogConfig">AWS
          * API Reference</a></p>
          */
@@ -732,11 +748,12 @@ namespace Model
          * configuration.</p> <p>To specify which VPCs you want to log queries for, you use
          * <code>AssociateResolverQueryLogConfig</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>.
-         * </p> <p>You can optionally use AWS Resource Access Manager (AWS RAM) to share a
-         * query logging configuration with other AWS accounts. The other accounts can then
-         * associate VPCs with the configuration. The query logs that Resolver creates for
-         * a configuration include all DNS queries that originate in all VPCs that are
-         * associated with the configuration.</p><p><h3>See Also:</h3>   <a
+         * </p> <p>You can optionally use Resource Access Manager (RAM) to share a query
+         * logging configuration with other Amazon Web Services accounts. The other
+         * accounts can then associate VPCs with the configuration. The query logs that
+         * Resolver creates for a configuration include all DNS queries that originate in
+         * all VPCs that are associated with the configuration.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverQueryLogConfig">AWS
          * API Reference</a></p>
          *
@@ -751,11 +768,12 @@ namespace Model
          * configuration.</p> <p>To specify which VPCs you want to log queries for, you use
          * <code>AssociateResolverQueryLogConfig</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>.
-         * </p> <p>You can optionally use AWS Resource Access Manager (AWS RAM) to share a
-         * query logging configuration with other AWS accounts. The other accounts can then
-         * associate VPCs with the configuration. The query logs that Resolver creates for
-         * a configuration include all DNS queries that originate in all VPCs that are
-         * associated with the configuration.</p><p><h3>See Also:</h3>   <a
+         * </p> <p>You can optionally use Resource Access Manager (RAM) to share a query
+         * logging configuration with other Amazon Web Services accounts. The other
+         * accounts can then associate VPCs with the configuration. The query logs that
+         * Resolver creates for a configuration include all DNS queries that originate in
+         * all VPCs that are associated with the configuration.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverQueryLogConfig">AWS
          * API Reference</a></p>
          *
@@ -916,10 +934,10 @@ namespace Model
          * <p>Deletes a query logging configuration. When you delete a configuration,
          * Resolver stops logging DNS queries for all of the Amazon VPCs that are
          * associated with the configuration. This also applies if the query logging
-         * configuration is shared with other AWS accounts, and the other accounts have
-         * associated VPCs with the shared configuration.</p> <p>Before you can delete a
-         * query logging configuration, you must first disassociate all VPCs from the
-         * configuration. See <a
+         * configuration is shared with other Amazon Web Services accounts, and the other
+         * accounts have associated VPCs with the shared configuration.</p> <p>Before you
+         * can delete a query logging configuration, you must first disassociate all VPCs
+         * from the configuration. See <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.</p>
          * <p>If you used Resource Access Manager (RAM) to share a query logging
          * configuration with other accounts, you must stop sharing the configuration
@@ -937,10 +955,10 @@ namespace Model
          * <p>Deletes a query logging configuration. When you delete a configuration,
          * Resolver stops logging DNS queries for all of the Amazon VPCs that are
          * associated with the configuration. This also applies if the query logging
-         * configuration is shared with other AWS accounts, and the other accounts have
-         * associated VPCs with the shared configuration.</p> <p>Before you can delete a
-         * query logging configuration, you must first disassociate all VPCs from the
-         * configuration. See <a
+         * configuration is shared with other Amazon Web Services accounts, and the other
+         * accounts have associated VPCs with the shared configuration.</p> <p>Before you
+         * can delete a query logging configuration, you must first disassociate all VPCs
+         * from the configuration. See <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.</p>
          * <p>If you used Resource Access Manager (RAM) to share a query logging
          * configuration with other accounts, you must stop sharing the configuration
@@ -960,10 +978,10 @@ namespace Model
          * <p>Deletes a query logging configuration. When you delete a configuration,
          * Resolver stops logging DNS queries for all of the Amazon VPCs that are
          * associated with the configuration. This also applies if the query logging
-         * configuration is shared with other AWS accounts, and the other accounts have
-         * associated VPCs with the shared configuration.</p> <p>Before you can delete a
-         * query logging configuration, you must first disassociate all VPCs from the
-         * configuration. See <a
+         * configuration is shared with other Amazon Web Services accounts, and the other
+         * accounts have associated VPCs with the shared configuration.</p> <p>Before you
+         * can delete a query logging configuration, you must first disassociate all VPCs
+         * from the configuration. See <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.</p>
          * <p>If you used Resource Access Manager (RAM) to share a query logging
          * configuration with other accounts, you must stop sharing the configuration
@@ -1087,10 +1105,10 @@ namespace Model
         /**
          * <p>Disassociates a VPC from a query logging configuration.</p>  <p>Before
          * you can delete a query logging configuration, you must first disassociate all
-         * VPCs from the configuration. If you used AWS Resource Access Manager (AWS RAM)
-         * to share a query logging configuration with other accounts, VPCs can be
-         * disassociated from the configuration in the following ways:</p> <ul> <li> <p>The
-         * accounts that you shared the configuration with can disassociate VPCs from the
+         * VPCs from the configuration. If you used Resource Access Manager (RAM) to share
+         * a query logging configuration with other accounts, VPCs can be disassociated
+         * from the configuration in the following ways:</p> <ul> <li> <p>The accounts that
+         * you shared the configuration with can disassociate VPCs from the
          * configuration.</p> </li> <li> <p>You can stop sharing the configuration.</p>
          * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverQueryLogConfig">AWS
@@ -1101,10 +1119,10 @@ namespace Model
         /**
          * <p>Disassociates a VPC from a query logging configuration.</p>  <p>Before
          * you can delete a query logging configuration, you must first disassociate all
-         * VPCs from the configuration. If you used AWS Resource Access Manager (AWS RAM)
-         * to share a query logging configuration with other accounts, VPCs can be
-         * disassociated from the configuration in the following ways:</p> <ul> <li> <p>The
-         * accounts that you shared the configuration with can disassociate VPCs from the
+         * VPCs from the configuration. If you used Resource Access Manager (RAM) to share
+         * a query logging configuration with other accounts, VPCs can be disassociated
+         * from the configuration in the following ways:</p> <ul> <li> <p>The accounts that
+         * you shared the configuration with can disassociate VPCs from the
          * configuration.</p> </li> <li> <p>You can stop sharing the configuration.</p>
          * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverQueryLogConfig">AWS
@@ -1117,10 +1135,10 @@ namespace Model
         /**
          * <p>Disassociates a VPC from a query logging configuration.</p>  <p>Before
          * you can delete a query logging configuration, you must first disassociate all
-         * VPCs from the configuration. If you used AWS Resource Access Manager (AWS RAM)
-         * to share a query logging configuration with other accounts, VPCs can be
-         * disassociated from the configuration in the following ways:</p> <ul> <li> <p>The
-         * accounts that you shared the configuration with can disassociate VPCs from the
+         * VPCs from the configuration. If you used Resource Access Manager (RAM) to share
+         * a query logging configuration with other accounts, VPCs can be disassociated
+         * from the configuration in the following ways:</p> <ul> <li> <p>The accounts that
+         * you shared the configuration with can disassociate VPCs from the
          * configuration.</p> </li> <li> <p>You can stop sharing the configuration.</p>
          * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverQueryLogConfig">AWS
@@ -1280,18 +1298,18 @@ namespace Model
         virtual void GetFirewallRuleGroupAssociationAsync(const Model::GetFirewallRuleGroupAssociationRequest& request, const GetFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the AWS Identity and Access Management (AWS IAM) policy for sharing
-         * the specified rule group. You can use the policy to share the rule group using
-         * AWS Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the Identity and Access Management (Amazon Web Services IAM) policy
+         * for sharing the specified rule group. You can use the policy to share the rule
+         * group using Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::GetFirewallRuleGroupPolicyOutcome GetFirewallRuleGroupPolicy(const Model::GetFirewallRuleGroupPolicyRequest& request) const;
 
         /**
-         * <p>Returns the AWS Identity and Access Management (AWS IAM) policy for sharing
-         * the specified rule group. You can use the policy to share the rule group using
-         * AWS Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the Identity and Access Management (Amazon Web Services IAM) policy
+         * for sharing the specified rule group. You can use the policy to share the rule
+         * group using Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -1300,15 +1318,43 @@ namespace Model
         virtual Model::GetFirewallRuleGroupPolicyOutcomeCallable GetFirewallRuleGroupPolicyCallable(const Model::GetFirewallRuleGroupPolicyRequest& request) const;
 
         /**
-         * <p>Returns the AWS Identity and Access Management (AWS IAM) policy for sharing
-         * the specified rule group. You can use the policy to share the rule group using
-         * AWS Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the Identity and Access Management (Amazon Web Services IAM) policy
+         * for sharing the specified rule group. You can use the policy to share the rule
+         * group using Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetFirewallRuleGroupPolicyAsync(const Model::GetFirewallRuleGroupPolicyRequest& request, const GetFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the behavior configuration of Route 53 Resolver behavior for a
+         * single VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResolverConfigOutcome GetResolverConfig(const Model::GetResolverConfigRequest& request) const;
+
+        /**
+         * <p>Retrieves the behavior configuration of Route 53 Resolver behavior for a
+         * single VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResolverConfigOutcomeCallable GetResolverConfigCallable(const Model::GetResolverConfigRequest& request) const;
+
+        /**
+         * <p>Retrieves the behavior configuration of Route 53 Resolver behavior for a
+         * single VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResolverConfigAsync(const Model::GetResolverConfigRequest& request, const GetResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets DNSSEC validation information for a specified resource.</p><p><h3>See
@@ -1437,7 +1483,8 @@ namespace Model
         /**
          * <p>Gets information about a query logging policy. A query logging policy
          * specifies the Resolver query logging operations and resources that you want to
-         * allow another AWS account to be able to use.</p><p><h3>See Also:</h3>   <a
+         * allow another Amazon Web Services account to be able to use.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfigPolicy">AWS
          * API Reference</a></p>
          */
@@ -1446,7 +1493,8 @@ namespace Model
         /**
          * <p>Gets information about a query logging policy. A query logging policy
          * specifies the Resolver query logging operations and resources that you want to
-         * allow another AWS account to be able to use.</p><p><h3>See Also:</h3>   <a
+         * allow another Amazon Web Services account to be able to use.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfigPolicy">AWS
          * API Reference</a></p>
          *
@@ -1457,7 +1505,8 @@ namespace Model
         /**
          * <p>Gets information about a query logging policy. A query logging policy
          * specifies the Resolver query logging operations and resources that you want to
-         * allow another AWS account to be able to use.</p><p><h3>See Also:</h3>   <a
+         * allow another Amazon Web Services account to be able to use.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfigPolicy">AWS
          * API Reference</a></p>
          *
@@ -1821,8 +1870,39 @@ namespace Model
         virtual void ListFirewallRulesAsync(const Model::ListFirewallRulesRequest& request, const ListFirewallRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the Resolver configurations that you have defined. Route 53
+         * Resolver uses the configurations to manage DNS resolution behavior for your
+         * VPCs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverConfigs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResolverConfigsOutcome ListResolverConfigs(const Model::ListResolverConfigsRequest& request) const;
+
+        /**
+         * <p>Retrieves the Resolver configurations that you have defined. Route 53
+         * Resolver uses the configurations to manage DNS resolution behavior for your
+         * VPCs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverConfigs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResolverConfigsOutcomeCallable ListResolverConfigsCallable(const Model::ListResolverConfigsRequest& request) const;
+
+        /**
+         * <p>Retrieves the Resolver configurations that you have defined. Route 53
+         * Resolver uses the configurations to manage DNS resolution behavior for your
+         * VPCs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverConfigs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResolverConfigsAsync(const Model::ListResolverConfigsRequest& request, const ListResolverConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the configurations for DNSSEC validation that are associated with the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs">AWS
          * API Reference</a></p>
          */
@@ -1830,7 +1910,7 @@ namespace Model
 
         /**
          * <p>Lists the configurations for DNSSEC validation that are associated with the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs">AWS
          * API Reference</a></p>
          *
@@ -1840,7 +1920,7 @@ namespace Model
 
         /**
          * <p>Lists the configurations for DNSSEC validation that are associated with the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs">AWS
          * API Reference</a></p>
          *
@@ -1877,16 +1957,16 @@ namespace Model
         virtual void ListResolverEndpointIpAddressesAsync(const Model::ListResolverEndpointIpAddressesRequest& request, const ListResolverEndpointIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the Resolver endpoints that were created using the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the Resolver endpoints that were created using the current Amazon
+         * Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverEndpoints">AWS
          * API Reference</a></p>
          */
         virtual Model::ListResolverEndpointsOutcome ListResolverEndpoints(const Model::ListResolverEndpointsRequest& request) const;
 
         /**
-         * <p>Lists all the Resolver endpoints that were created using the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the Resolver endpoints that were created using the current Amazon
+         * Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverEndpoints">AWS
          * API Reference</a></p>
          *
@@ -1895,8 +1975,8 @@ namespace Model
         virtual Model::ListResolverEndpointsOutcomeCallable ListResolverEndpointsCallable(const Model::ListResolverEndpointsRequest& request) const;
 
         /**
-         * <p>Lists all the Resolver endpoints that were created using the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the Resolver endpoints that were created using the current Amazon
+         * Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverEndpoints">AWS
          * API Reference</a></p>
          *
@@ -1968,7 +2048,7 @@ namespace Model
 
         /**
          * <p>Lists the associations that were created between Resolver rules and VPCs
-         * using the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * using the current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRuleAssociations">AWS
          * API Reference</a></p>
          */
@@ -1976,7 +2056,7 @@ namespace Model
 
         /**
          * <p>Lists the associations that were created between Resolver rules and VPCs
-         * using the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * using the current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRuleAssociations">AWS
          * API Reference</a></p>
          *
@@ -1986,7 +2066,7 @@ namespace Model
 
         /**
          * <p>Lists the associations that were created between Resolver rules and VPCs
-         * using the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * using the current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRuleAssociations">AWS
          * API Reference</a></p>
          *
@@ -1995,16 +2075,16 @@ namespace Model
         virtual void ListResolverRuleAssociationsAsync(const Model::ListResolverRuleAssociationsRequest& request, const ListResolverRuleAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Resolver rules that were created using the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Resolver rules that were created using the current Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRules">AWS
          * API Reference</a></p>
          */
         virtual Model::ListResolverRulesOutcome ListResolverRules(const Model::ListResolverRulesRequest& request) const;
 
         /**
-         * <p>Lists the Resolver rules that were created using the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Resolver rules that were created using the current Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRules">AWS
          * API Reference</a></p>
          *
@@ -2013,8 +2093,8 @@ namespace Model
         virtual Model::ListResolverRulesOutcomeCallable ListResolverRulesCallable(const Model::ListResolverRulesRequest& request) const;
 
         /**
-         * <p>Lists the Resolver rules that were created using the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Resolver rules that were created using the current Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRules">AWS
          * API Reference</a></p>
          *
@@ -2051,18 +2131,18 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing
-         * the rule group. You can use the policy to share the rule group using AWS
-         * Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
+         * <p>Attaches an Identity and Access Management (Amazon Web Services IAM) policy
+         * for sharing the rule group. You can use the policy to share the rule group using
+         * Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutFirewallRuleGroupPolicyOutcome PutFirewallRuleGroupPolicy(const Model::PutFirewallRuleGroupPolicyRequest& request) const;
 
         /**
-         * <p>Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing
-         * the rule group. You can use the policy to share the rule group using AWS
-         * Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
+         * <p>Attaches an Identity and Access Management (Amazon Web Services IAM) policy
+         * for sharing the rule group. You can use the policy to share the rule group using
+         * Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -2071,9 +2151,9 @@ namespace Model
         virtual Model::PutFirewallRuleGroupPolicyOutcomeCallable PutFirewallRuleGroupPolicyCallable(const Model::PutFirewallRuleGroupPolicyRequest& request) const;
 
         /**
-         * <p>Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing
-         * the rule group. You can use the policy to share the rule group using AWS
-         * Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
+         * <p>Attaches an Identity and Access Management (Amazon Web Services IAM) policy
+         * for sharing the rule group. You can use the policy to share the rule group using
+         * Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -2082,9 +2162,9 @@ namespace Model
         virtual void PutFirewallRuleGroupPolicyAsync(const Model::PutFirewallRuleGroupPolicyRequest& request, const PutFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Specifies an AWS account that you want to share a query logging configuration
-         * with, the query logging configuration that you want to share, and the operations
-         * that you want the account to be able to perform on the
+         * <p>Specifies an Amazon Web Services account that you want to share a query
+         * logging configuration with, the query logging configuration that you want to
+         * share, and the operations that you want the account to be able to perform on the
          * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverQueryLogConfigPolicy">AWS
          * API Reference</a></p>
@@ -2092,9 +2172,9 @@ namespace Model
         virtual Model::PutResolverQueryLogConfigPolicyOutcome PutResolverQueryLogConfigPolicy(const Model::PutResolverQueryLogConfigPolicyRequest& request) const;
 
         /**
-         * <p>Specifies an AWS account that you want to share a query logging configuration
-         * with, the query logging configuration that you want to share, and the operations
-         * that you want the account to be able to perform on the
+         * <p>Specifies an Amazon Web Services account that you want to share a query
+         * logging configuration with, the query logging configuration that you want to
+         * share, and the operations that you want the account to be able to perform on the
          * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverQueryLogConfigPolicy">AWS
          * API Reference</a></p>
@@ -2104,9 +2184,9 @@ namespace Model
         virtual Model::PutResolverQueryLogConfigPolicyOutcomeCallable PutResolverQueryLogConfigPolicyCallable(const Model::PutResolverQueryLogConfigPolicyRequest& request) const;
 
         /**
-         * <p>Specifies an AWS account that you want to share a query logging configuration
-         * with, the query logging configuration that you want to share, and the operations
-         * that you want the account to be able to perform on the
+         * <p>Specifies an Amazon Web Services account that you want to share a query
+         * logging configuration with, the query logging configuration that you want to
+         * share, and the operations that you want the account to be able to perform on the
          * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverQueryLogConfigPolicy">AWS
          * API Reference</a></p>
@@ -2116,18 +2196,20 @@ namespace Model
         virtual void PutResolverQueryLogConfigPolicyAsync(const Model::PutResolverQueryLogConfigPolicyRequest& request, const PutResolverQueryLogConfigPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Specifies an AWS rule that you want to share with another account, the
-         * account that you want to share the rule with, and the operations that you want
-         * the account to be able to perform on the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Specifies an Amazon Web Services rule that you want to share with another
+         * account, the account that you want to share the rule with, and the operations
+         * that you want the account to be able to perform on the rule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverRulePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutResolverRulePolicyOutcome PutResolverRulePolicy(const Model::PutResolverRulePolicyRequest& request) const;
 
         /**
-         * <p>Specifies an AWS rule that you want to share with another account, the
-         * account that you want to share the rule with, and the operations that you want
-         * the account to be able to perform on the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Specifies an Amazon Web Services rule that you want to share with another
+         * account, the account that you want to share the rule with, and the operations
+         * that you want the account to be able to perform on the rule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverRulePolicy">AWS
          * API Reference</a></p>
          *
@@ -2136,9 +2218,10 @@ namespace Model
         virtual Model::PutResolverRulePolicyOutcomeCallable PutResolverRulePolicyCallable(const Model::PutResolverRulePolicyRequest& request) const;
 
         /**
-         * <p>Specifies an AWS rule that you want to share with another account, the
-         * account that you want to share the rule with, and the operations that you want
-         * the account to be able to perform on the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Specifies an Amazon Web Services rule that you want to share with another
+         * account, the account that you want to share the rule with, and the operations
+         * that you want the account to be able to perform on the rule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverRulePolicy">AWS
          * API Reference</a></p>
          *
@@ -2312,6 +2395,34 @@ namespace Model
         virtual void UpdateFirewallRuleGroupAssociationAsync(const Model::UpdateFirewallRuleGroupAssociationRequest& request, const UpdateFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the behavior configuration of Route 53 Resolver behavior for a single
+         * VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateResolverConfigOutcome UpdateResolverConfig(const Model::UpdateResolverConfigRequest& request) const;
+
+        /**
+         * <p>Updates the behavior configuration of Route 53 Resolver behavior for a single
+         * VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateResolverConfigOutcomeCallable UpdateResolverConfigCallable(const Model::UpdateResolverConfigRequest& request) const;
+
+        /**
+         * <p>Updates the behavior configuration of Route 53 Resolver behavior for a single
+         * VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateResolverConfigAsync(const Model::UpdateResolverConfigRequest& request, const UpdateResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing DNSSEC validation configuration. If there is no existing
          * DNSSEC validation configuration, one is created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverDnssecConfig">AWS
@@ -2427,6 +2538,7 @@ namespace Model
         void GetFirewallRuleGroupAsyncHelper(const Model::GetFirewallRuleGroupRequest& request, const GetFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFirewallRuleGroupAssociationAsyncHelper(const Model::GetFirewallRuleGroupAssociationRequest& request, const GetFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFirewallRuleGroupPolicyAsyncHelper(const Model::GetFirewallRuleGroupPolicyRequest& request, const GetFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetResolverConfigAsyncHelper(const Model::GetResolverConfigRequest& request, const GetResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResolverDnssecConfigAsyncHelper(const Model::GetResolverDnssecConfigRequest& request, const GetResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResolverEndpointAsyncHelper(const Model::GetResolverEndpointRequest& request, const GetResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResolverQueryLogConfigAsyncHelper(const Model::GetResolverQueryLogConfigRequest& request, const GetResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2442,6 +2554,7 @@ namespace Model
         void ListFirewallRuleGroupAssociationsAsyncHelper(const Model::ListFirewallRuleGroupAssociationsRequest& request, const ListFirewallRuleGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFirewallRuleGroupsAsyncHelper(const Model::ListFirewallRuleGroupsRequest& request, const ListFirewallRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFirewallRulesAsyncHelper(const Model::ListFirewallRulesRequest& request, const ListFirewallRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListResolverConfigsAsyncHelper(const Model::ListResolverConfigsRequest& request, const ListResolverConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResolverDnssecConfigsAsyncHelper(const Model::ListResolverDnssecConfigsRequest& request, const ListResolverDnssecConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResolverEndpointIpAddressesAsyncHelper(const Model::ListResolverEndpointIpAddressesRequest& request, const ListResolverEndpointIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResolverEndpointsAsyncHelper(const Model::ListResolverEndpointsRequest& request, const ListResolverEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2459,6 +2572,7 @@ namespace Model
         void UpdateFirewallDomainsAsyncHelper(const Model::UpdateFirewallDomainsRequest& request, const UpdateFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFirewallRuleAsyncHelper(const Model::UpdateFirewallRuleRequest& request, const UpdateFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFirewallRuleGroupAssociationAsyncHelper(const Model::UpdateFirewallRuleGroupAssociationRequest& request, const UpdateFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateResolverConfigAsyncHelper(const Model::UpdateResolverConfigRequest& request, const UpdateResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResolverDnssecConfigAsyncHelper(const Model::UpdateResolverDnssecConfigRequest& request, const UpdateResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResolverEndpointAsyncHelper(const Model::UpdateResolverEndpointRequest& request, const UpdateResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResolverRuleAsyncHelper(const Model::UpdateResolverRuleRequest& request, const UpdateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

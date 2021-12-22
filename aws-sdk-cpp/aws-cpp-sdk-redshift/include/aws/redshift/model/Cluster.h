@@ -19,6 +19,7 @@
 #include <aws/redshift/model/ScheduleState.h>
 #include <aws/redshift/model/ResizeInfo.h>
 #include <aws/redshift/model/AquaConfiguration.h>
+#include <aws/redshift/model/ReservedNodeExchangeStatus.h>
 #include <aws/redshift/model/ClusterSecurityGroupMembership.h>
 #include <aws/redshift/model/VpcSecurityGroupMembership.h>
 #include <aws/redshift/model/ClusterParameterGroupStatus.h>
@@ -2266,6 +2267,92 @@ namespace Model
      */
     inline Cluster& WithAquaConfiguration(AquaConfiguration&& value) { SetAquaConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline const Aws::String& GetDefaultIamRoleArn() const{ return m_defaultIamRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline bool DefaultIamRoleArnHasBeenSet() const { return m_defaultIamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline void SetDefaultIamRoleArn(const Aws::String& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline void SetDefaultIamRoleArn(Aws::String&& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline void SetDefaultIamRoleArn(const char* value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline Cluster& WithDefaultIamRoleArn(const Aws::String& value) { SetDefaultIamRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline Cluster& WithDefaultIamRoleArn(Aws::String&& value) { SetDefaultIamRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline Cluster& WithDefaultIamRoleArn(const char* value) { SetDefaultIamRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The status of the reserved-node exchange request. Statuses include
+     * in-progress and requested.</p>
+     */
+    inline const ReservedNodeExchangeStatus& GetReservedNodeExchangeStatus() const{ return m_reservedNodeExchangeStatus; }
+
+    /**
+     * <p>The status of the reserved-node exchange request. Statuses include
+     * in-progress and requested.</p>
+     */
+    inline bool ReservedNodeExchangeStatusHasBeenSet() const { return m_reservedNodeExchangeStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the reserved-node exchange request. Statuses include
+     * in-progress and requested.</p>
+     */
+    inline void SetReservedNodeExchangeStatus(const ReservedNodeExchangeStatus& value) { m_reservedNodeExchangeStatusHasBeenSet = true; m_reservedNodeExchangeStatus = value; }
+
+    /**
+     * <p>The status of the reserved-node exchange request. Statuses include
+     * in-progress and requested.</p>
+     */
+    inline void SetReservedNodeExchangeStatus(ReservedNodeExchangeStatus&& value) { m_reservedNodeExchangeStatusHasBeenSet = true; m_reservedNodeExchangeStatus = std::move(value); }
+
+    /**
+     * <p>The status of the reserved-node exchange request. Statuses include
+     * in-progress and requested.</p>
+     */
+    inline Cluster& WithReservedNodeExchangeStatus(const ReservedNodeExchangeStatus& value) { SetReservedNodeExchangeStatus(value); return *this;}
+
+    /**
+     * <p>The status of the reserved-node exchange request. Statuses include
+     * in-progress and requested.</p>
+     */
+    inline Cluster& WithReservedNodeExchangeStatus(ReservedNodeExchangeStatus&& value) { SetReservedNodeExchangeStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -2417,6 +2504,12 @@ namespace Model
 
     AquaConfiguration m_aquaConfiguration;
     bool m_aquaConfigurationHasBeenSet;
+
+    Aws::String m_defaultIamRoleArn;
+    bool m_defaultIamRoleArnHasBeenSet;
+
+    ReservedNodeExchangeStatus m_reservedNodeExchangeStatus;
+    bool m_reservedNodeExchangeStatusHasBeenSet;
   };
 
 } // namespace Model

@@ -38,6 +38,7 @@
 #include <aws/imagebuilder/model/GetImageRecipePolicyResult.h>
 #include <aws/imagebuilder/model/GetInfrastructureConfigurationResult.h>
 #include <aws/imagebuilder/model/ImportComponentResult.h>
+#include <aws/imagebuilder/model/ImportVmImageResult.h>
 #include <aws/imagebuilder/model/ListComponentBuildVersionsResult.h>
 #include <aws/imagebuilder/model/ListComponentsResult.h>
 #include <aws/imagebuilder/model/ListContainerRecipesResult.h>
@@ -126,6 +127,7 @@ namespace Model
         class GetImageRecipePolicyRequest;
         class GetInfrastructureConfigurationRequest;
         class ImportComponentRequest;
+        class ImportVmImageRequest;
         class ListComponentBuildVersionsRequest;
         class ListComponentsRequest;
         class ListContainerRecipesRequest;
@@ -176,6 +178,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetImageRecipePolicyResult, ImagebuilderError> GetImageRecipePolicyOutcome;
         typedef Aws::Utils::Outcome<GetInfrastructureConfigurationResult, ImagebuilderError> GetInfrastructureConfigurationOutcome;
         typedef Aws::Utils::Outcome<ImportComponentResult, ImagebuilderError> ImportComponentOutcome;
+        typedef Aws::Utils::Outcome<ImportVmImageResult, ImagebuilderError> ImportVmImageOutcome;
         typedef Aws::Utils::Outcome<ListComponentBuildVersionsResult, ImagebuilderError> ListComponentBuildVersionsOutcome;
         typedef Aws::Utils::Outcome<ListComponentsResult, ImagebuilderError> ListComponentsOutcome;
         typedef Aws::Utils::Outcome<ListContainerRecipesResult, ImagebuilderError> ListContainerRecipesOutcome;
@@ -226,6 +229,7 @@ namespace Model
         typedef std::future<GetImageRecipePolicyOutcome> GetImageRecipePolicyOutcomeCallable;
         typedef std::future<GetInfrastructureConfigurationOutcome> GetInfrastructureConfigurationOutcomeCallable;
         typedef std::future<ImportComponentOutcome> ImportComponentOutcomeCallable;
+        typedef std::future<ImportVmImageOutcome> ImportVmImageOutcomeCallable;
         typedef std::future<ListComponentBuildVersionsOutcome> ListComponentBuildVersionsOutcomeCallable;
         typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
         typedef std::future<ListContainerRecipesOutcome> ListContainerRecipesOutcomeCallable;
@@ -279,6 +283,7 @@ namespace Model
     typedef std::function<void(const ImagebuilderClient*, const Model::GetImageRecipePolicyRequest&, const Model::GetImageRecipePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImageRecipePolicyResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetInfrastructureConfigurationRequest&, const Model::GetInfrastructureConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInfrastructureConfigurationResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ImportComponentRequest&, const Model::ImportComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportComponentResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::ImportVmImageRequest&, const Model::ImportVmImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportVmImageResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListComponentBuildVersionsRequest&, const Model::ListComponentBuildVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentBuildVersionsResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListContainerRecipesRequest&, const Model::ListContainerRecipesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainerRecipesResponseReceivedHandler;
@@ -644,14 +649,40 @@ namespace Model
         virtual void DeleteDistributionConfigurationAsync(const Model::DeleteDistributionConfigurationRequest& request, const DeleteDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes an image.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Image Builder image resource. This does not delete any EC2 AMIs or
+         * ECR container images that are created during the image build process. You must
+         * clean those up separately, using the appropriate Amazon EC2 or Amazon ECR
+         * console actions, or API or CLI commands.</p> <ul> <li> <p>To deregister an EC2
+         * Linux AMI, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister
+         * your Linux AMI</a> in the <i> <i>Amazon EC2 User Guide</i> </i>.</p> </li> <li>
+         * <p>To deregister an EC2 Windows AMI, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/deregister-ami.html">Deregister
+         * your Windows AMI</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i>.</p> </li>
+         * <li> <p>To delete a container image from Amazon ECR, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/delete_image.html">Deleting
+         * an image</a> in the <i>Amazon ECR User Guide</i>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImage">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteImageOutcome DeleteImage(const Model::DeleteImageRequest& request) const;
 
         /**
-         * <p> Deletes an image.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Image Builder image resource. This does not delete any EC2 AMIs or
+         * ECR container images that are created during the image build process. You must
+         * clean those up separately, using the appropriate Amazon EC2 or Amazon ECR
+         * console actions, or API or CLI commands.</p> <ul> <li> <p>To deregister an EC2
+         * Linux AMI, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister
+         * your Linux AMI</a> in the <i> <i>Amazon EC2 User Guide</i> </i>.</p> </li> <li>
+         * <p>To deregister an EC2 Windows AMI, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/deregister-ami.html">Deregister
+         * your Windows AMI</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i>.</p> </li>
+         * <li> <p>To delete a container image from Amazon ECR, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/delete_image.html">Deleting
+         * an image</a> in the <i>Amazon ECR User Guide</i>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImage">AWS
          * API Reference</a></p>
          *
@@ -660,7 +691,20 @@ namespace Model
         virtual Model::DeleteImageOutcomeCallable DeleteImageCallable(const Model::DeleteImageRequest& request) const;
 
         /**
-         * <p> Deletes an image.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Image Builder image resource. This does not delete any EC2 AMIs or
+         * ECR container images that are created during the image build process. You must
+         * clean those up separately, using the appropriate Amazon EC2 or Amazon ECR
+         * console actions, or API or CLI commands.</p> <ul> <li> <p>To deregister an EC2
+         * Linux AMI, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister
+         * your Linux AMI</a> in the <i> <i>Amazon EC2 User Guide</i> </i>.</p> </li> <li>
+         * <p>To deregister an EC2 Windows AMI, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/deregister-ami.html">Deregister
+         * your Windows AMI</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i>.</p> </li>
+         * <li> <p>To delete a container image from Amazon ECR, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/delete_image.html">Deleting
+         * an image</a> in the <i>Amazon ECR User Guide</i>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImage">AWS
          * API Reference</a></p>
          *
@@ -1047,17 +1091,70 @@ namespace Model
         virtual void ImportComponentAsync(const Model::ImportComponentRequest& request, const ImportComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>When you export your virtual machine (VM) from its virtualization
+         * environment, that process creates a set of one or more disk container files that
+         * act as snapshots of your VM’s environment, settings, and data. The Amazon EC2
+         * API <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a>
+         * action uses those files to import your VM and create an AMI. To import using the
+         * CLI command, see <a
+         * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a>
+         * </p> <p>You can reference the task ID from the VM import to pull in the AMI that
+         * the import created as the base image for your Image Builder
+         * recipe.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportVmImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportVmImageOutcome ImportVmImage(const Model::ImportVmImageRequest& request) const;
+
+        /**
+         * <p>When you export your virtual machine (VM) from its virtualization
+         * environment, that process creates a set of one or more disk container files that
+         * act as snapshots of your VM’s environment, settings, and data. The Amazon EC2
+         * API <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a>
+         * action uses those files to import your VM and create an AMI. To import using the
+         * CLI command, see <a
+         * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a>
+         * </p> <p>You can reference the task ID from the VM import to pull in the AMI that
+         * the import created as the base image for your Image Builder
+         * recipe.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportVmImage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportVmImageOutcomeCallable ImportVmImageCallable(const Model::ImportVmImageRequest& request) const;
+
+        /**
+         * <p>When you export your virtual machine (VM) from its virtualization
+         * environment, that process creates a set of one or more disk container files that
+         * act as snapshots of your VM’s environment, settings, and data. The Amazon EC2
+         * API <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a>
+         * action uses those files to import your VM and create an AMI. To import using the
+         * CLI command, see <a
+         * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a>
+         * </p> <p>You can reference the task ID from the VM import to pull in the AMI that
+         * the import created as the base image for your Image Builder
+         * recipe.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportVmImage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportVmImageAsync(const Model::ImportVmImageRequest& request, const ImportVmImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Returns the list of component build versions for the specified semantic
          * version.</p>  <p>The semantic version has four nodes:
          * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
          * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-         * When you retrieve or reference a resource with a semantic version, you can use
-         * wildcards (x) to filter your results. When you use a wildcard in any node, all
-         * nodes to the right of the first wildcard must also be wildcards. For example,
-         * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-         * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-         * Builder automatically uses a wildcard for that, if applicable.</p>
-         * <p><h3>See Also:</h3>   <a
+         * With semantic versioning, you have the flexibility to use wildcards (x) to
+         * specify the most recent versions or nodes when selecting the base image or
+         * components for your recipe. When you use a wildcard in any node, all nodes to
+         * the right of the first wildcard must also be wildcards.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponentBuildVersions">AWS
          * API Reference</a></p>
          */
@@ -1068,13 +1165,11 @@ namespace Model
          * version.</p>  <p>The semantic version has four nodes:
          * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
          * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-         * When you retrieve or reference a resource with a semantic version, you can use
-         * wildcards (x) to filter your results. When you use a wildcard in any node, all
-         * nodes to the right of the first wildcard must also be wildcards. For example,
-         * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-         * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-         * Builder automatically uses a wildcard for that, if applicable.</p>
-         * <p><h3>See Also:</h3>   <a
+         * With semantic versioning, you have the flexibility to use wildcards (x) to
+         * specify the most recent versions or nodes when selecting the base image or
+         * components for your recipe. When you use a wildcard in any node, all nodes to
+         * the right of the first wildcard must also be wildcards.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponentBuildVersions">AWS
          * API Reference</a></p>
          *
@@ -1087,13 +1182,11 @@ namespace Model
          * version.</p>  <p>The semantic version has four nodes:
          * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
          * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-         * When you retrieve or reference a resource with a semantic version, you can use
-         * wildcards (x) to filter your results. When you use a wildcard in any node, all
-         * nodes to the right of the first wildcard must also be wildcards. For example,
-         * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-         * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-         * Builder automatically uses a wildcard for that, if applicable.</p>
-         * <p><h3>See Also:</h3>   <a
+         * With semantic versioning, you have the flexibility to use wildcards (x) to
+         * specify the most recent versions or nodes when selecting the base image or
+         * components for your recipe. When you use a wildcard in any node, all nodes to
+         * the right of the first wildcard must also be wildcards.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponentBuildVersions">AWS
          * API Reference</a></p>
          *
@@ -1106,13 +1199,11 @@ namespace Model
          * version.</p>  <p>The semantic version has four nodes:
          * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
          * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-         * When you retrieve or reference a resource with a semantic version, you can use
-         * wildcards (x) to filter your results. When you use a wildcard in any node, all
-         * nodes to the right of the first wildcard must also be wildcards. For example,
-         * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-         * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-         * Builder automatically uses a wildcard for that, if applicable.</p>
-         * <p><h3>See Also:</h3>   <a
+         * With semantic versioning, you have the flexibility to use wildcards (x) to
+         * specify the most recent versions or nodes when selecting the base image or
+         * components for your recipe. When you use a wildcard in any node, all nodes to
+         * the right of the first wildcard must also be wildcards.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponents">AWS
          * API Reference</a></p>
          */
@@ -1123,13 +1214,11 @@ namespace Model
          * version.</p>  <p>The semantic version has four nodes:
          * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
          * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-         * When you retrieve or reference a resource with a semantic version, you can use
-         * wildcards (x) to filter your results. When you use a wildcard in any node, all
-         * nodes to the right of the first wildcard must also be wildcards. For example,
-         * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-         * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-         * Builder automatically uses a wildcard for that, if applicable.</p>
-         * <p><h3>See Also:</h3>   <a
+         * With semantic versioning, you have the flexibility to use wildcards (x) to
+         * specify the most recent versions or nodes when selecting the base image or
+         * components for your recipe. When you use a wildcard in any node, all nodes to
+         * the right of the first wildcard must also be wildcards.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponents">AWS
          * API Reference</a></p>
          *
@@ -1142,13 +1231,11 @@ namespace Model
          * version.</p>  <p>The semantic version has four nodes:
          * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
          * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-         * When you retrieve or reference a resource with a semantic version, you can use
-         * wildcards (x) to filter your results. When you use a wildcard in any node, all
-         * nodes to the right of the first wildcard must also be wildcards. For example,
-         * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-         * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-         * Builder automatically uses a wildcard for that, if applicable.</p>
-         * <p><h3>See Also:</h3>   <a
+         * With semantic versioning, you have the flexibility to use wildcards (x) to
+         * specify the most recent versions or nodes when selecting the base image or
+         * components for your recipe. When you use a wildcard in any node, all nodes to
+         * the right of the first wildcard must also be wildcards.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponents">AWS
          * API Reference</a></p>
          *
@@ -1233,8 +1320,8 @@ namespace Model
 
         /**
          * <p>List the Packages that are associated with an Image Build Version, as
-         * determined by Amazon EC2 Systems Manager Inventory at build time.</p><p><h3>See
-         * Also:</h3>   <a
+         * determined by Amazon Web Services Systems Manager Inventory at build
+         * time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">AWS
          * API Reference</a></p>
          */
@@ -1242,8 +1329,8 @@ namespace Model
 
         /**
          * <p>List the Packages that are associated with an Image Build Version, as
-         * determined by Amazon EC2 Systems Manager Inventory at build time.</p><p><h3>See
-         * Also:</h3>   <a
+         * determined by Amazon Web Services Systems Manager Inventory at build
+         * time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">AWS
          * API Reference</a></p>
          *
@@ -1253,8 +1340,8 @@ namespace Model
 
         /**
          * <p>List the Packages that are associated with an Image Build Version, as
-         * determined by Amazon EC2 Systems Manager Inventory at build time.</p><p><h3>See
-         * Also:</h3>   <a
+         * determined by Amazon Web Services Systems Manager Inventory at build
+         * time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">AWS
          * API Reference</a></p>
          *
@@ -1470,11 +1557,11 @@ namespace Model
         /**
          * <p>Applies a policy to a container image. We recommend that you call the RAM API
          * CreateResourceShare
-         * (https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html)
+         * (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html)
          * to share resources. If you call the Image Builder API
          * <code>PutContainerImagePolicy</code>, you must also call the RAM API
          * PromoteResourceShareCreatedFromPolicy
-         * (https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
+         * (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
          * in order for the resource to be visible to all principals with whom the resource
          * is shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy">AWS
@@ -1485,11 +1572,11 @@ namespace Model
         /**
          * <p>Applies a policy to a container image. We recommend that you call the RAM API
          * CreateResourceShare
-         * (https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html)
+         * (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html)
          * to share resources. If you call the Image Builder API
          * <code>PutContainerImagePolicy</code>, you must also call the RAM API
          * PromoteResourceShareCreatedFromPolicy
-         * (https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
+         * (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
          * in order for the resource to be visible to all principals with whom the resource
          * is shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy">AWS
@@ -1502,11 +1589,11 @@ namespace Model
         /**
          * <p>Applies a policy to a container image. We recommend that you call the RAM API
          * CreateResourceShare
-         * (https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html)
+         * (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html)
          * to share resources. If you call the Image Builder API
          * <code>PutContainerImagePolicy</code>, you must also call the RAM API
          * PromoteResourceShareCreatedFromPolicy
-         * (https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
+         * (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
          * in order for the resource to be visible to all principals with whom the resource
          * is shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy">AWS
@@ -1810,6 +1897,7 @@ namespace Model
         void GetImageRecipePolicyAsyncHelper(const Model::GetImageRecipePolicyRequest& request, const GetImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInfrastructureConfigurationAsyncHelper(const Model::GetInfrastructureConfigurationRequest& request, const GetInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportComponentAsyncHelper(const Model::ImportComponentRequest& request, const ImportComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ImportVmImageAsyncHelper(const Model::ImportVmImageRequest& request, const ImportVmImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComponentBuildVersionsAsyncHelper(const Model::ListComponentBuildVersionsRequest& request, const ListComponentBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComponentsAsyncHelper(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListContainerRecipesAsyncHelper(const Model::ListContainerRecipesRequest& request, const ListContainerRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

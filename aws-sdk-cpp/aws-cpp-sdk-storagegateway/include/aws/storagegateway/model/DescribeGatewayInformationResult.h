@@ -438,37 +438,37 @@ namespace Model
 
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline const Aws::String& GetEc2InstanceRegion() const{ return m_ec2InstanceRegion; }
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline void SetEc2InstanceRegion(const Aws::String& value) { m_ec2InstanceRegion = value; }
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline void SetEc2InstanceRegion(Aws::String&& value) { m_ec2InstanceRegion = std::move(value); }
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline void SetEc2InstanceRegion(const char* value) { m_ec2InstanceRegion.assign(value); }
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline DescribeGatewayInformationResult& WithEc2InstanceRegion(const Aws::String& value) { SetEc2InstanceRegion(value); return *this;}
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline DescribeGatewayInformationResult& WithEc2InstanceRegion(Aws::String&& value) { SetEc2InstanceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline DescribeGatewayInformationResult& WithEc2InstanceRegion(const char* value) { SetEc2InstanceRegion(value); return *this;}
 
@@ -617,27 +617,32 @@ namespace Model
 
 
     /**
-     * <p>The type of hypervisor environment used by the host.</p>
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
      */
     inline const HostEnvironment& GetHostEnvironment() const{ return m_hostEnvironment; }
 
     /**
-     * <p>The type of hypervisor environment used by the host.</p>
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
      */
     inline void SetHostEnvironment(const HostEnvironment& value) { m_hostEnvironment = value; }
 
     /**
-     * <p>The type of hypervisor environment used by the host.</p>
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
      */
     inline void SetHostEnvironment(HostEnvironment&& value) { m_hostEnvironment = std::move(value); }
 
     /**
-     * <p>The type of hypervisor environment used by the host.</p>
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
      */
     inline DescribeGatewayInformationResult& WithHostEnvironment(const HostEnvironment& value) { SetHostEnvironment(value); return *this;}
 
     /**
-     * <p>The type of hypervisor environment used by the host.</p>
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
      */
     inline DescribeGatewayInformationResult& WithHostEnvironment(HostEnvironment&& value) { SetHostEnvironment(std::move(value)); return *this;}
 
@@ -839,6 +844,56 @@ namespace Model
      */
     inline DescribeGatewayInformationResult& AddSupportedGatewayCapacities(GatewayCapacity&& value) { m_supportedGatewayCapacities.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline const Aws::String& GetHostEnvironmentId() const{ return m_hostEnvironmentId; }
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline void SetHostEnvironmentId(const Aws::String& value) { m_hostEnvironmentId = value; }
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline void SetHostEnvironmentId(Aws::String&& value) { m_hostEnvironmentId = std::move(value); }
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline void SetHostEnvironmentId(const char* value) { m_hostEnvironmentId.assign(value); }
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline DescribeGatewayInformationResult& WithHostEnvironmentId(const Aws::String& value) { SetHostEnvironmentId(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline DescribeGatewayInformationResult& WithHostEnvironmentId(Aws::String&& value) { SetHostEnvironmentId(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline DescribeGatewayInformationResult& WithHostEnvironmentId(const char* value) { SetHostEnvironmentId(value); return *this;}
+
   private:
 
     Aws::String m_gatewayARN;
@@ -880,6 +935,8 @@ namespace Model
     GatewayCapacity m_gatewayCapacity;
 
     Aws::Vector<GatewayCapacity> m_supportedGatewayCapacities;
+
+    Aws::String m_hostEnvironmentId;
   };
 
 } // namespace Model

@@ -81,42 +81,58 @@ namespace Model
 
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline User& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline User& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline User& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -167,7 +183,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -180,7 +196,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -193,7 +209,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -206,7 +222,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -219,7 +235,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -232,7 +248,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>

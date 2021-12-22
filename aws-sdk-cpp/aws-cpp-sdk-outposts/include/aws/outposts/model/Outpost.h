@@ -7,6 +7,7 @@
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/outposts/model/SupportedHardwareType.h>
 #include <utility>
 
 namespace Aws
@@ -38,28 +39,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline Outpost& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline Outpost& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline Outpost& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
 
 
@@ -353,6 +370,37 @@ namespace Model
     
     inline Outpost& WithSiteArn(const char* value) { SetSiteArn(value); return *this;}
 
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline const SupportedHardwareType& GetSupportedHardwareType() const{ return m_supportedHardwareType; }
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline bool SupportedHardwareTypeHasBeenSet() const { return m_supportedHardwareTypeHasBeenSet; }
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline void SetSupportedHardwareType(const SupportedHardwareType& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = value; }
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline void SetSupportedHardwareType(SupportedHardwareType&& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = std::move(value); }
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline Outpost& WithSupportedHardwareType(const SupportedHardwareType& value) { SetSupportedHardwareType(value); return *this;}
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline Outpost& WithSupportedHardwareType(SupportedHardwareType&& value) { SetSupportedHardwareType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_outpostId;
@@ -387,6 +435,9 @@ namespace Model
 
     Aws::String m_siteArn;
     bool m_siteArnHasBeenSet;
+
+    SupportedHardwareType m_supportedHardwareType;
+    bool m_supportedHardwareTypeHasBeenSet;
   };
 
 } // namespace Model

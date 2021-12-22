@@ -31,9 +31,11 @@
 #include <aws/lexv2-models/model/DeleteImportResult.h>
 #include <aws/lexv2-models/model/DeleteResourcePolicyResult.h>
 #include <aws/lexv2-models/model/DeleteResourcePolicyStatementResult.h>
+#include <aws/lexv2-models/model/DeleteUtterancesResult.h>
 #include <aws/lexv2-models/model/DescribeBotResult.h>
 #include <aws/lexv2-models/model/DescribeBotAliasResult.h>
 #include <aws/lexv2-models/model/DescribeBotLocaleResult.h>
+#include <aws/lexv2-models/model/DescribeBotRecommendationResult.h>
 #include <aws/lexv2-models/model/DescribeBotVersionResult.h>
 #include <aws/lexv2-models/model/DescribeExportResult.h>
 #include <aws/lexv2-models/model/DescribeImportResult.h>
@@ -41,8 +43,10 @@
 #include <aws/lexv2-models/model/DescribeResourcePolicyResult.h>
 #include <aws/lexv2-models/model/DescribeSlotResult.h>
 #include <aws/lexv2-models/model/DescribeSlotTypeResult.h>
+#include <aws/lexv2-models/model/ListAggregatedUtterancesResult.h>
 #include <aws/lexv2-models/model/ListBotAliasesResult.h>
 #include <aws/lexv2-models/model/ListBotLocalesResult.h>
+#include <aws/lexv2-models/model/ListBotRecommendationsResult.h>
 #include <aws/lexv2-models/model/ListBotVersionsResult.h>
 #include <aws/lexv2-models/model/ListBotsResult.h>
 #include <aws/lexv2-models/model/ListBuiltInIntentsResult.h>
@@ -50,15 +54,19 @@
 #include <aws/lexv2-models/model/ListExportsResult.h>
 #include <aws/lexv2-models/model/ListImportsResult.h>
 #include <aws/lexv2-models/model/ListIntentsResult.h>
+#include <aws/lexv2-models/model/ListRecommendedIntentsResult.h>
 #include <aws/lexv2-models/model/ListSlotTypesResult.h>
 #include <aws/lexv2-models/model/ListSlotsResult.h>
 #include <aws/lexv2-models/model/ListTagsForResourceResult.h>
+#include <aws/lexv2-models/model/SearchAssociatedTranscriptsResult.h>
+#include <aws/lexv2-models/model/StartBotRecommendationResult.h>
 #include <aws/lexv2-models/model/StartImportResult.h>
 #include <aws/lexv2-models/model/TagResourceResult.h>
 #include <aws/lexv2-models/model/UntagResourceResult.h>
 #include <aws/lexv2-models/model/UpdateBotResult.h>
 #include <aws/lexv2-models/model/UpdateBotAliasResult.h>
 #include <aws/lexv2-models/model/UpdateBotLocaleResult.h>
+#include <aws/lexv2-models/model/UpdateBotRecommendationResult.h>
 #include <aws/lexv2-models/model/UpdateExportResult.h>
 #include <aws/lexv2-models/model/UpdateIntentResult.h>
 #include <aws/lexv2-models/model/UpdateResourcePolicyResult.h>
@@ -127,9 +135,11 @@ namespace Model
         class DeleteResourcePolicyStatementRequest;
         class DeleteSlotRequest;
         class DeleteSlotTypeRequest;
+        class DeleteUtterancesRequest;
         class DescribeBotRequest;
         class DescribeBotAliasRequest;
         class DescribeBotLocaleRequest;
+        class DescribeBotRecommendationRequest;
         class DescribeBotVersionRequest;
         class DescribeExportRequest;
         class DescribeImportRequest;
@@ -137,8 +147,10 @@ namespace Model
         class DescribeResourcePolicyRequest;
         class DescribeSlotRequest;
         class DescribeSlotTypeRequest;
+        class ListAggregatedUtterancesRequest;
         class ListBotAliasesRequest;
         class ListBotLocalesRequest;
+        class ListBotRecommendationsRequest;
         class ListBotVersionsRequest;
         class ListBotsRequest;
         class ListBuiltInIntentsRequest;
@@ -146,15 +158,19 @@ namespace Model
         class ListExportsRequest;
         class ListImportsRequest;
         class ListIntentsRequest;
+        class ListRecommendedIntentsRequest;
         class ListSlotTypesRequest;
         class ListSlotsRequest;
         class ListTagsForResourceRequest;
+        class SearchAssociatedTranscriptsRequest;
+        class StartBotRecommendationRequest;
         class StartImportRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateBotRequest;
         class UpdateBotAliasRequest;
         class UpdateBotLocaleRequest;
+        class UpdateBotRecommendationRequest;
         class UpdateExportRequest;
         class UpdateIntentRequest;
         class UpdateResourcePolicyRequest;
@@ -184,9 +200,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteResourcePolicyStatementResult, LexModelsV2Error> DeleteResourcePolicyStatementOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LexModelsV2Error> DeleteSlotOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LexModelsV2Error> DeleteSlotTypeOutcome;
+        typedef Aws::Utils::Outcome<DeleteUtterancesResult, LexModelsV2Error> DeleteUtterancesOutcome;
         typedef Aws::Utils::Outcome<DescribeBotResult, LexModelsV2Error> DescribeBotOutcome;
         typedef Aws::Utils::Outcome<DescribeBotAliasResult, LexModelsV2Error> DescribeBotAliasOutcome;
         typedef Aws::Utils::Outcome<DescribeBotLocaleResult, LexModelsV2Error> DescribeBotLocaleOutcome;
+        typedef Aws::Utils::Outcome<DescribeBotRecommendationResult, LexModelsV2Error> DescribeBotRecommendationOutcome;
         typedef Aws::Utils::Outcome<DescribeBotVersionResult, LexModelsV2Error> DescribeBotVersionOutcome;
         typedef Aws::Utils::Outcome<DescribeExportResult, LexModelsV2Error> DescribeExportOutcome;
         typedef Aws::Utils::Outcome<DescribeImportResult, LexModelsV2Error> DescribeImportOutcome;
@@ -194,8 +212,10 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeResourcePolicyResult, LexModelsV2Error> DescribeResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeSlotResult, LexModelsV2Error> DescribeSlotOutcome;
         typedef Aws::Utils::Outcome<DescribeSlotTypeResult, LexModelsV2Error> DescribeSlotTypeOutcome;
+        typedef Aws::Utils::Outcome<ListAggregatedUtterancesResult, LexModelsV2Error> ListAggregatedUtterancesOutcome;
         typedef Aws::Utils::Outcome<ListBotAliasesResult, LexModelsV2Error> ListBotAliasesOutcome;
         typedef Aws::Utils::Outcome<ListBotLocalesResult, LexModelsV2Error> ListBotLocalesOutcome;
+        typedef Aws::Utils::Outcome<ListBotRecommendationsResult, LexModelsV2Error> ListBotRecommendationsOutcome;
         typedef Aws::Utils::Outcome<ListBotVersionsResult, LexModelsV2Error> ListBotVersionsOutcome;
         typedef Aws::Utils::Outcome<ListBotsResult, LexModelsV2Error> ListBotsOutcome;
         typedef Aws::Utils::Outcome<ListBuiltInIntentsResult, LexModelsV2Error> ListBuiltInIntentsOutcome;
@@ -203,15 +223,19 @@ namespace Model
         typedef Aws::Utils::Outcome<ListExportsResult, LexModelsV2Error> ListExportsOutcome;
         typedef Aws::Utils::Outcome<ListImportsResult, LexModelsV2Error> ListImportsOutcome;
         typedef Aws::Utils::Outcome<ListIntentsResult, LexModelsV2Error> ListIntentsOutcome;
+        typedef Aws::Utils::Outcome<ListRecommendedIntentsResult, LexModelsV2Error> ListRecommendedIntentsOutcome;
         typedef Aws::Utils::Outcome<ListSlotTypesResult, LexModelsV2Error> ListSlotTypesOutcome;
         typedef Aws::Utils::Outcome<ListSlotsResult, LexModelsV2Error> ListSlotsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, LexModelsV2Error> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<SearchAssociatedTranscriptsResult, LexModelsV2Error> SearchAssociatedTranscriptsOutcome;
+        typedef Aws::Utils::Outcome<StartBotRecommendationResult, LexModelsV2Error> StartBotRecommendationOutcome;
         typedef Aws::Utils::Outcome<StartImportResult, LexModelsV2Error> StartImportOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, LexModelsV2Error> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, LexModelsV2Error> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateBotResult, LexModelsV2Error> UpdateBotOutcome;
         typedef Aws::Utils::Outcome<UpdateBotAliasResult, LexModelsV2Error> UpdateBotAliasOutcome;
         typedef Aws::Utils::Outcome<UpdateBotLocaleResult, LexModelsV2Error> UpdateBotLocaleOutcome;
+        typedef Aws::Utils::Outcome<UpdateBotRecommendationResult, LexModelsV2Error> UpdateBotRecommendationOutcome;
         typedef Aws::Utils::Outcome<UpdateExportResult, LexModelsV2Error> UpdateExportOutcome;
         typedef Aws::Utils::Outcome<UpdateIntentResult, LexModelsV2Error> UpdateIntentOutcome;
         typedef Aws::Utils::Outcome<UpdateResourcePolicyResult, LexModelsV2Error> UpdateResourcePolicyOutcome;
@@ -241,9 +265,11 @@ namespace Model
         typedef std::future<DeleteResourcePolicyStatementOutcome> DeleteResourcePolicyStatementOutcomeCallable;
         typedef std::future<DeleteSlotOutcome> DeleteSlotOutcomeCallable;
         typedef std::future<DeleteSlotTypeOutcome> DeleteSlotTypeOutcomeCallable;
+        typedef std::future<DeleteUtterancesOutcome> DeleteUtterancesOutcomeCallable;
         typedef std::future<DescribeBotOutcome> DescribeBotOutcomeCallable;
         typedef std::future<DescribeBotAliasOutcome> DescribeBotAliasOutcomeCallable;
         typedef std::future<DescribeBotLocaleOutcome> DescribeBotLocaleOutcomeCallable;
+        typedef std::future<DescribeBotRecommendationOutcome> DescribeBotRecommendationOutcomeCallable;
         typedef std::future<DescribeBotVersionOutcome> DescribeBotVersionOutcomeCallable;
         typedef std::future<DescribeExportOutcome> DescribeExportOutcomeCallable;
         typedef std::future<DescribeImportOutcome> DescribeImportOutcomeCallable;
@@ -251,8 +277,10 @@ namespace Model
         typedef std::future<DescribeResourcePolicyOutcome> DescribeResourcePolicyOutcomeCallable;
         typedef std::future<DescribeSlotOutcome> DescribeSlotOutcomeCallable;
         typedef std::future<DescribeSlotTypeOutcome> DescribeSlotTypeOutcomeCallable;
+        typedef std::future<ListAggregatedUtterancesOutcome> ListAggregatedUtterancesOutcomeCallable;
         typedef std::future<ListBotAliasesOutcome> ListBotAliasesOutcomeCallable;
         typedef std::future<ListBotLocalesOutcome> ListBotLocalesOutcomeCallable;
+        typedef std::future<ListBotRecommendationsOutcome> ListBotRecommendationsOutcomeCallable;
         typedef std::future<ListBotVersionsOutcome> ListBotVersionsOutcomeCallable;
         typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
         typedef std::future<ListBuiltInIntentsOutcome> ListBuiltInIntentsOutcomeCallable;
@@ -260,15 +288,19 @@ namespace Model
         typedef std::future<ListExportsOutcome> ListExportsOutcomeCallable;
         typedef std::future<ListImportsOutcome> ListImportsOutcomeCallable;
         typedef std::future<ListIntentsOutcome> ListIntentsOutcomeCallable;
+        typedef std::future<ListRecommendedIntentsOutcome> ListRecommendedIntentsOutcomeCallable;
         typedef std::future<ListSlotTypesOutcome> ListSlotTypesOutcomeCallable;
         typedef std::future<ListSlotsOutcome> ListSlotsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<SearchAssociatedTranscriptsOutcome> SearchAssociatedTranscriptsOutcomeCallable;
+        typedef std::future<StartBotRecommendationOutcome> StartBotRecommendationOutcomeCallable;
         typedef std::future<StartImportOutcome> StartImportOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateBotOutcome> UpdateBotOutcomeCallable;
         typedef std::future<UpdateBotAliasOutcome> UpdateBotAliasOutcomeCallable;
         typedef std::future<UpdateBotLocaleOutcome> UpdateBotLocaleOutcomeCallable;
+        typedef std::future<UpdateBotRecommendationOutcome> UpdateBotRecommendationOutcomeCallable;
         typedef std::future<UpdateExportOutcome> UpdateExportOutcomeCallable;
         typedef std::future<UpdateIntentOutcome> UpdateIntentOutcomeCallable;
         typedef std::future<UpdateResourcePolicyOutcome> UpdateResourcePolicyOutcomeCallable;
@@ -301,9 +333,11 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteResourcePolicyStatementRequest&, const Model::DeleteResourcePolicyStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyStatementResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteSlotRequest&, const Model::DeleteSlotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSlotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteSlotTypeRequest&, const Model::DeleteSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSlotTypeResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DeleteUtterancesRequest&, const Model::DeleteUtterancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUtterancesResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotRequest&, const Model::DescribeBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotAliasRequest&, const Model::DescribeBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotLocaleRequest&, const Model::DescribeBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotLocaleResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotRecommendationRequest&, const Model::DescribeBotRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotRecommendationResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotVersionRequest&, const Model::DescribeBotVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotVersionResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeExportRequest&, const Model::DescribeExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeImportRequest&, const Model::DescribeImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImportResponseReceivedHandler;
@@ -311,8 +345,10 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeResourcePolicyRequest&, const Model::DescribeResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeSlotRequest&, const Model::DescribeSlotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSlotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeSlotTypeRequest&, const Model::DescribeSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSlotTypeResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListAggregatedUtterancesRequest&, const Model::ListAggregatedUtterancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAggregatedUtterancesResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotAliasesRequest&, const Model::ListBotAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotAliasesResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotLocalesRequest&, const Model::ListBotLocalesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotLocalesResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListBotRecommendationsRequest&, const Model::ListBotRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotRecommendationsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotVersionsRequest&, const Model::ListBotVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotVersionsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBuiltInIntentsRequest&, const Model::ListBuiltInIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuiltInIntentsResponseReceivedHandler;
@@ -320,15 +356,19 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::ListExportsRequest&, const Model::ListExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExportsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListImportsRequest&, const Model::ListImportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListIntentsRequest&, const Model::ListIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIntentsResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListRecommendedIntentsRequest&, const Model::ListRecommendedIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecommendedIntentsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListSlotTypesRequest&, const Model::ListSlotTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSlotTypesResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListSlotsRequest&, const Model::ListSlotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSlotsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::SearchAssociatedTranscriptsRequest&, const Model::SearchAssociatedTranscriptsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAssociatedTranscriptsResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::StartBotRecommendationRequest&, const Model::StartBotRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBotRecommendationResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::StartImportRequest&, const Model::StartImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateBotRequest&, const Model::UpdateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateBotAliasRequest&, const Model::UpdateBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateBotLocaleRequest&, const Model::UpdateBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBotLocaleResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::UpdateBotRecommendationRequest&, const Model::UpdateBotRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBotRecommendationResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateExportRequest&, const Model::UpdateExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateIntentRequest&, const Model::UpdateIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIntentResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateResourcePolicyRequest&, const Model::UpdateResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourcePolicyResponseReceivedHandler;
@@ -916,7 +956,9 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of a bot. To delete all version of a bot, use the
-         * <a>DeleteBot</a> operation.</p><p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotVersion">AWS
          * API Reference</a></p>
          */
@@ -924,7 +966,9 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of a bot. To delete all version of a bot, use the
-         * <a>DeleteBot</a> operation.</p><p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotVersion">AWS
          * API Reference</a></p>
          *
@@ -934,7 +978,9 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of a bot. To delete all version of a bot, use the
-         * <a>DeleteBot</a> operation.</p><p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotVersion">AWS
          * API Reference</a></p>
          *
@@ -1151,6 +1197,58 @@ namespace Model
         virtual void DeleteSlotTypeAsync(const Model::DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
+         * send to your bot. Utterances are stored for 15 days for use with the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+         * operation, and then stored indefinitely for use in improving the ability of your
+         * bot to respond to user input..</p> <p>Use the <code>DeleteUtterances</code>
+         * operation to manually delete utterances for a specific session. When you use the
+         * <code>DeleteUtterances</code> operation, utterances stored for improving your
+         * bot's ability to respond to user input are deleted immediately. Utterances
+         * stored for use with the <code>ListAggregatedUtterances</code> operation are
+         * deleted after 15 days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteUtterances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUtterancesOutcome DeleteUtterances(const Model::DeleteUtterancesRequest& request) const;
+
+        /**
+         * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
+         * send to your bot. Utterances are stored for 15 days for use with the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+         * operation, and then stored indefinitely for use in improving the ability of your
+         * bot to respond to user input..</p> <p>Use the <code>DeleteUtterances</code>
+         * operation to manually delete utterances for a specific session. When you use the
+         * <code>DeleteUtterances</code> operation, utterances stored for improving your
+         * bot's ability to respond to user input are deleted immediately. Utterances
+         * stored for use with the <code>ListAggregatedUtterances</code> operation are
+         * deleted after 15 days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteUtterances">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteUtterancesOutcomeCallable DeleteUtterancesCallable(const Model::DeleteUtterancesRequest& request) const;
+
+        /**
+         * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
+         * send to your bot. Utterances are stored for 15 days for use with the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+         * operation, and then stored indefinitely for use in improving the ability of your
+         * bot to respond to user input..</p> <p>Use the <code>DeleteUtterances</code>
+         * operation to manually delete utterances for a specific session. When you use the
+         * <code>DeleteUtterances</code> operation, utterances stored for improving your
+         * bot's ability to respond to user input are deleted immediately. Utterances
+         * stored for use with the <code>ListAggregatedUtterances</code> operation are
+         * deleted after 15 days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteUtterances">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteUtterancesAsync(const Model::DeleteUtterancesRequest& request, const DeleteUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides metadata information about a bot. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBot">AWS
          * API Reference</a></p>
@@ -1227,6 +1325,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBotLocaleAsync(const Model::DescribeBotLocaleRequest& request, const DescribeBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides metadata information about a bot recommendation. This information
+         * will enable you to get a description on the request inputs, to download
+         * associated transcripts after processing is complete, and to download intents and
+         * slot-types generated by the bot recommendation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotRecommendation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBotRecommendationOutcome DescribeBotRecommendation(const Model::DescribeBotRecommendationRequest& request) const;
+
+        /**
+         * <p>Provides metadata information about a bot recommendation. This information
+         * will enable you to get a description on the request inputs, to download
+         * associated transcripts after processing is complete, and to download intents and
+         * slot-types generated by the bot recommendation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotRecommendation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeBotRecommendationOutcomeCallable DescribeBotRecommendationCallable(const Model::DescribeBotRecommendationRequest& request) const;
+
+        /**
+         * <p>Provides metadata information about a bot recommendation. This information
+         * will enable you to get a description on the request inputs, to download
+         * associated transcripts after processing is complete, and to download intents and
+         * slot-types generated by the bot recommendation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotRecommendation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeBotRecommendationAsync(const Model::DescribeBotRecommendationRequest& request, const DescribeBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides metadata about a version of a bot.</p><p><h3>See Also:</h3>   <a
@@ -1407,6 +1539,67 @@ namespace Model
         virtual void DescribeSlotTypeAsync(const Model::DescribeSlotTypeRequest& request, const DescribeSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides a list of utterances that users have sent to the bot.</p>
+         * <p>Utterances are aggregated by the text of the utterance. For example, all
+         * instances where customers used the phrase "I want to order pizza" are aggregated
+         * into the same line in the response.</p> <p>You can see both detected utterances
+         * and missed utterances. A detected utterance is where the bot properly recognized
+         * the utterance and activated the associated intent. A missed utterance was not
+         * recognized by the bot and didn't activate an intent.</p> <p>Utterances can be
+         * aggregated for a bot alias or for a bot version, but not both at the same
+         * time.</p> <p>Utterances statistics are not generated under the following
+         * conditions:</p> <ul> <li> <p>The <code>childDirected</code> field was set to
+         * true when the bot was created.</p> </li> <li> <p>You are using slot obfuscation
+         * with one or more slots.</p> </li> <li> <p>You opted out of participating in
+         * improving Amazon Lex.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListAggregatedUtterances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAggregatedUtterancesOutcome ListAggregatedUtterances(const Model::ListAggregatedUtterancesRequest& request) const;
+
+        /**
+         * <p>Provides a list of utterances that users have sent to the bot.</p>
+         * <p>Utterances are aggregated by the text of the utterance. For example, all
+         * instances where customers used the phrase "I want to order pizza" are aggregated
+         * into the same line in the response.</p> <p>You can see both detected utterances
+         * and missed utterances. A detected utterance is where the bot properly recognized
+         * the utterance and activated the associated intent. A missed utterance was not
+         * recognized by the bot and didn't activate an intent.</p> <p>Utterances can be
+         * aggregated for a bot alias or for a bot version, but not both at the same
+         * time.</p> <p>Utterances statistics are not generated under the following
+         * conditions:</p> <ul> <li> <p>The <code>childDirected</code> field was set to
+         * true when the bot was created.</p> </li> <li> <p>You are using slot obfuscation
+         * with one or more slots.</p> </li> <li> <p>You opted out of participating in
+         * improving Amazon Lex.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListAggregatedUtterances">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAggregatedUtterancesOutcomeCallable ListAggregatedUtterancesCallable(const Model::ListAggregatedUtterancesRequest& request) const;
+
+        /**
+         * <p>Provides a list of utterances that users have sent to the bot.</p>
+         * <p>Utterances are aggregated by the text of the utterance. For example, all
+         * instances where customers used the phrase "I want to order pizza" are aggregated
+         * into the same line in the response.</p> <p>You can see both detected utterances
+         * and missed utterances. A detected utterance is where the bot properly recognized
+         * the utterance and activated the associated intent. A missed utterance was not
+         * recognized by the bot and didn't activate an intent.</p> <p>Utterances can be
+         * aggregated for a bot alias or for a bot version, but not both at the same
+         * time.</p> <p>Utterances statistics are not generated under the following
+         * conditions:</p> <ul> <li> <p>The <code>childDirected</code> field was set to
+         * true when the bot was created.</p> </li> <li> <p>You are using slot obfuscation
+         * with one or more slots.</p> </li> <li> <p>You opted out of participating in
+         * improving Amazon Lex.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListAggregatedUtterances">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAggregatedUtterancesAsync(const Model::ListAggregatedUtterancesRequest& request, const ListAggregatedUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of aliases for the specified bot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliases">AWS
          * API Reference</a></p>
@@ -1455,6 +1648,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListBotLocalesAsync(const Model::ListBotLocalesRequest& request, const ListBotLocalesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get a list of bot recommendations that meet the specified
+         * criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBotRecommendationsOutcome ListBotRecommendations(const Model::ListBotRecommendationsRequest& request) const;
+
+        /**
+         * <p>Get a list of bot recommendations that meet the specified
+         * criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotRecommendations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBotRecommendationsOutcomeCallable ListBotRecommendationsCallable(const Model::ListBotRecommendationsRequest& request) const;
+
+        /**
+         * <p>Get a list of bot recommendations that meet the specified
+         * criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotRecommendations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBotRecommendationsAsync(const Model::ListBotRecommendationsRequest& request, const ListBotRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about all of the versions of a bot.</p> <p>The
@@ -1529,7 +1750,9 @@ namespace Model
          * your bot. </p> <p>To use a built-in intent as a the base for your own intent,
          * include the built-in intent signature in the <code>parentIntentSignature</code>
          * parameter when you call the <code>CreateIntent</code> operation. For more
-         * information, see <a>CreateIntent</a>.</p><p><h3>See Also:</h3>   <a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBuiltInIntents">AWS
          * API Reference</a></p>
          */
@@ -1540,7 +1763,9 @@ namespace Model
          * your bot. </p> <p>To use a built-in intent as a the base for your own intent,
          * include the built-in intent signature in the <code>parentIntentSignature</code>
          * parameter when you call the <code>CreateIntent</code> operation. For more
-         * information, see <a>CreateIntent</a>.</p><p><h3>See Also:</h3>   <a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBuiltInIntents">AWS
          * API Reference</a></p>
          *
@@ -1553,7 +1778,9 @@ namespace Model
          * your bot. </p> <p>To use a built-in intent as a the base for your own intent,
          * include the built-in intent signature in the <code>parentIntentSignature</code>
          * parameter when you call the <code>CreateIntent</code> operation. For more
-         * information, see <a>CreateIntent</a>.</p><p><h3>See Also:</h3>   <a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBuiltInIntents">AWS
          * API Reference</a></p>
          *
@@ -1674,6 +1901,34 @@ namespace Model
         virtual void ListIntentsAsync(const Model::ListIntentsRequest& request, const ListIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets a list of recommended intents provided by the bot recommendation that
+         * you can use in your bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListRecommendedIntents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRecommendedIntentsOutcome ListRecommendedIntents(const Model::ListRecommendedIntentsRequest& request) const;
+
+        /**
+         * <p>Gets a list of recommended intents provided by the bot recommendation that
+         * you can use in your bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListRecommendedIntents">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRecommendedIntentsOutcomeCallable ListRecommendedIntentsCallable(const Model::ListRecommendedIntentsRequest& request) const;
+
+        /**
+         * <p>Gets a list of recommended intents provided by the bot recommendation that
+         * you can use in your bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListRecommendedIntents">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRecommendedIntentsAsync(const Model::ListRecommendedIntentsRequest& request, const ListRecommendedIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of slot types that match the specified criteria.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSlotTypes">AWS
@@ -1756,6 +2011,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Search for associated transcripts that meet the specified
+         * criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SearchAssociatedTranscripts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchAssociatedTranscriptsOutcome SearchAssociatedTranscripts(const Model::SearchAssociatedTranscriptsRequest& request) const;
+
+        /**
+         * <p>Search for associated transcripts that meet the specified
+         * criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SearchAssociatedTranscripts">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchAssociatedTranscriptsOutcomeCallable SearchAssociatedTranscriptsCallable(const Model::SearchAssociatedTranscriptsRequest& request) const;
+
+        /**
+         * <p>Search for associated transcripts that meet the specified
+         * criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SearchAssociatedTranscripts">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchAssociatedTranscriptsAsync(const Model::SearchAssociatedTranscriptsRequest& request, const SearchAssociatedTranscriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Use this to provide your transcript data, and to start the bot recommendation
+         * process.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotRecommendation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartBotRecommendationOutcome StartBotRecommendation(const Model::StartBotRecommendationRequest& request) const;
+
+        /**
+         * <p>Use this to provide your transcript data, and to start the bot recommendation
+         * process.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotRecommendation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartBotRecommendationOutcomeCallable StartBotRecommendationCallable(const Model::StartBotRecommendationRequest& request) const;
+
+        /**
+         * <p>Use this to provide your transcript data, and to start the bot recommendation
+         * process.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotRecommendation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartBotRecommendationAsync(const Model::StartBotRecommendationRequest& request, const StartBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts importing a bot or bot locale from a zip archive that you uploaded to
@@ -1926,11 +2237,37 @@ namespace Model
         virtual void UpdateBotLocaleAsync(const Model::UpdateBotLocaleRequest& request, const UpdateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an existing bot recommendation request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateBotRecommendation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateBotRecommendationOutcome UpdateBotRecommendation(const Model::UpdateBotRecommendationRequest& request) const;
+
+        /**
+         * <p>Updates an existing bot recommendation request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateBotRecommendation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateBotRecommendationOutcomeCallable UpdateBotRecommendationCallable(const Model::UpdateBotRecommendationRequest& request) const;
+
+        /**
+         * <p>Updates an existing bot recommendation request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateBotRecommendation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateBotRecommendationAsync(const Model::UpdateBotRecommendationRequest& request, const UpdateBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the password used to protect an export zip archive.</p> <p>The
          * password is not required. If you don't supply a password, Amazon Lex generates a
          * zip file that is not protected by a password. This is the archive that is
-         * available at the pre-signed S3 URL provided by the operation.</p><p><h3>See
-         * Also:</h3>   <a
+         * available at the pre-signed S3 URL provided by the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">AWS
          * API Reference</a></p>
          */
@@ -1940,8 +2277,9 @@ namespace Model
          * <p>Updates the password used to protect an export zip archive.</p> <p>The
          * password is not required. If you don't supply a password, Amazon Lex generates a
          * zip file that is not protected by a password. This is the archive that is
-         * available at the pre-signed S3 URL provided by the operation.</p><p><h3>See
-         * Also:</h3>   <a
+         * available at the pre-signed S3 URL provided by the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">AWS
          * API Reference</a></p>
          *
@@ -1953,8 +2291,9 @@ namespace Model
          * <p>Updates the password used to protect an export zip archive.</p> <p>The
          * password is not required. If you don't supply a password, Amazon Lex generates a
          * zip file that is not protected by a password. This is the archive that is
-         * available at the pre-signed S3 URL provided by the operation.</p><p><h3>See
-         * Also:</h3>   <a
+         * available at the pre-signed S3 URL provided by the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">AWS
          * API Reference</a></p>
          *
@@ -2098,9 +2437,11 @@ namespace Model
         void DeleteResourcePolicyStatementAsyncHelper(const Model::DeleteResourcePolicyStatementRequest& request, const DeleteResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSlotAsyncHelper(const Model::DeleteSlotRequest& request, const DeleteSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSlotTypeAsyncHelper(const Model::DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteUtterancesAsyncHelper(const Model::DeleteUtterancesRequest& request, const DeleteUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBotAsyncHelper(const Model::DescribeBotRequest& request, const DescribeBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBotAliasAsyncHelper(const Model::DescribeBotAliasRequest& request, const DescribeBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBotLocaleAsyncHelper(const Model::DescribeBotLocaleRequest& request, const DescribeBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeBotRecommendationAsyncHelper(const Model::DescribeBotRecommendationRequest& request, const DescribeBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBotVersionAsyncHelper(const Model::DescribeBotVersionRequest& request, const DescribeBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExportAsyncHelper(const Model::DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImportAsyncHelper(const Model::DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2108,8 +2449,10 @@ namespace Model
         void DescribeResourcePolicyAsyncHelper(const Model::DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSlotAsyncHelper(const Model::DescribeSlotRequest& request, const DescribeSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSlotTypeAsyncHelper(const Model::DescribeSlotTypeRequest& request, const DescribeSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAggregatedUtterancesAsyncHelper(const Model::ListAggregatedUtterancesRequest& request, const ListAggregatedUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBotAliasesAsyncHelper(const Model::ListBotAliasesRequest& request, const ListBotAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBotLocalesAsyncHelper(const Model::ListBotLocalesRequest& request, const ListBotLocalesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBotRecommendationsAsyncHelper(const Model::ListBotRecommendationsRequest& request, const ListBotRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBotVersionsAsyncHelper(const Model::ListBotVersionsRequest& request, const ListBotVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBotsAsyncHelper(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuiltInIntentsAsyncHelper(const Model::ListBuiltInIntentsRequest& request, const ListBuiltInIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2117,15 +2460,19 @@ namespace Model
         void ListExportsAsyncHelper(const Model::ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListImportsAsyncHelper(const Model::ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIntentsAsyncHelper(const Model::ListIntentsRequest& request, const ListIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListRecommendedIntentsAsyncHelper(const Model::ListRecommendedIntentsRequest& request, const ListRecommendedIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSlotTypesAsyncHelper(const Model::ListSlotTypesRequest& request, const ListSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSlotsAsyncHelper(const Model::ListSlotsRequest& request, const ListSlotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchAssociatedTranscriptsAsyncHelper(const Model::SearchAssociatedTranscriptsRequest& request, const SearchAssociatedTranscriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartBotRecommendationAsyncHelper(const Model::StartBotRecommendationRequest& request, const StartBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartImportAsyncHelper(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBotAsyncHelper(const Model::UpdateBotRequest& request, const UpdateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBotAliasAsyncHelper(const Model::UpdateBotAliasRequest& request, const UpdateBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBotLocaleAsyncHelper(const Model::UpdateBotLocaleRequest& request, const UpdateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateBotRecommendationAsyncHelper(const Model::UpdateBotRecommendationRequest& request, const UpdateBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateExportAsyncHelper(const Model::UpdateExportRequest& request, const UpdateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIntentAsyncHelper(const Model::UpdateIntentRequest& request, const UpdateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResourcePolicyAsyncHelper(const Model::UpdateResourcePolicyRequest& request, const UpdateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

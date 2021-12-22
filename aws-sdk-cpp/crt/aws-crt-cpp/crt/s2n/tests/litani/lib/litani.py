@@ -29,8 +29,12 @@ JOBS_DIR = "jobs"
 RUN_FILE = "run.json"
 TIME_FORMAT_R = "%Y-%m-%dT%H:%M:%SZ"
 TIME_FORMAT_W = "%Y-%m-%dT%H:%M:%SZ"
-VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH = 1, 7, 1
-VERSION = "%d.%d.%d" % (VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH)
+TIME_FORMAT_MS = "%Y-%m-%dT%H:%M:%S.%fZ"
+VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH = 1, 11, 1
+RC = False
+
+RC_STR = "-rc" if RC else ""
+VERSION = "%d.%d.%d%s" % (VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH, RC_STR)
 
 
 
@@ -138,6 +142,7 @@ class LockableDirectory:
         self.release()
 
 
+
 def _get_cache_dir(path=os.getcwd()):
     def cache_pointer_dirs():
         current = pathlib.Path(path).resolve(strict=True)
@@ -191,6 +196,7 @@ def get_report_dir():
 def get_report_data_dir():
     return get_cache_dir() / "report_data"
 
+
 def get_artifacts_dir():
     return get_cache_dir() / "artifacts"
 
@@ -205,6 +211,7 @@ def atomic_write(path, mode="w"):
         parent = pathlib.Path(path).parent
         parent.mkdir(exist_ok=True, parents=True)
         tmp = "%s~" % path
+        # pylint: disable=consider-using-with
         handle = open(tmp, mode)
         yield handle
     except RuntimeError:

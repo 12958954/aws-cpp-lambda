@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     ALLOW,
     BLOCK,
-    COUNT
+    COUNT,
+    CAPTCHA,
+    EXCLUDED_AS_COUNT
   };
 
 namespace ActionValueMapper

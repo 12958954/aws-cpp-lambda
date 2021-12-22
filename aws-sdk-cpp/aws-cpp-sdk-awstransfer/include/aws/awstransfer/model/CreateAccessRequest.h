@@ -99,7 +99,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -109,7 +109,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -119,7 +119,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -129,7 +129,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -139,7 +139,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -149,7 +149,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -166,13 +166,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the scope-down policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to
-     * the <code>HomeDirectory</code> parameter value.</p> <p>The following is an
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
+     * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
      * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
@@ -197,13 +196,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the scope-down policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to
-     * the <code>HomeDirectory</code> parameter value.</p> <p>The following is an
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
+     * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
      * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
@@ -228,13 +226,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the scope-down policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to
-     * the <code>HomeDirectory</code> parameter value.</p> <p>The following is an
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
+     * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
      * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
@@ -259,13 +256,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the scope-down policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to
-     * the <code>HomeDirectory</code> parameter value.</p> <p>The following is an
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
+     * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
      * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
@@ -290,13 +286,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the scope-down policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to
-     * the <code>HomeDirectory</code> parameter value.</p> <p>The following is an
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
+     * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
      * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
@@ -321,13 +316,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the scope-down policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to
-     * the <code>HomeDirectory</code> parameter value.</p> <p>The following is an
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
+     * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
      * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
@@ -352,13 +346,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the scope-down policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to
-     * the <code>HomeDirectory</code> parameter value.</p> <p>The following is an
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
+     * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
      * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
@@ -383,13 +376,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the scope-down policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to
-     * the <code>HomeDirectory</code> parameter value.</p> <p>The following is an
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
+     * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
      * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
@@ -406,18 +398,18 @@ namespace Model
 
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
-     * <p>For scope-down policies, Amazon Web Services Transfer Family stores the
-     * policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy.
-     * You save the policy as a JSON blob and pass it in the <code>Policy</code>
-     * argument.</p> <p>For an example of a scope-down policy, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-     * scope-down policy</a>.</p> <p>For more information, see <a
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
+     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
+     * save the policy as a JSON blob and pass it in the <code>Policy</code>
+     * argument.</p> <p>For an example of a session policy, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+     * session policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
      * 
@@ -425,18 +417,18 @@ namespace Model
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
-     * <p>For scope-down policies, Amazon Web Services Transfer Family stores the
-     * policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy.
-     * You save the policy as a JSON blob and pass it in the <code>Policy</code>
-     * argument.</p> <p>For an example of a scope-down policy, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-     * scope-down policy</a>.</p> <p>For more information, see <a
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
+     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
+     * save the policy as a JSON blob and pass it in the <code>Policy</code>
+     * argument.</p> <p>For an example of a session policy, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+     * session policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
      * 
@@ -444,18 +436,18 @@ namespace Model
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
-     * <p>For scope-down policies, Amazon Web Services Transfer Family stores the
-     * policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy.
-     * You save the policy as a JSON blob and pass it in the <code>Policy</code>
-     * argument.</p> <p>For an example of a scope-down policy, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-     * scope-down policy</a>.</p> <p>For more information, see <a
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
+     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
+     * save the policy as a JSON blob and pass it in the <code>Policy</code>
+     * argument.</p> <p>For an example of a session policy, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+     * session policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
      * 
@@ -463,18 +455,18 @@ namespace Model
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
-     * <p>For scope-down policies, Amazon Web Services Transfer Family stores the
-     * policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy.
-     * You save the policy as a JSON blob and pass it in the <code>Policy</code>
-     * argument.</p> <p>For an example of a scope-down policy, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-     * scope-down policy</a>.</p> <p>For more information, see <a
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
+     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
+     * save the policy as a JSON blob and pass it in the <code>Policy</code>
+     * argument.</p> <p>For an example of a session policy, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+     * session policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
      * 
@@ -482,18 +474,18 @@ namespace Model
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
-     * <p>For scope-down policies, Amazon Web Services Transfer Family stores the
-     * policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy.
-     * You save the policy as a JSON blob and pass it in the <code>Policy</code>
-     * argument.</p> <p>For an example of a scope-down policy, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-     * scope-down policy</a>.</p> <p>For more information, see <a
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
+     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
+     * save the policy as a JSON blob and pass it in the <code>Policy</code>
+     * argument.</p> <p>For an example of a session policy, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+     * session policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
      * 
@@ -501,18 +493,18 @@ namespace Model
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
-     * <p>For scope-down policies, Amazon Web Services Transfer Family stores the
-     * policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy.
-     * You save the policy as a JSON blob and pass it in the <code>Policy</code>
-     * argument.</p> <p>For an example of a scope-down policy, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-     * scope-down policy</a>.</p> <p>For more information, see <a
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
+     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
+     * save the policy as a JSON blob and pass it in the <code>Policy</code>
+     * argument.</p> <p>For an example of a session policy, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+     * session policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
      * 
@@ -520,18 +512,18 @@ namespace Model
     inline CreateAccessRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
-     * <p>For scope-down policies, Amazon Web Services Transfer Family stores the
-     * policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy.
-     * You save the policy as a JSON blob and pass it in the <code>Policy</code>
-     * argument.</p> <p>For an example of a scope-down policy, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-     * scope-down policy</a>.</p> <p>For more information, see <a
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
+     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
+     * save the policy as a JSON blob and pass it in the <code>Policy</code>
+     * argument.</p> <p>For an example of a session policy, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+     * session policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
      * 
@@ -539,18 +531,18 @@ namespace Model
     inline CreateAccessRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
-     * <p>For scope-down policies, Amazon Web Services Transfer Family stores the
-     * policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy.
-     * You save the policy as a JSON blob and pass it in the <code>Policy</code>
-     * argument.</p> <p>For an example of a scope-down policy, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-     * scope-down policy</a>.</p> <p>For more information, see <a
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
+     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
+     * save the policy as a JSON blob and pass it in the <code>Policy</code>
+     * argument.</p> <p>For an example of a session policy, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+     * session policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
      * 

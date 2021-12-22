@@ -79,7 +79,9 @@ Cluster::Cluster() :
     m_clusterNamespaceArnHasBeenSet(false),
     m_totalStorageCapacityInMegaBytes(0),
     m_totalStorageCapacityInMegaBytesHasBeenSet(false),
-    m_aquaConfigurationHasBeenSet(false)
+    m_aquaConfigurationHasBeenSet(false),
+    m_defaultIamRoleArnHasBeenSet(false),
+    m_reservedNodeExchangeStatusHasBeenSet(false)
 {
 }
 
@@ -142,7 +144,9 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_clusterNamespaceArnHasBeenSet(false),
     m_totalStorageCapacityInMegaBytes(0),
     m_totalStorageCapacityInMegaBytesHasBeenSet(false),
-    m_aquaConfigurationHasBeenSet(false)
+    m_aquaConfigurationHasBeenSet(false),
+    m_defaultIamRoleArnHasBeenSet(false),
+    m_reservedNodeExchangeStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -501,6 +505,18 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_aquaConfiguration = aquaConfigurationNode;
       m_aquaConfigurationHasBeenSet = true;
     }
+    XmlNode defaultIamRoleArnNode = resultNode.FirstChild("DefaultIamRoleArn");
+    if(!defaultIamRoleArnNode.IsNull())
+    {
+      m_defaultIamRoleArn = Aws::Utils::Xml::DecodeEscapedXmlText(defaultIamRoleArnNode.GetText());
+      m_defaultIamRoleArnHasBeenSet = true;
+    }
+    XmlNode reservedNodeExchangeStatusNode = resultNode.FirstChild("ReservedNodeExchangeStatus");
+    if(!reservedNodeExchangeStatusNode.IsNull())
+    {
+      m_reservedNodeExchangeStatus = reservedNodeExchangeStatusNode;
+      m_reservedNodeExchangeStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -822,6 +838,18 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       m_aquaConfiguration.OutputToStream(oStream, aquaConfigurationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_defaultIamRoleArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultIamRoleArn=" << StringUtils::URLEncode(m_defaultIamRoleArn.c_str()) << "&";
+  }
+
+  if(m_reservedNodeExchangeStatusHasBeenSet)
+  {
+      Aws::StringStream reservedNodeExchangeStatusLocationAndMemberSs;
+      reservedNodeExchangeStatusLocationAndMemberSs << location << index << locationValue << ".ReservedNodeExchangeStatus";
+      m_reservedNodeExchangeStatus.OutputToStream(oStream, reservedNodeExchangeStatusLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1089,6 +1117,16 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String aquaConfigurationLocationAndMember(location);
       aquaConfigurationLocationAndMember += ".AquaConfiguration";
       m_aquaConfiguration.OutputToStream(oStream, aquaConfigurationLocationAndMember.c_str());
+  }
+  if(m_defaultIamRoleArnHasBeenSet)
+  {
+      oStream << location << ".DefaultIamRoleArn=" << StringUtils::URLEncode(m_defaultIamRoleArn.c_str()) << "&";
+  }
+  if(m_reservedNodeExchangeStatusHasBeenSet)
+  {
+      Aws::String reservedNodeExchangeStatusLocationAndMember(location);
+      reservedNodeExchangeStatusLocationAndMember += ".ReservedNodeExchangeStatus";
+      m_reservedNodeExchangeStatus.OutputToStream(oStream, reservedNodeExchangeStatusLocationAndMember.c_str());
   }
 }
 

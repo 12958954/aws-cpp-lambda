@@ -70,9 +70,9 @@ public class CppViewHelper {
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("json", "Aws::AMZN_JSON_CONTENT_TYPE_1_1");
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("json1.0", "Aws::AMZN_JSON_CONTENT_TYPE_1_0");
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("json1.1", "Aws::AMZN_JSON_CONTENT_TYPE_1_1");
-        CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-json", "Aws::AMZN_JSON_CONTENT_TYPE_1_1");
-        CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-json1.0", "Aws::AMZN_JSON_CONTENT_TYPE_1_0");
-        CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-json1.1", "Aws::AMZN_JSON_CONTENT_TYPE_1_1");
+        CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-json", "Aws::JSON_CONTENT_TYPE");
+        CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-json1.0", "Aws::JSON_CONTENT_TYPE");
+        CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-json1.1", "Aws::JSON_CONTENT_TYPE");
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-xml", "Aws::AMZN_XML_CONTENT_TYPE");
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("query", "Aws::FORM_CONTENT_TYPE");
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("ec2", "Aws::FORM_CONTENT_TYPE");
@@ -157,6 +157,11 @@ public class CppViewHelper {
             return cppType;
         }
 
+        else if(shape.isDocument())
+        {
+            return "Aws::Utils::Document";
+        }
+
         else if(shape.isStructure() || shape.isEnum())
         {
             return shape.getName();
@@ -198,6 +203,8 @@ public class CppViewHelper {
 
         // Customization for request content-type
         if (metadata.getServiceId().equals("WellArchitected")) {
+            return "Aws::JSON_CONTENT_TYPE";
+        } else if (metadata.getServiceId().equals("savingsplans")) {
             return "Aws::JSON_CONTENT_TYPE";
         } else {
             return CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.get(protocolAndVersion);
@@ -283,6 +290,9 @@ public class CppViewHelper {
         }
         else if(shape.isList()) {
             return "<aws/core/utils/memory/stl/AWSVector.h>";
+        }
+        else if(shape.isDocument()) {
+            return "<aws/core/utils/Document.h>";
         }
         else if(shape.isEnum() || shape.isStructure()) {
             return String.format("<aws/%s/model/%s.h>", projectName, shape.getName());

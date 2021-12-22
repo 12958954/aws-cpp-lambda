@@ -28,7 +28,10 @@ MutableClusterInfo::MutableClusterInfo() :
     m_openMonitoringHasBeenSet(false),
     m_kafkaVersionHasBeenSet(false),
     m_loggingInfoHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_clientAuthenticationHasBeenSet(false),
+    m_encryptionInfoHasBeenSet(false),
+    m_connectivityInfoHasBeenSet(false)
 {
 }
 
@@ -42,7 +45,10 @@ MutableClusterInfo::MutableClusterInfo(JsonView jsonValue) :
     m_openMonitoringHasBeenSet(false),
     m_kafkaVersionHasBeenSet(false),
     m_loggingInfoHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_clientAuthenticationHasBeenSet(false),
+    m_encryptionInfoHasBeenSet(false),
+    m_connectivityInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -108,6 +114,27 @@ MutableClusterInfo& MutableClusterInfo::operator =(JsonView jsonValue)
     m_instanceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("clientAuthentication"))
+  {
+    m_clientAuthentication = jsonValue.GetObject("clientAuthentication");
+
+    m_clientAuthenticationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("encryptionInfo"))
+  {
+    m_encryptionInfo = jsonValue.GetObject("encryptionInfo");
+
+    m_encryptionInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectivityInfo"))
+  {
+    m_connectivityInfo = jsonValue.GetObject("connectivityInfo");
+
+    m_connectivityInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -164,6 +191,24 @@ JsonValue MutableClusterInfo::Jsonize() const
   if(m_instanceTypeHasBeenSet)
   {
    payload.WithString("instanceType", m_instanceType);
+
+  }
+
+  if(m_clientAuthenticationHasBeenSet)
+  {
+   payload.WithObject("clientAuthentication", m_clientAuthentication.Jsonize());
+
+  }
+
+  if(m_encryptionInfoHasBeenSet)
+  {
+   payload.WithObject("encryptionInfo", m_encryptionInfo.Jsonize());
+
+  }
+
+  if(m_connectivityInfoHasBeenSet)
+  {
+   payload.WithObject("connectivityInfo", m_connectivityInfo.Jsonize());
 
   }
 

@@ -241,7 +241,14 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 
     for (long retries = 0;; retries++)
     {
-        m_retryStrategy->GetSendToken();
+        if(!m_retryStrategy->HasSendToken())
+        {
+            return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::SLOW_DOWN,
+                                                               "",
+                                                               "Unable to acquire enough send tokens to execute request.",
+                                                               false/*retryable*/));
+
+        };
         httpRequest->SetEventStreamRequest(request.IsEventStreamRequest());
 
         outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegion, signerServiceNameOverride);
@@ -367,7 +374,14 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 
     for (long retries = 0;; retries++)
     {
-        m_retryStrategy->GetSendToken();
+        if(!m_retryStrategy->HasSendToken())
+        {
+            return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::SLOW_DOWN,
+                                                            "",
+                                                            "Unable to acquire enough send tokens to execute request.",
+                                                            false/*retryable*/));
+
+        };
         outcome = AttemptOneRequest(httpRequest, signerName, requestName, signerRegion, signerServiceNameOverride);
         if (retries == 0)
         {
@@ -786,6 +800,34 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
         request->SetHeaderValue(it.first.c_str(), it.second);
     }
     auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
+    if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
+    {
+        return request->GetURIString();
+    }
+
+    return {};
+}
+
+Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, long long expirationInSeconds) const
+{
+    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto signer = GetSignerByName(signerName);
+    if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
+    {
+        return request->GetURIString();
+    }
+
+    return {};
+}
+
+Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+{
+    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    for (const auto& it: customizedHeaders)
+    {
+        request->SetHeaderValue(it.first.c_str(), it.second);
+    }
+    auto signer = GetSignerByName(signerName);
     if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
     {
         return request->GetURIString();

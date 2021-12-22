@@ -10,7 +10,7 @@
 #include <aws/io/event_loop.h>
 #include <aws/io/file_utils.h>
 #include <aws/io/logging.h>
-#include <aws/io/pki_utils.h>
+#include <aws/io/private/pki_utils.h>
 #include <aws/io/private/tls_channel_handler_shared.h>
 #include <aws/io/statistics.h>
 
@@ -961,25 +961,23 @@ static struct aws_tls_ctx *s_tls_ctx_new(
 
     switch (options->minimum_tls_version) {
         case AWS_IO_SSLv3:
-            s2n_config_set_cipher_preferences(s2n_ctx->s2n_config, "CloudFront-SSL-v-3");
+            s2n_config_set_cipher_preferences(s2n_ctx->s2n_config, "AWS-CRT-SDK-SSLv3.0");
             break;
         case AWS_IO_TLSv1:
-            s2n_config_set_cipher_preferences(s2n_ctx->s2n_config, "CloudFront-TLS-1-0-2014");
+            s2n_config_set_cipher_preferences(s2n_ctx->s2n_config, "AWS-CRT-SDK-TLSv1.0");
             break;
         case AWS_IO_TLSv1_1:
-            s2n_config_set_cipher_preferences(s2n_ctx->s2n_config, "ELBSecurityPolicy-TLS-1-1-2017-01");
+            s2n_config_set_cipher_preferences(s2n_ctx->s2n_config, "AWS-CRT-SDK-TLSv1.1");
             break;
         case AWS_IO_TLSv1_2:
-            s2n_config_set_cipher_preferences(s2n_ctx->s2n_config, "ELBSecurityPolicy-TLS-1-2-Ext-2018-06");
+            s2n_config_set_cipher_preferences(s2n_ctx->s2n_config, "AWS-CRT-SDK-TLSv1.2");
             break;
         case AWS_IO_TLSv1_3:
-            AWS_LOGF_ERROR(AWS_LS_IO_TLS, "TLS 1.3 is not supported yet.");
-            /* sorry guys, we'll add this as soon as s2n does. */
-            aws_raise_error(AWS_IO_TLS_VERSION_UNSUPPORTED);
-            goto cleanup_s2n_config;
+            s2n_config_set_cipher_preferences(s2n_ctx->s2n_config, "AWS-CRT-SDK-TLSv1.3");
+            break;
         case AWS_IO_TLS_VER_SYS_DEFAULTS:
         default:
-            s2n_config_set_cipher_preferences(s2n_ctx->s2n_config, "ELBSecurityPolicy-TLS-1-1-2017-01");
+            s2n_config_set_cipher_preferences(s2n_ctx->s2n_config, "AWS-CRT-SDK-TLSv1.0");
     }
 
     switch (options->cipher_pref) {
@@ -1001,13 +999,16 @@ static struct aws_tls_ctx *s_tls_ctx_new(
         case AWS_IO_TLS_CIPHER_PREF_KMS_PQ_TLSv1_0_2020_07:
             s2n_config_set_cipher_preferences(s2n_ctx->s2n_config, "KMS-PQ-TLS-1-0-2020-07");
             break;
+        case AWS_IO_TLS_CIPHER_PREF_PQ_TLSv1_0_2021_05:
+            s2n_config_set_cipher_preferences(s2n_ctx->s2n_config, "PQ-TLS-1-0-2021-05-26");
+            break;
         default:
             AWS_LOGF_ERROR(AWS_LS_IO_TLS, "Unrecognized TLS Cipher Preference: %d", options->cipher_pref);
             aws_raise_error(AWS_IO_TLS_CIPHER_PREF_UNSUPPORTED);
             goto cleanup_s2n_config;
     }
 
-    if (options->certificate.len && options->private_key.len) {
+    if (aws_tls_options_buf_is_set(&options->certificate) && aws_tls_options_buf_is_set(&options->private_key)) {
         AWS_LOGF_DEBUG(AWS_LS_IO_TLS, "ctx: Certificate and key have been set, setting them up now.");
 
         if (!aws_text_is_utf8(options->certificate.buffer, options->certificate.len)) {
@@ -1072,40 +1073,61 @@ static struct aws_tls_ctx *s_tls_ctx_new(
             }
         }
 
-        if (options->ca_path) {
-            if (s2n_config_set_verification_ca_location(
-                    s2n_ctx->s2n_config, NULL, aws_string_c_str(options->ca_path))) {
+        if (options->ca_path || aws_tls_options_buf_is_set(&options->ca_file)) {
+            /* The user called an override_default_trust_store() function.
+             * Begin by wiping anything that s2n loaded by default */
+            if (s2n_config_wipe_trust_store(s2n_ctx->s2n_config)) {
                 AWS_LOGF_ERROR(
                     AWS_LS_IO_TLS,
                     "ctx: configuration error %s (%s)",
                     s2n_strerror(s2n_errno, "EN"),
                     s2n_strerror_debug(s2n_errno, "EN"));
-                AWS_LOGF_ERROR(AWS_LS_IO_TLS, "Failed to set ca_path %s\n", aws_string_c_str(options->ca_path));
+                AWS_LOGF_ERROR(AWS_LS_IO_TLS, "Failed to wipe default trust store\n");
                 aws_raise_error(AWS_IO_TLS_CTX_ERROR);
                 goto cleanup_s2n_config;
             }
-        }
 
-        if (options->ca_file.len) {
-            /* Ensure that what we pass to s2n is zero-terminated */
-            struct aws_string *ca_file_string = aws_string_new_from_buf(alloc, &options->ca_file);
-            int set_ca_result =
-                s2n_config_add_pem_to_trust_store(s2n_ctx->s2n_config, (const char *)ca_file_string->bytes);
-            aws_string_destroy(ca_file_string);
-
-            if (set_ca_result) {
-                AWS_LOGF_ERROR(
-                    AWS_LS_IO_TLS,
-                    "ctx: configuration error %s (%s)",
-                    s2n_strerror(s2n_errno, "EN"),
-                    s2n_strerror_debug(s2n_errno, "EN"));
-                AWS_LOGF_ERROR(AWS_LS_IO_TLS, "Failed to set ca_file %s\n", (const char *)options->ca_file.buffer);
-                aws_raise_error(AWS_IO_TLS_CTX_ERROR);
-                goto cleanup_s2n_config;
+            if (options->ca_path) {
+                if (s2n_config_set_verification_ca_location(
+                        s2n_ctx->s2n_config, NULL, aws_string_c_str(options->ca_path))) {
+                    AWS_LOGF_ERROR(
+                        AWS_LS_IO_TLS,
+                        "ctx: configuration error %s (%s)",
+                        s2n_strerror(s2n_errno, "EN"),
+                        s2n_strerror_debug(s2n_errno, "EN"));
+                    AWS_LOGF_ERROR(AWS_LS_IO_TLS, "Failed to set ca_path %s\n", aws_string_c_str(options->ca_path));
+                    aws_raise_error(AWS_IO_TLS_CTX_ERROR);
+                    goto cleanup_s2n_config;
+                }
             }
-        }
 
-        if (!options->ca_path && !options->ca_file.len) {
+            if (aws_tls_options_buf_is_set(&options->ca_file)) {
+                /* Ensure that what we pass to s2n is zero-terminated */
+                struct aws_string *ca_file_string = aws_string_new_from_buf(alloc, &options->ca_file);
+                int set_ca_result =
+                    s2n_config_add_pem_to_trust_store(s2n_ctx->s2n_config, (const char *)ca_file_string->bytes);
+                aws_string_destroy(ca_file_string);
+
+                if (set_ca_result) {
+                    AWS_LOGF_ERROR(
+                        AWS_LS_IO_TLS,
+                        "ctx: configuration error %s (%s)",
+                        s2n_strerror(s2n_errno, "EN"),
+                        s2n_strerror_debug(s2n_errno, "EN"));
+                    AWS_LOGF_ERROR(AWS_LS_IO_TLS, "Failed to set ca_file %s\n", (const char *)options->ca_file.buffer);
+                    aws_raise_error(AWS_IO_TLS_CTX_ERROR);
+                    goto cleanup_s2n_config;
+                }
+            }
+        } else {
+            /* User wants to use the system's default trust store.
+             *
+             * Note that s2n's trust store always starts with libcrypto's default locations.
+             * These paths are configured when libcrypto is built (--openssldir),
+             * but might not be right for the current machine (e.g. if libcrypto
+             * is statically linked into an application that is distributed
+             * to multiple flavors of Linux). Therefore, load the locations that
+             * were found at library startup. */
             if (s2n_config_set_verification_ca_location(s2n_ctx->s2n_config, s_default_ca_file, s_default_ca_dir)) {
                 AWS_LOGF_ERROR(
                     AWS_LS_IO_TLS,

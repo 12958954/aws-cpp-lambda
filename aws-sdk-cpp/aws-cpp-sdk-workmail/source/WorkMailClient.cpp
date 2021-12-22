@@ -31,15 +31,20 @@
 #include <aws/workmail/model/CreateUserRequest.h>
 #include <aws/workmail/model/DeleteAccessControlRuleRequest.h>
 #include <aws/workmail/model/DeleteAliasRequest.h>
+#include <aws/workmail/model/DeleteEmailMonitoringConfigurationRequest.h>
 #include <aws/workmail/model/DeleteGroupRequest.h>
 #include <aws/workmail/model/DeleteMailboxPermissionsRequest.h>
+#include <aws/workmail/model/DeleteMobileDeviceAccessOverrideRequest.h>
 #include <aws/workmail/model/DeleteMobileDeviceAccessRuleRequest.h>
 #include <aws/workmail/model/DeleteOrganizationRequest.h>
 #include <aws/workmail/model/DeleteResourceRequest.h>
 #include <aws/workmail/model/DeleteRetentionPolicyRequest.h>
 #include <aws/workmail/model/DeleteUserRequest.h>
 #include <aws/workmail/model/DeregisterFromWorkMailRequest.h>
+#include <aws/workmail/model/DeregisterMailDomainRequest.h>
+#include <aws/workmail/model/DescribeEmailMonitoringConfigurationRequest.h>
 #include <aws/workmail/model/DescribeGroupRequest.h>
+#include <aws/workmail/model/DescribeInboundDmarcSettingsRequest.h>
 #include <aws/workmail/model/DescribeMailboxExportJobRequest.h>
 #include <aws/workmail/model/DescribeOrganizationRequest.h>
 #include <aws/workmail/model/DescribeResourceRequest.h>
@@ -48,14 +53,18 @@
 #include <aws/workmail/model/DisassociateMemberFromGroupRequest.h>
 #include <aws/workmail/model/GetAccessControlEffectRequest.h>
 #include <aws/workmail/model/GetDefaultRetentionPolicyRequest.h>
+#include <aws/workmail/model/GetMailDomainRequest.h>
 #include <aws/workmail/model/GetMailboxDetailsRequest.h>
 #include <aws/workmail/model/GetMobileDeviceAccessEffectRequest.h>
+#include <aws/workmail/model/GetMobileDeviceAccessOverrideRequest.h>
 #include <aws/workmail/model/ListAccessControlRulesRequest.h>
 #include <aws/workmail/model/ListAliasesRequest.h>
 #include <aws/workmail/model/ListGroupMembersRequest.h>
 #include <aws/workmail/model/ListGroupsRequest.h>
+#include <aws/workmail/model/ListMailDomainsRequest.h>
 #include <aws/workmail/model/ListMailboxExportJobsRequest.h>
 #include <aws/workmail/model/ListMailboxPermissionsRequest.h>
+#include <aws/workmail/model/ListMobileDeviceAccessOverridesRequest.h>
 #include <aws/workmail/model/ListMobileDeviceAccessRulesRequest.h>
 #include <aws/workmail/model/ListOrganizationsRequest.h>
 #include <aws/workmail/model/ListResourceDelegatesRequest.h>
@@ -63,13 +72,18 @@
 #include <aws/workmail/model/ListTagsForResourceRequest.h>
 #include <aws/workmail/model/ListUsersRequest.h>
 #include <aws/workmail/model/PutAccessControlRuleRequest.h>
+#include <aws/workmail/model/PutEmailMonitoringConfigurationRequest.h>
+#include <aws/workmail/model/PutInboundDmarcSettingsRequest.h>
 #include <aws/workmail/model/PutMailboxPermissionsRequest.h>
+#include <aws/workmail/model/PutMobileDeviceAccessOverrideRequest.h>
 #include <aws/workmail/model/PutRetentionPolicyRequest.h>
+#include <aws/workmail/model/RegisterMailDomainRequest.h>
 #include <aws/workmail/model/RegisterToWorkMailRequest.h>
 #include <aws/workmail/model/ResetPasswordRequest.h>
 #include <aws/workmail/model/StartMailboxExportJobRequest.h>
 #include <aws/workmail/model/TagResourceRequest.h>
 #include <aws/workmail/model/UntagResourceRequest.h>
+#include <aws/workmail/model/UpdateDefaultMailDomainRequest.h>
 #include <aws/workmail/model/UpdateMailboxQuotaRequest.h>
 #include <aws/workmail/model/UpdateMobileDeviceAccessRuleRequest.h>
 #include <aws/workmail/model/UpdatePrimaryEmailAddressRequest.h>
@@ -412,6 +426,30 @@ void WorkMailClient::DeleteAliasAsyncHelper(const DeleteAliasRequest& request, c
   handler(this, request, DeleteAlias(request), context);
 }
 
+DeleteEmailMonitoringConfigurationOutcome WorkMailClient::DeleteEmailMonitoringConfiguration(const DeleteEmailMonitoringConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteEmailMonitoringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteEmailMonitoringConfigurationOutcomeCallable WorkMailClient::DeleteEmailMonitoringConfigurationCallable(const DeleteEmailMonitoringConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEmailMonitoringConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEmailMonitoringConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DeleteEmailMonitoringConfigurationAsync(const DeleteEmailMonitoringConfigurationRequest& request, const DeleteEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEmailMonitoringConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::DeleteEmailMonitoringConfigurationAsyncHelper(const DeleteEmailMonitoringConfigurationRequest& request, const DeleteEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEmailMonitoringConfiguration(request), context);
+}
+
 DeleteGroupOutcome WorkMailClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -458,6 +496,30 @@ void WorkMailClient::DeleteMailboxPermissionsAsync(const DeleteMailboxPermission
 void WorkMailClient::DeleteMailboxPermissionsAsyncHelper(const DeleteMailboxPermissionsRequest& request, const DeleteMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteMailboxPermissions(request), context);
+}
+
+DeleteMobileDeviceAccessOverrideOutcome WorkMailClient::DeleteMobileDeviceAccessOverride(const DeleteMobileDeviceAccessOverrideRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteMobileDeviceAccessOverrideOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteMobileDeviceAccessOverrideOutcomeCallable WorkMailClient::DeleteMobileDeviceAccessOverrideCallable(const DeleteMobileDeviceAccessOverrideRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMobileDeviceAccessOverrideOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMobileDeviceAccessOverride(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DeleteMobileDeviceAccessOverrideAsync(const DeleteMobileDeviceAccessOverrideRequest& request, const DeleteMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMobileDeviceAccessOverrideAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::DeleteMobileDeviceAccessOverrideAsyncHelper(const DeleteMobileDeviceAccessOverrideRequest& request, const DeleteMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteMobileDeviceAccessOverride(request), context);
 }
 
 DeleteMobileDeviceAccessRuleOutcome WorkMailClient::DeleteMobileDeviceAccessRule(const DeleteMobileDeviceAccessRuleRequest& request) const
@@ -604,6 +666,54 @@ void WorkMailClient::DeregisterFromWorkMailAsyncHelper(const DeregisterFromWorkM
   handler(this, request, DeregisterFromWorkMail(request), context);
 }
 
+DeregisterMailDomainOutcome WorkMailClient::DeregisterMailDomain(const DeregisterMailDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeregisterMailDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeregisterMailDomainOutcomeCallable WorkMailClient::DeregisterMailDomainCallable(const DeregisterMailDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterMailDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterMailDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DeregisterMailDomainAsync(const DeregisterMailDomainRequest& request, const DeregisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeregisterMailDomainAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::DeregisterMailDomainAsyncHelper(const DeregisterMailDomainRequest& request, const DeregisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeregisterMailDomain(request), context);
+}
+
+DescribeEmailMonitoringConfigurationOutcome WorkMailClient::DescribeEmailMonitoringConfiguration(const DescribeEmailMonitoringConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeEmailMonitoringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeEmailMonitoringConfigurationOutcomeCallable WorkMailClient::DescribeEmailMonitoringConfigurationCallable(const DescribeEmailMonitoringConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEmailMonitoringConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEmailMonitoringConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DescribeEmailMonitoringConfigurationAsync(const DescribeEmailMonitoringConfigurationRequest& request, const DescribeEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEmailMonitoringConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::DescribeEmailMonitoringConfigurationAsyncHelper(const DescribeEmailMonitoringConfigurationRequest& request, const DescribeEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEmailMonitoringConfiguration(request), context);
+}
+
 DescribeGroupOutcome WorkMailClient::DescribeGroup(const DescribeGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -626,6 +736,30 @@ void WorkMailClient::DescribeGroupAsync(const DescribeGroupRequest& request, con
 void WorkMailClient::DescribeGroupAsyncHelper(const DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeGroup(request), context);
+}
+
+DescribeInboundDmarcSettingsOutcome WorkMailClient::DescribeInboundDmarcSettings(const DescribeInboundDmarcSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeInboundDmarcSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeInboundDmarcSettingsOutcomeCallable WorkMailClient::DescribeInboundDmarcSettingsCallable(const DescribeInboundDmarcSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInboundDmarcSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInboundDmarcSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DescribeInboundDmarcSettingsAsync(const DescribeInboundDmarcSettingsRequest& request, const DescribeInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeInboundDmarcSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::DescribeInboundDmarcSettingsAsyncHelper(const DescribeInboundDmarcSettingsRequest& request, const DescribeInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeInboundDmarcSettings(request), context);
 }
 
 DescribeMailboxExportJobOutcome WorkMailClient::DescribeMailboxExportJob(const DescribeMailboxExportJobRequest& request) const
@@ -820,6 +954,30 @@ void WorkMailClient::GetDefaultRetentionPolicyAsyncHelper(const GetDefaultRetent
   handler(this, request, GetDefaultRetentionPolicy(request), context);
 }
 
+GetMailDomainOutcome WorkMailClient::GetMailDomain(const GetMailDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetMailDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMailDomainOutcomeCallable WorkMailClient::GetMailDomainCallable(const GetMailDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMailDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMailDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::GetMailDomainAsync(const GetMailDomainRequest& request, const GetMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMailDomainAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::GetMailDomainAsyncHelper(const GetMailDomainRequest& request, const GetMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMailDomain(request), context);
+}
+
 GetMailboxDetailsOutcome WorkMailClient::GetMailboxDetails(const GetMailboxDetailsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -866,6 +1024,30 @@ void WorkMailClient::GetMobileDeviceAccessEffectAsync(const GetMobileDeviceAcces
 void WorkMailClient::GetMobileDeviceAccessEffectAsyncHelper(const GetMobileDeviceAccessEffectRequest& request, const GetMobileDeviceAccessEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetMobileDeviceAccessEffect(request), context);
+}
+
+GetMobileDeviceAccessOverrideOutcome WorkMailClient::GetMobileDeviceAccessOverride(const GetMobileDeviceAccessOverrideRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetMobileDeviceAccessOverrideOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMobileDeviceAccessOverrideOutcomeCallable WorkMailClient::GetMobileDeviceAccessOverrideCallable(const GetMobileDeviceAccessOverrideRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMobileDeviceAccessOverrideOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMobileDeviceAccessOverride(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::GetMobileDeviceAccessOverrideAsync(const GetMobileDeviceAccessOverrideRequest& request, const GetMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMobileDeviceAccessOverrideAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::GetMobileDeviceAccessOverrideAsyncHelper(const GetMobileDeviceAccessOverrideRequest& request, const GetMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMobileDeviceAccessOverride(request), context);
 }
 
 ListAccessControlRulesOutcome WorkMailClient::ListAccessControlRules(const ListAccessControlRulesRequest& request) const
@@ -964,6 +1146,30 @@ void WorkMailClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, con
   handler(this, request, ListGroups(request), context);
 }
 
+ListMailDomainsOutcome WorkMailClient::ListMailDomains(const ListMailDomainsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListMailDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMailDomainsOutcomeCallable WorkMailClient::ListMailDomainsCallable(const ListMailDomainsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMailDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMailDomains(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::ListMailDomainsAsync(const ListMailDomainsRequest& request, const ListMailDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMailDomainsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::ListMailDomainsAsyncHelper(const ListMailDomainsRequest& request, const ListMailDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMailDomains(request), context);
+}
+
 ListMailboxExportJobsOutcome WorkMailClient::ListMailboxExportJobs(const ListMailboxExportJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1010,6 +1216,30 @@ void WorkMailClient::ListMailboxPermissionsAsync(const ListMailboxPermissionsReq
 void WorkMailClient::ListMailboxPermissionsAsyncHelper(const ListMailboxPermissionsRequest& request, const ListMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListMailboxPermissions(request), context);
+}
+
+ListMobileDeviceAccessOverridesOutcome WorkMailClient::ListMobileDeviceAccessOverrides(const ListMobileDeviceAccessOverridesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListMobileDeviceAccessOverridesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMobileDeviceAccessOverridesOutcomeCallable WorkMailClient::ListMobileDeviceAccessOverridesCallable(const ListMobileDeviceAccessOverridesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMobileDeviceAccessOverridesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMobileDeviceAccessOverrides(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::ListMobileDeviceAccessOverridesAsync(const ListMobileDeviceAccessOverridesRequest& request, const ListMobileDeviceAccessOverridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMobileDeviceAccessOverridesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::ListMobileDeviceAccessOverridesAsyncHelper(const ListMobileDeviceAccessOverridesRequest& request, const ListMobileDeviceAccessOverridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMobileDeviceAccessOverrides(request), context);
 }
 
 ListMobileDeviceAccessRulesOutcome WorkMailClient::ListMobileDeviceAccessRules(const ListMobileDeviceAccessRulesRequest& request) const
@@ -1180,6 +1410,54 @@ void WorkMailClient::PutAccessControlRuleAsyncHelper(const PutAccessControlRuleR
   handler(this, request, PutAccessControlRule(request), context);
 }
 
+PutEmailMonitoringConfigurationOutcome WorkMailClient::PutEmailMonitoringConfiguration(const PutEmailMonitoringConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutEmailMonitoringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutEmailMonitoringConfigurationOutcomeCallable WorkMailClient::PutEmailMonitoringConfigurationCallable(const PutEmailMonitoringConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutEmailMonitoringConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutEmailMonitoringConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::PutEmailMonitoringConfigurationAsync(const PutEmailMonitoringConfigurationRequest& request, const PutEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutEmailMonitoringConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::PutEmailMonitoringConfigurationAsyncHelper(const PutEmailMonitoringConfigurationRequest& request, const PutEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutEmailMonitoringConfiguration(request), context);
+}
+
+PutInboundDmarcSettingsOutcome WorkMailClient::PutInboundDmarcSettings(const PutInboundDmarcSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutInboundDmarcSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutInboundDmarcSettingsOutcomeCallable WorkMailClient::PutInboundDmarcSettingsCallable(const PutInboundDmarcSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutInboundDmarcSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutInboundDmarcSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::PutInboundDmarcSettingsAsync(const PutInboundDmarcSettingsRequest& request, const PutInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutInboundDmarcSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::PutInboundDmarcSettingsAsyncHelper(const PutInboundDmarcSettingsRequest& request, const PutInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutInboundDmarcSettings(request), context);
+}
+
 PutMailboxPermissionsOutcome WorkMailClient::PutMailboxPermissions(const PutMailboxPermissionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1204,6 +1482,30 @@ void WorkMailClient::PutMailboxPermissionsAsyncHelper(const PutMailboxPermission
   handler(this, request, PutMailboxPermissions(request), context);
 }
 
+PutMobileDeviceAccessOverrideOutcome WorkMailClient::PutMobileDeviceAccessOverride(const PutMobileDeviceAccessOverrideRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutMobileDeviceAccessOverrideOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutMobileDeviceAccessOverrideOutcomeCallable WorkMailClient::PutMobileDeviceAccessOverrideCallable(const PutMobileDeviceAccessOverrideRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutMobileDeviceAccessOverrideOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutMobileDeviceAccessOverride(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::PutMobileDeviceAccessOverrideAsync(const PutMobileDeviceAccessOverrideRequest& request, const PutMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutMobileDeviceAccessOverrideAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::PutMobileDeviceAccessOverrideAsyncHelper(const PutMobileDeviceAccessOverrideRequest& request, const PutMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutMobileDeviceAccessOverride(request), context);
+}
+
 PutRetentionPolicyOutcome WorkMailClient::PutRetentionPolicy(const PutRetentionPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1226,6 +1528,30 @@ void WorkMailClient::PutRetentionPolicyAsync(const PutRetentionPolicyRequest& re
 void WorkMailClient::PutRetentionPolicyAsyncHelper(const PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutRetentionPolicy(request), context);
+}
+
+RegisterMailDomainOutcome WorkMailClient::RegisterMailDomain(const RegisterMailDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RegisterMailDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RegisterMailDomainOutcomeCallable WorkMailClient::RegisterMailDomainCallable(const RegisterMailDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterMailDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterMailDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::RegisterMailDomainAsync(const RegisterMailDomainRequest& request, const RegisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterMailDomainAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::RegisterMailDomainAsyncHelper(const RegisterMailDomainRequest& request, const RegisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterMailDomain(request), context);
 }
 
 RegisterToWorkMailOutcome WorkMailClient::RegisterToWorkMail(const RegisterToWorkMailRequest& request) const
@@ -1346,6 +1672,30 @@ void WorkMailClient::UntagResourceAsync(const UntagResourceRequest& request, con
 void WorkMailClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateDefaultMailDomainOutcome WorkMailClient::UpdateDefaultMailDomain(const UpdateDefaultMailDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateDefaultMailDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDefaultMailDomainOutcomeCallable WorkMailClient::UpdateDefaultMailDomainCallable(const UpdateDefaultMailDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDefaultMailDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDefaultMailDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::UpdateDefaultMailDomainAsync(const UpdateDefaultMailDomainRequest& request, const UpdateDefaultMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDefaultMailDomainAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::UpdateDefaultMailDomainAsyncHelper(const UpdateDefaultMailDomainRequest& request, const UpdateDefaultMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDefaultMailDomain(request), context);
 }
 
 UpdateMailboxQuotaOutcome WorkMailClient::UpdateMailboxQuota(const UpdateMailboxQuotaRequest& request) const

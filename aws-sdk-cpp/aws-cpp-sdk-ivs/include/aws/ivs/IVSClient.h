@@ -22,11 +22,13 @@
 #include <aws/ivs/model/GetRecordingConfigurationResult.h>
 #include <aws/ivs/model/GetStreamResult.h>
 #include <aws/ivs/model/GetStreamKeyResult.h>
+#include <aws/ivs/model/GetStreamSessionResult.h>
 #include <aws/ivs/model/ImportPlaybackKeyPairResult.h>
 #include <aws/ivs/model/ListChannelsResult.h>
 #include <aws/ivs/model/ListPlaybackKeyPairsResult.h>
 #include <aws/ivs/model/ListRecordingConfigurationsResult.h>
 #include <aws/ivs/model/ListStreamKeysResult.h>
+#include <aws/ivs/model/ListStreamSessionsResult.h>
 #include <aws/ivs/model/ListStreamsResult.h>
 #include <aws/ivs/model/ListTagsForResourceResult.h>
 #include <aws/ivs/model/StopStreamResult.h>
@@ -87,11 +89,13 @@ namespace Model
         class GetRecordingConfigurationRequest;
         class GetStreamRequest;
         class GetStreamKeyRequest;
+        class GetStreamSessionRequest;
         class ImportPlaybackKeyPairRequest;
         class ListChannelsRequest;
         class ListPlaybackKeyPairsRequest;
         class ListRecordingConfigurationsRequest;
         class ListStreamKeysRequest;
+        class ListStreamSessionsRequest;
         class ListStreamsRequest;
         class ListTagsForResourceRequest;
         class PutMetadataRequest;
@@ -114,11 +118,13 @@ namespace Model
         typedef Aws::Utils::Outcome<GetRecordingConfigurationResult, IVSError> GetRecordingConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetStreamResult, IVSError> GetStreamOutcome;
         typedef Aws::Utils::Outcome<GetStreamKeyResult, IVSError> GetStreamKeyOutcome;
+        typedef Aws::Utils::Outcome<GetStreamSessionResult, IVSError> GetStreamSessionOutcome;
         typedef Aws::Utils::Outcome<ImportPlaybackKeyPairResult, IVSError> ImportPlaybackKeyPairOutcome;
         typedef Aws::Utils::Outcome<ListChannelsResult, IVSError> ListChannelsOutcome;
         typedef Aws::Utils::Outcome<ListPlaybackKeyPairsResult, IVSError> ListPlaybackKeyPairsOutcome;
         typedef Aws::Utils::Outcome<ListRecordingConfigurationsResult, IVSError> ListRecordingConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListStreamKeysResult, IVSError> ListStreamKeysOutcome;
+        typedef Aws::Utils::Outcome<ListStreamSessionsResult, IVSError> ListStreamSessionsOutcome;
         typedef Aws::Utils::Outcome<ListStreamsResult, IVSError> ListStreamsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, IVSError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> PutMetadataOutcome;
@@ -141,11 +147,13 @@ namespace Model
         typedef std::future<GetRecordingConfigurationOutcome> GetRecordingConfigurationOutcomeCallable;
         typedef std::future<GetStreamOutcome> GetStreamOutcomeCallable;
         typedef std::future<GetStreamKeyOutcome> GetStreamKeyOutcomeCallable;
+        typedef std::future<GetStreamSessionOutcome> GetStreamSessionOutcomeCallable;
         typedef std::future<ImportPlaybackKeyPairOutcome> ImportPlaybackKeyPairOutcomeCallable;
         typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
         typedef std::future<ListPlaybackKeyPairsOutcome> ListPlaybackKeyPairsOutcomeCallable;
         typedef std::future<ListRecordingConfigurationsOutcome> ListRecordingConfigurationsOutcomeCallable;
         typedef std::future<ListStreamKeysOutcome> ListStreamKeysOutcomeCallable;
+        typedef std::future<ListStreamSessionsOutcome> ListStreamSessionsOutcomeCallable;
         typedef std::future<ListStreamsOutcome> ListStreamsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutMetadataOutcome> PutMetadataOutcomeCallable;
@@ -171,11 +179,13 @@ namespace Model
     typedef std::function<void(const IVSClient*, const Model::GetRecordingConfigurationRequest&, const Model::GetRecordingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecordingConfigurationResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::GetStreamRequest&, const Model::GetStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::GetStreamKeyRequest&, const Model::GetStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamKeyResponseReceivedHandler;
+    typedef std::function<void(const IVSClient*, const Model::GetStreamSessionRequest&, const Model::GetStreamSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamSessionResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ImportPlaybackKeyPairRequest&, const Model::ImportPlaybackKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportPlaybackKeyPairResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListPlaybackKeyPairsRequest&, const Model::ListPlaybackKeyPairsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlaybackKeyPairsResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListRecordingConfigurationsRequest&, const Model::ListRecordingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecordingConfigurationsResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListStreamKeysRequest&, const Model::ListStreamKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamKeysResponseReceivedHandler;
+    typedef std::function<void(const IVSClient*, const Model::ListStreamSessionsRequest&, const Model::ListStreamSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamSessionsResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListStreamsRequest&, const Model::ListStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamsResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::PutMetadataRequest&, const Model::PutMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetadataResponseReceivedHandler;
@@ -186,25 +196,19 @@ namespace Model
 
   /**
    * <p> <b>Introduction</b> </p> <p>The Amazon Interactive Video Service (IVS) API
-   * is REST compatible, using a standard HTTP API and an AWS EventBridge event
-   * stream for responses. JSON is used for both requests and responses, including
-   * errors.</p> <p>The API is an AWS regional service, currently in these regions:
-   * us-west-2, us-east-1, and eu-west-1.</p> <p> <i> <b>All API request parameters
-   * and URLs are case sensitive. </b> </i> </p> <p>For a summary of notable
-   * documentation changes in each release, see <a
+   * is REST compatible, using a standard HTTP API and an Amazon Web Services
+   * EventBridge event stream for responses. JSON is used for both requests and
+   * responses, including errors.</p> <p>The API is an Amazon Web Services regional
+   * service. For a list of supported regions and Amazon IVS HTTPS service endpoints,
+   * see the <a href="https://docs.aws.amazon.com/general/latest/gr/ivs.html">Amazon
+   * IVS page</a> in the <i>Amazon Web Services General Reference</i>.</p> <p> <i>
+   * <b>All API request parameters and URLs are case sensitive. </b> </i> </p> <p>For
+   * a summary of notable documentation changes in each release, see <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/doc-history.html">
-   * Document History</a>.</p> <p> <b>Service Endpoints</b> </p> <p>The following are
-   * the Amazon IVS service endpoints (all HTTPS): </p> <p>Region name: US West
-   * (Oregon)</p> <ul> <li> <p>Region: <code>us-west-2</code> </p> </li> <li>
-   * <p>Endpoint: <code>ivs.us-west-2.amazonaws.com</code> </p> </li> </ul> <p>Region
-   * name: US East (Virginia)</p> <ul> <li> <p>Region: <code>us-east-1</code> </p>
-   * </li> <li> <p>Endpoint: <code>ivs.us-east-1.amazonaws.com</code> </p> </li>
-   * </ul> <p>Region name: EU West (Dublin)</p> <ul> <li> <p>Region:
-   * <code>eu-west-1</code> </p> </li> <li> <p>Endpoint:
-   * <code>ivs.eu-west-1.amazonaws.com</code> </p> </li> </ul> <p> <b>Allowed Header
-   * Values</b> </p> <ul> <li> <p> <code> <b>Accept:</b> </code> application/json</p>
-   * </li> <li> <p> <code> <b>Accept-Encoding:</b> </code> gzip, deflate</p> </li>
-   * <li> <p> <code> <b>Content-Type:</b> </code>application/json</p> </li> </ul> <p>
+   * Document History</a>.</p> <p> <b>Allowed Header Values</b> </p> <ul> <li> <p>
+   * <code> <b>Accept:</b> </code> application/json</p> </li> <li> <p> <code>
+   * <b>Accept-Encoding:</b> </code> gzip, deflate</p> </li> <li> <p> <code>
+   * <b>Content-Type:</b> </code>application/json</p> </li> </ul> <p>
    * <b>Resources</b> </p> <p>The following resources contain information about your
    * IVS live stream (see <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html">
@@ -224,38 +228,41 @@ namespace Model
    * Multiple channels can reference the same recording configuration. See the
    * Recording Configuration endpoints for more information.</p> </li> </ul> <p>
    * <b>Tagging</b> </p> <p>A <i>tag</i> is a metadata label that you assign to an
-   * AWS resource. A tag comprises a <i>key</i> and a <i>value</i>, both set by you.
-   * For example, you might set a tag as <code>topic:nature</code> to label a
-   * particular video category. See <a
+   * Amazon Web Services resource. A tag comprises a <i>key</i> and a <i>value</i>,
+   * both set by you. For example, you might set a tag as <code>topic:nature</code>
+   * to label a particular video category. See <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-   * AWS Resources</a> for more information, including restrictions that apply to
-   * tags.</p> <p>Tags can help you identify and organize your AWS resources. For
-   * example, you can use the same tag for different resources to indicate that they
-   * are related. You can also use tags to manage access (see <a
+   * Amazon Web Services Resources</a> for more information, including restrictions
+   * that apply to tags.</p> <p>Tags can help you identify and organize your Amazon
+   * Web Services resources. For example, you can use the same tag for different
+   * resources to indicate that they are related. You can also use tags to manage
+   * access (see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html"> Access
    * Tags</a>). </p> <p>The Amazon IVS API has these tag-related endpoints:
    * <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>. The
    * following resources support tagging: Channels, Stream Keys, Playback Key Pairs,
-   * and Recording Configurations.</p> <p> <b>Authentication versus Authorization</b>
-   * </p> <p>Note the differences between these concepts:</p> <ul> <li> <p>
-   * <i>Authentication</i> is about verifying identity. You need to be authenticated
-   * to sign Amazon IVS API requests.</p> </li> <li> <p> <i>Authorization</i> is
-   * about granting permissions. You need to be authorized to view <a
+   * and Recording Configurations.</p> <p>At most 50 tags can be applied to a
+   * resource. </p> <p> <b>Authentication versus Authorization</b> </p> <p>Note the
+   * differences between these concepts:</p> <ul> <li> <p> <i>Authentication</i> is
+   * about verifying identity. You need to be authenticated to sign Amazon IVS API
+   * requests.</p> </li> <li> <p> <i>Authorization</i> is about granting permissions.
+   * You need to be authorized to view <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Amazon
    * IVS private channels</a>. (Private channels are channels that are enabled for
    * "playback authorization.")</p> </li> </ul> <p> <b>Authentication</b> </p> <p>All
-   * Amazon IVS API requests must be authenticated with a signature. The AWS
-   * Command-Line Interface (CLI) and Amazon IVS Player SDKs take care of signing the
-   * underlying API calls for you. However, if your application calls the Amazon IVS
-   * API directly, it’s your responsibility to sign the requests.</p> <p>You generate
-   * a signature using valid AWS credentials that have permission to perform the
-   * requested action. For example, you must sign PutMetadata requests with a
-   * signature generated from an IAM user account that has the
-   * <code>ivs:PutMetadata</code> permission.</p> <p>For more information:</p> <ul>
-   * <li> <p>Authentication and generating signatures — See <a
+   * Amazon IVS API requests must be authenticated with a signature. The Amazon Web
+   * Services Command-Line Interface (CLI) and Amazon IVS Player SDKs take care of
+   * signing the underlying API calls for you. However, if your application calls the
+   * Amazon IVS API directly, it’s your responsibility to sign the requests.</p>
+   * <p>You generate a signature using valid Amazon Web Services credentials that
+   * have permission to perform the requested action. For example, you must sign
+   * PutMetadata requests with a signature generated from an IAM user account that
+   * has the <code>ivs:PutMetadata</code> permission.</p> <p>For more
+   * information:</p> <ul> <li> <p>Authentication and generating signatures — See <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-   * Requests (AWS Signature Version 4)</a> in the <i>AWS General Reference</i>.</p>
-   * </li> <li> <p>Managing Amazon IVS permissions — See <a
+   * Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon Web
+   * Services General Reference</i>.</p> </li> <li> <p>Managing Amazon IVS
+   * permissions — See <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/security-iam.html">Identity
    * and Access Management</a> on the Security page of the <i>Amazon IVS User
    * Guide</i>.</p> </li> </ul> <p> <b>Channel Endpoints</b> </p> <ul> <li> <p>
@@ -264,33 +271,39 @@ namespace Model
    * configuration for the specified channel ARN (Amazon Resource Name).</p> </li>
    * <li> <p> <a>BatchGetChannel</a> — Performs <a>GetChannel</a> on multiple ARNs
    * simultaneously.</p> </li> <li> <p> <a>ListChannels</a> — Gets summary
-   * information about all channels in your account, in the AWS region where the API
-   * request is processed. This list can be filtered to match a specified name or
-   * recording-configuration ARN. Filters are mutually exclusive and cannot be used
-   * together. If you try to use both filters, you will get an error (409 Conflict
-   * Exception).</p> </li> <li> <p> <a>UpdateChannel</a> — Updates a channel's
-   * configuration. This does not affect an ongoing stream of this channel. You must
-   * stop and restart the stream for the changes to take effect.</p> </li> <li> <p>
-   * <a>DeleteChannel</a> — Deletes the specified channel.</p> </li> </ul> <p>
-   * <b>StreamKey Endpoints</b> </p> <ul> <li> <p> <a>CreateStreamKey</a> — Creates a
-   * stream key, used to initiate a stream, for the specified channel ARN.</p> </li>
-   * <li> <p> <a>GetStreamKey</a> — Gets stream key information for the specified
-   * ARN.</p> </li> <li> <p> <a>BatchGetStreamKey</a> — Performs <a>GetStreamKey</a>
-   * on multiple ARNs simultaneously.</p> </li> <li> <p> <a>ListStreamKeys</a> — Gets
-   * summary information about stream keys for the specified channel.</p> </li> <li>
-   * <p> <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it
-   * can no longer be used to stream.</p> </li> </ul> <p> <b>Stream Endpoints</b>
-   * </p> <ul> <li> <p> <a>GetStream</a> — Gets information about the active (live)
-   * stream on a specified channel.</p> </li> <li> <p> <a>ListStreams</a> — Gets
-   * summary information about live streams in your account, in the AWS region where
-   * the API request is processed.</p> </li> <li> <p> <a>StopStream</a> — Disconnects
-   * the incoming RTMPS stream for the specified channel. Can be used in conjunction
-   * with <a>DeleteStreamKey</a> to prevent further streaming to a channel.</p> </li>
-   * <li> <p> <a>PutMetadata</a> — Inserts metadata into the active stream of the
-   * specified channel. A maximum of 5 requests per second per channel is allowed,
-   * each with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we
-   * recommend batching your data into a single PutMetadata call.)</p> </li> </ul>
-   * <p> <b>PlaybackKeyPair Endpoints</b> </p> <p>For more information, see <a
+   * information about all channels in your account, in the Amazon Web Services
+   * region where the API request is processed. This list can be filtered to match a
+   * specified name or recording-configuration ARN. Filters are mutually exclusive
+   * and cannot be used together. If you try to use both filters, you will get an
+   * error (409 Conflict Exception).</p> </li> <li> <p> <a>UpdateChannel</a> —
+   * Updates a channel's configuration. This does not affect an ongoing stream of
+   * this channel. You must stop and restart the stream for the changes to take
+   * effect.</p> </li> <li> <p> <a>DeleteChannel</a> — Deletes the specified
+   * channel.</p> </li> </ul> <p> <b>StreamKey Endpoints</b> </p> <ul> <li> <p>
+   * <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for
+   * the specified channel ARN.</p> </li> <li> <p> <a>GetStreamKey</a> — Gets stream
+   * key information for the specified ARN.</p> </li> <li> <p>
+   * <a>BatchGetStreamKey</a> — Performs <a>GetStreamKey</a> on multiple ARNs
+   * simultaneously.</p> </li> <li> <p> <a>ListStreamKeys</a> — Gets summary
+   * information about stream keys for the specified channel.</p> </li> <li> <p>
+   * <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it can
+   * no longer be used to stream.</p> </li> </ul> <p> <b>Stream Endpoints</b> </p>
+   * <ul> <li> <p> <a>GetStream</a> — Gets information about the active (live) stream
+   * on a specified channel.</p> </li> <li> <p> <a>GetStreamSession</a> — Gets
+   * metadata on a specified stream.</p> </li> <li> <p> <a>ListStreams</a> — Gets
+   * summary information about live streams in your account, in the Amazon Web
+   * Services region where the API request is processed.</p> </li> <li> <p>
+   * <a>ListStreamSessions</a> — Gets a summary of current and previous streams for a
+   * specified channel in your account, in the AWS region where the API request is
+   * processed.</p> </li> <li> <p> <a>StopStream</a> — Disconnects the incoming RTMPS
+   * stream for the specified channel. Can be used in conjunction with
+   * <a>DeleteStreamKey</a> to prevent further streaming to a channel.</p> </li> <li>
+   * <p> <a>PutMetadata</a> — Inserts metadata into the active stream of the
+   * specified channel. At most 5 requests per second per channel are allowed, each
+   * with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we
+   * recommend batching your data into a single PutMetadata call.) At most 155
+   * requests per second per account are allowed.</p> </li> </ul> <p>
+   * <b>PlaybackKeyPair Endpoints</b> </p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
    * Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.</p> <ul> <li> <p>
    * <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and
@@ -311,14 +324,15 @@ namespace Model
    * <li> <p> <a>GetRecordingConfiguration</a> — Gets the recording-configuration
    * metadata for the specified ARN.</p> </li> <li> <p>
    * <a>ListRecordingConfigurations</a> — Gets summary information about all
-   * recording configurations in your account, in the AWS region where the API
-   * request is processed.</p> </li> <li> <p> <a>DeleteRecordingConfiguration</a> —
-   * Deletes the recording configuration for the specified ARN.</p> </li> </ul> <p>
-   * <b>AWS Tags Endpoints</b> </p> <ul> <li> <p> <a>TagResource</a> — Adds or
-   * updates tags for the AWS resource with the specified ARN.</p> </li> <li> <p>
+   * recording configurations in your account, in the Amazon Web Services region
+   * where the API request is processed.</p> </li> <li> <p>
+   * <a>DeleteRecordingConfiguration</a> — Deletes the recording configuration for
+   * the specified ARN.</p> </li> </ul> <p> <b>Amazon Web Services Tags Endpoints</b>
+   * </p> <ul> <li> <p> <a>TagResource</a> — Adds or updates tags for the Amazon Web
+   * Services resource with the specified ARN.</p> </li> <li> <p>
    * <a>UntagResource</a> — Removes tags from the resource with the specified
-   * ARN.</p> </li> <li> <p> <a>ListTagsForResource</a> — Gets information about AWS
-   * tags for the specified ARN.</p> </li> </ul>
+   * ARN.</p> </li> <li> <p> <a>ListTagsForResource</a> — Gets information about
+   * Amazon Web Services tags for the specified ARN.</p> </li> </ul>
    */
   class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient
   {
@@ -433,16 +447,16 @@ namespace Model
 
         /**
          * <p>Creates a new recording configuration, used to enable recording to Amazon
-         * S3.</p> <p> <b>Known issue:</b> In the us-east-1 region, if you use the AWS CLI
-         * to create a recording configuration, it returns success even if the S3 bucket is
-         * in a different region. In this case, the <code>state</code> of the recording
-         * configuration is <code>CREATE_FAILED</code> (instead of <code>ACTIVE</code>).
-         * (In other regions, the CLI correctly returns failure if the bucket is in a
-         * different region.)</p> <p> <b>Workaround:</b> Ensure that your S3 bucket is in
-         * the same region as the recording configuration. If you create a recording
-         * configuration in a different region as your S3 bucket, delete that recording
-         * configuration and create a new one with an S3 bucket from the correct
-         * region.</p><p><h3>See Also:</h3>   <a
+         * S3.</p> <p> <b>Known issue:</b> In the us-east-1 region, if you use the Amazon
+         * Web Services CLI to create a recording configuration, it returns success even if
+         * the S3 bucket is in a different region. In this case, the <code>state</code> of
+         * the recording configuration is <code>CREATE_FAILED</code> (instead of
+         * <code>ACTIVE</code>). (In other regions, the CLI correctly returns failure if
+         * the bucket is in a different region.)</p> <p> <b>Workaround:</b> Ensure that
+         * your S3 bucket is in the same region as the recording configuration. If you
+         * create a recording configuration in a different region as your S3 bucket, delete
+         * that recording configuration and create a new one with an S3 bucket from the
+         * correct region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateRecordingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -450,16 +464,16 @@ namespace Model
 
         /**
          * <p>Creates a new recording configuration, used to enable recording to Amazon
-         * S3.</p> <p> <b>Known issue:</b> In the us-east-1 region, if you use the AWS CLI
-         * to create a recording configuration, it returns success even if the S3 bucket is
-         * in a different region. In this case, the <code>state</code> of the recording
-         * configuration is <code>CREATE_FAILED</code> (instead of <code>ACTIVE</code>).
-         * (In other regions, the CLI correctly returns failure if the bucket is in a
-         * different region.)</p> <p> <b>Workaround:</b> Ensure that your S3 bucket is in
-         * the same region as the recording configuration. If you create a recording
-         * configuration in a different region as your S3 bucket, delete that recording
-         * configuration and create a new one with an S3 bucket from the correct
-         * region.</p><p><h3>See Also:</h3>   <a
+         * S3.</p> <p> <b>Known issue:</b> In the us-east-1 region, if you use the Amazon
+         * Web Services CLI to create a recording configuration, it returns success even if
+         * the S3 bucket is in a different region. In this case, the <code>state</code> of
+         * the recording configuration is <code>CREATE_FAILED</code> (instead of
+         * <code>ACTIVE</code>). (In other regions, the CLI correctly returns failure if
+         * the bucket is in a different region.)</p> <p> <b>Workaround:</b> Ensure that
+         * your S3 bucket is in the same region as the recording configuration. If you
+         * create a recording configuration in a different region as your S3 bucket, delete
+         * that recording configuration and create a new one with an S3 bucket from the
+         * correct region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateRecordingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -469,16 +483,16 @@ namespace Model
 
         /**
          * <p>Creates a new recording configuration, used to enable recording to Amazon
-         * S3.</p> <p> <b>Known issue:</b> In the us-east-1 region, if you use the AWS CLI
-         * to create a recording configuration, it returns success even if the S3 bucket is
-         * in a different region. In this case, the <code>state</code> of the recording
-         * configuration is <code>CREATE_FAILED</code> (instead of <code>ACTIVE</code>).
-         * (In other regions, the CLI correctly returns failure if the bucket is in a
-         * different region.)</p> <p> <b>Workaround:</b> Ensure that your S3 bucket is in
-         * the same region as the recording configuration. If you create a recording
-         * configuration in a different region as your S3 bucket, delete that recording
-         * configuration and create a new one with an S3 bucket from the correct
-         * region.</p><p><h3>See Also:</h3>   <a
+         * S3.</p> <p> <b>Known issue:</b> In the us-east-1 region, if you use the Amazon
+         * Web Services CLI to create a recording configuration, it returns success even if
+         * the S3 bucket is in a different region. In this case, the <code>state</code> of
+         * the recording configuration is <code>CREATE_FAILED</code> (instead of
+         * <code>ACTIVE</code>). (In other regions, the CLI correctly returns failure if
+         * the bucket is in a different region.)</p> <p> <b>Workaround:</b> Ensure that
+         * your S3 bucket is in the same region as the recording configuration. If you
+         * create a recording configuration in a different region as your S3 bucket, delete
+         * that recording configuration and create a new one with an S3 bucket from the
+         * correct region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateRecordingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -830,6 +844,31 @@ namespace Model
         virtual void GetStreamKeyAsync(const Model::GetStreamKeyRequest& request, const GetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets metadata on a specified stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetStreamSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetStreamSessionOutcome GetStreamSession(const Model::GetStreamSessionRequest& request) const;
+
+        /**
+         * <p>Gets metadata on a specified stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetStreamSession">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetStreamSessionOutcomeCallable GetStreamSessionCallable(const Model::GetStreamSessionRequest& request) const;
+
+        /**
+         * <p>Gets metadata on a specified stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetStreamSession">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetStreamSessionAsync(const Model::GetStreamSessionRequest& request, const GetStreamSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Imports the public portion of a new key pair and returns its <code>arn</code>
          * and <code>fingerprint</code>. The <code>privateKey</code> can then be used to
          * generate viewer authorization tokens, to grant viewers access to private
@@ -873,22 +912,22 @@ namespace Model
         virtual void ImportPlaybackKeyPairAsync(const Model::ImportPlaybackKeyPairRequest& request, const ImportPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets summary information about all channels in your account, in the AWS
-         * region where the API request is processed. This list can be filtered to match a
-         * specified name or recording-configuration ARN. Filters are mutually exclusive
-         * and cannot be used together. If you try to use both filters, you will get an
-         * error (409 ConflictException).</p><p><h3>See Also:</h3>   <a
+         * <p>Gets summary information about all channels in your account, in the Amazon
+         * Web Services region where the API request is processed. This list can be
+         * filtered to match a specified name or recording-configuration ARN. Filters are
+         * mutually exclusive and cannot be used together. If you try to use both filters,
+         * you will get an error (409 ConflictException).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListChannels">AWS
          * API Reference</a></p>
          */
         virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
 
         /**
-         * <p>Gets summary information about all channels in your account, in the AWS
-         * region where the API request is processed. This list can be filtered to match a
-         * specified name or recording-configuration ARN. Filters are mutually exclusive
-         * and cannot be used together. If you try to use both filters, you will get an
-         * error (409 ConflictException).</p><p><h3>See Also:</h3>   <a
+         * <p>Gets summary information about all channels in your account, in the Amazon
+         * Web Services region where the API request is processed. This list can be
+         * filtered to match a specified name or recording-configuration ARN. Filters are
+         * mutually exclusive and cannot be used together. If you try to use both filters,
+         * you will get an error (409 ConflictException).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListChannels">AWS
          * API Reference</a></p>
          *
@@ -897,11 +936,11 @@ namespace Model
         virtual Model::ListChannelsOutcomeCallable ListChannelsCallable(const Model::ListChannelsRequest& request) const;
 
         /**
-         * <p>Gets summary information about all channels in your account, in the AWS
-         * region where the API request is processed. This list can be filtered to match a
-         * specified name or recording-configuration ARN. Filters are mutually exclusive
-         * and cannot be used together. If you try to use both filters, you will get an
-         * error (409 ConflictException).</p><p><h3>See Also:</h3>   <a
+         * <p>Gets summary information about all channels in your account, in the Amazon
+         * Web Services region where the API request is processed. This list can be
+         * filtered to match a specified name or recording-configuration ARN. Filters are
+         * mutually exclusive and cannot be used together. If you try to use both filters,
+         * you will get an error (409 ConflictException).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListChannels">AWS
          * API Reference</a></p>
          *
@@ -948,8 +987,8 @@ namespace Model
 
         /**
          * <p>Gets summary information about all recording configurations in your account,
-         * in the AWS region where the API request is processed.</p><p><h3>See Also:</h3>  
-         * <a
+         * in the Amazon Web Services region where the API request is
+         * processed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListRecordingConfigurations">AWS
          * API Reference</a></p>
          */
@@ -957,8 +996,8 @@ namespace Model
 
         /**
          * <p>Gets summary information about all recording configurations in your account,
-         * in the AWS region where the API request is processed.</p><p><h3>See Also:</h3>  
-         * <a
+         * in the Amazon Web Services region where the API request is
+         * processed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListRecordingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -968,8 +1007,8 @@ namespace Model
 
         /**
          * <p>Gets summary information about all recording configurations in your account,
-         * in the AWS region where the API request is processed.</p><p><h3>See Also:</h3>  
-         * <a
+         * in the Amazon Web Services region where the API request is
+         * processed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListRecordingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -1006,44 +1045,75 @@ namespace Model
         virtual void ListStreamKeysAsync(const Model::ListStreamKeysRequest& request, const ListStreamKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets summary information about live streams in your account, in the AWS
-         * region where the API request is processed.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">AWS API
-         * Reference</a></p>
+         * <p>Gets a summary of current and previous streams for a specified channel in
+         * your account, in the AWS region where the API request is
+         * processed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreamSessions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStreamSessionsOutcome ListStreamSessions(const Model::ListStreamSessionsRequest& request) const;
+
+        /**
+         * <p>Gets a summary of current and previous streams for a specified channel in
+         * your account, in the AWS region where the API request is
+         * processed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreamSessions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListStreamSessionsOutcomeCallable ListStreamSessionsCallable(const Model::ListStreamSessionsRequest& request) const;
+
+        /**
+         * <p>Gets a summary of current and previous streams for a specified channel in
+         * your account, in the AWS region where the API request is
+         * processed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreamSessions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListStreamSessionsAsync(const Model::ListStreamSessionsRequest& request, const ListStreamSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets summary information about live streams in your account, in the Amazon
+         * Web Services region where the API request is processed.</p><p><h3>See Also:</h3>
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
 
         /**
-         * <p>Gets summary information about live streams in your account, in the AWS
-         * region where the API request is processed.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">AWS API
-         * Reference</a></p>
+         * <p>Gets summary information about live streams in your account, in the Amazon
+         * Web Services region where the API request is processed.</p><p><h3>See Also:</h3>
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListStreamsOutcomeCallable ListStreamsCallable(const Model::ListStreamsRequest& request) const;
 
         /**
-         * <p>Gets summary information about live streams in your account, in the AWS
-         * region where the API request is processed.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">AWS API
-         * Reference</a></p>
+         * <p>Gets summary information about live streams in your account, in the Amazon
+         * Web Services region where the API request is processed.</p><p><h3>See Also:</h3>
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListStreamsAsync(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about AWS tags for the specified ARN.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about Amazon Web Services tags for the specified
+         * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Gets information about AWS tags for the specified ARN.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about Amazon Web Services tags for the specified
+         * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1052,8 +1122,8 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Gets information about AWS tags for the specified ARN.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about Amazon Web Services tags for the specified
+         * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1062,10 +1132,11 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Inserts metadata into the active stream of the specified channel. A maximum
-         * of 5 requests per second per channel is allowed, each with a maximum 1 KB
-         * payload. (If 5 TPS is not sufficient for your needs, we recommend batching your
-         * data into a single PutMetadata call.) Also see <a
+         * <p>Inserts metadata into the active stream of the specified channel. At most 5
+         * requests per second per channel are allowed, each with a maximum 1 KB payload.
+         * (If 5 TPS is not sufficient for your needs, we recommend batching your data into
+         * a single PutMetadata call.) At most 155 requests per second per account are
+         * allowed. Also see <a
          * href="https://docs.aws.amazon.com/ivs/latest/userguide/metadata.html">Embedding
          * Metadata within a Video Stream</a> in the <i>Amazon IVS User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1075,10 +1146,11 @@ namespace Model
         virtual Model::PutMetadataOutcome PutMetadata(const Model::PutMetadataRequest& request) const;
 
         /**
-         * <p>Inserts metadata into the active stream of the specified channel. A maximum
-         * of 5 requests per second per channel is allowed, each with a maximum 1 KB
-         * payload. (If 5 TPS is not sufficient for your needs, we recommend batching your
-         * data into a single PutMetadata call.) Also see <a
+         * <p>Inserts metadata into the active stream of the specified channel. At most 5
+         * requests per second per channel are allowed, each with a maximum 1 KB payload.
+         * (If 5 TPS is not sufficient for your needs, we recommend batching your data into
+         * a single PutMetadata call.) At most 155 requests per second per account are
+         * allowed. Also see <a
          * href="https://docs.aws.amazon.com/ivs/latest/userguide/metadata.html">Embedding
          * Metadata within a Video Stream</a> in the <i>Amazon IVS User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1090,10 +1162,11 @@ namespace Model
         virtual Model::PutMetadataOutcomeCallable PutMetadataCallable(const Model::PutMetadataRequest& request) const;
 
         /**
-         * <p>Inserts metadata into the active stream of the specified channel. A maximum
-         * of 5 requests per second per channel is allowed, each with a maximum 1 KB
-         * payload. (If 5 TPS is not sufficient for your needs, we recommend batching your
-         * data into a single PutMetadata call.) Also see <a
+         * <p>Inserts metadata into the active stream of the specified channel. At most 5
+         * requests per second per channel are allowed, each with a maximum 1 KB payload.
+         * (If 5 TPS is not sufficient for your needs, we recommend batching your data into
+         * a single PutMetadata call.) At most 155 requests per second per account are
+         * allowed. Also see <a
          * href="https://docs.aws.amazon.com/ivs/latest/userguide/metadata.html">Embedding
          * Metadata within a Video Stream</a> in the <i>Amazon IVS User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1145,7 +1218,7 @@ namespace Model
         virtual void StopStreamAsync(const Model::StopStreamRequest& request, const StopStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or updates tags for the AWS resource with the specified
+         * <p>Adds or updates tags for the Amazon Web Services resource with the specified
          * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/TagResource">AWS API
          * Reference</a></p>
@@ -1153,7 +1226,7 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or updates tags for the AWS resource with the specified
+         * <p>Adds or updates tags for the Amazon Web Services resource with the specified
          * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/TagResource">AWS API
          * Reference</a></p>
@@ -1163,7 +1236,7 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or updates tags for the AWS resource with the specified
+         * <p>Adds or updates tags for the Amazon Web Services resource with the specified
          * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/TagResource">AWS API
          * Reference</a></p>
@@ -1249,11 +1322,13 @@ namespace Model
         void GetRecordingConfigurationAsyncHelper(const Model::GetRecordingConfigurationRequest& request, const GetRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStreamAsyncHelper(const Model::GetStreamRequest& request, const GetStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStreamKeyAsyncHelper(const Model::GetStreamKeyRequest& request, const GetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetStreamSessionAsyncHelper(const Model::GetStreamSessionRequest& request, const GetStreamSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportPlaybackKeyPairAsyncHelper(const Model::ImportPlaybackKeyPairRequest& request, const ImportPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPlaybackKeyPairsAsyncHelper(const Model::ListPlaybackKeyPairsRequest& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRecordingConfigurationsAsyncHelper(const Model::ListRecordingConfigurationsRequest& request, const ListRecordingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStreamKeysAsyncHelper(const Model::ListStreamKeysRequest& request, const ListStreamKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListStreamSessionsAsyncHelper(const Model::ListStreamSessionsRequest& request, const ListStreamSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStreamsAsyncHelper(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMetadataAsyncHelper(const Model::PutMetadataRequest& request, const PutMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

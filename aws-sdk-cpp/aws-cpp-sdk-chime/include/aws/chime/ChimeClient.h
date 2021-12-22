@@ -974,8 +974,9 @@ namespace Model
    * developers to perform key tasks, such as creating and managing Amazon Chime
    * accounts, users, and Voice Connectors. This guide provides detailed information
    * about the Amazon Chime API, including operations, types, inputs and outputs, and
-   * error codes. It also includes some server-side API actions to use with the
-   * Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a
+   * error codes. It also includes API actions for use with the Amazon Chime SDK,
+   * which developers use to build their own communication applications. For more
+   * information about the Amazon Chime SDK, see <a
    * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html"> Using the
    * Amazon Chime SDK </a> in the <i>Amazon Chime Developer Guide</i>.</p> <p>You can
    * use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to
@@ -6276,7 +6277,7 @@ namespace Model
         virtual void SendChannelMessageAsync(const Model::SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Start transcription for the specified <code>meetingId</code>. </p><p><h3>See
+         * <p>Starts transcription for the specified <code>meetingId</code>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription">AWS
          * API Reference</a></p>
@@ -6284,7 +6285,7 @@ namespace Model
         virtual Model::StartMeetingTranscriptionOutcome StartMeetingTranscription(const Model::StartMeetingTranscriptionRequest& request) const;
 
         /**
-         * <p>Start transcription for the specified <code>meetingId</code>. </p><p><h3>See
+         * <p>Starts transcription for the specified <code>meetingId</code>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription">AWS
          * API Reference</a></p>
@@ -6294,7 +6295,7 @@ namespace Model
         virtual Model::StartMeetingTranscriptionOutcomeCallable StartMeetingTranscriptionCallable(const Model::StartMeetingTranscriptionRequest& request) const;
 
         /**
-         * <p>Start transcription for the specified <code>meetingId</code>. </p><p><h3>See
+         * <p>Starts transcription for the specified <code>meetingId</code>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription">AWS
          * API Reference</a></p>

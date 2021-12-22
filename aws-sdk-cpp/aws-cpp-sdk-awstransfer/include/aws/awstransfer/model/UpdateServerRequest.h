@@ -12,6 +12,7 @@
 #include <aws/awstransfer/model/EndpointType.h>
 #include <aws/awstransfer/model/IdentityProviderDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/awstransfer/model/WorkflowDetails.h>
 #include <aws/awstransfer/model/Protocol.h>
 #include <utility>
 
@@ -237,7 +238,10 @@ namespace Model
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
      * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
      * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p>
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
      */
     inline const ProtocolDetails& GetProtocolDetails() const{ return m_protocolDetails; }
 
@@ -245,7 +249,10 @@ namespace Model
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
      * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
      * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p>
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
      */
     inline bool ProtocolDetailsHasBeenSet() const { return m_protocolDetailsHasBeenSet; }
 
@@ -253,7 +260,10 @@ namespace Model
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
      * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
      * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p>
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
      */
     inline void SetProtocolDetails(const ProtocolDetails& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = value; }
 
@@ -261,7 +271,10 @@ namespace Model
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
      * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
      * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p>
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
      */
     inline void SetProtocolDetails(ProtocolDetails&& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = std::move(value); }
 
@@ -269,7 +282,10 @@ namespace Model
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
      * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
      * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p>
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
      */
     inline UpdateServerRequest& WithProtocolDetails(const ProtocolDetails& value) { SetProtocolDetails(value); return *this;}
 
@@ -277,7 +293,10 @@ namespace Model
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
      * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
      * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p>
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
      */
     inline UpdateServerRequest& WithProtocolDetails(ProtocolDetails&& value) { SetProtocolDetails(std::move(value)); return *this;}
 
@@ -941,6 +960,43 @@ namespace Model
      */
     inline UpdateServerRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline const WorkflowDetails& GetWorkflowDetails() const{ return m_workflowDetails; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline bool WorkflowDetailsHasBeenSet() const { return m_workflowDetailsHasBeenSet; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline void SetWorkflowDetails(const WorkflowDetails& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = value; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline void SetWorkflowDetails(WorkflowDetails&& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = std::move(value); }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline UpdateServerRequest& WithWorkflowDetails(const WorkflowDetails& value) { SetWorkflowDetails(value); return *this;}
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline UpdateServerRequest& WithWorkflowDetails(WorkflowDetails&& value) { SetWorkflowDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_certificate;
@@ -972,6 +1028,9 @@ namespace Model
 
     Aws::String m_serverId;
     bool m_serverIdHasBeenSet;
+
+    WorkflowDetails m_workflowDetails;
+    bool m_workflowDetailsHasBeenSet;
   };
 
 } // namespace Model

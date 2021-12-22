@@ -32,6 +32,7 @@ CmafGroupSettings::CmafGroupSettings() :
     m_fragmentLengthHasBeenSet(false),
     m_imageBasedTrickPlay(CmafImageBasedTrickPlay::NOT_SET),
     m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_manifestCompression(CmafManifestCompression::NOT_SET),
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(CmafManifestDurationFormat::NOT_SET),
@@ -48,6 +49,8 @@ CmafGroupSettings::CmafGroupSettings() :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(CmafSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_streamInfResolution(CmafStreamInfResolution::NOT_SET),
     m_streamInfResolutionHasBeenSet(false),
     m_targetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode::NOT_SET),
@@ -75,6 +78,7 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_fragmentLengthHasBeenSet(false),
     m_imageBasedTrickPlay(CmafImageBasedTrickPlay::NOT_SET),
     m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_manifestCompression(CmafManifestCompression::NOT_SET),
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(CmafManifestDurationFormat::NOT_SET),
@@ -91,6 +95,8 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(CmafSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_streamInfResolution(CmafStreamInfResolution::NOT_SET),
     m_streamInfResolutionHasBeenSet(false),
     m_targetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode::NOT_SET),
@@ -173,6 +179,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_imageBasedTrickPlayHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageBasedTrickPlaySettings"))
+  {
+    m_imageBasedTrickPlaySettings = jsonValue.GetObject("imageBasedTrickPlaySettings");
+
+    m_imageBasedTrickPlaySettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("manifestCompression"))
   {
     m_manifestCompression = CmafManifestCompressionMapper::GetCmafManifestCompressionForName(jsonValue.GetString("manifestCompression"));
@@ -227,6 +240,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_segmentLength = jsonValue.GetInteger("segmentLength");
 
     m_segmentLengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("segmentLengthControl"))
+  {
+    m_segmentLengthControl = CmafSegmentLengthControlMapper::GetCmafSegmentLengthControlForName(jsonValue.GetString("segmentLengthControl"));
+
+    m_segmentLengthControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("streamInfResolution"))
@@ -327,6 +347,12 @@ JsonValue CmafGroupSettings::Jsonize() const
    payload.WithString("imageBasedTrickPlay", CmafImageBasedTrickPlayMapper::GetNameForCmafImageBasedTrickPlay(m_imageBasedTrickPlay));
   }
 
+  if(m_imageBasedTrickPlaySettingsHasBeenSet)
+  {
+   payload.WithObject("imageBasedTrickPlaySettings", m_imageBasedTrickPlaySettings.Jsonize());
+
+  }
+
   if(m_manifestCompressionHasBeenSet)
   {
    payload.WithString("manifestCompression", CmafManifestCompressionMapper::GetNameForCmafManifestCompression(m_manifestCompression));
@@ -368,6 +394,11 @@ JsonValue CmafGroupSettings::Jsonize() const
   {
    payload.WithInteger("segmentLength", m_segmentLength);
 
+  }
+
+  if(m_segmentLengthControlHasBeenSet)
+  {
+   payload.WithString("segmentLengthControl", CmafSegmentLengthControlMapper::GetNameForCmafSegmentLengthControl(m_segmentLengthControl));
   }
 
   if(m_streamInfResolutionHasBeenSet)

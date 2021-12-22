@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/model/ImageConfig.h>
 #include <aws/lambda/model/FileSystemConfig.h>
+#include <aws/lambda/model/Architecture.h>
 #include <utility>
 
 namespace Aws
@@ -142,37 +143,43 @@ namespace Model
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline CreateFunctionRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline CreateFunctionRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
@@ -220,8 +227,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -229,8 +237,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -238,8 +247,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -247,8 +257,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -256,8 +267,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -265,8 +277,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -274,8 +287,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -283,8 +297,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -364,36 +379,36 @@ namespace Model
 
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
@@ -1053,6 +1068,63 @@ namespace Model
      */
     inline CreateFunctionRequest& WithCodeSigningConfigArn(const char* value) { SetCodeSigningConfigArn(value); return *this;}
 
+
+    /**
+     * <p>The instruction set architecture that the function supports. Enter a string
+     * array with one of the valid values (arm64 or x86_64). The default value is
+     * <code>x86_64</code>.</p>
+     */
+    inline const Aws::Vector<Architecture>& GetArchitectures() const{ return m_architectures; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Enter a string
+     * array with one of the valid values (arm64 or x86_64). The default value is
+     * <code>x86_64</code>.</p>
+     */
+    inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Enter a string
+     * array with one of the valid values (arm64 or x86_64). The default value is
+     * <code>x86_64</code>.</p>
+     */
+    inline void SetArchitectures(const Aws::Vector<Architecture>& value) { m_architecturesHasBeenSet = true; m_architectures = value; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Enter a string
+     * array with one of the valid values (arm64 or x86_64). The default value is
+     * <code>x86_64</code>.</p>
+     */
+    inline void SetArchitectures(Aws::Vector<Architecture>&& value) { m_architecturesHasBeenSet = true; m_architectures = std::move(value); }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Enter a string
+     * array with one of the valid values (arm64 or x86_64). The default value is
+     * <code>x86_64</code>.</p>
+     */
+    inline CreateFunctionRequest& WithArchitectures(const Aws::Vector<Architecture>& value) { SetArchitectures(value); return *this;}
+
+    /**
+     * <p>The instruction set architecture that the function supports. Enter a string
+     * array with one of the valid values (arm64 or x86_64). The default value is
+     * <code>x86_64</code>.</p>
+     */
+    inline CreateFunctionRequest& WithArchitectures(Aws::Vector<Architecture>&& value) { SetArchitectures(std::move(value)); return *this;}
+
+    /**
+     * <p>The instruction set architecture that the function supports. Enter a string
+     * array with one of the valid values (arm64 or x86_64). The default value is
+     * <code>x86_64</code>.</p>
+     */
+    inline CreateFunctionRequest& AddArchitectures(const Architecture& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Enter a string
+     * array with one of the valid values (arm64 or x86_64). The default value is
+     * <code>x86_64</code>.</p>
+     */
+    inline CreateFunctionRequest& AddArchitectures(Architecture&& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_functionName;
@@ -1114,6 +1186,9 @@ namespace Model
 
     Aws::String m_codeSigningConfigArn;
     bool m_codeSigningConfigArnHasBeenSet;
+
+    Aws::Vector<Architecture> m_architectures;
+    bool m_architecturesHasBeenSet;
   };
 
 } // namespace Model

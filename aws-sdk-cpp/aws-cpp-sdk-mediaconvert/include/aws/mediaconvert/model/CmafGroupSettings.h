@@ -12,11 +12,13 @@
 #include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/CmafEncryptionSettings.h>
 #include <aws/mediaconvert/model/CmafImageBasedTrickPlay.h>
+#include <aws/mediaconvert/model/CmafImageBasedTrickPlaySettings.h>
 #include <aws/mediaconvert/model/CmafManifestCompression.h>
 #include <aws/mediaconvert/model/CmafManifestDurationFormat.h>
 #include <aws/mediaconvert/model/CmafMpdProfile.h>
 #include <aws/mediaconvert/model/CmafPtsOffsetHandlingForBFrames.h>
 #include <aws/mediaconvert/model/CmafSegmentControl.h>
+#include <aws/mediaconvert/model/CmafSegmentLengthControl.h>
 #include <aws/mediaconvert/model/CmafStreamInfResolution.h>
 #include <aws/mediaconvert/model/CmafTargetDurationCompatibilityMode.h>
 #include <aws/mediaconvert/model/CmafWriteDASHManifest.h>
@@ -418,42 +420,34 @@ namespace Model
 
 
     /**
-     * Length of fragments to generate (in seconds). Fragment length must be compatible
-     * with GOP size and Framerate. Note that fragments will end on the next keyframe
-     * after this number of seconds, so actual fragment length may be longer. When Emit
-     * Single File is checked, the fragmentation is internal to a single output file
-     * and it does not cause the creation of many output files as in other output
-     * types.
+     * Specify the length, in whole seconds, of the mp4 fragments. When you don't
+     * specify a value, MediaConvert defaults to 2. Related setting: Use Fragment
+     * length control (FragmentLengthControl) to specify whether the encoder enforces
+     * this value strictly.
      */
     inline int GetFragmentLength() const{ return m_fragmentLength; }
 
     /**
-     * Length of fragments to generate (in seconds). Fragment length must be compatible
-     * with GOP size and Framerate. Note that fragments will end on the next keyframe
-     * after this number of seconds, so actual fragment length may be longer. When Emit
-     * Single File is checked, the fragmentation is internal to a single output file
-     * and it does not cause the creation of many output files as in other output
-     * types.
+     * Specify the length, in whole seconds, of the mp4 fragments. When you don't
+     * specify a value, MediaConvert defaults to 2. Related setting: Use Fragment
+     * length control (FragmentLengthControl) to specify whether the encoder enforces
+     * this value strictly.
      */
     inline bool FragmentLengthHasBeenSet() const { return m_fragmentLengthHasBeenSet; }
 
     /**
-     * Length of fragments to generate (in seconds). Fragment length must be compatible
-     * with GOP size and Framerate. Note that fragments will end on the next keyframe
-     * after this number of seconds, so actual fragment length may be longer. When Emit
-     * Single File is checked, the fragmentation is internal to a single output file
-     * and it does not cause the creation of many output files as in other output
-     * types.
+     * Specify the length, in whole seconds, of the mp4 fragments. When you don't
+     * specify a value, MediaConvert defaults to 2. Related setting: Use Fragment
+     * length control (FragmentLengthControl) to specify whether the encoder enforces
+     * this value strictly.
      */
     inline void SetFragmentLength(int value) { m_fragmentLengthHasBeenSet = true; m_fragmentLength = value; }
 
     /**
-     * Length of fragments to generate (in seconds). Fragment length must be compatible
-     * with GOP size and Framerate. Note that fragments will end on the next keyframe
-     * after this number of seconds, so actual fragment length may be longer. When Emit
-     * Single File is checked, the fragmentation is internal to a single output file
-     * and it does not cause the creation of many output files as in other output
-     * types.
+     * Specify the length, in whole seconds, of the mp4 fragments. When you don't
+     * specify a value, MediaConvert defaults to 2. Related setting: Use Fragment
+     * length control (FragmentLengthControl) to specify whether the encoder enforces
+     * this value strictly.
      */
     inline CmafGroupSettings& WithFragmentLength(int value) { SetFragmentLength(value); return *this;}
 
@@ -559,6 +553,37 @@ namespace Model
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline CmafGroupSettings& WithImageBasedTrickPlay(CmafImageBasedTrickPlay&& value) { SetImageBasedTrickPlay(std::move(value)); return *this;}
+
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline const CmafImageBasedTrickPlaySettings& GetImageBasedTrickPlaySettings() const{ return m_imageBasedTrickPlaySettings; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline bool ImageBasedTrickPlaySettingsHasBeenSet() const { return m_imageBasedTrickPlaySettingsHasBeenSet; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(const CmafImageBasedTrickPlaySettings& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = value; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(CmafImageBasedTrickPlaySettings&& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = std::move(value); }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline CmafGroupSettings& WithImageBasedTrickPlaySettings(const CmafImageBasedTrickPlaySettings& value) { SetImageBasedTrickPlaySettings(value); return *this;}
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline CmafGroupSettings& WithImageBasedTrickPlaySettings(CmafImageBasedTrickPlaySettings&& value) { SetImageBasedTrickPlaySettings(std::move(value)); return *this;}
 
 
     /**
@@ -905,52 +930,99 @@ namespace Model
 
 
     /**
-     * Use this setting to specify the length, in seconds, of each individual CMAF
-     * segment. This value applies to the whole package; that is, to every output in
-     * the output group. Note that segments end on the first keyframe after this number
-     * of seconds, so the actual segment length might be slightly longer. If you set
-     * Segment control (CmafSegmentControl) to single file, the service puts the
-     * content of each output in a single file that has metadata that marks these
-     * segments. If you set it to segmented files, the service creates multiple files
-     * for each output, each with the content of one segment.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (CmafSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline int GetSegmentLength() const{ return m_segmentLength; }
 
     /**
-     * Use this setting to specify the length, in seconds, of each individual CMAF
-     * segment. This value applies to the whole package; that is, to every output in
-     * the output group. Note that segments end on the first keyframe after this number
-     * of seconds, so the actual segment length might be slightly longer. If you set
-     * Segment control (CmafSegmentControl) to single file, the service puts the
-     * content of each output in a single file that has metadata that marks these
-     * segments. If you set it to segmented files, the service creates multiple files
-     * for each output, each with the content of one segment.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (CmafSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
 
     /**
-     * Use this setting to specify the length, in seconds, of each individual CMAF
-     * segment. This value applies to the whole package; that is, to every output in
-     * the output group. Note that segments end on the first keyframe after this number
-     * of seconds, so the actual segment length might be slightly longer. If you set
-     * Segment control (CmafSegmentControl) to single file, the service puts the
-     * content of each output in a single file that has metadata that marks these
-     * segments. If you set it to segmented files, the service creates multiple files
-     * for each output, each with the content of one segment.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (CmafSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
 
     /**
-     * Use this setting to specify the length, in seconds, of each individual CMAF
-     * segment. This value applies to the whole package; that is, to every output in
-     * the output group. Note that segments end on the first keyframe after this number
-     * of seconds, so the actual segment length might be slightly longer. If you set
-     * Segment control (CmafSegmentControl) to single file, the service puts the
-     * content of each output in a single file that has metadata that marks these
-     * segments. If you set it to segmented files, the service creates multiple files
-     * for each output, each with the content of one segment.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (CmafSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline CmafGroupSettings& WithSegmentLength(int value) { SetSegmentLength(value); return *this;}
+
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline const CmafSegmentLengthControl& GetSegmentLengthControl() const{ return m_segmentLengthControl; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline bool SegmentLengthControlHasBeenSet() const { return m_segmentLengthControlHasBeenSet; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline void SetSegmentLengthControl(const CmafSegmentLengthControl& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = value; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline void SetSegmentLengthControl(CmafSegmentLengthControl&& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = std::move(value); }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline CmafGroupSettings& WithSegmentLengthControl(const CmafSegmentLengthControl& value) { SetSegmentLengthControl(value); return *this;}
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline CmafGroupSettings& WithSegmentLengthControl(CmafSegmentLengthControl&& value) { SetSegmentLengthControl(std::move(value)); return *this;}
 
 
     /**
@@ -1226,6 +1298,9 @@ namespace Model
     CmafImageBasedTrickPlay m_imageBasedTrickPlay;
     bool m_imageBasedTrickPlayHasBeenSet;
 
+    CmafImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
+    bool m_imageBasedTrickPlaySettingsHasBeenSet;
+
     CmafManifestCompression m_manifestCompression;
     bool m_manifestCompressionHasBeenSet;
 
@@ -1249,6 +1324,9 @@ namespace Model
 
     int m_segmentLength;
     bool m_segmentLengthHasBeenSet;
+
+    CmafSegmentLengthControl m_segmentLengthControl;
+    bool m_segmentLengthControlHasBeenSet;
 
     CmafStreamInfResolution m_streamInfResolution;
     bool m_streamInfResolutionHasBeenSet;

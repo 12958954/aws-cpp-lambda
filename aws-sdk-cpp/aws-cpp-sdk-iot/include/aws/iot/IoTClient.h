@@ -30,6 +30,7 @@
 #include <aws/iot/model/CreateDimensionResult.h>
 #include <aws/iot/model/CreateDomainConfigurationResult.h>
 #include <aws/iot/model/CreateDynamicThingGroupResult.h>
+#include <aws/iot/model/CreateFleetMetricResult.h>
 #include <aws/iot/model/CreateJobResult.h>
 #include <aws/iot/model/CreateJobTemplateResult.h>
 #include <aws/iot/model/CreateKeysAndCertificateResult.h>
@@ -87,10 +88,12 @@
 #include <aws/iot/model/DescribeDomainConfigurationResult.h>
 #include <aws/iot/model/DescribeEndpointResult.h>
 #include <aws/iot/model/DescribeEventConfigurationsResult.h>
+#include <aws/iot/model/DescribeFleetMetricResult.h>
 #include <aws/iot/model/DescribeIndexResult.h>
 #include <aws/iot/model/DescribeJobResult.h>
 #include <aws/iot/model/DescribeJobExecutionResult.h>
 #include <aws/iot/model/DescribeJobTemplateResult.h>
+#include <aws/iot/model/DescribeManagedJobTemplateResult.h>
 #include <aws/iot/model/DescribeMitigationActionResult.h>
 #include <aws/iot/model/DescribeProvisioningTemplateResult.h>
 #include <aws/iot/model/DescribeProvisioningTemplateVersionResult.h>
@@ -105,6 +108,7 @@
 #include <aws/iot/model/DetachSecurityProfileResult.h>
 #include <aws/iot/model/DetachThingPrincipalResult.h>
 #include <aws/iot/model/GetBehaviorModelTrainingSummariesResult.h>
+#include <aws/iot/model/GetBucketsAggregationResult.h>
 #include <aws/iot/model/GetCardinalityResult.h>
 #include <aws/iot/model/GetEffectivePoliciesResult.h>
 #include <aws/iot/model/GetIndexingConfigurationResult.h>
@@ -136,11 +140,13 @@
 #include <aws/iot/model/ListDetectMitigationActionsTasksResult.h>
 #include <aws/iot/model/ListDimensionsResult.h>
 #include <aws/iot/model/ListDomainConfigurationsResult.h>
+#include <aws/iot/model/ListFleetMetricsResult.h>
 #include <aws/iot/model/ListIndicesResult.h>
 #include <aws/iot/model/ListJobExecutionsForJobResult.h>
 #include <aws/iot/model/ListJobExecutionsForThingResult.h>
 #include <aws/iot/model/ListJobTemplatesResult.h>
 #include <aws/iot/model/ListJobsResult.h>
+#include <aws/iot/model/ListManagedJobTemplatesResult.h>
 #include <aws/iot/model/ListMitigationActionsResult.h>
 #include <aws/iot/model/ListOTAUpdatesResult.h>
 #include <aws/iot/model/ListOutgoingCertificatesResult.h>
@@ -170,6 +176,7 @@
 #include <aws/iot/model/ListTopicRulesResult.h>
 #include <aws/iot/model/ListV2LoggingLevelsResult.h>
 #include <aws/iot/model/ListViolationEventsResult.h>
+#include <aws/iot/model/PutVerificationStateOnViolationResult.h>
 #include <aws/iot/model/RegisterCACertificateResult.h>
 #include <aws/iot/model/RegisterCertificateResult.h>
 #include <aws/iot/model/RegisterCertificateWithoutCAResult.h>
@@ -272,6 +279,7 @@ namespace Model
         class CreateDimensionRequest;
         class CreateDomainConfigurationRequest;
         class CreateDynamicThingGroupRequest;
+        class CreateFleetMetricRequest;
         class CreateJobRequest;
         class CreateJobTemplateRequest;
         class CreateKeysAndCertificateRequest;
@@ -301,6 +309,7 @@ namespace Model
         class DeleteDimensionRequest;
         class DeleteDomainConfigurationRequest;
         class DeleteDynamicThingGroupRequest;
+        class DeleteFleetMetricRequest;
         class DeleteJobRequest;
         class DeleteJobExecutionRequest;
         class DeleteJobTemplateRequest;
@@ -338,10 +347,12 @@ namespace Model
         class DescribeDomainConfigurationRequest;
         class DescribeEndpointRequest;
         class DescribeEventConfigurationsRequest;
+        class DescribeFleetMetricRequest;
         class DescribeIndexRequest;
         class DescribeJobRequest;
         class DescribeJobExecutionRequest;
         class DescribeJobTemplateRequest;
+        class DescribeManagedJobTemplateRequest;
         class DescribeMitigationActionRequest;
         class DescribeProvisioningTemplateRequest;
         class DescribeProvisioningTemplateVersionRequest;
@@ -359,6 +370,7 @@ namespace Model
         class DisableTopicRuleRequest;
         class EnableTopicRuleRequest;
         class GetBehaviorModelTrainingSummariesRequest;
+        class GetBucketsAggregationRequest;
         class GetCardinalityRequest;
         class GetEffectivePoliciesRequest;
         class GetIndexingConfigurationRequest;
@@ -390,11 +402,13 @@ namespace Model
         class ListDetectMitigationActionsTasksRequest;
         class ListDimensionsRequest;
         class ListDomainConfigurationsRequest;
+        class ListFleetMetricsRequest;
         class ListIndicesRequest;
         class ListJobExecutionsForJobRequest;
         class ListJobExecutionsForThingRequest;
         class ListJobTemplatesRequest;
         class ListJobsRequest;
+        class ListManagedJobTemplatesRequest;
         class ListMitigationActionsRequest;
         class ListOTAUpdatesRequest;
         class ListOutgoingCertificatesRequest;
@@ -424,6 +438,7 @@ namespace Model
         class ListTopicRulesRequest;
         class ListV2LoggingLevelsRequest;
         class ListViolationEventsRequest;
+        class PutVerificationStateOnViolationRequest;
         class RegisterCACertificateRequest;
         class RegisterCertificateRequest;
         class RegisterCertificateWithoutCARequest;
@@ -459,6 +474,7 @@ namespace Model
         class UpdateDomainConfigurationRequest;
         class UpdateDynamicThingGroupRequest;
         class UpdateEventConfigurationsRequest;
+        class UpdateFleetMetricRequest;
         class UpdateIndexingConfigurationRequest;
         class UpdateJobRequest;
         class UpdateMitigationActionRequest;
@@ -496,6 +512,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDimensionResult, IoTError> CreateDimensionOutcome;
         typedef Aws::Utils::Outcome<CreateDomainConfigurationResult, IoTError> CreateDomainConfigurationOutcome;
         typedef Aws::Utils::Outcome<CreateDynamicThingGroupResult, IoTError> CreateDynamicThingGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateFleetMetricResult, IoTError> CreateFleetMetricOutcome;
         typedef Aws::Utils::Outcome<CreateJobResult, IoTError> CreateJobOutcome;
         typedef Aws::Utils::Outcome<CreateJobTemplateResult, IoTError> CreateJobTemplateOutcome;
         typedef Aws::Utils::Outcome<CreateKeysAndCertificateResult, IoTError> CreateKeysAndCertificateOutcome;
@@ -525,6 +542,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteDimensionResult, IoTError> DeleteDimensionOutcome;
         typedef Aws::Utils::Outcome<DeleteDomainConfigurationResult, IoTError> DeleteDomainConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeleteDynamicThingGroupResult, IoTError> DeleteDynamicThingGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> DeleteFleetMetricOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> DeleteJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> DeleteJobExecutionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> DeleteJobTemplateOutcome;
@@ -562,10 +580,12 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeDomainConfigurationResult, IoTError> DescribeDomainConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointResult, IoTError> DescribeEndpointOutcome;
         typedef Aws::Utils::Outcome<DescribeEventConfigurationsResult, IoTError> DescribeEventConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeFleetMetricResult, IoTError> DescribeFleetMetricOutcome;
         typedef Aws::Utils::Outcome<DescribeIndexResult, IoTError> DescribeIndexOutcome;
         typedef Aws::Utils::Outcome<DescribeJobResult, IoTError> DescribeJobOutcome;
         typedef Aws::Utils::Outcome<DescribeJobExecutionResult, IoTError> DescribeJobExecutionOutcome;
         typedef Aws::Utils::Outcome<DescribeJobTemplateResult, IoTError> DescribeJobTemplateOutcome;
+        typedef Aws::Utils::Outcome<DescribeManagedJobTemplateResult, IoTError> DescribeManagedJobTemplateOutcome;
         typedef Aws::Utils::Outcome<DescribeMitigationActionResult, IoTError> DescribeMitigationActionOutcome;
         typedef Aws::Utils::Outcome<DescribeProvisioningTemplateResult, IoTError> DescribeProvisioningTemplateOutcome;
         typedef Aws::Utils::Outcome<DescribeProvisioningTemplateVersionResult, IoTError> DescribeProvisioningTemplateVersionOutcome;
@@ -583,6 +603,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> DisableTopicRuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> EnableTopicRuleOutcome;
         typedef Aws::Utils::Outcome<GetBehaviorModelTrainingSummariesResult, IoTError> GetBehaviorModelTrainingSummariesOutcome;
+        typedef Aws::Utils::Outcome<GetBucketsAggregationResult, IoTError> GetBucketsAggregationOutcome;
         typedef Aws::Utils::Outcome<GetCardinalityResult, IoTError> GetCardinalityOutcome;
         typedef Aws::Utils::Outcome<GetEffectivePoliciesResult, IoTError> GetEffectivePoliciesOutcome;
         typedef Aws::Utils::Outcome<GetIndexingConfigurationResult, IoTError> GetIndexingConfigurationOutcome;
@@ -614,11 +635,13 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDetectMitigationActionsTasksResult, IoTError> ListDetectMitigationActionsTasksOutcome;
         typedef Aws::Utils::Outcome<ListDimensionsResult, IoTError> ListDimensionsOutcome;
         typedef Aws::Utils::Outcome<ListDomainConfigurationsResult, IoTError> ListDomainConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListFleetMetricsResult, IoTError> ListFleetMetricsOutcome;
         typedef Aws::Utils::Outcome<ListIndicesResult, IoTError> ListIndicesOutcome;
         typedef Aws::Utils::Outcome<ListJobExecutionsForJobResult, IoTError> ListJobExecutionsForJobOutcome;
         typedef Aws::Utils::Outcome<ListJobExecutionsForThingResult, IoTError> ListJobExecutionsForThingOutcome;
         typedef Aws::Utils::Outcome<ListJobTemplatesResult, IoTError> ListJobTemplatesOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, IoTError> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<ListManagedJobTemplatesResult, IoTError> ListManagedJobTemplatesOutcome;
         typedef Aws::Utils::Outcome<ListMitigationActionsResult, IoTError> ListMitigationActionsOutcome;
         typedef Aws::Utils::Outcome<ListOTAUpdatesResult, IoTError> ListOTAUpdatesOutcome;
         typedef Aws::Utils::Outcome<ListOutgoingCertificatesResult, IoTError> ListOutgoingCertificatesOutcome;
@@ -648,6 +671,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTopicRulesResult, IoTError> ListTopicRulesOutcome;
         typedef Aws::Utils::Outcome<ListV2LoggingLevelsResult, IoTError> ListV2LoggingLevelsOutcome;
         typedef Aws::Utils::Outcome<ListViolationEventsResult, IoTError> ListViolationEventsOutcome;
+        typedef Aws::Utils::Outcome<PutVerificationStateOnViolationResult, IoTError> PutVerificationStateOnViolationOutcome;
         typedef Aws::Utils::Outcome<RegisterCACertificateResult, IoTError> RegisterCACertificateOutcome;
         typedef Aws::Utils::Outcome<RegisterCertificateResult, IoTError> RegisterCertificateOutcome;
         typedef Aws::Utils::Outcome<RegisterCertificateWithoutCAResult, IoTError> RegisterCertificateWithoutCAOutcome;
@@ -683,6 +707,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateDomainConfigurationResult, IoTError> UpdateDomainConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdateDynamicThingGroupResult, IoTError> UpdateDynamicThingGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateEventConfigurationsResult, IoTError> UpdateEventConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> UpdateFleetMetricOutcome;
         typedef Aws::Utils::Outcome<UpdateIndexingConfigurationResult, IoTError> UpdateIndexingConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> UpdateJobOutcome;
         typedef Aws::Utils::Outcome<UpdateMitigationActionResult, IoTError> UpdateMitigationActionOutcome;
@@ -720,6 +745,7 @@ namespace Model
         typedef std::future<CreateDimensionOutcome> CreateDimensionOutcomeCallable;
         typedef std::future<CreateDomainConfigurationOutcome> CreateDomainConfigurationOutcomeCallable;
         typedef std::future<CreateDynamicThingGroupOutcome> CreateDynamicThingGroupOutcomeCallable;
+        typedef std::future<CreateFleetMetricOutcome> CreateFleetMetricOutcomeCallable;
         typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
         typedef std::future<CreateJobTemplateOutcome> CreateJobTemplateOutcomeCallable;
         typedef std::future<CreateKeysAndCertificateOutcome> CreateKeysAndCertificateOutcomeCallable;
@@ -749,6 +775,7 @@ namespace Model
         typedef std::future<DeleteDimensionOutcome> DeleteDimensionOutcomeCallable;
         typedef std::future<DeleteDomainConfigurationOutcome> DeleteDomainConfigurationOutcomeCallable;
         typedef std::future<DeleteDynamicThingGroupOutcome> DeleteDynamicThingGroupOutcomeCallable;
+        typedef std::future<DeleteFleetMetricOutcome> DeleteFleetMetricOutcomeCallable;
         typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
         typedef std::future<DeleteJobExecutionOutcome> DeleteJobExecutionOutcomeCallable;
         typedef std::future<DeleteJobTemplateOutcome> DeleteJobTemplateOutcomeCallable;
@@ -786,10 +813,12 @@ namespace Model
         typedef std::future<DescribeDomainConfigurationOutcome> DescribeDomainConfigurationOutcomeCallable;
         typedef std::future<DescribeEndpointOutcome> DescribeEndpointOutcomeCallable;
         typedef std::future<DescribeEventConfigurationsOutcome> DescribeEventConfigurationsOutcomeCallable;
+        typedef std::future<DescribeFleetMetricOutcome> DescribeFleetMetricOutcomeCallable;
         typedef std::future<DescribeIndexOutcome> DescribeIndexOutcomeCallable;
         typedef std::future<DescribeJobOutcome> DescribeJobOutcomeCallable;
         typedef std::future<DescribeJobExecutionOutcome> DescribeJobExecutionOutcomeCallable;
         typedef std::future<DescribeJobTemplateOutcome> DescribeJobTemplateOutcomeCallable;
+        typedef std::future<DescribeManagedJobTemplateOutcome> DescribeManagedJobTemplateOutcomeCallable;
         typedef std::future<DescribeMitigationActionOutcome> DescribeMitigationActionOutcomeCallable;
         typedef std::future<DescribeProvisioningTemplateOutcome> DescribeProvisioningTemplateOutcomeCallable;
         typedef std::future<DescribeProvisioningTemplateVersionOutcome> DescribeProvisioningTemplateVersionOutcomeCallable;
@@ -807,6 +836,7 @@ namespace Model
         typedef std::future<DisableTopicRuleOutcome> DisableTopicRuleOutcomeCallable;
         typedef std::future<EnableTopicRuleOutcome> EnableTopicRuleOutcomeCallable;
         typedef std::future<GetBehaviorModelTrainingSummariesOutcome> GetBehaviorModelTrainingSummariesOutcomeCallable;
+        typedef std::future<GetBucketsAggregationOutcome> GetBucketsAggregationOutcomeCallable;
         typedef std::future<GetCardinalityOutcome> GetCardinalityOutcomeCallable;
         typedef std::future<GetEffectivePoliciesOutcome> GetEffectivePoliciesOutcomeCallable;
         typedef std::future<GetIndexingConfigurationOutcome> GetIndexingConfigurationOutcomeCallable;
@@ -838,11 +868,13 @@ namespace Model
         typedef std::future<ListDetectMitigationActionsTasksOutcome> ListDetectMitigationActionsTasksOutcomeCallable;
         typedef std::future<ListDimensionsOutcome> ListDimensionsOutcomeCallable;
         typedef std::future<ListDomainConfigurationsOutcome> ListDomainConfigurationsOutcomeCallable;
+        typedef std::future<ListFleetMetricsOutcome> ListFleetMetricsOutcomeCallable;
         typedef std::future<ListIndicesOutcome> ListIndicesOutcomeCallable;
         typedef std::future<ListJobExecutionsForJobOutcome> ListJobExecutionsForJobOutcomeCallable;
         typedef std::future<ListJobExecutionsForThingOutcome> ListJobExecutionsForThingOutcomeCallable;
         typedef std::future<ListJobTemplatesOutcome> ListJobTemplatesOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
+        typedef std::future<ListManagedJobTemplatesOutcome> ListManagedJobTemplatesOutcomeCallable;
         typedef std::future<ListMitigationActionsOutcome> ListMitigationActionsOutcomeCallable;
         typedef std::future<ListOTAUpdatesOutcome> ListOTAUpdatesOutcomeCallable;
         typedef std::future<ListOutgoingCertificatesOutcome> ListOutgoingCertificatesOutcomeCallable;
@@ -872,6 +904,7 @@ namespace Model
         typedef std::future<ListTopicRulesOutcome> ListTopicRulesOutcomeCallable;
         typedef std::future<ListV2LoggingLevelsOutcome> ListV2LoggingLevelsOutcomeCallable;
         typedef std::future<ListViolationEventsOutcome> ListViolationEventsOutcomeCallable;
+        typedef std::future<PutVerificationStateOnViolationOutcome> PutVerificationStateOnViolationOutcomeCallable;
         typedef std::future<RegisterCACertificateOutcome> RegisterCACertificateOutcomeCallable;
         typedef std::future<RegisterCertificateOutcome> RegisterCertificateOutcomeCallable;
         typedef std::future<RegisterCertificateWithoutCAOutcome> RegisterCertificateWithoutCAOutcomeCallable;
@@ -907,6 +940,7 @@ namespace Model
         typedef std::future<UpdateDomainConfigurationOutcome> UpdateDomainConfigurationOutcomeCallable;
         typedef std::future<UpdateDynamicThingGroupOutcome> UpdateDynamicThingGroupOutcomeCallable;
         typedef std::future<UpdateEventConfigurationsOutcome> UpdateEventConfigurationsOutcomeCallable;
+        typedef std::future<UpdateFleetMetricOutcome> UpdateFleetMetricOutcomeCallable;
         typedef std::future<UpdateIndexingConfigurationOutcome> UpdateIndexingConfigurationOutcomeCallable;
         typedef std::future<UpdateJobOutcome> UpdateJobOutcomeCallable;
         typedef std::future<UpdateMitigationActionOutcome> UpdateMitigationActionOutcomeCallable;
@@ -947,6 +981,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::CreateDimensionRequest&, const Model::CreateDimensionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDimensionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateDomainConfigurationRequest&, const Model::CreateDomainConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateDynamicThingGroupRequest&, const Model::CreateDynamicThingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDynamicThingGroupResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::CreateFleetMetricRequest&, const Model::CreateFleetMetricOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetMetricResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateJobTemplateRequest&, const Model::CreateJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobTemplateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateKeysAndCertificateRequest&, const Model::CreateKeysAndCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKeysAndCertificateResponseReceivedHandler;
@@ -976,6 +1011,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::DeleteDimensionRequest&, const Model::DeleteDimensionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDimensionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteDomainConfigurationRequest&, const Model::DeleteDomainConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteDynamicThingGroupRequest&, const Model::DeleteDynamicThingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDynamicThingGroupResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::DeleteFleetMetricRequest&, const Model::DeleteFleetMetricOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetMetricResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteJobRequest&, const Model::DeleteJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteJobExecutionRequest&, const Model::DeleteJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobExecutionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteJobTemplateRequest&, const Model::DeleteJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobTemplateResponseReceivedHandler;
@@ -1013,10 +1049,12 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::DescribeDomainConfigurationRequest&, const Model::DescribeDomainConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeEndpointRequest&, const Model::DescribeEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeEventConfigurationsRequest&, const Model::DescribeEventConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::DescribeFleetMetricRequest&, const Model::DescribeFleetMetricOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetMetricResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeIndexRequest&, const Model::DescribeIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIndexResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeJobRequest&, const Model::DescribeJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeJobExecutionRequest&, const Model::DescribeJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobExecutionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeJobTemplateRequest&, const Model::DescribeJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobTemplateResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::DescribeManagedJobTemplateRequest&, const Model::DescribeManagedJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedJobTemplateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeMitigationActionRequest&, const Model::DescribeMitigationActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMitigationActionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeProvisioningTemplateRequest&, const Model::DescribeProvisioningTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProvisioningTemplateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeProvisioningTemplateVersionRequest&, const Model::DescribeProvisioningTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProvisioningTemplateVersionResponseReceivedHandler;
@@ -1034,6 +1072,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::DisableTopicRuleRequest&, const Model::DisableTopicRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableTopicRuleResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::EnableTopicRuleRequest&, const Model::EnableTopicRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableTopicRuleResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetBehaviorModelTrainingSummariesRequest&, const Model::GetBehaviorModelTrainingSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBehaviorModelTrainingSummariesResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::GetBucketsAggregationRequest&, const Model::GetBucketsAggregationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketsAggregationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetCardinalityRequest&, const Model::GetCardinalityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCardinalityResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetEffectivePoliciesRequest&, const Model::GetEffectivePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEffectivePoliciesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetIndexingConfigurationRequest&, const Model::GetIndexingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIndexingConfigurationResponseReceivedHandler;
@@ -1065,11 +1104,13 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::ListDetectMitigationActionsTasksRequest&, const Model::ListDetectMitigationActionsTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDetectMitigationActionsTasksResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListDimensionsRequest&, const Model::ListDimensionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDimensionsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListDomainConfigurationsRequest&, const Model::ListDomainConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::ListFleetMetricsRequest&, const Model::ListFleetMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFleetMetricsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListIndicesRequest&, const Model::ListIndicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIndicesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListJobExecutionsForJobRequest&, const Model::ListJobExecutionsForJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobExecutionsForJobResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListJobExecutionsForThingRequest&, const Model::ListJobExecutionsForThingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobExecutionsForThingResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListJobTemplatesRequest&, const Model::ListJobTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobTemplatesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::ListManagedJobTemplatesRequest&, const Model::ListManagedJobTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedJobTemplatesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListMitigationActionsRequest&, const Model::ListMitigationActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMitigationActionsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListOTAUpdatesRequest&, const Model::ListOTAUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOTAUpdatesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListOutgoingCertificatesRequest&, const Model::ListOutgoingCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOutgoingCertificatesResponseReceivedHandler;
@@ -1099,6 +1140,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::ListTopicRulesRequest&, const Model::ListTopicRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTopicRulesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListV2LoggingLevelsRequest&, const Model::ListV2LoggingLevelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListV2LoggingLevelsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListViolationEventsRequest&, const Model::ListViolationEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListViolationEventsResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::PutVerificationStateOnViolationRequest&, const Model::PutVerificationStateOnViolationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVerificationStateOnViolationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::RegisterCACertificateRequest&, const Model::RegisterCACertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterCACertificateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::RegisterCertificateRequest&, const Model::RegisterCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterCertificateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::RegisterCertificateWithoutCARequest&, const Model::RegisterCertificateWithoutCAOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterCertificateWithoutCAResponseReceivedHandler;
@@ -1134,6 +1176,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::UpdateDomainConfigurationRequest&, const Model::UpdateDomainConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateDynamicThingGroupRequest&, const Model::UpdateDynamicThingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDynamicThingGroupResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateEventConfigurationsRequest&, const Model::UpdateEventConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::UpdateFleetMetricRequest&, const Model::UpdateFleetMetricOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetMetricResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateIndexingConfigurationRequest&, const Model::UpdateIndexingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIndexingConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateJobRequest&, const Model::UpdateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateMitigationActionRequest&, const Model::UpdateMitigationActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMitigationActionResponseReceivedHandler;
@@ -1149,25 +1192,26 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::ValidateSecurityProfileBehaviorsRequest&, const Model::ValidateSecurityProfileBehaviorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateSecurityProfileBehaviorsResponseReceivedHandler;
 
   /**
-   * <fullname>AWS IoT</fullname> <p>AWS IoT provides secure, bi-directional
-   * communication between Internet-connected devices (such as sensors, actuators,
-   * embedded devices, or smart appliances) and the AWS cloud. You can discover your
-   * custom IoT-Data endpoint to communicate with, configure rules for data
-   * processing and integration with other services, organize resources associated
-   * with each device (Registry), configure logging, and create and manage policies
-   * and credentials to authenticate devices.</p> <p>The service endpoints that
-   * expose this API are listed in <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html">AWS IoT Core
-   * Endpoints and Quotas</a>. You must use the endpoint for the region that has the
-   * resources you want to access.</p> <p>The service name used by <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">AWS
-   * Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For
-   * more information about how AWS IoT works, see the <a
+   * <fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication
+   * between Internet-connected devices (such as sensors, actuators, embedded
+   * devices, or smart appliances) and the Amazon Web Services cloud. You can
+   * discover your custom IoT-Data endpoint to communicate with, configure rules for
+   * data processing and integration with other services, organize resources
+   * associated with each device (Registry), configure logging, and create and manage
+   * policies and credentials to authenticate devices.</p> <p>The service endpoints
+   * that expose this API are listed in <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html">Amazon Web
+   * Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the
+   * region that has the resources you want to access.</p> <p>The service name used
+   * by <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Amazon
+   * Web Services Signature Version 4</a> to sign the request is:
+   * <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a
    * href="https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer
    * Guide</a>.</p> <p>For information about how to use the credentials provider for
-   * AWS IoT, see <a
+   * IoT, see <a
    * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing
-   * Direct Calls to AWS Services</a>.</p>
+   * Direct Calls to Amazon Web Services Services</a>.</p>
    */
   class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient
   {
@@ -1199,8 +1243,10 @@ namespace Model
         /**
          * <p>Accepts a pending certificate transfer. The default state of the certificate
          * is INACTIVE.</p> <p>To check for pending certificate transfers, call
-         * <a>ListCertificates</a> to enumerate your certificates.</p><p><h3>See Also:</h3>
-         * <a
+         * <a>ListCertificates</a> to enumerate your certificates.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AcceptCertificateTransfer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransfer">AWS
          * API Reference</a></p>
          */
@@ -1209,8 +1255,10 @@ namespace Model
         /**
          * <p>Accepts a pending certificate transfer. The default state of the certificate
          * is INACTIVE.</p> <p>To check for pending certificate transfers, call
-         * <a>ListCertificates</a> to enumerate your certificates.</p><p><h3>See Also:</h3>
-         * <a
+         * <a>ListCertificates</a> to enumerate your certificates.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AcceptCertificateTransfer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransfer">AWS
          * API Reference</a></p>
          *
@@ -1221,8 +1269,10 @@ namespace Model
         /**
          * <p>Accepts a pending certificate transfer. The default state of the certificate
          * is INACTIVE.</p> <p>To check for pending certificate transfers, call
-         * <a>ListCertificates</a> to enumerate your certificates.</p><p><h3>See Also:</h3>
-         * <a
+         * <a>ListCertificates</a> to enumerate your certificates.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AcceptCertificateTransfer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransfer">AWS
          * API Reference</a></p>
          *
@@ -1231,14 +1281,18 @@ namespace Model
         virtual void AcceptCertificateTransferAsync(const Model::AcceptCertificateTransferRequest& request, const AcceptCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a thing to a billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a thing to a billing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AddThingToBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToBillingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::AddThingToBillingGroupOutcome AddThingToBillingGroup(const Model::AddThingToBillingGroupRequest& request) const;
 
         /**
-         * <p>Adds a thing to a billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a thing to a billing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AddThingToBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -1247,7 +1301,9 @@ namespace Model
         virtual Model::AddThingToBillingGroupOutcomeCallable AddThingToBillingGroupCallable(const Model::AddThingToBillingGroupRequest& request) const;
 
         /**
-         * <p>Adds a thing to a billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a thing to a billing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AddThingToBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -1256,14 +1312,18 @@ namespace Model
         virtual void AddThingToBillingGroupAsync(const Model::AddThingToBillingGroupRequest& request, const AddThingToBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a thing to a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a thing to a thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AddThingToThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToThingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::AddThingToThingGroupOutcome AddThingToThingGroup(const Model::AddThingToThingGroupRequest& request) const;
 
         /**
-         * <p>Adds a thing to a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a thing to a thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AddThingToThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToThingGroup">AWS
          * API Reference</a></p>
          *
@@ -1272,7 +1332,9 @@ namespace Model
         virtual Model::AddThingToThingGroupOutcomeCallable AddThingToThingGroupCallable(const Model::AddThingToThingGroupRequest& request) const;
 
         /**
-         * <p>Adds a thing to a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a thing to a thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AddThingToThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToThingGroup">AWS
          * API Reference</a></p>
          *
@@ -1285,8 +1347,10 @@ namespace Model
          * </p> <ul> <li> <p>The job must have been created with the
          * <code>targetSelection</code> field set to "CONTINUOUS".</p> </li> <li> <p>The
          * job status must currently be "IN_PROGRESS".</p> </li> <li> <p>The total number
-         * of targets associated with a job must not exceed 100.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * of targets associated with a job must not exceed 100.</p> </li> </ul>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AssociateTargetsWithJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AssociateTargetsWithJob">AWS
          * API Reference</a></p>
          */
@@ -1297,8 +1361,10 @@ namespace Model
          * </p> <ul> <li> <p>The job must have been created with the
          * <code>targetSelection</code> field set to "CONTINUOUS".</p> </li> <li> <p>The
          * job status must currently be "IN_PROGRESS".</p> </li> <li> <p>The total number
-         * of targets associated with a job must not exceed 100.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * of targets associated with a job must not exceed 100.</p> </li> </ul>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AssociateTargetsWithJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AssociateTargetsWithJob">AWS
          * API Reference</a></p>
          *
@@ -1311,8 +1377,10 @@ namespace Model
          * </p> <ul> <li> <p>The job must have been created with the
          * <code>targetSelection</code> field set to "CONTINUOUS".</p> </li> <li> <p>The
          * job status must currently be "IN_PROGRESS".</p> </li> <li> <p>The total number
-         * of targets associated with a job must not exceed 100.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * of targets associated with a job must not exceed 100.</p> </li> </ul>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AssociateTargetsWithJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AssociateTargetsWithJob">AWS
          * API Reference</a></p>
          *
@@ -1322,7 +1390,9 @@ namespace Model
 
         /**
          * <p>Attaches the specified policy to the specified principal (certificate or
-         * other credential).</p><p><h3>See Also:</h3>   <a
+         * other credential).</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPolicy">AWS
          * API Reference</a></p>
          */
@@ -1330,7 +1400,9 @@ namespace Model
 
         /**
          * <p>Attaches the specified policy to the specified principal (certificate or
-         * other credential).</p><p><h3>See Also:</h3>   <a
+         * other credential).</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPolicy">AWS
          * API Reference</a></p>
          *
@@ -1340,7 +1412,9 @@ namespace Model
 
         /**
          * <p>Attaches the specified policy to the specified principal (certificate or
-         * other credential).</p><p><h3>See Also:</h3>   <a
+         * other credential).</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPolicy">AWS
          * API Reference</a></p>
          *
@@ -1351,7 +1425,9 @@ namespace Model
         /**
          * <p>Associates a Device Defender security profile with a thing group or this
          * account. Each thing group or account can have up to five security profiles
-         * associated with it.</p><p><h3>See Also:</h3>   <a
+         * associated with it.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachSecurityProfile">AWS
          * API Reference</a></p>
          */
@@ -1360,7 +1436,9 @@ namespace Model
         /**
          * <p>Associates a Device Defender security profile with a thing group or this
          * account. Each thing group or account can have up to five security profiles
-         * associated with it.</p><p><h3>See Also:</h3>   <a
+         * associated with it.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -1371,7 +1449,9 @@ namespace Model
         /**
          * <p>Associates a Device Defender security profile with a thing group or this
          * account. Each thing group or account can have up to five security profiles
-         * associated with it.</p><p><h3>See Also:</h3>   <a
+         * associated with it.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -1382,7 +1462,9 @@ namespace Model
         /**
          * <p>Attaches the specified principal to the specified thing. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities.</p><p><h3>See Also:</h3>   <a
+         * federated identities.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachThingPrincipal</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">AWS
          * API Reference</a></p>
          */
@@ -1391,7 +1473,9 @@ namespace Model
         /**
          * <p>Attaches the specified principal to the specified thing. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities.</p><p><h3>See Also:</h3>   <a
+         * federated identities.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachThingPrincipal</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">AWS
          * API Reference</a></p>
          *
@@ -1402,7 +1486,9 @@ namespace Model
         /**
          * <p>Attaches the specified principal to the specified thing. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities.</p><p><h3>See Also:</h3>   <a
+         * federated identities.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachThingPrincipal</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">AWS
          * API Reference</a></p>
          *
@@ -1412,7 +1498,10 @@ namespace Model
 
         /**
          * <p>Cancels a mitigation action task that is in progress. If the task is not in
-         * progress, an InvalidRequestException occurs.</p><p><h3>See Also:</h3>   <a
+         * progress, an InvalidRequestException occurs.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelAuditMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelAuditMitigationActionsTask">AWS
          * API Reference</a></p>
          */
@@ -1420,7 +1509,10 @@ namespace Model
 
         /**
          * <p>Cancels a mitigation action task that is in progress. If the task is not in
-         * progress, an InvalidRequestException occurs.</p><p><h3>See Also:</h3>   <a
+         * progress, an InvalidRequestException occurs.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelAuditMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelAuditMitigationActionsTask">AWS
          * API Reference</a></p>
          *
@@ -1430,7 +1522,10 @@ namespace Model
 
         /**
          * <p>Cancels a mitigation action task that is in progress. If the task is not in
-         * progress, an InvalidRequestException occurs.</p><p><h3>See Also:</h3>   <a
+         * progress, an InvalidRequestException occurs.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelAuditMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelAuditMitigationActionsTask">AWS
          * API Reference</a></p>
          *
@@ -1440,8 +1535,10 @@ namespace Model
 
         /**
          * <p>Cancels an audit that is in progress. The audit can be either scheduled or on
-         * demand. If the audit isn't in progress, an "InvalidRequestException"
-         * occurs.</p><p><h3>See Also:</h3>   <a
+         * demand. If the audit isn't in progress, an "InvalidRequestException" occurs.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelAuditTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelAuditTask">AWS
          * API Reference</a></p>
          */
@@ -1449,8 +1546,10 @@ namespace Model
 
         /**
          * <p>Cancels an audit that is in progress. The audit can be either scheduled or on
-         * demand. If the audit isn't in progress, an "InvalidRequestException"
-         * occurs.</p><p><h3>See Also:</h3>   <a
+         * demand. If the audit isn't in progress, an "InvalidRequestException" occurs.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelAuditTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelAuditTask">AWS
          * API Reference</a></p>
          *
@@ -1460,8 +1559,10 @@ namespace Model
 
         /**
          * <p>Cancels an audit that is in progress. The audit can be either scheduled or on
-         * demand. If the audit isn't in progress, an "InvalidRequestException"
-         * occurs.</p><p><h3>See Also:</h3>   <a
+         * demand. If the audit isn't in progress, an "InvalidRequestException" occurs.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelAuditTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelAuditTask">AWS
          * API Reference</a></p>
          *
@@ -1473,11 +1574,13 @@ namespace Model
          * <p>Cancels a pending transfer for the specified certificate.</p> <p> <b>Note</b>
          * Only the transfer source account can use this operation to cancel a transfer.
          * (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After
-         * transfer, AWS IoT returns the certificate to the source account in the INACTIVE
+         * transfer, IoT returns the certificate to the source account in the INACTIVE
          * state. After the destination account has accepted the transfer, the transfer
          * cannot be cancelled.</p> <p>After a certificate transfer is cancelled, the
-         * status of the certificate changes from PENDING_TRANSFER to
-         * INACTIVE.</p><p><h3>See Also:</h3>   <a
+         * status of the certificate changes from PENDING_TRANSFER to INACTIVE.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelCertificateTransfer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">AWS
          * API Reference</a></p>
          */
@@ -1487,11 +1590,13 @@ namespace Model
          * <p>Cancels a pending transfer for the specified certificate.</p> <p> <b>Note</b>
          * Only the transfer source account can use this operation to cancel a transfer.
          * (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After
-         * transfer, AWS IoT returns the certificate to the source account in the INACTIVE
+         * transfer, IoT returns the certificate to the source account in the INACTIVE
          * state. After the destination account has accepted the transfer, the transfer
          * cannot be cancelled.</p> <p>After a certificate transfer is cancelled, the
-         * status of the certificate changes from PENDING_TRANSFER to
-         * INACTIVE.</p><p><h3>See Also:</h3>   <a
+         * status of the certificate changes from PENDING_TRANSFER to INACTIVE.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelCertificateTransfer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">AWS
          * API Reference</a></p>
          *
@@ -1503,11 +1608,13 @@ namespace Model
          * <p>Cancels a pending transfer for the specified certificate.</p> <p> <b>Note</b>
          * Only the transfer source account can use this operation to cancel a transfer.
          * (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After
-         * transfer, AWS IoT returns the certificate to the source account in the INACTIVE
+         * transfer, IoT returns the certificate to the source account in the INACTIVE
          * state. After the destination account has accepted the transfer, the transfer
          * cannot be cancelled.</p> <p>After a certificate transfer is cancelled, the
-         * status of the certificate changes from PENDING_TRANSFER to
-         * INACTIVE.</p><p><h3>See Also:</h3>   <a
+         * status of the certificate changes from PENDING_TRANSFER to INACTIVE.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelCertificateTransfer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">AWS
          * API Reference</a></p>
          *
@@ -1516,16 +1623,20 @@ namespace Model
         virtual void CancelCertificateTransferAsync(const Model::CancelCertificateTransferRequest& request, const CancelCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Cancels a Device Defender ML Detect mitigation action. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Cancels a Device Defender ML Detect mitigation action. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelDetectMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelDetectMitigationActionsTask">AWS
          * API Reference</a></p>
          */
         virtual Model::CancelDetectMitigationActionsTaskOutcome CancelDetectMitigationActionsTask(const Model::CancelDetectMitigationActionsTaskRequest& request) const;
 
         /**
-         * <p> Cancels a Device Defender ML Detect mitigation action. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Cancels a Device Defender ML Detect mitigation action. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelDetectMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelDetectMitigationActionsTask">AWS
          * API Reference</a></p>
          *
@@ -1534,8 +1645,10 @@ namespace Model
         virtual Model::CancelDetectMitigationActionsTaskOutcomeCallable CancelDetectMitigationActionsTaskCallable(const Model::CancelDetectMitigationActionsTaskRequest& request) const;
 
         /**
-         * <p> Cancels a Device Defender ML Detect mitigation action. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Cancels a Device Defender ML Detect mitigation action. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelDetectMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelDetectMitigationActionsTask">AWS
          * API Reference</a></p>
          *
@@ -1544,14 +1657,18 @@ namespace Model
         virtual void CancelDetectMitigationActionsTaskAsync(const Model::CancelDetectMitigationActionsTaskRequest& request, const CancelDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Cancels a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Cancels a job.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJob">AWS API
          * Reference</a></p>
          */
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
         /**
-         * <p>Cancels a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Cancels a job.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJob">AWS API
          * Reference</a></p>
          *
@@ -1560,7 +1677,9 @@ namespace Model
         virtual Model::CancelJobOutcomeCallable CancelJobCallable(const Model::CancelJobRequest& request) const;
 
         /**
-         * <p>Cancels a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Cancels a job.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJob">AWS API
          * Reference</a></p>
          *
@@ -1569,16 +1688,20 @@ namespace Model
         virtual void CancelJobAsync(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Cancels the execution of a job for a given thing.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Cancels the execution of a job for a given thing.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJobExecution</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">AWS
          * API Reference</a></p>
          */
         virtual Model::CancelJobExecutionOutcome CancelJobExecution(const Model::CancelJobExecutionRequest& request) const;
 
         /**
-         * <p>Cancels the execution of a job for a given thing.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Cancels the execution of a job for a given thing.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJobExecution</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">AWS
          * API Reference</a></p>
          *
@@ -1587,8 +1710,10 @@ namespace Model
         virtual Model::CancelJobExecutionOutcomeCallable CancelJobExecutionCallable(const Model::CancelJobExecutionRequest& request) const;
 
         /**
-         * <p>Cancels the execution of a job for a given thing.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Cancels the execution of a job for a given thing.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJobExecution</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">AWS
          * API Reference</a></p>
          *
@@ -1597,14 +1722,18 @@ namespace Model
         virtual void CancelJobExecutionAsync(const Model::CancelJobExecutionRequest& request, const CancelJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Clears the default authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Clears the default authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ClearDefaultAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ClearDefaultAuthorizer">AWS
          * API Reference</a></p>
          */
         virtual Model::ClearDefaultAuthorizerOutcome ClearDefaultAuthorizer(const Model::ClearDefaultAuthorizerRequest& request) const;
 
         /**
-         * <p>Clears the default authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Clears the default authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ClearDefaultAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ClearDefaultAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -1613,7 +1742,9 @@ namespace Model
         virtual Model::ClearDefaultAuthorizerOutcomeCallable ClearDefaultAuthorizerCallable(const Model::ClearDefaultAuthorizerRequest& request) const;
 
         /**
-         * <p>Clears the default authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Clears the default authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ClearDefaultAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ClearDefaultAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -1623,10 +1754,12 @@ namespace Model
 
         /**
          * <p>Confirms a topic rule destination. When you create a rule requiring a
-         * destination, AWS IoT sends a confirmation message to the endpoint or base
-         * address you specify. The message includes a token which you pass back when
-         * calling <code>ConfirmTopicRuleDestination</code> to confirm that you own or have
-         * access to the endpoint.</p><p><h3>See Also:</h3>   <a
+         * destination, IoT sends a confirmation message to the endpoint or base address
+         * you specify. The message includes a token which you pass back when calling
+         * <code>ConfirmTopicRuleDestination</code> to confirm that you own or have access
+         * to the endpoint.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ConfirmTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ConfirmTopicRuleDestination">AWS
          * API Reference</a></p>
          */
@@ -1634,10 +1767,12 @@ namespace Model
 
         /**
          * <p>Confirms a topic rule destination. When you create a rule requiring a
-         * destination, AWS IoT sends a confirmation message to the endpoint or base
-         * address you specify. The message includes a token which you pass back when
-         * calling <code>ConfirmTopicRuleDestination</code> to confirm that you own or have
-         * access to the endpoint.</p><p><h3>See Also:</h3>   <a
+         * destination, IoT sends a confirmation message to the endpoint or base address
+         * you specify. The message includes a token which you pass back when calling
+         * <code>ConfirmTopicRuleDestination</code> to confirm that you own or have access
+         * to the endpoint.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ConfirmTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ConfirmTopicRuleDestination">AWS
          * API Reference</a></p>
          *
@@ -1647,10 +1782,12 @@ namespace Model
 
         /**
          * <p>Confirms a topic rule destination. When you create a rule requiring a
-         * destination, AWS IoT sends a confirmation message to the endpoint or base
-         * address you specify. The message includes a token which you pass back when
-         * calling <code>ConfirmTopicRuleDestination</code> to confirm that you own or have
-         * access to the endpoint.</p><p><h3>See Also:</h3>   <a
+         * destination, IoT sends a confirmation message to the endpoint or base address
+         * you specify. The message includes a token which you pass back when calling
+         * <code>ConfirmTopicRuleDestination</code> to confirm that you own or have access
+         * to the endpoint.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ConfirmTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ConfirmTopicRuleDestination">AWS
          * API Reference</a></p>
          *
@@ -1659,14 +1796,20 @@ namespace Model
         virtual void ConfirmTopicRuleDestinationAsync(const Model::ConfirmTopicRuleDestinationRequest& request, const ConfirmTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Creates a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * <p> Creates a Device Defender audit suppression. </p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuditSuppression</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuditSuppression">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAuditSuppressionOutcome CreateAuditSuppression(const Model::CreateAuditSuppressionRequest& request) const;
 
         /**
-         * <p> Creates a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * <p> Creates a Device Defender audit suppression. </p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuditSuppression</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuditSuppression">AWS
          * API Reference</a></p>
          *
@@ -1675,7 +1818,10 @@ namespace Model
         virtual Model::CreateAuditSuppressionOutcomeCallable CreateAuditSuppressionCallable(const Model::CreateAuditSuppressionRequest& request) const;
 
         /**
-         * <p> Creates a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * <p> Creates a Device Defender audit suppression. </p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuditSuppression</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuditSuppression">AWS
          * API Reference</a></p>
          *
@@ -1684,14 +1830,18 @@ namespace Model
         virtual void CreateAuditSuppressionAsync(const Model::CreateAuditSuppressionRequest& request, const CreateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuthorizer">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAuthorizerOutcome CreateAuthorizer(const Model::CreateAuthorizerRequest& request) const;
 
         /**
-         * <p>Creates an authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -1700,7 +1850,9 @@ namespace Model
         virtual Model::CreateAuthorizerOutcomeCallable CreateAuthorizerCallable(const Model::CreateAuthorizerRequest& request) const;
 
         /**
-         * <p>Creates an authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -1709,14 +1861,18 @@ namespace Model
         virtual void CreateAuthorizerAsync(const Model::CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a billing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateBillingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateBillingGroupOutcome CreateBillingGroup(const Model::CreateBillingGroupRequest& request) const;
 
         /**
-         * <p>Creates a billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a billing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -1725,7 +1881,9 @@ namespace Model
         virtual Model::CreateBillingGroupOutcomeCallable CreateBillingGroupCallable(const Model::CreateBillingGroupRequest& request) const;
 
         /**
-         * <p>Creates a billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a billing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -1736,22 +1894,27 @@ namespace Model
         /**
          * <p>Creates an X.509 certificate using the specified certificate signing
          * request.</p> <p> <b>Note:</b> The CSR must include a public key that is either
-         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256 or
-         * NIST P-384 curves. </p> <p> <b>Note:</b> Reusing the same certificate signing
-         * request (CSR) results in a distinct certificate.</p> <p>You can create multiple
-         * certificates in a batch by creating a directory, copying multiple .csr files
-         * into that directory, and then specifying that directory on the command line. The
-         * following commands show how to create a batch of certificates given a batch of
-         * CSRs.</p> <p>Assuming a set of CSRs are located inside of the directory
-         * my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls
-         * my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
-         * --certificate-signing-request file://my-csr-directory/{}</p> <p>This command
-         * lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
-         * aws iot create-certificate-from-csr AWS CLI command to create a certificate for
-         * the corresponding CSR.</p> <p>The aws iot create-certificate-from-csr part of
-         * the command can also be run in parallel to speed up the certificate creation
-         * process:</p> <p>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot
+         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256,
+         * NIST P-384, or NIST P-512 curves. For supported certificates, consult <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+         * Certificate signing algorithms supported by IoT</a>.</p> <p> <b>Note:</b>
+         * Reusing the same certificate signing request (CSR) results in a distinct
+         * certificate.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
+         * action.</p> <p>You can create multiple certificates in a batch by creating a
+         * directory, copying multiple .csr files into that directory, and then specifying
+         * that directory on the command line. The following commands show how to create a
+         * batch of certificates given a batch of CSRs.</p> <p>Assuming a set of CSRs are
+         * located inside of the directory my-csr-directory:</p> <p>On Linux and OS X, the
+         * command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot
          * create-certificate-from-csr --certificate-signing-request
+         * file://my-csr-directory/{}</p> <p>This command lists all of the CSRs in
+         * my-csr-directory and pipes each CSR file name to the aws iot
+         * create-certificate-from-csr Amazon Web Services CLI command to create a
+         * certificate for the corresponding CSR.</p> <p>The aws iot
+         * create-certificate-from-csr part of the command can also be run in parallel to
+         * speed up the certificate creation process:</p> <p>$ ls my-csr-directory/ | xargs
+         * -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
          * file://my-csr-directory/{}</p> <p>On Windows PowerShell, the command to create
          * certificates for all CSRs in my-csr-directory is:</p> <p>&gt; ls -Name
          * my-csr-directory | %{aws iot create-certificate-from-csr
@@ -1768,22 +1931,27 @@ namespace Model
         /**
          * <p>Creates an X.509 certificate using the specified certificate signing
          * request.</p> <p> <b>Note:</b> The CSR must include a public key that is either
-         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256 or
-         * NIST P-384 curves. </p> <p> <b>Note:</b> Reusing the same certificate signing
-         * request (CSR) results in a distinct certificate.</p> <p>You can create multiple
-         * certificates in a batch by creating a directory, copying multiple .csr files
-         * into that directory, and then specifying that directory on the command line. The
-         * following commands show how to create a batch of certificates given a batch of
-         * CSRs.</p> <p>Assuming a set of CSRs are located inside of the directory
-         * my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls
-         * my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
-         * --certificate-signing-request file://my-csr-directory/{}</p> <p>This command
-         * lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
-         * aws iot create-certificate-from-csr AWS CLI command to create a certificate for
-         * the corresponding CSR.</p> <p>The aws iot create-certificate-from-csr part of
-         * the command can also be run in parallel to speed up the certificate creation
-         * process:</p> <p>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot
+         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256,
+         * NIST P-384, or NIST P-512 curves. For supported certificates, consult <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+         * Certificate signing algorithms supported by IoT</a>.</p> <p> <b>Note:</b>
+         * Reusing the same certificate signing request (CSR) results in a distinct
+         * certificate.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
+         * action.</p> <p>You can create multiple certificates in a batch by creating a
+         * directory, copying multiple .csr files into that directory, and then specifying
+         * that directory on the command line. The following commands show how to create a
+         * batch of certificates given a batch of CSRs.</p> <p>Assuming a set of CSRs are
+         * located inside of the directory my-csr-directory:</p> <p>On Linux and OS X, the
+         * command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot
          * create-certificate-from-csr --certificate-signing-request
+         * file://my-csr-directory/{}</p> <p>This command lists all of the CSRs in
+         * my-csr-directory and pipes each CSR file name to the aws iot
+         * create-certificate-from-csr Amazon Web Services CLI command to create a
+         * certificate for the corresponding CSR.</p> <p>The aws iot
+         * create-certificate-from-csr part of the command can also be run in parallel to
+         * speed up the certificate creation process:</p> <p>$ ls my-csr-directory/ | xargs
+         * -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
          * file://my-csr-directory/{}</p> <p>On Windows PowerShell, the command to create
          * certificates for all CSRs in my-csr-directory is:</p> <p>&gt; ls -Name
          * my-csr-directory | %{aws iot create-certificate-from-csr
@@ -1802,22 +1970,27 @@ namespace Model
         /**
          * <p>Creates an X.509 certificate using the specified certificate signing
          * request.</p> <p> <b>Note:</b> The CSR must include a public key that is either
-         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256 or
-         * NIST P-384 curves. </p> <p> <b>Note:</b> Reusing the same certificate signing
-         * request (CSR) results in a distinct certificate.</p> <p>You can create multiple
-         * certificates in a batch by creating a directory, copying multiple .csr files
-         * into that directory, and then specifying that directory on the command line. The
-         * following commands show how to create a batch of certificates given a batch of
-         * CSRs.</p> <p>Assuming a set of CSRs are located inside of the directory
-         * my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls
-         * my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
-         * --certificate-signing-request file://my-csr-directory/{}</p> <p>This command
-         * lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
-         * aws iot create-certificate-from-csr AWS CLI command to create a certificate for
-         * the corresponding CSR.</p> <p>The aws iot create-certificate-from-csr part of
-         * the command can also be run in parallel to speed up the certificate creation
-         * process:</p> <p>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot
+         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256,
+         * NIST P-384, or NIST P-512 curves. For supported certificates, consult <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+         * Certificate signing algorithms supported by IoT</a>.</p> <p> <b>Note:</b>
+         * Reusing the same certificate signing request (CSR) results in a distinct
+         * certificate.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
+         * action.</p> <p>You can create multiple certificates in a batch by creating a
+         * directory, copying multiple .csr files into that directory, and then specifying
+         * that directory on the command line. The following commands show how to create a
+         * batch of certificates given a batch of CSRs.</p> <p>Assuming a set of CSRs are
+         * located inside of the directory my-csr-directory:</p> <p>On Linux and OS X, the
+         * command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot
          * create-certificate-from-csr --certificate-signing-request
+         * file://my-csr-directory/{}</p> <p>This command lists all of the CSRs in
+         * my-csr-directory and pipes each CSR file name to the aws iot
+         * create-certificate-from-csr Amazon Web Services CLI command to create a
+         * certificate for the corresponding CSR.</p> <p>The aws iot
+         * create-certificate-from-csr part of the command can also be run in parallel to
+         * speed up the certificate creation process:</p> <p>$ ls my-csr-directory/ | xargs
+         * -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
          * file://my-csr-directory/{}</p> <p>On Windows PowerShell, the command to create
          * certificates for all CSRs in my-csr-directory is:</p> <p>&gt; ls -Name
          * my-csr-directory | %{aws iot create-certificate-from-csr
@@ -1835,7 +2008,9 @@ namespace Model
 
         /**
          * <p> Use this API to define a Custom Metric published by your devices to Device
-         * Defender. </p><p><h3>See Also:</h3>   <a
+         * Defender. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCustomMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCustomMetric">AWS
          * API Reference</a></p>
          */
@@ -1843,7 +2018,9 @@ namespace Model
 
         /**
          * <p> Use this API to define a Custom Metric published by your devices to Device
-         * Defender. </p><p><h3>See Also:</h3>   <a
+         * Defender. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCustomMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCustomMetric">AWS
          * API Reference</a></p>
          *
@@ -1853,7 +2030,9 @@ namespace Model
 
         /**
          * <p> Use this API to define a Custom Metric published by your devices to Device
-         * Defender. </p><p><h3>See Also:</h3>   <a
+         * Defender. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCustomMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCustomMetric">AWS
          * API Reference</a></p>
          *
@@ -1863,10 +2042,12 @@ namespace Model
 
         /**
          * <p>Create a dimension that you can use to limit the scope of a metric used in a
-         * security profile for AWS IoT Device Defender. For example, using a
+         * security profile for IoT Device Defender. For example, using a
          * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-         * only to MQTT topics whose name match the pattern specified in the
-         * dimension.</p><p><h3>See Also:</h3>   <a
+         * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDimension</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDimension">AWS
          * API Reference</a></p>
          */
@@ -1874,10 +2055,12 @@ namespace Model
 
         /**
          * <p>Create a dimension that you can use to limit the scope of a metric used in a
-         * security profile for AWS IoT Device Defender. For example, using a
+         * security profile for IoT Device Defender. For example, using a
          * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-         * only to MQTT topics whose name match the pattern specified in the
-         * dimension.</p><p><h3>See Also:</h3>   <a
+         * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDimension</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDimension">AWS
          * API Reference</a></p>
          *
@@ -1887,10 +2070,12 @@ namespace Model
 
         /**
          * <p>Create a dimension that you can use to limit the scope of a metric used in a
-         * security profile for AWS IoT Device Defender. For example, using a
+         * security profile for IoT Device Defender. For example, using a
          * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-         * only to MQTT topics whose name match the pattern specified in the
-         * dimension.</p><p><h3>See Also:</h3>   <a
+         * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDimension</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDimension">AWS
          * API Reference</a></p>
          *
@@ -1899,14 +2084,18 @@ namespace Model
         virtual void CreateDimensionAsync(const Model::CreateDimensionRequest& request, const CreateDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a domain configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a domain configuration.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDomainConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDomainConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDomainConfigurationOutcome CreateDomainConfiguration(const Model::CreateDomainConfigurationRequest& request) const;
 
         /**
-         * <p>Creates a domain configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a domain configuration.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDomainConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDomainConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1915,7 +2104,9 @@ namespace Model
         virtual Model::CreateDomainConfigurationOutcomeCallable CreateDomainConfigurationCallable(const Model::CreateDomainConfigurationRequest& request) const;
 
         /**
-         * <p>Creates a domain configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a domain configuration.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDomainConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDomainConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1924,14 +2115,18 @@ namespace Model
         virtual void CreateDomainConfigurationAsync(const Model::CreateDomainConfigurationRequest& request, const CreateDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a dynamic thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a dynamic thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDynamicThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDynamicThingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDynamicThingGroupOutcome CreateDynamicThingGroup(const Model::CreateDynamicThingGroupRequest& request) const;
 
         /**
-         * <p>Creates a dynamic thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a dynamic thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDynamicThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDynamicThingGroup">AWS
          * API Reference</a></p>
          *
@@ -1940,7 +2135,9 @@ namespace Model
         virtual Model::CreateDynamicThingGroupOutcomeCallable CreateDynamicThingGroupCallable(const Model::CreateDynamicThingGroupRequest& request) const;
 
         /**
-         * <p>Creates a dynamic thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a dynamic thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDynamicThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDynamicThingGroup">AWS
          * API Reference</a></p>
          *
@@ -1949,14 +2146,49 @@ namespace Model
         virtual void CreateDynamicThingGroupAsync(const Model::CreateDynamicThingGroupRequest& request, const CreateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a fleet metric.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateFleetMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateFleetMetric">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFleetMetricOutcome CreateFleetMetric(const Model::CreateFleetMetricRequest& request) const;
+
+        /**
+         * <p>Creates a fleet metric.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateFleetMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateFleetMetric">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFleetMetricOutcomeCallable CreateFleetMetricCallable(const Model::CreateFleetMetricRequest& request) const;
+
+        /**
+         * <p>Creates a fleet metric.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateFleetMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateFleetMetric">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFleetMetricAsync(const Model::CreateFleetMetricRequest& request, const CreateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a job.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateJob">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
 
         /**
-         * <p>Creates a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a job.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateJob">AWS API
          * Reference</a></p>
          *
@@ -1965,7 +2197,9 @@ namespace Model
         virtual Model::CreateJobOutcomeCallable CreateJobCallable(const Model::CreateJobRequest& request) const;
 
         /**
-         * <p>Creates a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a job.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateJob">AWS API
          * Reference</a></p>
          *
@@ -1974,14 +2208,18 @@ namespace Model
         virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a job template.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a job template.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateJobTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateJobTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateJobTemplateOutcome CreateJobTemplate(const Model::CreateJobTemplateRequest& request) const;
 
         /**
-         * <p>Creates a job template.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a job template.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateJobTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateJobTemplate">AWS
          * API Reference</a></p>
          *
@@ -1990,7 +2228,9 @@ namespace Model
         virtual Model::CreateJobTemplateOutcomeCallable CreateJobTemplateCallable(const Model::CreateJobTemplateRequest& request) const;
 
         /**
-         * <p>Creates a job template.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a job template.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateJobTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateJobTemplate">AWS
          * API Reference</a></p>
          *
@@ -2003,9 +2243,11 @@ namespace Model
          * issued public key. You can also call <code>CreateKeysAndCertificate</code> over
          * MQTT from a device, for more information, see <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#provision-mqtt-api">Provisioning
-         * MQTT API</a>.</p> <p> <b>Note</b> This is the only time AWS IoT issues the
-         * private key for this certificate, so it is important to keep it in a secure
-         * location.</p><p><h3>See Also:</h3>   <a
+         * MQTT API</a>.</p> <p> <b>Note</b> This is the only time IoT issues the private
+         * key for this certificate, so it is important to keep it in a secure
+         * location.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateKeysAndCertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">AWS
          * API Reference</a></p>
          */
@@ -2016,9 +2258,11 @@ namespace Model
          * issued public key. You can also call <code>CreateKeysAndCertificate</code> over
          * MQTT from a device, for more information, see <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#provision-mqtt-api">Provisioning
-         * MQTT API</a>.</p> <p> <b>Note</b> This is the only time AWS IoT issues the
-         * private key for this certificate, so it is important to keep it in a secure
-         * location.</p><p><h3>See Also:</h3>   <a
+         * MQTT API</a>.</p> <p> <b>Note</b> This is the only time IoT issues the private
+         * key for this certificate, so it is important to keep it in a secure
+         * location.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateKeysAndCertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">AWS
          * API Reference</a></p>
          *
@@ -2031,9 +2275,11 @@ namespace Model
          * issued public key. You can also call <code>CreateKeysAndCertificate</code> over
          * MQTT from a device, for more information, see <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#provision-mqtt-api">Provisioning
-         * MQTT API</a>.</p> <p> <b>Note</b> This is the only time AWS IoT issues the
-         * private key for this certificate, so it is important to keep it in a secure
-         * location.</p><p><h3>See Also:</h3>   <a
+         * MQTT API</a>.</p> <p> <b>Note</b> This is the only time IoT issues the private
+         * key for this certificate, so it is important to keep it in a secure
+         * location.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateKeysAndCertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">AWS
          * API Reference</a></p>
          *
@@ -2046,8 +2292,10 @@ namespace Model
          * StartAuditMitigationActionsTask. Only certain types of mitigation actions can be
          * applied to specific check names. For more information, see <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
-         * actions</a>. Each mitigation action can apply only one type of
-         * change.</p><p><h3>See Also:</h3>   <a
+         * actions</a>. Each mitigation action can apply only one type of change.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateMitigationAction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateMitigationAction">AWS
          * API Reference</a></p>
          */
@@ -2058,8 +2306,10 @@ namespace Model
          * StartAuditMitigationActionsTask. Only certain types of mitigation actions can be
          * applied to specific check names. For more information, see <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
-         * actions</a>. Each mitigation action can apply only one type of
-         * change.</p><p><h3>See Also:</h3>   <a
+         * actions</a>. Each mitigation action can apply only one type of change.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateMitigationAction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateMitigationAction">AWS
          * API Reference</a></p>
          *
@@ -2072,8 +2322,10 @@ namespace Model
          * StartAuditMitigationActionsTask. Only certain types of mitigation actions can be
          * applied to specific check names. For more information, see <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
-         * actions</a>. Each mitigation action can apply only one type of
-         * change.</p><p><h3>See Also:</h3>   <a
+         * actions</a>. Each mitigation action can apply only one type of change.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateMitigationAction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateMitigationAction">AWS
          * API Reference</a></p>
          *
@@ -2082,16 +2334,20 @@ namespace Model
         virtual void CreateMitigationActionAsync(const Model::CreateMitigationActionRequest& request, const CreateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS IoT OTAUpdate on a target group of things or
-         * groups.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an IoT OTA update on a target group of things or groups.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateOTAUpdate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateOTAUpdate">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateOTAUpdateOutcome CreateOTAUpdate(const Model::CreateOTAUpdateRequest& request) const;
 
         /**
-         * <p>Creates an AWS IoT OTAUpdate on a target group of things or
-         * groups.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an IoT OTA update on a target group of things or groups.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateOTAUpdate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateOTAUpdate">AWS
          * API Reference</a></p>
          *
@@ -2100,8 +2356,10 @@ namespace Model
         virtual Model::CreateOTAUpdateOutcomeCallable CreateOTAUpdateCallable(const Model::CreateOTAUpdateRequest& request) const;
 
         /**
-         * <p>Creates an AWS IoT OTAUpdate on a target group of things or
-         * groups.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an IoT OTA update on a target group of things or groups.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateOTAUpdate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateOTAUpdate">AWS
          * API Reference</a></p>
          *
@@ -2110,20 +2368,24 @@ namespace Model
         virtual void CreateOTAUpdateAsync(const Model::CreateOTAUpdateRequest& request, const CreateOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS IoT policy.</p> <p>The created policy is the default version
-         * for the policy. This operation creates a policy version with a version
-         * identifier of <b>1</b> and sets <b>1</b> as the policy's default
-         * version.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an IoT policy.</p> <p>The created policy is the default version for
+         * the policy. This operation creates a policy version with a version identifier of
+         * <b>1</b> and sets <b>1</b> as the policy's default version.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePolicyOutcome CreatePolicy(const Model::CreatePolicyRequest& request) const;
 
         /**
-         * <p>Creates an AWS IoT policy.</p> <p>The created policy is the default version
-         * for the policy. This operation creates a policy version with a version
-         * identifier of <b>1</b> and sets <b>1</b> as the policy's default
-         * version.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an IoT policy.</p> <p>The created policy is the default version for
+         * the policy. This operation creates a policy version with a version identifier of
+         * <b>1</b> and sets <b>1</b> as the policy's default version.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">AWS
          * API Reference</a></p>
          *
@@ -2132,10 +2394,12 @@ namespace Model
         virtual Model::CreatePolicyOutcomeCallable CreatePolicyCallable(const Model::CreatePolicyRequest& request) const;
 
         /**
-         * <p>Creates an AWS IoT policy.</p> <p>The created policy is the default version
-         * for the policy. This operation creates a policy version with a version
-         * identifier of <b>1</b> and sets <b>1</b> as the policy's default
-         * version.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an IoT policy.</p> <p>The created policy is the default version for
+         * the policy. This operation creates a policy version with a version identifier of
+         * <b>1</b> and sets <b>1</b> as the policy's default version.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">AWS
          * API Reference</a></p>
          *
@@ -2144,26 +2408,30 @@ namespace Model
         virtual void CreatePolicyAsync(const Model::CreatePolicyRequest& request, const CreatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new version of the specified AWS IoT policy. To update a policy,
-         * create a new policy version. A managed policy can have up to five versions. If
-         * the policy has five versions, you must use <a>DeletePolicyVersion</a> to delete
-         * an existing version before you create a new one.</p> <p>Optionally, you can set
-         * the new version as the policy's default version. The default version is the
+         * <p>Creates a new version of the specified IoT policy. To update a policy, create
+         * a new policy version. A managed policy can have up to five versions. If the
+         * policy has five versions, you must use <a>DeletePolicyVersion</a> to delete an
+         * existing version before you create a new one.</p> <p>Optionally, you can set the
+         * new version as the policy's default version. The default version is the
          * operative version (that is, the version that is in effect for the certificates
-         * to which the policy is attached).</p><p><h3>See Also:</h3>   <a
+         * to which the policy is attached).</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicyVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePolicyVersionOutcome CreatePolicyVersion(const Model::CreatePolicyVersionRequest& request) const;
 
         /**
-         * <p>Creates a new version of the specified AWS IoT policy. To update a policy,
-         * create a new policy version. A managed policy can have up to five versions. If
-         * the policy has five versions, you must use <a>DeletePolicyVersion</a> to delete
-         * an existing version before you create a new one.</p> <p>Optionally, you can set
-         * the new version as the policy's default version. The default version is the
+         * <p>Creates a new version of the specified IoT policy. To update a policy, create
+         * a new policy version. A managed policy can have up to five versions. If the
+         * policy has five versions, you must use <a>DeletePolicyVersion</a> to delete an
+         * existing version before you create a new one.</p> <p>Optionally, you can set the
+         * new version as the policy's default version. The default version is the
          * operative version (that is, the version that is in effect for the certificates
-         * to which the policy is attached).</p><p><h3>See Also:</h3>   <a
+         * to which the policy is attached).</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicyVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">AWS
          * API Reference</a></p>
          *
@@ -2172,13 +2440,15 @@ namespace Model
         virtual Model::CreatePolicyVersionOutcomeCallable CreatePolicyVersionCallable(const Model::CreatePolicyVersionRequest& request) const;
 
         /**
-         * <p>Creates a new version of the specified AWS IoT policy. To update a policy,
-         * create a new policy version. A managed policy can have up to five versions. If
-         * the policy has five versions, you must use <a>DeletePolicyVersion</a> to delete
-         * an existing version before you create a new one.</p> <p>Optionally, you can set
-         * the new version as the policy's default version. The default version is the
+         * <p>Creates a new version of the specified IoT policy. To update a policy, create
+         * a new policy version. A managed policy can have up to five versions. If the
+         * policy has five versions, you must use <a>DeletePolicyVersion</a> to delete an
+         * existing version before you create a new one.</p> <p>Optionally, you can set the
+         * new version as the policy's default version. The default version is the
          * operative version (that is, the version that is in effect for the certificates
-         * to which the policy is attached).</p><p><h3>See Also:</h3>   <a
+         * to which the policy is attached).</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicyVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">AWS
          * API Reference</a></p>
          *
@@ -2187,14 +2457,18 @@ namespace Model
         virtual void CreatePolicyVersionAsync(const Model::CreatePolicyVersionRequest& request, const CreatePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a provisioning claim.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a provisioning claim.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningClaim</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateProvisioningClaim">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateProvisioningClaimOutcome CreateProvisioningClaim(const Model::CreateProvisioningClaimRequest& request) const;
 
         /**
-         * <p>Creates a provisioning claim.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a provisioning claim.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningClaim</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateProvisioningClaim">AWS
          * API Reference</a></p>
          *
@@ -2203,7 +2477,9 @@ namespace Model
         virtual Model::CreateProvisioningClaimOutcomeCallable CreateProvisioningClaimCallable(const Model::CreateProvisioningClaimRequest& request) const;
 
         /**
-         * <p>Creates a provisioning claim.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a provisioning claim.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningClaim</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateProvisioningClaim">AWS
          * API Reference</a></p>
          *
@@ -2212,14 +2488,20 @@ namespace Model
         virtual void CreateProvisioningClaimAsync(const Model::CreateProvisioningClaimRequest& request, const CreateProvisioningClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a fleet provisioning template.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a fleet provisioning template.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateProvisioningTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateProvisioningTemplateOutcome CreateProvisioningTemplate(const Model::CreateProvisioningTemplateRequest& request) const;
 
         /**
-         * <p>Creates a fleet provisioning template.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a fleet provisioning template.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateProvisioningTemplate">AWS
          * API Reference</a></p>
          *
@@ -2228,7 +2510,10 @@ namespace Model
         virtual Model::CreateProvisioningTemplateOutcomeCallable CreateProvisioningTemplateCallable(const Model::CreateProvisioningTemplateRequest& request) const;
 
         /**
-         * <p>Creates a fleet provisioning template.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a fleet provisioning template.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateProvisioningTemplate">AWS
          * API Reference</a></p>
          *
@@ -2237,16 +2522,20 @@ namespace Model
         virtual void CreateProvisioningTemplateAsync(const Model::CreateProvisioningTemplateRequest& request, const CreateProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new version of a fleet provisioning template.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new version of a fleet provisioning template.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplateVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateProvisioningTemplateVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateProvisioningTemplateVersionOutcome CreateProvisioningTemplateVersion(const Model::CreateProvisioningTemplateVersionRequest& request) const;
 
         /**
-         * <p>Creates a new version of a fleet provisioning template.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new version of a fleet provisioning template.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplateVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateProvisioningTemplateVersion">AWS
          * API Reference</a></p>
          *
@@ -2255,8 +2544,10 @@ namespace Model
         virtual Model::CreateProvisioningTemplateVersionOutcomeCallable CreateProvisioningTemplateVersionCallable(const Model::CreateProvisioningTemplateVersionRequest& request) const;
 
         /**
-         * <p>Creates a new version of a fleet provisioning template.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new version of a fleet provisioning template.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplateVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateProvisioningTemplateVersion">AWS
          * API Reference</a></p>
          *
@@ -2265,14 +2556,18 @@ namespace Model
         virtual void CreateProvisioningTemplateVersionAsync(const Model::CreateProvisioningTemplateVersionRequest& request, const CreateProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a role alias.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a role alias.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateRoleAlias</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateRoleAlias">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateRoleAliasOutcome CreateRoleAlias(const Model::CreateRoleAliasRequest& request) const;
 
         /**
-         * <p>Creates a role alias.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a role alias.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateRoleAlias</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateRoleAlias">AWS
          * API Reference</a></p>
          *
@@ -2281,7 +2576,9 @@ namespace Model
         virtual Model::CreateRoleAliasOutcomeCallable CreateRoleAliasCallable(const Model::CreateRoleAliasRequest& request) const;
 
         /**
-         * <p>Creates a role alias.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a role alias.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateRoleAlias</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateRoleAlias">AWS
          * API Reference</a></p>
          *
@@ -2290,16 +2587,20 @@ namespace Model
         virtual void CreateRoleAliasAsync(const Model::CreateRoleAliasRequest& request, const CreateRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a scheduled audit that is run at a specified time
-         * interval.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a scheduled audit that is run at a specified time interval.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateScheduledAudit</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateScheduledAudit">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateScheduledAuditOutcome CreateScheduledAudit(const Model::CreateScheduledAuditRequest& request) const;
 
         /**
-         * <p>Creates a scheduled audit that is run at a specified time
-         * interval.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a scheduled audit that is run at a specified time interval.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateScheduledAudit</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateScheduledAudit">AWS
          * API Reference</a></p>
          *
@@ -2308,8 +2609,10 @@ namespace Model
         virtual Model::CreateScheduledAuditOutcomeCallable CreateScheduledAuditCallable(const Model::CreateScheduledAuditRequest& request) const;
 
         /**
-         * <p>Creates a scheduled audit that is run at a specified time
-         * interval.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a scheduled audit that is run at a specified time interval.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateScheduledAudit</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateScheduledAudit">AWS
          * API Reference</a></p>
          *
@@ -2318,14 +2621,20 @@ namespace Model
         virtual void CreateScheduledAuditAsync(const Model::CreateScheduledAuditRequest& request, const CreateScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a Device Defender security profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Device Defender security profile.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateSecurityProfile">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSecurityProfileOutcome CreateSecurityProfile(const Model::CreateSecurityProfileRequest& request) const;
 
         /**
-         * <p>Creates a Device Defender security profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Device Defender security profile.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -2334,7 +2643,10 @@ namespace Model
         virtual Model::CreateSecurityProfileOutcomeCallable CreateSecurityProfileCallable(const Model::CreateSecurityProfileRequest& request) const;
 
         /**
-         * <p>Creates a Device Defender security profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Device Defender security profile.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -2346,7 +2658,9 @@ namespace Model
          * <p>Creates a stream for delivering one or more large files in chunks over MQTT.
          * A stream transports data bytes in chunks or blocks packaged as MQTT messages
          * from a source like S3. You can have one or more files associated with a
-         * stream.</p><p><h3>See Also:</h3>   <a
+         * stream.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateStream</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateStream">AWS
          * API Reference</a></p>
          */
@@ -2356,7 +2670,9 @@ namespace Model
          * <p>Creates a stream for delivering one or more large files in chunks over MQTT.
          * A stream transports data bytes in chunks or blocks packaged as MQTT messages
          * from a source like S3. You can have one or more files associated with a
-         * stream.</p><p><h3>See Also:</h3>   <a
+         * stream.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateStream</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateStream">AWS
          * API Reference</a></p>
          *
@@ -2368,7 +2684,9 @@ namespace Model
          * <p>Creates a stream for delivering one or more large files in chunks over MQTT.
          * A stream transports data bytes in chunks or blocks packaged as MQTT messages
          * from a source like S3. You can have one or more files associated with a
-         * stream.</p><p><h3>See Also:</h3>   <a
+         * stream.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateStream</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateStream">AWS
          * API Reference</a></p>
          *
@@ -2383,8 +2701,10 @@ namespace Model
          * <code>ResourceAlreadyExistsException</code> is thrown.</p>  <p>This is a
          * control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
-         * for information about authorizing control plane actions.</p> <p><h3>See
-         * Also:</h3>   <a
+         * for information about authorizing control plane actions.</p>  <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
          * Reference</a></p>
          */
@@ -2397,8 +2717,10 @@ namespace Model
          * <code>ResourceAlreadyExistsException</code> is thrown.</p>  <p>This is a
          * control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
-         * for information about authorizing control plane actions.</p> <p><h3>See
-         * Also:</h3>   <a
+         * for information about authorizing control plane actions.</p>  <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
          * Reference</a></p>
          *
@@ -2413,8 +2735,10 @@ namespace Model
          * <code>ResourceAlreadyExistsException</code> is thrown.</p>  <p>This is a
          * control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
-         * for information about authorizing control plane actions.</p> <p><h3>See
-         * Also:</h3>   <a
+         * for information about authorizing control plane actions.</p>  <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
          * Reference</a></p>
          *
@@ -2425,8 +2749,10 @@ namespace Model
         /**
          * <p>Create a thing group.</p>  <p>This is a control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
-         * for information about authorizing control plane actions.</p> <p><h3>See
-         * Also:</h3>   <a
+         * for information about authorizing control plane actions.</p>  <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
          * API Reference</a></p>
          */
@@ -2435,8 +2761,10 @@ namespace Model
         /**
          * <p>Create a thing group.</p>  <p>This is a control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
-         * for information about authorizing control plane actions.</p> <p><h3>See
-         * Also:</h3>   <a
+         * for information about authorizing control plane actions.</p>  <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
          * API Reference</a></p>
          *
@@ -2447,8 +2775,10 @@ namespace Model
         /**
          * <p>Create a thing group.</p>  <p>This is a control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
-         * for information about authorizing control plane actions.</p> <p><h3>See
-         * Also:</h3>   <a
+         * for information about authorizing control plane actions.</p>  <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
          * API Reference</a></p>
          *
@@ -2457,14 +2787,18 @@ namespace Model
         virtual void CreateThingGroupAsync(const Model::CreateThingGroupRequest& request, const CreateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new thing type.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new thing type.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingType</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingType">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateThingTypeOutcome CreateThingType(const Model::CreateThingTypeRequest& request) const;
 
         /**
-         * <p>Creates a new thing type.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new thing type.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingType</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingType">AWS
          * API Reference</a></p>
          *
@@ -2473,7 +2807,9 @@ namespace Model
         virtual Model::CreateThingTypeOutcomeCallable CreateThingTypeCallable(const Model::CreateThingTypeRequest& request) const;
 
         /**
-         * <p>Creates a new thing type.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new thing type.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingType</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingType">AWS
          * API Reference</a></p>
          *
@@ -2484,7 +2820,9 @@ namespace Model
         /**
          * <p>Creates a rule. Creating rules is an administrator-level action. Any user who
          * has permission to create rules will be able to access data processed by the
-         * rule.</p><p><h3>See Also:</h3>   <a
+         * rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">AWS
          * API Reference</a></p>
          */
@@ -2493,7 +2831,9 @@ namespace Model
         /**
          * <p>Creates a rule. Creating rules is an administrator-level action. Any user who
          * has permission to create rules will be able to access data processed by the
-         * rule.</p><p><h3>See Also:</h3>   <a
+         * rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">AWS
          * API Reference</a></p>
          *
@@ -2504,7 +2844,9 @@ namespace Model
         /**
          * <p>Creates a rule. Creating rules is an administrator-level action. Any user who
          * has permission to create rules will be able to access data processed by the
-         * rule.</p><p><h3>See Also:</h3>   <a
+         * rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">AWS
          * API Reference</a></p>
          *
@@ -2514,7 +2856,9 @@ namespace Model
 
         /**
          * <p>Creates a topic rule destination. The destination must be confirmed prior to
-         * use.</p><p><h3>See Also:</h3>   <a
+         * use.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRuleDestination">AWS
          * API Reference</a></p>
          */
@@ -2522,7 +2866,9 @@ namespace Model
 
         /**
          * <p>Creates a topic rule destination. The destination must be confirmed prior to
-         * use.</p><p><h3>See Also:</h3>   <a
+         * use.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRuleDestination">AWS
          * API Reference</a></p>
          *
@@ -2532,7 +2878,9 @@ namespace Model
 
         /**
          * <p>Creates a topic rule destination. The destination must be confirmed prior to
-         * use.</p><p><h3>See Also:</h3>   <a
+         * use.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRuleDestination">AWS
          * API Reference</a></p>
          *
@@ -2543,7 +2891,9 @@ namespace Model
         /**
          * <p>Restores the default settings for Device Defender audits for this account.
          * Any configuration data you entered is deleted and all audit checks are reset to
-         * disabled. </p><p><h3>See Also:</h3>   <a
+         * disabled. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAccountAuditConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAccountAuditConfiguration">AWS
          * API Reference</a></p>
          */
@@ -2552,7 +2902,9 @@ namespace Model
         /**
          * <p>Restores the default settings for Device Defender audits for this account.
          * Any configuration data you entered is deleted and all audit checks are reset to
-         * disabled. </p><p><h3>See Also:</h3>   <a
+         * disabled. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAccountAuditConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAccountAuditConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2563,7 +2915,9 @@ namespace Model
         /**
          * <p>Restores the default settings for Device Defender audits for this account.
          * Any configuration data you entered is deleted and all audit checks are reset to
-         * disabled. </p><p><h3>See Also:</h3>   <a
+         * disabled. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAccountAuditConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAccountAuditConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2572,14 +2926,20 @@ namespace Model
         virtual void DeleteAccountAuditConfigurationAsync(const Model::DeleteAccountAuditConfigurationRequest& request, const DeleteAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes a Device Defender audit suppression. </p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAuditSuppression</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuditSuppression">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteAuditSuppressionOutcome DeleteAuditSuppression(const Model::DeleteAuditSuppressionRequest& request) const;
 
         /**
-         * <p> Deletes a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes a Device Defender audit suppression. </p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAuditSuppression</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuditSuppression">AWS
          * API Reference</a></p>
          *
@@ -2588,7 +2948,10 @@ namespace Model
         virtual Model::DeleteAuditSuppressionOutcomeCallable DeleteAuditSuppressionCallable(const Model::DeleteAuditSuppressionRequest& request) const;
 
         /**
-         * <p> Deletes a Device Defender audit suppression. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes a Device Defender audit suppression. </p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAuditSuppression</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuditSuppression">AWS
          * API Reference</a></p>
          *
@@ -2597,14 +2960,18 @@ namespace Model
         virtual void DeleteAuditSuppressionAsync(const Model::DeleteAuditSuppressionRequest& request, const DeleteAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuthorizer">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteAuthorizerOutcome DeleteAuthorizer(const Model::DeleteAuthorizerRequest& request) const;
 
         /**
-         * <p>Deletes an authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -2613,7 +2980,9 @@ namespace Model
         virtual Model::DeleteAuthorizerOutcomeCallable DeleteAuthorizerCallable(const Model::DeleteAuthorizerRequest& request) const;
 
         /**
-         * <p>Deletes an authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -2622,14 +2991,18 @@ namespace Model
         virtual void DeleteAuthorizerAsync(const Model::DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the billing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteBillingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteBillingGroupOutcome DeleteBillingGroup(const Model::DeleteBillingGroupRequest& request) const;
 
         /**
-         * <p>Deletes the billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the billing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -2638,7 +3011,9 @@ namespace Model
         virtual Model::DeleteBillingGroupOutcomeCallable DeleteBillingGroupCallable(const Model::DeleteBillingGroupRequest& request) const;
 
         /**
-         * <p>Deletes the billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the billing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -2647,14 +3022,20 @@ namespace Model
         virtual void DeleteBillingGroupAsync(const Model::DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a registered CA certificate.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a registered CA certificate.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCACertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCACertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteCACertificateOutcome DeleteCACertificate(const Model::DeleteCACertificateRequest& request) const;
 
         /**
-         * <p>Deletes a registered CA certificate.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a registered CA certificate.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCACertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCACertificate">AWS
          * API Reference</a></p>
          *
@@ -2663,7 +3044,10 @@ namespace Model
         virtual Model::DeleteCACertificateOutcomeCallable DeleteCACertificateCallable(const Model::DeleteCACertificateRequest& request) const;
 
         /**
-         * <p>Deletes a registered CA certificate.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a registered CA certificate.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCACertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCACertificate">AWS
          * API Reference</a></p>
          *
@@ -2674,9 +3058,11 @@ namespace Model
         /**
          * <p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if
          * it has a policy or IoT thing attached to it or if its status is set to ACTIVE.
-         * To delete a certificate, first use the <a>DetachPrincipalPolicy</a> API to
-         * detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
-         * certificate to the INACTIVE status.</p><p><h3>See Also:</h3>   <a
+         * To delete a certificate, first use the <a>DetachPolicy</a> action to detach all
+         * policies. Next, use the <a>UpdateCertificate</a> action to set the certificate
+         * to the INACTIVE status.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">AWS
          * API Reference</a></p>
          */
@@ -2685,9 +3071,11 @@ namespace Model
         /**
          * <p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if
          * it has a policy or IoT thing attached to it or if its status is set to ACTIVE.
-         * To delete a certificate, first use the <a>DetachPrincipalPolicy</a> API to
-         * detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
-         * certificate to the INACTIVE status.</p><p><h3>See Also:</h3>   <a
+         * To delete a certificate, first use the <a>DetachPolicy</a> action to detach all
+         * policies. Next, use the <a>UpdateCertificate</a> action to set the certificate
+         * to the INACTIVE status.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">AWS
          * API Reference</a></p>
          *
@@ -2698,9 +3086,11 @@ namespace Model
         /**
          * <p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if
          * it has a policy or IoT thing attached to it or if its status is set to ACTIVE.
-         * To delete a certificate, first use the <a>DetachPrincipalPolicy</a> API to
-         * detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
-         * certificate to the INACTIVE status.</p><p><h3>See Also:</h3>   <a
+         * To delete a certificate, first use the <a>DetachPolicy</a> action to detach all
+         * policies. Next, use the <a>UpdateCertificate</a> action to set the certificate
+         * to the INACTIVE status.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">AWS
          * API Reference</a></p>
          *
@@ -2709,24 +3099,30 @@ namespace Model
         virtual void DeleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>Before you can delete a custom metric, you must first remove the
-         * custom metric from all security profiles it's a part of. The security profile
-         * associated with the custom metric can be found using the <a
+         * <p> Deletes a Device Defender detect custom metric. </p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCustomMetric</a>
+         * action.</p>  <p>Before you can delete a custom metric, you must first
+         * remove the custom metric from all security profiles it's a part of. The security
+         * profile associated with the custom metric can be found using the <a
          * href="https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html">ListSecurityProfiles</a>
-         * API with <code>metricName</code> set to your custom metric name.</p>  <p>
-         * Deletes a Device Defender detect custom metric. </p><p><h3>See Also:</h3>   <a
+         * API with <code>metricName</code> set to your custom metric name.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCustomMetric">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteCustomMetricOutcome DeleteCustomMetric(const Model::DeleteCustomMetricRequest& request) const;
 
         /**
-         *  <p>Before you can delete a custom metric, you must first remove the
-         * custom metric from all security profiles it's a part of. The security profile
-         * associated with the custom metric can be found using the <a
+         * <p> Deletes a Device Defender detect custom metric. </p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCustomMetric</a>
+         * action.</p>  <p>Before you can delete a custom metric, you must first
+         * remove the custom metric from all security profiles it's a part of. The security
+         * profile associated with the custom metric can be found using the <a
          * href="https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html">ListSecurityProfiles</a>
-         * API with <code>metricName</code> set to your custom metric name.</p>  <p>
-         * Deletes a Device Defender detect custom metric. </p><p><h3>See Also:</h3>   <a
+         * API with <code>metricName</code> set to your custom metric name.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCustomMetric">AWS
          * API Reference</a></p>
          *
@@ -2735,12 +3131,15 @@ namespace Model
         virtual Model::DeleteCustomMetricOutcomeCallable DeleteCustomMetricCallable(const Model::DeleteCustomMetricRequest& request) const;
 
         /**
-         *  <p>Before you can delete a custom metric, you must first remove the
-         * custom metric from all security profiles it's a part of. The security profile
-         * associated with the custom metric can be found using the <a
+         * <p> Deletes a Device Defender detect custom metric. </p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCustomMetric</a>
+         * action.</p>  <p>Before you can delete a custom metric, you must first
+         * remove the custom metric from all security profiles it's a part of. The security
+         * profile associated with the custom metric can be found using the <a
          * href="https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html">ListSecurityProfiles</a>
-         * API with <code>metricName</code> set to your custom metric name.</p>  <p>
-         * Deletes a Device Defender detect custom metric. </p><p><h3>See Also:</h3>   <a
+         * API with <code>metricName</code> set to your custom metric name.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCustomMetric">AWS
          * API Reference</a></p>
          *
@@ -2749,16 +3148,20 @@ namespace Model
         virtual void DeleteCustomMetricAsync(const Model::DeleteCustomMetricRequest& request, const DeleteCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified dimension from your AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the specified dimension from your Amazon Web Services accounts.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDimension</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDimension">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDimensionOutcome DeleteDimension(const Model::DeleteDimensionRequest& request) const;
 
         /**
-         * <p>Removes the specified dimension from your AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the specified dimension from your Amazon Web Services accounts.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDimension</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDimension">AWS
          * API Reference</a></p>
          *
@@ -2767,8 +3170,10 @@ namespace Model
         virtual Model::DeleteDimensionOutcomeCallable DeleteDimensionCallable(const Model::DeleteDimensionRequest& request) const;
 
         /**
-         * <p>Removes the specified dimension from your AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the specified dimension from your Amazon Web Services accounts.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDimension</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDimension">AWS
          * API Reference</a></p>
          *
@@ -2777,14 +3182,20 @@ namespace Model
         virtual void DeleteDimensionAsync(const Model::DeleteDimensionRequest& request, const DeleteDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified domain configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified domain configuration.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDomainConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDomainConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDomainConfigurationOutcome DeleteDomainConfiguration(const Model::DeleteDomainConfigurationRequest& request) const;
 
         /**
-         * <p>Deletes the specified domain configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified domain configuration.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDomainConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDomainConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2793,7 +3204,10 @@ namespace Model
         virtual Model::DeleteDomainConfigurationOutcomeCallable DeleteDomainConfigurationCallable(const Model::DeleteDomainConfigurationRequest& request) const;
 
         /**
-         * <p>Deletes the specified domain configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified domain configuration.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDomainConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDomainConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2802,14 +3216,18 @@ namespace Model
         virtual void DeleteDomainConfigurationAsync(const Model::DeleteDomainConfigurationRequest& request, const DeleteDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a dynamic thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a dynamic thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDynamicThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDynamicThingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDynamicThingGroupOutcome DeleteDynamicThingGroup(const Model::DeleteDynamicThingGroupRequest& request) const;
 
         /**
-         * <p>Deletes a dynamic thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a dynamic thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDynamicThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDynamicThingGroup">AWS
          * API Reference</a></p>
          *
@@ -2818,7 +3236,9 @@ namespace Model
         virtual Model::DeleteDynamicThingGroupOutcomeCallable DeleteDynamicThingGroupCallable(const Model::DeleteDynamicThingGroupRequest& request) const;
 
         /**
-         * <p>Deletes a dynamic thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a dynamic thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDynamicThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDynamicThingGroup">AWS
          * API Reference</a></p>
          *
@@ -2827,13 +3247,52 @@ namespace Model
         virtual void DeleteDynamicThingGroupAsync(const Model::DeleteDynamicThingGroupRequest& request, const DeleteDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the specified fleet metric. Returns successfully with no error if the
+         * deletion is successful or you specify a fleet metric that doesn't exist.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteFleetMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteFleetMetric">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFleetMetricOutcome DeleteFleetMetric(const Model::DeleteFleetMetricRequest& request) const;
+
+        /**
+         * <p>Deletes the specified fleet metric. Returns successfully with no error if the
+         * deletion is successful or you specify a fleet metric that doesn't exist.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteFleetMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteFleetMetric">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFleetMetricOutcomeCallable DeleteFleetMetricCallable(const Model::DeleteFleetMetricRequest& request) const;
+
+        /**
+         * <p>Deletes the specified fleet metric. Returns successfully with no error if the
+         * deletion is successful or you specify a fleet metric that doesn't exist.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteFleetMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteFleetMetric">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFleetMetricAsync(const Model::DeleteFleetMetricRequest& request, const DeleteFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a job and its related job executions.</p> <p>Deleting a job may take
          * time, depending on the number of job executions created for the job and various
          * other factors. While the job is being deleted, the status of the job will be
          * shown as "DELETION_IN_PROGRESS". Attempting to delete or cancel a job whose
          * status is already "DELETION_IN_PROGRESS" will result in an error.</p> <p>Only 10
          * jobs may have status "DELETION_IN_PROGRESS" at the same time, or a
-         * LimitExceededException will occur.</p><p><h3>See Also:</h3>   <a
+         * LimitExceededException will occur.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">AWS API
          * Reference</a></p>
          */
@@ -2846,7 +3305,9 @@ namespace Model
          * shown as "DELETION_IN_PROGRESS". Attempting to delete or cancel a job whose
          * status is already "DELETION_IN_PROGRESS" will result in an error.</p> <p>Only 10
          * jobs may have status "DELETION_IN_PROGRESS" at the same time, or a
-         * LimitExceededException will occur.</p><p><h3>See Also:</h3>   <a
+         * LimitExceededException will occur.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">AWS API
          * Reference</a></p>
          *
@@ -2861,7 +3322,9 @@ namespace Model
          * shown as "DELETION_IN_PROGRESS". Attempting to delete or cancel a job whose
          * status is already "DELETION_IN_PROGRESS" will result in an error.</p> <p>Only 10
          * jobs may have status "DELETION_IN_PROGRESS" at the same time, or a
-         * LimitExceededException will occur.</p><p><h3>See Also:</h3>   <a
+         * LimitExceededException will occur.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">AWS API
          * Reference</a></p>
          *
@@ -2870,14 +3333,18 @@ namespace Model
         virtual void DeleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a job execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a job execution.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJobExecution</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteJobExecutionOutcome DeleteJobExecution(const Model::DeleteJobExecutionRequest& request) const;
 
         /**
-         * <p>Deletes a job execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a job execution.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJobExecution</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">AWS
          * API Reference</a></p>
          *
@@ -2886,7 +3353,9 @@ namespace Model
         virtual Model::DeleteJobExecutionOutcomeCallable DeleteJobExecutionCallable(const Model::DeleteJobExecutionRequest& request) const;
 
         /**
-         * <p>Deletes a job execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a job execution.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJobExecution</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">AWS
          * API Reference</a></p>
          *
@@ -2920,16 +3389,20 @@ namespace Model
         virtual void DeleteJobTemplateAsync(const Model::DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a defined mitigation action from your AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a defined mitigation action from your Amazon Web Services
+         * accounts.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteMitigationAction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteMitigationAction">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteMitigationActionOutcome DeleteMitigationAction(const Model::DeleteMitigationActionRequest& request) const;
 
         /**
-         * <p>Deletes a defined mitigation action from your AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a defined mitigation action from your Amazon Web Services
+         * accounts.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteMitigationAction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteMitigationAction">AWS
          * API Reference</a></p>
          *
@@ -2938,8 +3411,10 @@ namespace Model
         virtual Model::DeleteMitigationActionOutcomeCallable DeleteMitigationActionCallable(const Model::DeleteMitigationActionRequest& request) const;
 
         /**
-         * <p>Deletes a defined mitigation action from your AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a defined mitigation action from your Amazon Web Services
+         * accounts.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteMitigationAction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteMitigationAction">AWS
          * API Reference</a></p>
          *
@@ -2948,14 +3423,18 @@ namespace Model
         virtual void DeleteMitigationActionAsync(const Model::DeleteMitigationActionRequest& request, const DeleteMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete an OTA update.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete an OTA update.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteOTAUpdate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteOTAUpdate">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteOTAUpdateOutcome DeleteOTAUpdate(const Model::DeleteOTAUpdateRequest& request) const;
 
         /**
-         * <p>Delete an OTA update.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete an OTA update.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteOTAUpdate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteOTAUpdate">AWS
          * API Reference</a></p>
          *
@@ -2964,7 +3443,9 @@ namespace Model
         virtual Model::DeleteOTAUpdateOutcomeCallable DeleteOTAUpdateCallable(const Model::DeleteOTAUpdateRequest& request) const;
 
         /**
-         * <p>Delete an OTA update.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete an OTA update.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteOTAUpdate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteOTAUpdate">AWS
          * API Reference</a></p>
          *
@@ -2975,11 +3456,15 @@ namespace Model
         /**
          * <p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has
          * non-default versions or it is attached to any certificate.</p> <p>To delete a
-         * policy, use the DeletePolicyVersion API to delete all non-default versions of
-         * the policy; use the DetachPrincipalPolicy API to detach the policy from any
-         * certificate; and then use the DeletePolicy API to delete the policy.</p> <p>When
-         * a policy is deleted using DeletePolicy, its default version is deleted with
-         * it.</p><p><h3>See Also:</h3>   <a
+         * policy, use the <a>DeletePolicyVersion</a> action to delete all non-default
+         * versions of the policy; use the <a>DetachPolicy</a> action to detach the policy
+         * from any certificate; and then use the DeletePolicy action to delete the
+         * policy.</p> <p>When a policy is deleted using DeletePolicy, its default version
+         * is deleted with it.</p>  <p>Because of the distributed nature of Amazon
+         * Web Services, it can take up to five minutes after a policy is detached before
+         * it's ready to be deleted.</p>  <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">AWS
          * API Reference</a></p>
          */
@@ -2988,11 +3473,15 @@ namespace Model
         /**
          * <p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has
          * non-default versions or it is attached to any certificate.</p> <p>To delete a
-         * policy, use the DeletePolicyVersion API to delete all non-default versions of
-         * the policy; use the DetachPrincipalPolicy API to detach the policy from any
-         * certificate; and then use the DeletePolicy API to delete the policy.</p> <p>When
-         * a policy is deleted using DeletePolicy, its default version is deleted with
-         * it.</p><p><h3>See Also:</h3>   <a
+         * policy, use the <a>DeletePolicyVersion</a> action to delete all non-default
+         * versions of the policy; use the <a>DetachPolicy</a> action to detach the policy
+         * from any certificate; and then use the DeletePolicy action to delete the
+         * policy.</p> <p>When a policy is deleted using DeletePolicy, its default version
+         * is deleted with it.</p>  <p>Because of the distributed nature of Amazon
+         * Web Services, it can take up to five minutes after a policy is detached before
+         * it's ready to be deleted.</p>  <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">AWS
          * API Reference</a></p>
          *
@@ -3003,11 +3492,15 @@ namespace Model
         /**
          * <p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has
          * non-default versions or it is attached to any certificate.</p> <p>To delete a
-         * policy, use the DeletePolicyVersion API to delete all non-default versions of
-         * the policy; use the DetachPrincipalPolicy API to detach the policy from any
-         * certificate; and then use the DeletePolicy API to delete the policy.</p> <p>When
-         * a policy is deleted using DeletePolicy, its default version is deleted with
-         * it.</p><p><h3>See Also:</h3>   <a
+         * policy, use the <a>DeletePolicyVersion</a> action to delete all non-default
+         * versions of the policy; use the <a>DetachPolicy</a> action to detach the policy
+         * from any certificate; and then use the DeletePolicy action to delete the
+         * policy.</p> <p>When a policy is deleted using DeletePolicy, its default version
+         * is deleted with it.</p>  <p>Because of the distributed nature of Amazon
+         * Web Services, it can take up to five minutes after a policy is detached before
+         * it's ready to be deleted.</p>  <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">AWS
          * API Reference</a></p>
          *
@@ -3017,9 +3510,12 @@ namespace Model
 
         /**
          * <p>Deletes the specified version of the specified policy. You cannot delete the
-         * default version of a policy using this API. To delete the default version of a
-         * policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked
-         * as the default version, use ListPolicyVersions.</p><p><h3>See Also:</h3>   <a
+         * default version of a policy using this action. To delete the default version of
+         * a policy, use <a>DeletePolicy</a>. To find out which version of a policy is
+         * marked as the default version, use ListPolicyVersions.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicyVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">AWS
          * API Reference</a></p>
          */
@@ -3027,9 +3523,12 @@ namespace Model
 
         /**
          * <p>Deletes the specified version of the specified policy. You cannot delete the
-         * default version of a policy using this API. To delete the default version of a
-         * policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked
-         * as the default version, use ListPolicyVersions.</p><p><h3>See Also:</h3>   <a
+         * default version of a policy using this action. To delete the default version of
+         * a policy, use <a>DeletePolicy</a>. To find out which version of a policy is
+         * marked as the default version, use ListPolicyVersions.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicyVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">AWS
          * API Reference</a></p>
          *
@@ -3039,9 +3538,12 @@ namespace Model
 
         /**
          * <p>Deletes the specified version of the specified policy. You cannot delete the
-         * default version of a policy using this API. To delete the default version of a
-         * policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked
-         * as the default version, use ListPolicyVersions.</p><p><h3>See Also:</h3>   <a
+         * default version of a policy using this action. To delete the default version of
+         * a policy, use <a>DeletePolicy</a>. To find out which version of a policy is
+         * marked as the default version, use ListPolicyVersions.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicyVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">AWS
          * API Reference</a></p>
          *
@@ -3050,14 +3552,20 @@ namespace Model
         virtual void DeletePolicyVersionAsync(const Model::DeletePolicyVersionRequest& request, const DeletePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a fleet provisioning template.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a fleet provisioning template.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteProvisioningTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteProvisioningTemplateOutcome DeleteProvisioningTemplate(const Model::DeleteProvisioningTemplateRequest& request) const;
 
         /**
-         * <p>Deletes a fleet provisioning template.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a fleet provisioning template.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteProvisioningTemplate">AWS
          * API Reference</a></p>
          *
@@ -3066,7 +3574,10 @@ namespace Model
         virtual Model::DeleteProvisioningTemplateOutcomeCallable DeleteProvisioningTemplateCallable(const Model::DeleteProvisioningTemplateRequest& request) const;
 
         /**
-         * <p>Deletes a fleet provisioning template.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a fleet provisioning template.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteProvisioningTemplate">AWS
          * API Reference</a></p>
          *
@@ -3075,14 +3586,20 @@ namespace Model
         virtual void DeleteProvisioningTemplateAsync(const Model::DeleteProvisioningTemplateRequest& request, const DeleteProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a fleet provisioning template version.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a fleet provisioning template version.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplateVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteProvisioningTemplateVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteProvisioningTemplateVersionOutcome DeleteProvisioningTemplateVersion(const Model::DeleteProvisioningTemplateVersionRequest& request) const;
 
         /**
-         * <p>Deletes a fleet provisioning template version.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a fleet provisioning template version.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplateVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteProvisioningTemplateVersion">AWS
          * API Reference</a></p>
          *
@@ -3091,7 +3608,10 @@ namespace Model
         virtual Model::DeleteProvisioningTemplateVersionOutcomeCallable DeleteProvisioningTemplateVersionCallable(const Model::DeleteProvisioningTemplateVersionRequest& request) const;
 
         /**
-         * <p>Deletes a fleet provisioning template version.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a fleet provisioning template version.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplateVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteProvisioningTemplateVersion">AWS
          * API Reference</a></p>
          *
@@ -3100,14 +3620,20 @@ namespace Model
         virtual void DeleteProvisioningTemplateVersionAsync(const Model::DeleteProvisioningTemplateVersionRequest& request, const DeleteProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a CA certificate registration code.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a CA certificate registration code.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteRegistrationCode</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRegistrationCode">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteRegistrationCodeOutcome DeleteRegistrationCode(const Model::DeleteRegistrationCodeRequest& request) const;
 
         /**
-         * <p>Deletes a CA certificate registration code.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a CA certificate registration code.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteRegistrationCode</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRegistrationCode">AWS
          * API Reference</a></p>
          *
@@ -3116,7 +3642,10 @@ namespace Model
         virtual Model::DeleteRegistrationCodeOutcomeCallable DeleteRegistrationCodeCallable(const Model::DeleteRegistrationCodeRequest& request) const;
 
         /**
-         * <p>Deletes a CA certificate registration code.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a CA certificate registration code.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteRegistrationCode</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRegistrationCode">AWS
          * API Reference</a></p>
          *
@@ -3125,14 +3654,18 @@ namespace Model
         virtual void DeleteRegistrationCodeAsync(const Model::DeleteRegistrationCodeRequest& request, const DeleteRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a role alias</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a role alias</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteRoleAlias</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRoleAlias">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteRoleAliasOutcome DeleteRoleAlias(const Model::DeleteRoleAliasRequest& request) const;
 
         /**
-         * <p>Deletes a role alias</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a role alias</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteRoleAlias</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRoleAlias">AWS
          * API Reference</a></p>
          *
@@ -3141,7 +3674,9 @@ namespace Model
         virtual Model::DeleteRoleAliasOutcomeCallable DeleteRoleAliasCallable(const Model::DeleteRoleAliasRequest& request) const;
 
         /**
-         * <p>Deletes a role alias</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a role alias</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteRoleAlias</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRoleAlias">AWS
          * API Reference</a></p>
          *
@@ -3150,14 +3685,18 @@ namespace Model
         virtual void DeleteRoleAliasAsync(const Model::DeleteRoleAliasRequest& request, const DeleteRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a scheduled audit.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a scheduled audit.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteScheduledAudit</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteScheduledAudit">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteScheduledAuditOutcome DeleteScheduledAudit(const Model::DeleteScheduledAuditRequest& request) const;
 
         /**
-         * <p>Deletes a scheduled audit.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a scheduled audit.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteScheduledAudit</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteScheduledAudit">AWS
          * API Reference</a></p>
          *
@@ -3166,7 +3705,9 @@ namespace Model
         virtual Model::DeleteScheduledAuditOutcomeCallable DeleteScheduledAuditCallable(const Model::DeleteScheduledAuditRequest& request) const;
 
         /**
-         * <p>Deletes a scheduled audit.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a scheduled audit.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteScheduledAudit</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteScheduledAudit">AWS
          * API Reference</a></p>
          *
@@ -3175,14 +3716,20 @@ namespace Model
         virtual void DeleteScheduledAuditAsync(const Model::DeleteScheduledAuditRequest& request, const DeleteScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a Device Defender security profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Device Defender security profile.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteSecurityProfile">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteSecurityProfileOutcome DeleteSecurityProfile(const Model::DeleteSecurityProfileRequest& request) const;
 
         /**
-         * <p>Deletes a Device Defender security profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Device Defender security profile.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -3191,7 +3738,10 @@ namespace Model
         virtual Model::DeleteSecurityProfileOutcomeCallable DeleteSecurityProfileCallable(const Model::DeleteSecurityProfileRequest& request) const;
 
         /**
-         * <p>Deletes a Device Defender security profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Device Defender security profile.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -3200,14 +3750,18 @@ namespace Model
         virtual void DeleteSecurityProfileAsync(const Model::DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a stream.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a stream.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteStream</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteStream">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteStreamOutcome DeleteStream(const Model::DeleteStreamRequest& request) const;
 
         /**
-         * <p>Deletes a stream.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a stream.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteStream</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteStream">AWS
          * API Reference</a></p>
          *
@@ -3216,7 +3770,9 @@ namespace Model
         virtual Model::DeleteStreamOutcomeCallable DeleteStreamCallable(const Model::DeleteStreamRequest& request) const;
 
         /**
-         * <p>Deletes a stream.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a stream.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteStream</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteStream">AWS
          * API Reference</a></p>
          *
@@ -3226,8 +3782,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified thing. Returns successfully with no error if the
-         * deletion is successful or you specify a thing that doesn't exist.</p><p><h3>See
-         * Also:</h3>   <a
+         * deletion is successful or you specify a thing that doesn't exist.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">AWS API
          * Reference</a></p>
          */
@@ -3235,8 +3793,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified thing. Returns successfully with no error if the
-         * deletion is successful or you specify a thing that doesn't exist.</p><p><h3>See
-         * Also:</h3>   <a
+         * deletion is successful or you specify a thing that doesn't exist.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">AWS API
          * Reference</a></p>
          *
@@ -3246,8 +3806,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified thing. Returns successfully with no error if the
-         * deletion is successful or you specify a thing that doesn't exist.</p><p><h3>See
-         * Also:</h3>   <a
+         * deletion is successful or you specify a thing that doesn't exist.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">AWS API
          * Reference</a></p>
          *
@@ -3256,14 +3818,18 @@ namespace Model
         virtual void DeleteThingAsync(const Model::DeleteThingRequest& request, const DeleteThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteThingGroupOutcome DeleteThingGroup(const Model::DeleteThingGroupRequest& request) const;
 
         /**
-         * <p>Deletes a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingGroup">AWS
          * API Reference</a></p>
          *
@@ -3272,7 +3838,9 @@ namespace Model
         virtual Model::DeleteThingGroupOutcomeCallable DeleteThingGroupCallable(const Model::DeleteThingGroupRequest& request) const;
 
         /**
-         * <p>Deletes a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingGroup">AWS
          * API Reference</a></p>
          *
@@ -3285,8 +3853,10 @@ namespace Model
          * things associated with it. To delete a thing type, first mark it as deprecated
          * by calling <a>DeprecateThingType</a>, then remove any associated things by
          * calling <a>UpdateThing</a> to change the thing type on any associated thing, and
-         * finally use <a>DeleteThingType</a> to delete the thing type.</p><p><h3>See
-         * Also:</h3>   <a
+         * finally use <a>DeleteThingType</a> to delete the thing type.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingType</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingType">AWS
          * API Reference</a></p>
          */
@@ -3297,8 +3867,10 @@ namespace Model
          * things associated with it. To delete a thing type, first mark it as deprecated
          * by calling <a>DeprecateThingType</a>, then remove any associated things by
          * calling <a>UpdateThing</a> to change the thing type on any associated thing, and
-         * finally use <a>DeleteThingType</a> to delete the thing type.</p><p><h3>See
-         * Also:</h3>   <a
+         * finally use <a>DeleteThingType</a> to delete the thing type.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingType</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingType">AWS
          * API Reference</a></p>
          *
@@ -3311,8 +3883,10 @@ namespace Model
          * things associated with it. To delete a thing type, first mark it as deprecated
          * by calling <a>DeprecateThingType</a>, then remove any associated things by
          * calling <a>UpdateThing</a> to change the thing type on any associated thing, and
-         * finally use <a>DeleteThingType</a> to delete the thing type.</p><p><h3>See
-         * Also:</h3>   <a
+         * finally use <a>DeleteThingType</a> to delete the thing type.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingType</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingType">AWS
          * API Reference</a></p>
          *
@@ -3321,14 +3895,18 @@ namespace Model
         virtual void DeleteThingTypeAsync(const Model::DeleteThingTypeRequest& request, const DeleteThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteTopicRuleOutcome DeleteTopicRule(const Model::DeleteTopicRuleRequest& request) const;
 
         /**
-         * <p>Deletes the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">AWS
          * API Reference</a></p>
          *
@@ -3337,7 +3915,9 @@ namespace Model
         virtual Model::DeleteTopicRuleOutcomeCallable DeleteTopicRuleCallable(const Model::DeleteTopicRuleRequest& request) const;
 
         /**
-         * <p>Deletes the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">AWS
          * API Reference</a></p>
          *
@@ -3346,14 +3926,18 @@ namespace Model
         virtual void DeleteTopicRuleAsync(const Model::DeleteTopicRuleRequest& request, const DeleteTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a topic rule destination.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a topic rule destination.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRuleDestination">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteTopicRuleDestinationOutcome DeleteTopicRuleDestination(const Model::DeleteTopicRuleDestinationRequest& request) const;
 
         /**
-         * <p>Deletes a topic rule destination.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a topic rule destination.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRuleDestination">AWS
          * API Reference</a></p>
          *
@@ -3362,7 +3946,9 @@ namespace Model
         virtual Model::DeleteTopicRuleDestinationOutcomeCallable DeleteTopicRuleDestinationCallable(const Model::DeleteTopicRuleDestinationRequest& request) const;
 
         /**
-         * <p>Deletes a topic rule destination.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a topic rule destination.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRuleDestination">AWS
          * API Reference</a></p>
          *
@@ -3371,14 +3957,18 @@ namespace Model
         virtual void DeleteTopicRuleDestinationAsync(const Model::DeleteTopicRuleDestinationRequest& request, const DeleteTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a logging level.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a logging level.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteV2LoggingLevel</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteV2LoggingLevel">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteV2LoggingLevelOutcome DeleteV2LoggingLevel(const Model::DeleteV2LoggingLevelRequest& request) const;
 
         /**
-         * <p>Deletes a logging level.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a logging level.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteV2LoggingLevel</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteV2LoggingLevel">AWS
          * API Reference</a></p>
          *
@@ -3387,7 +3977,9 @@ namespace Model
         virtual Model::DeleteV2LoggingLevelOutcomeCallable DeleteV2LoggingLevelCallable(const Model::DeleteV2LoggingLevelRequest& request) const;
 
         /**
-         * <p>Deletes a logging level.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a logging level.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteV2LoggingLevel</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteV2LoggingLevel">AWS
          * API Reference</a></p>
          *
@@ -3397,7 +3989,9 @@ namespace Model
 
         /**
          * <p>Deprecates a thing type. You can not associate new things with deprecated
-         * thing type.</p><p><h3>See Also:</h3>   <a
+         * thing type.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeprecateThingType</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingType">AWS
          * API Reference</a></p>
          */
@@ -3405,7 +3999,9 @@ namespace Model
 
         /**
          * <p>Deprecates a thing type. You can not associate new things with deprecated
-         * thing type.</p><p><h3>See Also:</h3>   <a
+         * thing type.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeprecateThingType</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingType">AWS
          * API Reference</a></p>
          *
@@ -3415,7 +4011,9 @@ namespace Model
 
         /**
          * <p>Deprecates a thing type. You can not associate new things with deprecated
-         * thing type.</p><p><h3>See Also:</h3>   <a
+         * thing type.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeprecateThingType</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingType">AWS
          * API Reference</a></p>
          *
@@ -3426,7 +4024,9 @@ namespace Model
         /**
          * <p>Gets information about the Device Defender audit settings for this account.
          * Settings include how audit notifications are sent and which audit checks are
-         * enabled or disabled.</p><p><h3>See Also:</h3>   <a
+         * enabled or disabled.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAccountAuditConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAccountAuditConfiguration">AWS
          * API Reference</a></p>
          */
@@ -3435,7 +4035,9 @@ namespace Model
         /**
          * <p>Gets information about the Device Defender audit settings for this account.
          * Settings include how audit notifications are sent and which audit checks are
-         * enabled or disabled.</p><p><h3>See Also:</h3>   <a
+         * enabled or disabled.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAccountAuditConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAccountAuditConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3446,7 +4048,9 @@ namespace Model
         /**
          * <p>Gets information about the Device Defender audit settings for this account.
          * Settings include how audit notifications are sent and which audit checks are
-         * enabled or disabled.</p><p><h3>See Also:</h3>   <a
+         * enabled or disabled.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAccountAuditConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAccountAuditConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3457,7 +4061,9 @@ namespace Model
         /**
          * <p>Gets information about a single audit finding. Properties include the reason
          * for noncompliance, the severity of the issue, and the start time when the audit
-         * that returned the finding.</p><p><h3>See Also:</h3>   <a
+         * that returned the finding.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuditFinding</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditFinding">AWS
          * API Reference</a></p>
          */
@@ -3466,7 +4072,9 @@ namespace Model
         /**
          * <p>Gets information about a single audit finding. Properties include the reason
          * for noncompliance, the severity of the issue, and the start time when the audit
-         * that returned the finding.</p><p><h3>See Also:</h3>   <a
+         * that returned the finding.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuditFinding</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditFinding">AWS
          * API Reference</a></p>
          *
@@ -3477,7 +4085,9 @@ namespace Model
         /**
          * <p>Gets information about a single audit finding. Properties include the reason
          * for noncompliance, the severity of the issue, and the start time when the audit
-         * that returned the finding.</p><p><h3>See Also:</h3>   <a
+         * that returned the finding.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuditFinding</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditFinding">AWS
          * API Reference</a></p>
          *
@@ -3548,14 +4158,20 @@ namespace Model
         virtual void DescribeAuditSuppressionAsync(const Model::DescribeAuditSuppressionRequest& request, const DescribeAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a Device Defender audit.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a Device Defender audit.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuditTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditTask">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAuditTaskOutcome DescribeAuditTask(const Model::DescribeAuditTaskRequest& request) const;
 
         /**
-         * <p>Gets information about a Device Defender audit.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a Device Defender audit.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuditTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditTask">AWS
          * API Reference</a></p>
          *
@@ -3564,7 +4180,10 @@ namespace Model
         virtual Model::DescribeAuditTaskOutcomeCallable DescribeAuditTaskCallable(const Model::DescribeAuditTaskRequest& request) const;
 
         /**
-         * <p>Gets information about a Device Defender audit.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a Device Defender audit.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuditTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditTask">AWS
          * API Reference</a></p>
          *
@@ -3573,14 +4192,18 @@ namespace Model
         virtual void DescribeAuditTaskAsync(const Model::DescribeAuditTaskRequest& request, const DescribeAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuthorizer">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAuthorizerOutcome DescribeAuthorizer(const Model::DescribeAuthorizerRequest& request) const;
 
         /**
-         * <p>Describes an authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -3589,7 +4212,9 @@ namespace Model
         virtual Model::DescribeAuthorizerOutcomeCallable DescribeAuthorizerCallable(const Model::DescribeAuthorizerRequest& request) const;
 
         /**
-         * <p>Describes an authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -3598,14 +4223,20 @@ namespace Model
         virtual void DescribeAuthorizerAsync(const Model::DescribeAuthorizerRequest& request, const DescribeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a billing group.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeBillingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBillingGroupOutcome DescribeBillingGroup(const Model::DescribeBillingGroupRequest& request) const;
 
         /**
-         * <p>Returns information about a billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a billing group.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -3614,7 +4245,10 @@ namespace Model
         virtual Model::DescribeBillingGroupOutcomeCallable DescribeBillingGroupCallable(const Model::DescribeBillingGroupRequest& request) const;
 
         /**
-         * <p>Returns information about a billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a billing group.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -3623,14 +4257,20 @@ namespace Model
         virtual void DescribeBillingGroupAsync(const Model::DescribeBillingGroupRequest& request, const DescribeBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a registered CA certificate.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a registered CA certificate.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCACertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCACertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeCACertificateOutcome DescribeCACertificate(const Model::DescribeCACertificateRequest& request) const;
 
         /**
-         * <p>Describes a registered CA certificate.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a registered CA certificate.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCACertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCACertificate">AWS
          * API Reference</a></p>
          *
@@ -3639,7 +4279,10 @@ namespace Model
         virtual Model::DescribeCACertificateOutcomeCallable DescribeCACertificateCallable(const Model::DescribeCACertificateRequest& request) const;
 
         /**
-         * <p>Describes a registered CA certificate.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a registered CA certificate.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCACertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCACertificate">AWS
          * API Reference</a></p>
          *
@@ -3648,16 +4291,20 @@ namespace Model
         virtual void DescribeCACertificateAsync(const Model::DescribeCACertificateRequest& request, const DescribeCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the specified certificate.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about the specified certificate.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeCertificateOutcome DescribeCertificate(const Model::DescribeCertificateRequest& request) const;
 
         /**
-         * <p>Gets information about the specified certificate.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about the specified certificate.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">AWS
          * API Reference</a></p>
          *
@@ -3666,8 +4313,10 @@ namespace Model
         virtual Model::DescribeCertificateOutcomeCallable DescribeCertificateCallable(const Model::DescribeCertificateRequest& request) const;
 
         /**
-         * <p>Gets information about the specified certificate.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about the specified certificate.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">AWS
          * API Reference</a></p>
          *
@@ -3676,16 +4325,20 @@ namespace Model
         virtual void DescribeCertificateAsync(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets information about a Device Defender detect custom metric.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets information about a Device Defender detect custom metric. </p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCustomMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCustomMetric">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeCustomMetricOutcome DescribeCustomMetric(const Model::DescribeCustomMetricRequest& request) const;
 
         /**
-         * <p> Gets information about a Device Defender detect custom metric.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets information about a Device Defender detect custom metric. </p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCustomMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCustomMetric">AWS
          * API Reference</a></p>
          *
@@ -3694,8 +4347,10 @@ namespace Model
         virtual Model::DescribeCustomMetricOutcomeCallable DescribeCustomMetricCallable(const Model::DescribeCustomMetricRequest& request) const;
 
         /**
-         * <p> Gets information about a Device Defender detect custom metric.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets information about a Device Defender detect custom metric. </p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCustomMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCustomMetric">AWS
          * API Reference</a></p>
          *
@@ -3704,14 +4359,18 @@ namespace Model
         virtual void DescribeCustomMetricAsync(const Model::DescribeCustomMetricRequest& request, const DescribeCustomMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the default authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the default authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDefaultAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDefaultAuthorizer">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDefaultAuthorizerOutcome DescribeDefaultAuthorizer(const Model::DescribeDefaultAuthorizerRequest& request) const;
 
         /**
-         * <p>Describes the default authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the default authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDefaultAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDefaultAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -3720,7 +4379,9 @@ namespace Model
         virtual Model::DescribeDefaultAuthorizerOutcomeCallable DescribeDefaultAuthorizerCallable(const Model::DescribeDefaultAuthorizerRequest& request) const;
 
         /**
-         * <p>Describes the default authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the default authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDefaultAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDefaultAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -3729,16 +4390,20 @@ namespace Model
         virtual void DescribeDefaultAuthorizerAsync(const Model::DescribeDefaultAuthorizerRequest& request, const DescribeDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets information about a Device Defender ML Detect mitigation action.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets information about a Device Defender ML Detect mitigation action. </p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDetectMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDetectMitigationActionsTask">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDetectMitigationActionsTaskOutcome DescribeDetectMitigationActionsTask(const Model::DescribeDetectMitigationActionsTaskRequest& request) const;
 
         /**
-         * <p> Gets information about a Device Defender ML Detect mitigation action.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets information about a Device Defender ML Detect mitigation action. </p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDetectMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDetectMitigationActionsTask">AWS
          * API Reference</a></p>
          *
@@ -3747,8 +4412,10 @@ namespace Model
         virtual Model::DescribeDetectMitigationActionsTaskOutcomeCallable DescribeDetectMitigationActionsTaskCallable(const Model::DescribeDetectMitigationActionsTaskRequest& request) const;
 
         /**
-         * <p> Gets information about a Device Defender ML Detect mitigation action.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets information about a Device Defender ML Detect mitigation action. </p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDetectMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDetectMitigationActionsTask">AWS
          * API Reference</a></p>
          *
@@ -3757,16 +4424,20 @@ namespace Model
         virtual void DescribeDetectMitigationActionsTaskAsync(const Model::DescribeDetectMitigationActionsTaskRequest& request, const DescribeDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides details about a dimension that is defined in your AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides details about a dimension that is defined in your Amazon Web
+         * Services accounts.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDimension</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDimension">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDimensionOutcome DescribeDimension(const Model::DescribeDimensionRequest& request) const;
 
         /**
-         * <p>Provides details about a dimension that is defined in your AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides details about a dimension that is defined in your Amazon Web
+         * Services accounts.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDimension</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDimension">AWS
          * API Reference</a></p>
          *
@@ -3775,8 +4446,10 @@ namespace Model
         virtual Model::DescribeDimensionOutcomeCallable DescribeDimensionCallable(const Model::DescribeDimensionRequest& request) const;
 
         /**
-         * <p>Provides details about a dimension that is defined in your AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides details about a dimension that is defined in your Amazon Web
+         * Services accounts.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDimension</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDimension">AWS
          * API Reference</a></p>
          *
@@ -3785,16 +4458,20 @@ namespace Model
         virtual void DescribeDimensionAsync(const Model::DescribeDimensionRequest& request, const DescribeDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets summary information about a domain configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets summary information about a domain configuration.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDomainConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDomainConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDomainConfigurationOutcome DescribeDomainConfiguration(const Model::DescribeDomainConfigurationRequest& request) const;
 
         /**
-         * <p>Gets summary information about a domain configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets summary information about a domain configuration.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDomainConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDomainConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3803,8 +4480,10 @@ namespace Model
         virtual Model::DescribeDomainConfigurationOutcomeCallable DescribeDomainConfigurationCallable(const Model::DescribeDomainConfigurationRequest& request) const;
 
         /**
-         * <p>Gets summary information about a domain configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets summary information about a domain configuration.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDomainConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDomainConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3813,16 +4492,20 @@ namespace Model
         virtual void DescribeDomainConfigurationAsync(const Model::DescribeDomainConfigurationRequest& request, const DescribeDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a unique endpoint specific to the AWS account making the
-         * call.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a unique endpoint specific to the Amazon Web Services account making
+         * the call.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeEndpointOutcome DescribeEndpoint(const Model::DescribeEndpointRequest& request) const;
 
         /**
-         * <p>Returns a unique endpoint specific to the AWS account making the
-         * call.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a unique endpoint specific to the Amazon Web Services account making
+         * the call.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">AWS
          * API Reference</a></p>
          *
@@ -3831,8 +4514,10 @@ namespace Model
         virtual Model::DescribeEndpointOutcomeCallable DescribeEndpointCallable(const Model::DescribeEndpointRequest& request) const;
 
         /**
-         * <p>Returns a unique endpoint specific to the AWS account making the
-         * call.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a unique endpoint specific to the Amazon Web Services account making
+         * the call.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">AWS
          * API Reference</a></p>
          *
@@ -3841,14 +4526,18 @@ namespace Model
         virtual void DescribeEndpointAsync(const Model::DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes event configurations.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes event configurations.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEventConfigurations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEventConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeEventConfigurationsOutcome DescribeEventConfigurations(const Model::DescribeEventConfigurationsRequest& request) const;
 
         /**
-         * <p>Describes event configurations.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes event configurations.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEventConfigurations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEventConfigurations">AWS
          * API Reference</a></p>
          *
@@ -3857,7 +4546,9 @@ namespace Model
         virtual Model::DescribeEventConfigurationsOutcomeCallable DescribeEventConfigurationsCallable(const Model::DescribeEventConfigurationsRequest& request) const;
 
         /**
-         * <p>Describes event configurations.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes event configurations.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEventConfigurations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEventConfigurations">AWS
          * API Reference</a></p>
          *
@@ -3866,14 +4557,52 @@ namespace Model
         virtual void DescribeEventConfigurationsAsync(const Model::DescribeEventConfigurationsRequest& request, const DescribeEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a search index.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified fleet metric.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeFleetMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeFleetMetric">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFleetMetricOutcome DescribeFleetMetric(const Model::DescribeFleetMetricRequest& request) const;
+
+        /**
+         * <p>Gets information about the specified fleet metric.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeFleetMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeFleetMetric">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFleetMetricOutcomeCallable DescribeFleetMetricCallable(const Model::DescribeFleetMetricRequest& request) const;
+
+        /**
+         * <p>Gets information about the specified fleet metric.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeFleetMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeFleetMetric">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFleetMetricAsync(const Model::DescribeFleetMetricRequest& request, const DescribeFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes a search index.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeIndex</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeIndex">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeIndexOutcome DescribeIndex(const Model::DescribeIndexRequest& request) const;
 
         /**
-         * <p>Describes a search index.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a search index.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeIndex</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeIndex">AWS
          * API Reference</a></p>
          *
@@ -3882,7 +4611,9 @@ namespace Model
         virtual Model::DescribeIndexOutcomeCallable DescribeIndexCallable(const Model::DescribeIndexRequest& request) const;
 
         /**
-         * <p>Describes a search index.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a search index.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeIndex</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeIndex">AWS
          * API Reference</a></p>
          *
@@ -3891,14 +4622,18 @@ namespace Model
         virtual void DescribeIndexAsync(const Model::DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a job.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJob">AWS API
          * Reference</a></p>
          */
         virtual Model::DescribeJobOutcome DescribeJob(const Model::DescribeJobRequest& request) const;
 
         /**
-         * <p>Describes a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a job.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJob">AWS API
          * Reference</a></p>
          *
@@ -3907,7 +4642,9 @@ namespace Model
         virtual Model::DescribeJobOutcomeCallable DescribeJobCallable(const Model::DescribeJobRequest& request) const;
 
         /**
-         * <p>Describes a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a job.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJob">AWS API
          * Reference</a></p>
          *
@@ -3916,14 +4653,18 @@ namespace Model
         virtual void DescribeJobAsync(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a job execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a job execution.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJobExecution</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJobExecution">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeJobExecutionOutcome DescribeJobExecution(const Model::DescribeJobExecutionRequest& request) const;
 
         /**
-         * <p>Describes a job execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a job execution.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJobExecution</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJobExecution">AWS
          * API Reference</a></p>
          *
@@ -3932,7 +4673,9 @@ namespace Model
         virtual Model::DescribeJobExecutionOutcomeCallable DescribeJobExecutionCallable(const Model::DescribeJobExecutionRequest& request) const;
 
         /**
-         * <p>Describes a job execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a job execution.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJobExecution</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJobExecution">AWS
          * API Reference</a></p>
          *
@@ -3966,14 +4709,45 @@ namespace Model
         virtual void DescribeJobTemplateAsync(const Model::DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a mitigation action.</p><p><h3>See Also:</h3>   <a
+         * <p>View details of a managed job template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeManagedJobTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeManagedJobTemplateOutcome DescribeManagedJobTemplate(const Model::DescribeManagedJobTemplateRequest& request) const;
+
+        /**
+         * <p>View details of a managed job template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeManagedJobTemplate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeManagedJobTemplateOutcomeCallable DescribeManagedJobTemplateCallable(const Model::DescribeManagedJobTemplateRequest& request) const;
+
+        /**
+         * <p>View details of a managed job template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeManagedJobTemplate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeManagedJobTemplateAsync(const Model::DescribeManagedJobTemplateRequest& request, const DescribeManagedJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about a mitigation action.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeMitigationAction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeMitigationAction">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeMitigationActionOutcome DescribeMitigationAction(const Model::DescribeMitigationActionRequest& request) const;
 
         /**
-         * <p>Gets information about a mitigation action.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a mitigation action.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeMitigationAction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeMitigationAction">AWS
          * API Reference</a></p>
          *
@@ -3982,7 +4756,10 @@ namespace Model
         virtual Model::DescribeMitigationActionOutcomeCallable DescribeMitigationActionCallable(const Model::DescribeMitigationActionRequest& request) const;
 
         /**
-         * <p>Gets information about a mitigation action.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a mitigation action.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeMitigationAction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeMitigationAction">AWS
          * API Reference</a></p>
          *
@@ -3991,16 +4768,20 @@ namespace Model
         virtual void DescribeMitigationActionAsync(const Model::DescribeMitigationActionRequest& request, const DescribeMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a fleet provisioning template.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about a fleet provisioning template.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeProvisioningTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeProvisioningTemplateOutcome DescribeProvisioningTemplate(const Model::DescribeProvisioningTemplateRequest& request) const;
 
         /**
-         * <p>Returns information about a fleet provisioning template.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about a fleet provisioning template.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeProvisioningTemplate">AWS
          * API Reference</a></p>
          *
@@ -4009,8 +4790,10 @@ namespace Model
         virtual Model::DescribeProvisioningTemplateOutcomeCallable DescribeProvisioningTemplateCallable(const Model::DescribeProvisioningTemplateRequest& request) const;
 
         /**
-         * <p>Returns information about a fleet provisioning template.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about a fleet provisioning template.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeProvisioningTemplate">AWS
          * API Reference</a></p>
          *
@@ -4019,16 +4802,20 @@ namespace Model
         virtual void DescribeProvisioningTemplateAsync(const Model::DescribeProvisioningTemplateRequest& request, const DescribeProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a fleet provisioning template
-         * version.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a fleet provisioning template version.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplateVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeProvisioningTemplateVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeProvisioningTemplateVersionOutcome DescribeProvisioningTemplateVersion(const Model::DescribeProvisioningTemplateVersionRequest& request) const;
 
         /**
-         * <p>Returns information about a fleet provisioning template
-         * version.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a fleet provisioning template version.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplateVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeProvisioningTemplateVersion">AWS
          * API Reference</a></p>
          *
@@ -4037,8 +4824,10 @@ namespace Model
         virtual Model::DescribeProvisioningTemplateVersionOutcomeCallable DescribeProvisioningTemplateVersionCallable(const Model::DescribeProvisioningTemplateVersionRequest& request) const;
 
         /**
-         * <p>Returns information about a fleet provisioning template
-         * version.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a fleet provisioning template version.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplateVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeProvisioningTemplateVersion">AWS
          * API Reference</a></p>
          *
@@ -4047,14 +4836,18 @@ namespace Model
         virtual void DescribeProvisioningTemplateVersionAsync(const Model::DescribeProvisioningTemplateVersionRequest& request, const DescribeProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a role alias.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a role alias.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeRoleAlias</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeRoleAlias">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeRoleAliasOutcome DescribeRoleAlias(const Model::DescribeRoleAliasRequest& request) const;
 
         /**
-         * <p>Describes a role alias.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a role alias.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeRoleAlias</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeRoleAlias">AWS
          * API Reference</a></p>
          *
@@ -4063,7 +4856,9 @@ namespace Model
         virtual Model::DescribeRoleAliasOutcomeCallable DescribeRoleAliasCallable(const Model::DescribeRoleAliasRequest& request) const;
 
         /**
-         * <p>Describes a role alias.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a role alias.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeRoleAlias</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeRoleAlias">AWS
          * API Reference</a></p>
          *
@@ -4072,14 +4867,20 @@ namespace Model
         virtual void DescribeRoleAliasAsync(const Model::DescribeRoleAliasRequest& request, const DescribeRoleAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a scheduled audit.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a scheduled audit.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeScheduledAudit</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeScheduledAudit">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeScheduledAuditOutcome DescribeScheduledAudit(const Model::DescribeScheduledAuditRequest& request) const;
 
         /**
-         * <p>Gets information about a scheduled audit.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a scheduled audit.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeScheduledAudit</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeScheduledAudit">AWS
          * API Reference</a></p>
          *
@@ -4088,7 +4889,10 @@ namespace Model
         virtual Model::DescribeScheduledAuditOutcomeCallable DescribeScheduledAuditCallable(const Model::DescribeScheduledAuditRequest& request) const;
 
         /**
-         * <p>Gets information about a scheduled audit.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a scheduled audit.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeScheduledAudit</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeScheduledAudit">AWS
          * API Reference</a></p>
          *
@@ -4097,16 +4901,20 @@ namespace Model
         virtual void DescribeScheduledAuditAsync(const Model::DescribeScheduledAuditRequest& request, const DescribeScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a Device Defender security profile.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about a Device Defender security profile.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeSecurityProfile">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeSecurityProfileOutcome DescribeSecurityProfile(const Model::DescribeSecurityProfileRequest& request) const;
 
         /**
-         * <p>Gets information about a Device Defender security profile.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about a Device Defender security profile.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -4115,8 +4923,10 @@ namespace Model
         virtual Model::DescribeSecurityProfileOutcomeCallable DescribeSecurityProfileCallable(const Model::DescribeSecurityProfileRequest& request) const;
 
         /**
-         * <p>Gets information about a Device Defender security profile.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about a Device Defender security profile.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -4125,14 +4935,18 @@ namespace Model
         virtual void DescribeSecurityProfileAsync(const Model::DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a stream.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a stream.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeStream</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeStream">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeStreamOutcome DescribeStream(const Model::DescribeStreamRequest& request) const;
 
         /**
-         * <p>Gets information about a stream.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a stream.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeStream</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeStream">AWS
          * API Reference</a></p>
          *
@@ -4141,7 +4955,9 @@ namespace Model
         virtual Model::DescribeStreamOutcomeCallable DescribeStreamCallable(const Model::DescribeStreamRequest& request) const;
 
         /**
-         * <p>Gets information about a stream.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a stream.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeStream</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeStream">AWS
          * API Reference</a></p>
          *
@@ -4150,14 +4966,20 @@ namespace Model
         virtual void DescribeStreamAsync(const Model::DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the specified thing.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified thing.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeThingOutcome DescribeThing(const Model::DescribeThingRequest& request) const;
 
         /**
-         * <p>Gets information about the specified thing.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified thing.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">AWS
          * API Reference</a></p>
          *
@@ -4166,7 +4988,10 @@ namespace Model
         virtual Model::DescribeThingOutcomeCallable DescribeThingCallable(const Model::DescribeThingRequest& request) const;
 
         /**
-         * <p>Gets information about the specified thing.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified thing.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">AWS
          * API Reference</a></p>
          *
@@ -4175,14 +5000,18 @@ namespace Model
         virtual void DescribeThingAsync(const Model::DescribeThingRequest& request, const DescribeThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describe a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Describe a thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeThingGroupOutcome DescribeThingGroup(const Model::DescribeThingGroupRequest& request) const;
 
         /**
-         * <p>Describe a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Describe a thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingGroup">AWS
          * API Reference</a></p>
          *
@@ -4191,7 +5020,9 @@ namespace Model
         virtual Model::DescribeThingGroupOutcomeCallable DescribeThingGroupCallable(const Model::DescribeThingGroupRequest& request) const;
 
         /**
-         * <p>Describe a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Describe a thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingGroup">AWS
          * API Reference</a></p>
          *
@@ -4200,14 +5031,20 @@ namespace Model
         virtual void DescribeThingGroupAsync(const Model::DescribeThingGroupRequest& request, const DescribeThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a bulk thing provisioning task.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a bulk thing provisioning task.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingRegistrationTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingRegistrationTask">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeThingRegistrationTaskOutcome DescribeThingRegistrationTask(const Model::DescribeThingRegistrationTaskRequest& request) const;
 
         /**
-         * <p>Describes a bulk thing provisioning task.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a bulk thing provisioning task.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingRegistrationTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingRegistrationTask">AWS
          * API Reference</a></p>
          *
@@ -4216,7 +5053,10 @@ namespace Model
         virtual Model::DescribeThingRegistrationTaskOutcomeCallable DescribeThingRegistrationTaskCallable(const Model::DescribeThingRegistrationTaskRequest& request) const;
 
         /**
-         * <p>Describes a bulk thing provisioning task.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a bulk thing provisioning task.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingRegistrationTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingRegistrationTask">AWS
          * API Reference</a></p>
          *
@@ -4225,16 +5065,20 @@ namespace Model
         virtual void DescribeThingRegistrationTaskAsync(const Model::DescribeThingRegistrationTaskRequest& request, const DescribeThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the specified thing type.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about the specified thing type.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingType</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingType">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeThingTypeOutcome DescribeThingType(const Model::DescribeThingTypeRequest& request) const;
 
         /**
-         * <p>Gets information about the specified thing type.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about the specified thing type.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingType</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingType">AWS
          * API Reference</a></p>
          *
@@ -4243,8 +5087,10 @@ namespace Model
         virtual Model::DescribeThingTypeOutcomeCallable DescribeThingTypeCallable(const Model::DescribeThingTypeRequest& request) const;
 
         /**
-         * <p>Gets information about the specified thing type.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about the specified thing type.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingType</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingType">AWS
          * API Reference</a></p>
          *
@@ -4253,14 +5099,24 @@ namespace Model
         virtual void DescribeThingTypeAsync(const Model::DescribeThingTypeRequest& request, const DescribeThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Detaches a policy from the specified target.</p><p><h3>See Also:</h3>   <a
+         * <p>Detaches a policy from the specified target.</p>  <p>Because of the
+         * distributed nature of Amazon Web Services, it can take up to five minutes after
+         * a policy is detached before it's ready to be deleted.</p>  <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DetachPolicyOutcome DetachPolicy(const Model::DetachPolicyRequest& request) const;
 
         /**
-         * <p>Detaches a policy from the specified target.</p><p><h3>See Also:</h3>   <a
+         * <p>Detaches a policy from the specified target.</p>  <p>Because of the
+         * distributed nature of Amazon Web Services, it can take up to five minutes after
+         * a policy is detached before it's ready to be deleted.</p>  <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPolicy">AWS
          * API Reference</a></p>
          *
@@ -4269,7 +5125,12 @@ namespace Model
         virtual Model::DetachPolicyOutcomeCallable DetachPolicyCallable(const Model::DetachPolicyRequest& request) const;
 
         /**
-         * <p>Detaches a policy from the specified target.</p><p><h3>See Also:</h3>   <a
+         * <p>Detaches a policy from the specified target.</p>  <p>Because of the
+         * distributed nature of Amazon Web Services, it can take up to five minutes after
+         * a policy is detached before it's ready to be deleted.</p>  <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPolicy">AWS
          * API Reference</a></p>
          *
@@ -4279,7 +5140,9 @@ namespace Model
 
         /**
          * <p>Disassociates a Device Defender security profile from a thing group or from
-         * this account.</p><p><h3>See Also:</h3>   <a
+         * this account.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachSecurityProfile">AWS
          * API Reference</a></p>
          */
@@ -4287,7 +5150,9 @@ namespace Model
 
         /**
          * <p>Disassociates a Device Defender security profile from a thing group or from
-         * this account.</p><p><h3>See Also:</h3>   <a
+         * this account.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -4297,7 +5162,9 @@ namespace Model
 
         /**
          * <p>Disassociates a Device Defender security profile from a thing group or from
-         * this account.</p><p><h3>See Also:</h3>   <a
+         * this account.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -4309,8 +5176,10 @@ namespace Model
          * <p>Detaches the specified principal from the specified thing. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
          * federated identities.</p>  <p>This call is asynchronous. It might take
-         * several seconds for the detachment to propagate.</p> <p><h3>See
-         * Also:</h3>   <a
+         * several seconds for the detachment to propagate.</p>  <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachThingPrincipal</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">AWS
          * API Reference</a></p>
          */
@@ -4320,8 +5189,10 @@ namespace Model
          * <p>Detaches the specified principal from the specified thing. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
          * federated identities.</p>  <p>This call is asynchronous. It might take
-         * several seconds for the detachment to propagate.</p> <p><h3>See
-         * Also:</h3>   <a
+         * several seconds for the detachment to propagate.</p>  <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachThingPrincipal</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">AWS
          * API Reference</a></p>
          *
@@ -4333,8 +5204,10 @@ namespace Model
          * <p>Detaches the specified principal from the specified thing. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
          * federated identities.</p>  <p>This call is asynchronous. It might take
-         * several seconds for the detachment to propagate.</p> <p><h3>See
-         * Also:</h3>   <a
+         * several seconds for the detachment to propagate.</p>  <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachThingPrincipal</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">AWS
          * API Reference</a></p>
          *
@@ -4343,14 +5216,18 @@ namespace Model
         virtual void DetachThingPrincipalAsync(const Model::DetachThingPrincipalRequest& request, const DetachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables the rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DisableTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisableTopicRule">AWS
          * API Reference</a></p>
          */
         virtual Model::DisableTopicRuleOutcome DisableTopicRule(const Model::DisableTopicRuleRequest& request) const;
 
         /**
-         * <p>Disables the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables the rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DisableTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisableTopicRule">AWS
          * API Reference</a></p>
          *
@@ -4359,7 +5236,9 @@ namespace Model
         virtual Model::DisableTopicRuleOutcomeCallable DisableTopicRuleCallable(const Model::DisableTopicRuleRequest& request) const;
 
         /**
-         * <p>Disables the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables the rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DisableTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisableTopicRule">AWS
          * API Reference</a></p>
          *
@@ -4368,14 +5247,18 @@ namespace Model
         virtual void DisableTopicRuleAsync(const Model::DisableTopicRuleRequest& request, const DisableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">EnableTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableTopicRule">AWS
          * API Reference</a></p>
          */
         virtual Model::EnableTopicRuleOutcome EnableTopicRule(const Model::EnableTopicRuleRequest& request) const;
 
         /**
-         * <p>Enables the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">EnableTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableTopicRule">AWS
          * API Reference</a></p>
          *
@@ -4384,7 +5267,9 @@ namespace Model
         virtual Model::EnableTopicRuleOutcomeCallable EnableTopicRuleCallable(const Model::EnableTopicRuleRequest& request) const;
 
         /**
-         * <p>Enables the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">EnableTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableTopicRule">AWS
          * API Reference</a></p>
          *
@@ -4394,7 +5279,9 @@ namespace Model
 
         /**
          * <p> Returns a Device Defender's ML Detect Security Profile training model's
-         * status. </p><p><h3>See Also:</h3>   <a
+         * status. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBehaviorModelTrainingSummaries</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetBehaviorModelTrainingSummaries">AWS
          * API Reference</a></p>
          */
@@ -4402,7 +5289,9 @@ namespace Model
 
         /**
          * <p> Returns a Device Defender's ML Detect Security Profile training model's
-         * status. </p><p><h3>See Also:</h3>   <a
+         * status. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBehaviorModelTrainingSummaries</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetBehaviorModelTrainingSummaries">AWS
          * API Reference</a></p>
          *
@@ -4412,7 +5301,9 @@ namespace Model
 
         /**
          * <p> Returns a Device Defender's ML Detect Security Profile training model's
-         * status. </p><p><h3>See Also:</h3>   <a
+         * status. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBehaviorModelTrainingSummaries</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetBehaviorModelTrainingSummaries">AWS
          * API Reference</a></p>
          *
@@ -4421,16 +5312,54 @@ namespace Model
         virtual void GetBehaviorModelTrainingSummariesAsync(const Model::GetBehaviorModelTrainingSummariesRequest& request, const GetBehaviorModelTrainingSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the approximate count of unique values that match the
-         * query.</p><p><h3>See Also:</h3>   <a
+         * <p>Aggregates on indexed data with search queries pertaining to particular
+         * fields. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBucketsAggregation</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetBucketsAggregation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBucketsAggregationOutcome GetBucketsAggregation(const Model::GetBucketsAggregationRequest& request) const;
+
+        /**
+         * <p>Aggregates on indexed data with search queries pertaining to particular
+         * fields. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBucketsAggregation</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetBucketsAggregation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetBucketsAggregationOutcomeCallable GetBucketsAggregationCallable(const Model::GetBucketsAggregationRequest& request) const;
+
+        /**
+         * <p>Aggregates on indexed data with search queries pertaining to particular
+         * fields. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBucketsAggregation</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetBucketsAggregation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetBucketsAggregationAsync(const Model::GetBucketsAggregationRequest& request, const GetBucketsAggregationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the approximate count of unique values that match the query.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetCardinality</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetCardinality">AWS
          * API Reference</a></p>
          */
         virtual Model::GetCardinalityOutcome GetCardinality(const Model::GetCardinalityRequest& request) const;
 
         /**
-         * <p>Returns the approximate count of unique values that match the
-         * query.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the approximate count of unique values that match the query.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetCardinality</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetCardinality">AWS
          * API Reference</a></p>
          *
@@ -4439,8 +5368,10 @@ namespace Model
         virtual Model::GetCardinalityOutcomeCallable GetCardinalityCallable(const Model::GetCardinalityRequest& request) const;
 
         /**
-         * <p>Returns the approximate count of unique values that match the
-         * query.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the approximate count of unique values that match the query.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetCardinality</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetCardinality">AWS
          * API Reference</a></p>
          *
@@ -4450,8 +5381,10 @@ namespace Model
 
         /**
          * <p>Gets a list of the policies that have an effect on the authorization behavior
-         * of the specified device when it connects to the AWS IoT device
-         * gateway.</p><p><h3>See Also:</h3>   <a
+         * of the specified device when it connects to the IoT device gateway.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetEffectivePolicies</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetEffectivePolicies">AWS
          * API Reference</a></p>
          */
@@ -4459,8 +5392,10 @@ namespace Model
 
         /**
          * <p>Gets a list of the policies that have an effect on the authorization behavior
-         * of the specified device when it connects to the AWS IoT device
-         * gateway.</p><p><h3>See Also:</h3>   <a
+         * of the specified device when it connects to the IoT device gateway.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetEffectivePolicies</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetEffectivePolicies">AWS
          * API Reference</a></p>
          *
@@ -4470,8 +5405,10 @@ namespace Model
 
         /**
          * <p>Gets a list of the policies that have an effect on the authorization behavior
-         * of the specified device when it connects to the AWS IoT device
-         * gateway.</p><p><h3>See Also:</h3>   <a
+         * of the specified device when it connects to the IoT device gateway.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetEffectivePolicies</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetEffectivePolicies">AWS
          * API Reference</a></p>
          *
@@ -4480,14 +5417,18 @@ namespace Model
         virtual void GetEffectivePoliciesAsync(const Model::GetEffectivePoliciesRequest& request, const GetEffectivePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the indexing configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the indexing configuration.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetIndexingConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetIndexingConfigurationOutcome GetIndexingConfiguration(const Model::GetIndexingConfigurationRequest& request) const;
 
         /**
-         * <p>Gets the indexing configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the indexing configuration.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetIndexingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -4496,7 +5437,9 @@ namespace Model
         virtual Model::GetIndexingConfigurationOutcomeCallable GetIndexingConfigurationCallable(const Model::GetIndexingConfigurationRequest& request) const;
 
         /**
-         * <p>Gets the indexing configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the indexing configuration.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetIndexingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -4505,14 +5448,18 @@ namespace Model
         virtual void GetIndexingConfigurationAsync(const Model::GetIndexingConfigurationRequest& request, const GetIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a job document.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a job document.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetJobDocument</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetJobDocument">AWS
          * API Reference</a></p>
          */
         virtual Model::GetJobDocumentOutcome GetJobDocument(const Model::GetJobDocumentRequest& request) const;
 
         /**
-         * <p>Gets a job document.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a job document.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetJobDocument</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetJobDocument">AWS
          * API Reference</a></p>
          *
@@ -4521,7 +5468,9 @@ namespace Model
         virtual Model::GetJobDocumentOutcomeCallable GetJobDocumentCallable(const Model::GetJobDocumentRequest& request) const;
 
         /**
-         * <p>Gets a job document.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a job document.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetJobDocument</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetJobDocument">AWS
          * API Reference</a></p>
          *
@@ -4531,8 +5480,10 @@ namespace Model
 
         /**
          * <p>Gets the logging options.</p> <p>NOTE: use of this command is not
-         * recommended. Use <code>GetV2LoggingOptions</code> instead.</p><p><h3>See
-         * Also:</h3>   <a
+         * recommended. Use <code>GetV2LoggingOptions</code> instead.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetLoggingOptions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">AWS
          * API Reference</a></p>
          */
@@ -4540,8 +5491,10 @@ namespace Model
 
         /**
          * <p>Gets the logging options.</p> <p>NOTE: use of this command is not
-         * recommended. Use <code>GetV2LoggingOptions</code> instead.</p><p><h3>See
-         * Also:</h3>   <a
+         * recommended. Use <code>GetV2LoggingOptions</code> instead.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetLoggingOptions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -4551,8 +5504,10 @@ namespace Model
 
         /**
          * <p>Gets the logging options.</p> <p>NOTE: use of this command is not
-         * recommended. Use <code>GetV2LoggingOptions</code> instead.</p><p><h3>See
-         * Also:</h3>   <a
+         * recommended. Use <code>GetV2LoggingOptions</code> instead.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetLoggingOptions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -4561,14 +5516,18 @@ namespace Model
         virtual void GetLoggingOptionsAsync(const Model::GetLoggingOptionsRequest& request, const GetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets an OTA update.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an OTA update.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetOTAUpdate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetOTAUpdate">AWS
          * API Reference</a></p>
          */
         virtual Model::GetOTAUpdateOutcome GetOTAUpdate(const Model::GetOTAUpdateRequest& request) const;
 
         /**
-         * <p>Gets an OTA update.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an OTA update.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetOTAUpdate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetOTAUpdate">AWS
          * API Reference</a></p>
          *
@@ -4577,7 +5536,9 @@ namespace Model
         virtual Model::GetOTAUpdateOutcomeCallable GetOTAUpdateCallable(const Model::GetOTAUpdateRequest& request) const;
 
         /**
-         * <p>Gets an OTA update.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an OTA update.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetOTAUpdate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetOTAUpdate">AWS
          * API Reference</a></p>
          *
@@ -4595,7 +5556,9 @@ namespace Model
          * percentile group "5" contains the aggregated field value that occurs in
          * approximately five percent of the values that match the query, and so on. The
          * result is an approximation, the more values that match the query, the more
-         * accurate the percentile values.</p><p><h3>See Also:</h3>   <a
+         * accurate the percentile values.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPercentiles</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPercentiles">AWS
          * API Reference</a></p>
          */
@@ -4611,7 +5574,9 @@ namespace Model
          * percentile group "5" contains the aggregated field value that occurs in
          * approximately five percent of the values that match the query, and so on. The
          * result is an approximation, the more values that match the query, the more
-         * accurate the percentile values.</p><p><h3>See Also:</h3>   <a
+         * accurate the percentile values.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPercentiles</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPercentiles">AWS
          * API Reference</a></p>
          *
@@ -4629,7 +5594,9 @@ namespace Model
          * percentile group "5" contains the aggregated field value that occurs in
          * approximately five percent of the values that match the query, and so on. The
          * result is an approximation, the more values that match the query, the more
-         * accurate the percentile values.</p><p><h3>See Also:</h3>   <a
+         * accurate the percentile values.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPercentiles</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPercentiles">AWS
          * API Reference</a></p>
          *
@@ -4639,7 +5606,9 @@ namespace Model
 
         /**
          * <p>Gets information about the specified policy with the policy document of the
-         * default version.</p><p><h3>See Also:</h3>   <a
+         * default version.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">AWS API
          * Reference</a></p>
          */
@@ -4647,7 +5616,9 @@ namespace Model
 
         /**
          * <p>Gets information about the specified policy with the policy document of the
-         * default version.</p><p><h3>See Also:</h3>   <a
+         * default version.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">AWS API
          * Reference</a></p>
          *
@@ -4657,7 +5628,9 @@ namespace Model
 
         /**
          * <p>Gets information about the specified policy with the policy document of the
-         * default version.</p><p><h3>See Also:</h3>   <a
+         * default version.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">AWS API
          * Reference</a></p>
          *
@@ -4666,16 +5639,20 @@ namespace Model
         virtual void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the specified policy version.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets information about the specified policy version.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicyVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::GetPolicyVersionOutcome GetPolicyVersion(const Model::GetPolicyVersionRequest& request) const;
 
         /**
-         * <p>Gets information about the specified policy version.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets information about the specified policy version.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicyVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">AWS
          * API Reference</a></p>
          *
@@ -4684,8 +5661,10 @@ namespace Model
         virtual Model::GetPolicyVersionOutcomeCallable GetPolicyVersionCallable(const Model::GetPolicyVersionRequest& request) const;
 
         /**
-         * <p>Gets information about the specified policy version.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets information about the specified policy version.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicyVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">AWS
          * API Reference</a></p>
          *
@@ -4694,16 +5673,20 @@ namespace Model
         virtual void GetPolicyVersionAsync(const Model::GetPolicyVersionRequest& request, const GetPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a registration code used to register a CA certificate with AWS
-         * IoT.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a registration code used to register a CA certificate with IoT.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetRegistrationCode</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">AWS
          * API Reference</a></p>
          */
         virtual Model::GetRegistrationCodeOutcome GetRegistrationCode(const Model::GetRegistrationCodeRequest& request) const;
 
         /**
-         * <p>Gets a registration code used to register a CA certificate with AWS
-         * IoT.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a registration code used to register a CA certificate with IoT.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetRegistrationCode</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">AWS
          * API Reference</a></p>
          *
@@ -4712,8 +5695,10 @@ namespace Model
         virtual Model::GetRegistrationCodeOutcomeCallable GetRegistrationCodeCallable(const Model::GetRegistrationCodeRequest& request) const;
 
         /**
-         * <p>Gets a registration code used to register a CA certificate with AWS
-         * IoT.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a registration code used to register a CA certificate with IoT.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetRegistrationCode</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">AWS
          * API Reference</a></p>
          *
@@ -4724,8 +5709,10 @@ namespace Model
         /**
          * <p>Returns the count, average, sum, minimum, maximum, sum of squares, variance,
          * and standard deviation for the specified aggregated field. If the aggregation
-         * field is of type <code>String</code>, only the count statistic is
-         * returned.</p><p><h3>See Also:</h3>   <a
+         * field is of type <code>String</code>, only the count statistic is returned.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetStatistics</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">AWS
          * API Reference</a></p>
          */
@@ -4734,8 +5721,10 @@ namespace Model
         /**
          * <p>Returns the count, average, sum, minimum, maximum, sum of squares, variance,
          * and standard deviation for the specified aggregated field. If the aggregation
-         * field is of type <code>String</code>, only the count statistic is
-         * returned.</p><p><h3>See Also:</h3>   <a
+         * field is of type <code>String</code>, only the count statistic is returned.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetStatistics</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">AWS
          * API Reference</a></p>
          *
@@ -4746,8 +5735,10 @@ namespace Model
         /**
          * <p>Returns the count, average, sum, minimum, maximum, sum of squares, variance,
          * and standard deviation for the specified aggregated field. If the aggregation
-         * field is of type <code>String</code>, only the count statistic is
-         * returned.</p><p><h3>See Also:</h3>   <a
+         * field is of type <code>String</code>, only the count statistic is returned.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetStatistics</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">AWS
          * API Reference</a></p>
          *
@@ -4756,14 +5747,18 @@ namespace Model
         virtual void GetStatisticsAsync(const Model::GetStatisticsRequest& request, const GetStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">AWS
          * API Reference</a></p>
          */
         virtual Model::GetTopicRuleOutcome GetTopicRule(const Model::GetTopicRuleRequest& request) const;
 
         /**
-         * <p>Gets information about the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">AWS
          * API Reference</a></p>
          *
@@ -4772,7 +5767,9 @@ namespace Model
         virtual Model::GetTopicRuleOutcomeCallable GetTopicRuleCallable(const Model::GetTopicRuleRequest& request) const;
 
         /**
-         * <p>Gets information about the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the rule.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">AWS
          * API Reference</a></p>
          *
@@ -4781,16 +5778,20 @@ namespace Model
         virtual void GetTopicRuleAsync(const Model::GetTopicRuleRequest& request, const GetTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a topic rule destination.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about a topic rule destination.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRuleDestination">AWS
          * API Reference</a></p>
          */
         virtual Model::GetTopicRuleDestinationOutcome GetTopicRuleDestination(const Model::GetTopicRuleDestinationRequest& request) const;
 
         /**
-         * <p>Gets information about a topic rule destination.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about a topic rule destination.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRuleDestination">AWS
          * API Reference</a></p>
          *
@@ -4799,8 +5800,10 @@ namespace Model
         virtual Model::GetTopicRuleDestinationOutcomeCallable GetTopicRuleDestinationCallable(const Model::GetTopicRuleDestinationRequest& request) const;
 
         /**
-         * <p>Gets information about a topic rule destination.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about a topic rule destination.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRuleDestination">AWS
          * API Reference</a></p>
          *
@@ -4809,14 +5812,20 @@ namespace Model
         virtual void GetTopicRuleDestinationAsync(const Model::GetTopicRuleDestinationRequest& request, const GetTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the fine grained logging options.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the fine grained logging options.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetV2LoggingOptions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetV2LoggingOptions">AWS
          * API Reference</a></p>
          */
         virtual Model::GetV2LoggingOptionsOutcome GetV2LoggingOptions(const Model::GetV2LoggingOptionsRequest& request) const;
 
         /**
-         * <p>Gets the fine grained logging options.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the fine grained logging options.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetV2LoggingOptions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetV2LoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -4825,7 +5834,10 @@ namespace Model
         virtual Model::GetV2LoggingOptionsOutcomeCallable GetV2LoggingOptionsCallable(const Model::GetV2LoggingOptionsRequest& request) const;
 
         /**
-         * <p>Gets the fine grained logging options.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the fine grained logging options.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetV2LoggingOptions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetV2LoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -4834,16 +5846,20 @@ namespace Model
         virtual void GetV2LoggingOptionsAsync(const Model::GetV2LoggingOptionsRequest& request, const GetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the active violations for a given Device Defender security
-         * profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the active violations for a given Device Defender security profile.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListActiveViolations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListActiveViolations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListActiveViolationsOutcome ListActiveViolations(const Model::ListActiveViolationsRequest& request) const;
 
         /**
-         * <p>Lists the active violations for a given Device Defender security
-         * profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the active violations for a given Device Defender security profile.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListActiveViolations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListActiveViolations">AWS
          * API Reference</a></p>
          *
@@ -4852,8 +5868,10 @@ namespace Model
         virtual Model::ListActiveViolationsOutcomeCallable ListActiveViolationsCallable(const Model::ListActiveViolationsRequest& request) const;
 
         /**
-         * <p>Lists the active violations for a given Device Defender security
-         * profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the active violations for a given Device Defender security profile.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListActiveViolations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListActiveViolations">AWS
          * API Reference</a></p>
          *
@@ -4862,16 +5880,20 @@ namespace Model
         virtual void ListActiveViolationsAsync(const Model::ListActiveViolationsRequest& request, const ListActiveViolationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the policies attached to the specified thing group.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the policies attached to the specified thing group.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAttachedPolicies</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAttachedPolicies">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAttachedPoliciesOutcome ListAttachedPolicies(const Model::ListAttachedPoliciesRequest& request) const;
 
         /**
-         * <p>Lists the policies attached to the specified thing group.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the policies attached to the specified thing group.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAttachedPolicies</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAttachedPolicies">AWS
          * API Reference</a></p>
          *
@@ -4880,8 +5902,10 @@ namespace Model
         virtual Model::ListAttachedPoliciesOutcomeCallable ListAttachedPoliciesCallable(const Model::ListAttachedPoliciesRequest& request) const;
 
         /**
-         * <p>Lists the policies attached to the specified thing group.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the policies attached to the specified thing group.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAttachedPolicies</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAttachedPolicies">AWS
          * API Reference</a></p>
          *
@@ -4892,7 +5916,9 @@ namespace Model
         /**
          * <p>Lists the findings (results) of a Device Defender audit or of the audits
          * performed during a specified time period. (Findings are retained for 90
-         * days.)</p><p><h3>See Also:</h3>   <a
+         * days.)</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditFindings</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditFindings">AWS
          * API Reference</a></p>
          */
@@ -4901,7 +5927,9 @@ namespace Model
         /**
          * <p>Lists the findings (results) of a Device Defender audit or of the audits
          * performed during a specified time period. (Findings are retained for 90
-         * days.)</p><p><h3>See Also:</h3>   <a
+         * days.)</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditFindings</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditFindings">AWS
          * API Reference</a></p>
          *
@@ -4912,7 +5940,9 @@ namespace Model
         /**
          * <p>Lists the findings (results) of a Device Defender audit or of the audits
          * performed during a specified time period. (Findings are retained for 90
-         * days.)</p><p><h3>See Also:</h3>   <a
+         * days.)</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditFindings</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditFindings">AWS
          * API Reference</a></p>
          *
@@ -4921,16 +5951,20 @@ namespace Model
         virtual void ListAuditFindingsAsync(const Model::ListAuditFindingsRequest& request, const ListAuditFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the status of audit mitigation action tasks that were
-         * executed.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the status of audit mitigation action tasks that were executed.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditMitigationActionsExecutions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsExecutions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAuditMitigationActionsExecutionsOutcome ListAuditMitigationActionsExecutions(const Model::ListAuditMitigationActionsExecutionsRequest& request) const;
 
         /**
-         * <p>Gets the status of audit mitigation action tasks that were
-         * executed.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the status of audit mitigation action tasks that were executed.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditMitigationActionsExecutions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsExecutions">AWS
          * API Reference</a></p>
          *
@@ -4939,8 +5973,10 @@ namespace Model
         virtual Model::ListAuditMitigationActionsExecutionsOutcomeCallable ListAuditMitigationActionsExecutionsCallable(const Model::ListAuditMitigationActionsExecutionsRequest& request) const;
 
         /**
-         * <p>Gets the status of audit mitigation action tasks that were
-         * executed.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the status of audit mitigation action tasks that were executed.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditMitigationActionsExecutions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsExecutions">AWS
          * API Reference</a></p>
          *
@@ -4950,7 +5986,9 @@ namespace Model
 
         /**
          * <p>Gets a list of audit mitigation action tasks that match the specified
-         * filters.</p><p><h3>See Also:</h3>   <a
+         * filters.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditMitigationActionsTasks</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsTasks">AWS
          * API Reference</a></p>
          */
@@ -4958,7 +5996,9 @@ namespace Model
 
         /**
          * <p>Gets a list of audit mitigation action tasks that match the specified
-         * filters.</p><p><h3>See Also:</h3>   <a
+         * filters.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditMitigationActionsTasks</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsTasks">AWS
          * API Reference</a></p>
          *
@@ -4968,7 +6008,9 @@ namespace Model
 
         /**
          * <p>Gets a list of audit mitigation action tasks that match the specified
-         * filters.</p><p><h3>See Also:</h3>   <a
+         * filters.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditMitigationActionsTasks</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditMitigationActionsTasks">AWS
          * API Reference</a></p>
          *
@@ -4977,14 +6019,20 @@ namespace Model
         virtual void ListAuditMitigationActionsTasksAsync(const Model::ListAuditMitigationActionsTasksRequest& request, const ListAuditMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Lists your Device Defender audit listings. </p><p><h3>See Also:</h3>   <a
+         * <p> Lists your Device Defender audit listings. </p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditSuppressions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditSuppressions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAuditSuppressionsOutcome ListAuditSuppressions(const Model::ListAuditSuppressionsRequest& request) const;
 
         /**
-         * <p> Lists your Device Defender audit listings. </p><p><h3>See Also:</h3>   <a
+         * <p> Lists your Device Defender audit listings. </p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditSuppressions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditSuppressions">AWS
          * API Reference</a></p>
          *
@@ -4993,7 +6041,10 @@ namespace Model
         virtual Model::ListAuditSuppressionsOutcomeCallable ListAuditSuppressionsCallable(const Model::ListAuditSuppressionsRequest& request) const;
 
         /**
-         * <p> Lists your Device Defender audit listings. </p><p><h3>See Also:</h3>   <a
+         * <p> Lists your Device Defender audit listings. </p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditSuppressions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditSuppressions">AWS
          * API Reference</a></p>
          *
@@ -5003,7 +6054,9 @@ namespace Model
 
         /**
          * <p>Lists the Device Defender audits that have been performed during a given time
-         * period.</p><p><h3>See Also:</h3>   <a
+         * period.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditTasks</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditTasks">AWS
          * API Reference</a></p>
          */
@@ -5011,7 +6064,9 @@ namespace Model
 
         /**
          * <p>Lists the Device Defender audits that have been performed during a given time
-         * period.</p><p><h3>See Also:</h3>   <a
+         * period.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditTasks</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditTasks">AWS
          * API Reference</a></p>
          *
@@ -5021,7 +6076,9 @@ namespace Model
 
         /**
          * <p>Lists the Device Defender audits that have been performed during a given time
-         * period.</p><p><h3>See Also:</h3>   <a
+         * period.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditTasks</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditTasks">AWS
          * API Reference</a></p>
          *
@@ -5030,16 +6087,20 @@ namespace Model
         virtual void ListAuditTasksAsync(const Model::ListAuditTasksRequest& request, const ListAuditTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the authorizers registered in your account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the authorizers registered in your account.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuthorizers</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuthorizers">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAuthorizersOutcome ListAuthorizers(const Model::ListAuthorizersRequest& request) const;
 
         /**
-         * <p>Lists the authorizers registered in your account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the authorizers registered in your account.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuthorizers</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuthorizers">AWS
          * API Reference</a></p>
          *
@@ -5048,8 +6109,10 @@ namespace Model
         virtual Model::ListAuthorizersOutcomeCallable ListAuthorizersCallable(const Model::ListAuthorizersRequest& request) const;
 
         /**
-         * <p>Lists the authorizers registered in your account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the authorizers registered in your account.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuthorizers</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuthorizers">AWS
          * API Reference</a></p>
          *
@@ -5058,14 +6121,20 @@ namespace Model
         virtual void ListAuthorizersAsync(const Model::ListAuthorizersRequest& request, const ListAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the billing groups you have created.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the billing groups you have created.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListBillingGroups</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListBillingGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListBillingGroupsOutcome ListBillingGroups(const Model::ListBillingGroupsRequest& request) const;
 
         /**
-         * <p>Lists the billing groups you have created.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the billing groups you have created.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListBillingGroups</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListBillingGroups">AWS
          * API Reference</a></p>
          *
@@ -5074,7 +6143,10 @@ namespace Model
         virtual Model::ListBillingGroupsOutcomeCallable ListBillingGroupsCallable(const Model::ListBillingGroupsRequest& request) const;
 
         /**
-         * <p>Lists the billing groups you have created.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the billing groups you have created.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListBillingGroups</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListBillingGroups">AWS
          * API Reference</a></p>
          *
@@ -5083,18 +6155,24 @@ namespace Model
         virtual void ListBillingGroupsAsync(const Model::ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the CA certificates registered for your AWS account.</p> <p>The results
-         * are paginated with a default page size of 25. You can use the returned marker to
-         * retrieve additional results.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the CA certificates registered for your Amazon Web Services
+         * account.</p> <p>The results are paginated with a default page size of 25. You
+         * can use the returned marker to retrieve additional results.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCACertificates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">AWS
          * API Reference</a></p>
          */
         virtual Model::ListCACertificatesOutcome ListCACertificates(const Model::ListCACertificatesRequest& request) const;
 
         /**
-         * <p>Lists the CA certificates registered for your AWS account.</p> <p>The results
-         * are paginated with a default page size of 25. You can use the returned marker to
-         * retrieve additional results.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the CA certificates registered for your Amazon Web Services
+         * account.</p> <p>The results are paginated with a default page size of 25. You
+         * can use the returned marker to retrieve additional results.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCACertificates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">AWS
          * API Reference</a></p>
          *
@@ -5103,9 +6181,12 @@ namespace Model
         virtual Model::ListCACertificatesOutcomeCallable ListCACertificatesCallable(const Model::ListCACertificatesRequest& request) const;
 
         /**
-         * <p>Lists the CA certificates registered for your AWS account.</p> <p>The results
-         * are paginated with a default page size of 25. You can use the returned marker to
-         * retrieve additional results.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the CA certificates registered for your Amazon Web Services
+         * account.</p> <p>The results are paginated with a default page size of 25. You
+         * can use the returned marker to retrieve additional results.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCACertificates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">AWS
          * API Reference</a></p>
          *
@@ -5114,18 +6195,24 @@ namespace Model
         virtual void ListCACertificatesAsync(const Model::ListCACertificatesRequest& request, const ListCACertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the certificates registered in your AWS account.</p> <p>The results are
-         * paginated with a default page size of 25. You can use the returned marker to
-         * retrieve additional results.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the certificates registered in your Amazon Web Services account.</p>
+         * <p>The results are paginated with a default page size of 25. You can use the
+         * returned marker to retrieve additional results.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">AWS
          * API Reference</a></p>
          */
         virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request) const;
 
         /**
-         * <p>Lists the certificates registered in your AWS account.</p> <p>The results are
-         * paginated with a default page size of 25. You can use the returned marker to
-         * retrieve additional results.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the certificates registered in your Amazon Web Services account.</p>
+         * <p>The results are paginated with a default page size of 25. You can use the
+         * returned marker to retrieve additional results.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">AWS
          * API Reference</a></p>
          *
@@ -5134,9 +6221,12 @@ namespace Model
         virtual Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const Model::ListCertificatesRequest& request) const;
 
         /**
-         * <p>Lists the certificates registered in your AWS account.</p> <p>The results are
-         * paginated with a default page size of 25. You can use the returned marker to
-         * retrieve additional results.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the certificates registered in your Amazon Web Services account.</p>
+         * <p>The results are paginated with a default page size of 25. You can use the
+         * returned marker to retrieve additional results.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">AWS
          * API Reference</a></p>
          *
@@ -5145,16 +6235,20 @@ namespace Model
         virtual void ListCertificatesAsync(const Model::ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List the device certificates signed by the specified CA
-         * certificate.</p><p><h3>See Also:</h3>   <a
+         * <p>List the device certificates signed by the specified CA certificate.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificatesByCA</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">AWS
          * API Reference</a></p>
          */
         virtual Model::ListCertificatesByCAOutcome ListCertificatesByCA(const Model::ListCertificatesByCARequest& request) const;
 
         /**
-         * <p>List the device certificates signed by the specified CA
-         * certificate.</p><p><h3>See Also:</h3>   <a
+         * <p>List the device certificates signed by the specified CA certificate.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificatesByCA</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">AWS
          * API Reference</a></p>
          *
@@ -5163,8 +6257,10 @@ namespace Model
         virtual Model::ListCertificatesByCAOutcomeCallable ListCertificatesByCACallable(const Model::ListCertificatesByCARequest& request) const;
 
         /**
-         * <p>List the device certificates signed by the specified CA
-         * certificate.</p><p><h3>See Also:</h3>   <a
+         * <p>List the device certificates signed by the specified CA certificate.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificatesByCA</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">AWS
          * API Reference</a></p>
          *
@@ -5173,16 +6269,20 @@ namespace Model
         virtual void ListCertificatesByCAAsync(const Model::ListCertificatesByCARequest& request, const ListCertificatesByCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Lists your Device Defender detect custom metrics. </p><p><h3>See Also:</h3> 
-         * <a
+         * <p> Lists your Device Defender detect custom metrics. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCustomMetrics</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCustomMetrics">AWS
          * API Reference</a></p>
          */
         virtual Model::ListCustomMetricsOutcome ListCustomMetrics(const Model::ListCustomMetricsRequest& request) const;
 
         /**
-         * <p> Lists your Device Defender detect custom metrics. </p><p><h3>See Also:</h3> 
-         * <a
+         * <p> Lists your Device Defender detect custom metrics. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCustomMetrics</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCustomMetrics">AWS
          * API Reference</a></p>
          *
@@ -5191,8 +6291,10 @@ namespace Model
         virtual Model::ListCustomMetricsOutcomeCallable ListCustomMetricsCallable(const Model::ListCustomMetricsRequest& request) const;
 
         /**
-         * <p> Lists your Device Defender detect custom metrics. </p><p><h3>See Also:</h3> 
-         * <a
+         * <p> Lists your Device Defender detect custom metrics. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCustomMetrics</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCustomMetrics">AWS
          * API Reference</a></p>
          *
@@ -5202,7 +6304,9 @@ namespace Model
 
         /**
          * <p> Lists mitigation actions executions for a Device Defender ML Detect Security
-         * Profile. </p><p><h3>See Also:</h3>   <a
+         * Profile. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsExecutions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsExecutions">AWS
          * API Reference</a></p>
          */
@@ -5210,7 +6314,9 @@ namespace Model
 
         /**
          * <p> Lists mitigation actions executions for a Device Defender ML Detect Security
-         * Profile. </p><p><h3>See Also:</h3>   <a
+         * Profile. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsExecutions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsExecutions">AWS
          * API Reference</a></p>
          *
@@ -5220,7 +6326,9 @@ namespace Model
 
         /**
          * <p> Lists mitigation actions executions for a Device Defender ML Detect Security
-         * Profile. </p><p><h3>See Also:</h3>   <a
+         * Profile. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsExecutions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsExecutions">AWS
          * API Reference</a></p>
          *
@@ -5229,16 +6337,20 @@ namespace Model
         virtual void ListDetectMitigationActionsExecutionsAsync(const Model::ListDetectMitigationActionsExecutionsRequest& request, const ListDetectMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> List of Device Defender ML Detect mitigation actions tasks. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> List of Device Defender ML Detect mitigation actions tasks. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsTasks</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsTasks">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDetectMitigationActionsTasksOutcome ListDetectMitigationActionsTasks(const Model::ListDetectMitigationActionsTasksRequest& request) const;
 
         /**
-         * <p> List of Device Defender ML Detect mitigation actions tasks. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> List of Device Defender ML Detect mitigation actions tasks. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsTasks</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsTasks">AWS
          * API Reference</a></p>
          *
@@ -5247,8 +6359,10 @@ namespace Model
         virtual Model::ListDetectMitigationActionsTasksOutcomeCallable ListDetectMitigationActionsTasksCallable(const Model::ListDetectMitigationActionsTasksRequest& request) const;
 
         /**
-         * <p> List of Device Defender ML Detect mitigation actions tasks. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> List of Device Defender ML Detect mitigation actions tasks. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsTasks</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsTasks">AWS
          * API Reference</a></p>
          *
@@ -5257,16 +6371,20 @@ namespace Model
         virtual void ListDetectMitigationActionsTasksAsync(const Model::ListDetectMitigationActionsTasksRequest& request, const ListDetectMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List the set of dimensions that are defined for your AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>List the set of dimensions that are defined for your Amazon Web Services
+         * accounts.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDimensions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDimensions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDimensionsOutcome ListDimensions(const Model::ListDimensionsRequest& request) const;
 
         /**
-         * <p>List the set of dimensions that are defined for your AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>List the set of dimensions that are defined for your Amazon Web Services
+         * accounts.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDimensions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDimensions">AWS
          * API Reference</a></p>
          *
@@ -5275,8 +6393,10 @@ namespace Model
         virtual Model::ListDimensionsOutcomeCallable ListDimensionsCallable(const Model::ListDimensionsRequest& request) const;
 
         /**
-         * <p>List the set of dimensions that are defined for your AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>List the set of dimensions that are defined for your Amazon Web Services
+         * accounts.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDimensions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDimensions">AWS
          * API Reference</a></p>
          *
@@ -5286,7 +6406,10 @@ namespace Model
 
         /**
          * <p>Gets a list of domain configurations for the user. This list is sorted
-         * alphabetically by domain configuration name.</p><p><h3>See Also:</h3>   <a
+         * alphabetically by domain configuration name.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDomainConfigurations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDomainConfigurations">AWS
          * API Reference</a></p>
          */
@@ -5294,7 +6417,10 @@ namespace Model
 
         /**
          * <p>Gets a list of domain configurations for the user. This list is sorted
-         * alphabetically by domain configuration name.</p><p><h3>See Also:</h3>   <a
+         * alphabetically by domain configuration name.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDomainConfigurations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDomainConfigurations">AWS
          * API Reference</a></p>
          *
@@ -5304,7 +6430,10 @@ namespace Model
 
         /**
          * <p>Gets a list of domain configurations for the user. This list is sorted
-         * alphabetically by domain configuration name.</p><p><h3>See Also:</h3>   <a
+         * alphabetically by domain configuration name.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDomainConfigurations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDomainConfigurations">AWS
          * API Reference</a></p>
          *
@@ -5313,14 +6442,49 @@ namespace Model
         virtual void ListDomainConfigurationsAsync(const Model::ListDomainConfigurationsRequest& request, const ListDomainConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the search indices.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all your fleet metrics. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListFleetMetrics</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListFleetMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFleetMetricsOutcome ListFleetMetrics(const Model::ListFleetMetricsRequest& request) const;
+
+        /**
+         * <p>Lists all your fleet metrics. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListFleetMetrics</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListFleetMetrics">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFleetMetricsOutcomeCallable ListFleetMetricsCallable(const Model::ListFleetMetricsRequest& request) const;
+
+        /**
+         * <p>Lists all your fleet metrics. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListFleetMetrics</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListFleetMetrics">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFleetMetricsAsync(const Model::ListFleetMetricsRequest& request, const ListFleetMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the search indices.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListIndices</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListIndices">AWS API
          * Reference</a></p>
          */
         virtual Model::ListIndicesOutcome ListIndices(const Model::ListIndicesRequest& request) const;
 
         /**
-         * <p>Lists the search indices.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the search indices.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListIndices</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListIndices">AWS API
          * Reference</a></p>
          *
@@ -5329,7 +6493,9 @@ namespace Model
         virtual Model::ListIndicesOutcomeCallable ListIndicesCallable(const Model::ListIndicesRequest& request) const;
 
         /**
-         * <p>Lists the search indices.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the search indices.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListIndices</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListIndices">AWS API
          * Reference</a></p>
          *
@@ -5338,14 +6504,20 @@ namespace Model
         virtual void ListIndicesAsync(const Model::ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the job executions for a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the job executions for a job.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobExecutionsForJob">AWS
          * API Reference</a></p>
          */
         virtual Model::ListJobExecutionsForJobOutcome ListJobExecutionsForJob(const Model::ListJobExecutionsForJobRequest& request) const;
 
         /**
-         * <p>Lists the job executions for a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the job executions for a job.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobExecutionsForJob">AWS
          * API Reference</a></p>
          *
@@ -5354,7 +6526,10 @@ namespace Model
         virtual Model::ListJobExecutionsForJobOutcomeCallable ListJobExecutionsForJobCallable(const Model::ListJobExecutionsForJobRequest& request) const;
 
         /**
-         * <p>Lists the job executions for a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the job executions for a job.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobExecutionsForJob">AWS
          * API Reference</a></p>
          *
@@ -5363,16 +6538,20 @@ namespace Model
         virtual void ListJobExecutionsForJobAsync(const Model::ListJobExecutionsForJobRequest& request, const ListJobExecutionsForJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the job executions for the specified thing.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the job executions for the specified thing.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobExecutionsForThing">AWS
          * API Reference</a></p>
          */
         virtual Model::ListJobExecutionsForThingOutcome ListJobExecutionsForThing(const Model::ListJobExecutionsForThingRequest& request) const;
 
         /**
-         * <p>Lists the job executions for the specified thing.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the job executions for the specified thing.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobExecutionsForThing">AWS
          * API Reference</a></p>
          *
@@ -5381,8 +6560,10 @@ namespace Model
         virtual Model::ListJobExecutionsForThingOutcomeCallable ListJobExecutionsForThingCallable(const Model::ListJobExecutionsForThingRequest& request) const;
 
         /**
-         * <p>Lists the job executions for the specified thing.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the job executions for the specified thing.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobExecutionsForThing">AWS
          * API Reference</a></p>
          *
@@ -5391,14 +6572,18 @@ namespace Model
         virtual void ListJobExecutionsForThingAsync(const Model::ListJobExecutionsForThingRequest& request, const ListJobExecutionsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of job templates.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of job templates.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobTemplates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobTemplates">AWS
          * API Reference</a></p>
          */
         virtual Model::ListJobTemplatesOutcome ListJobTemplates(const Model::ListJobTemplatesRequest& request) const;
 
         /**
-         * <p>Returns a list of job templates.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of job templates.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobTemplates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobTemplates">AWS
          * API Reference</a></p>
          *
@@ -5407,7 +6592,9 @@ namespace Model
         virtual Model::ListJobTemplatesOutcomeCallable ListJobTemplatesCallable(const Model::ListJobTemplatesRequest& request) const;
 
         /**
-         * <p>Returns a list of job templates.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of job templates.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobTemplates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobTemplates">AWS
          * API Reference</a></p>
          *
@@ -5416,14 +6603,18 @@ namespace Model
         virtual void ListJobTemplatesAsync(const Model::ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists jobs.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobs</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobs">AWS API
          * Reference</a></p>
          */
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Lists jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists jobs.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobs</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobs">AWS API
          * Reference</a></p>
          *
@@ -5432,7 +6623,9 @@ namespace Model
         virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Lists jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists jobs.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobs</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobs">AWS API
          * Reference</a></p>
          *
@@ -5441,8 +6634,35 @@ namespace Model
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of managed job templates.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListManagedJobTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedJobTemplatesOutcome ListManagedJobTemplates(const Model::ListManagedJobTemplatesRequest& request) const;
+
+        /**
+         * <p>Returns a list of managed job templates.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListManagedJobTemplates">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListManagedJobTemplatesOutcomeCallable ListManagedJobTemplatesCallable(const Model::ListManagedJobTemplatesRequest& request) const;
+
+        /**
+         * <p>Returns a list of managed job templates.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListManagedJobTemplates">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListManagedJobTemplatesAsync(const Model::ListManagedJobTemplatesRequest& request, const ListManagedJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of all mitigation actions that match the specified filter
-         * criteria.</p><p><h3>See Also:</h3>   <a
+         * criteria.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListMitigationActions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMitigationActions">AWS
          * API Reference</a></p>
          */
@@ -5450,7 +6670,9 @@ namespace Model
 
         /**
          * <p>Gets a list of all mitigation actions that match the specified filter
-         * criteria.</p><p><h3>See Also:</h3>   <a
+         * criteria.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListMitigationActions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMitigationActions">AWS
          * API Reference</a></p>
          *
@@ -5460,7 +6682,9 @@ namespace Model
 
         /**
          * <p>Gets a list of all mitigation actions that match the specified filter
-         * criteria.</p><p><h3>See Also:</h3>   <a
+         * criteria.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListMitigationActions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMitigationActions">AWS
          * API Reference</a></p>
          *
@@ -5469,14 +6693,18 @@ namespace Model
         virtual void ListMitigationActionsAsync(const Model::ListMitigationActionsRequest& request, const ListMitigationActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists OTA updates.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists OTA updates.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListOTAUpdates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOTAUpdates">AWS
          * API Reference</a></p>
          */
         virtual Model::ListOTAUpdatesOutcome ListOTAUpdates(const Model::ListOTAUpdatesRequest& request) const;
 
         /**
-         * <p>Lists OTA updates.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists OTA updates.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListOTAUpdates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOTAUpdates">AWS
          * API Reference</a></p>
          *
@@ -5485,7 +6713,9 @@ namespace Model
         virtual Model::ListOTAUpdatesOutcomeCallable ListOTAUpdatesCallable(const Model::ListOTAUpdatesRequest& request) const;
 
         /**
-         * <p>Lists OTA updates.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists OTA updates.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListOTAUpdates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOTAUpdates">AWS
          * API Reference</a></p>
          *
@@ -5494,16 +6724,20 @@ namespace Model
         virtual void ListOTAUpdatesAsync(const Model::ListOTAUpdatesRequest& request, const ListOTAUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists certificates that are being transferred but not yet
-         * accepted.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists certificates that are being transferred but not yet accepted.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListOutgoingCertificates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificates">AWS
          * API Reference</a></p>
          */
         virtual Model::ListOutgoingCertificatesOutcome ListOutgoingCertificates(const Model::ListOutgoingCertificatesRequest& request) const;
 
         /**
-         * <p>Lists certificates that are being transferred but not yet
-         * accepted.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists certificates that are being transferred but not yet accepted.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListOutgoingCertificates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificates">AWS
          * API Reference</a></p>
          *
@@ -5512,8 +6746,10 @@ namespace Model
         virtual Model::ListOutgoingCertificatesOutcomeCallable ListOutgoingCertificatesCallable(const Model::ListOutgoingCertificatesRequest& request) const;
 
         /**
-         * <p>Lists certificates that are being transferred but not yet
-         * accepted.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists certificates that are being transferred but not yet accepted.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListOutgoingCertificates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificates">AWS
          * API Reference</a></p>
          *
@@ -5522,14 +6758,18 @@ namespace Model
         virtual void ListOutgoingCertificatesAsync(const Model::ListOutgoingCertificatesRequest& request, const ListOutgoingCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists your policies.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists your policies.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicies</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">AWS
          * API Reference</a></p>
          */
         virtual Model::ListPoliciesOutcome ListPolicies(const Model::ListPoliciesRequest& request) const;
 
         /**
-         * <p>Lists your policies.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists your policies.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicies</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">AWS
          * API Reference</a></p>
          *
@@ -5538,7 +6778,9 @@ namespace Model
         virtual Model::ListPoliciesOutcomeCallable ListPoliciesCallable(const Model::ListPoliciesRequest& request) const;
 
         /**
-         * <p>Lists your policies.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists your policies.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicies</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">AWS
          * API Reference</a></p>
          *
@@ -5548,7 +6790,9 @@ namespace Model
 
         /**
          * <p>Lists the versions of the specified policy and identifies the default
-         * version.</p><p><h3>See Also:</h3>   <a
+         * version.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyVersions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">AWS
          * API Reference</a></p>
          */
@@ -5556,7 +6800,9 @@ namespace Model
 
         /**
          * <p>Lists the versions of the specified policy and identifies the default
-         * version.</p><p><h3>See Also:</h3>   <a
+         * version.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyVersions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">AWS
          * API Reference</a></p>
          *
@@ -5566,7 +6812,9 @@ namespace Model
 
         /**
          * <p>Lists the versions of the specified policy and identifies the default
-         * version.</p><p><h3>See Also:</h3>   <a
+         * version.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyVersions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">AWS
          * API Reference</a></p>
          *
@@ -5577,7 +6825,9 @@ namespace Model
         /**
          * <p>Lists the things associated with the specified principal. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities. </p><p><h3>See Also:</h3>   <a
+         * federated identities. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalThings</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">AWS
          * API Reference</a></p>
          */
@@ -5586,7 +6836,9 @@ namespace Model
         /**
          * <p>Lists the things associated with the specified principal. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities. </p><p><h3>See Also:</h3>   <a
+         * federated identities. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalThings</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">AWS
          * API Reference</a></p>
          *
@@ -5597,7 +6849,9 @@ namespace Model
         /**
          * <p>Lists the things associated with the specified principal. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities. </p><p><h3>See Also:</h3>   <a
+         * federated identities. </p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalThings</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">AWS
          * API Reference</a></p>
          *
@@ -5606,14 +6860,20 @@ namespace Model
         virtual void ListPrincipalThingsAsync(const Model::ListPrincipalThingsRequest& request, const ListPrincipalThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>A list of fleet provisioning template versions.</p><p><h3>See Also:</h3>   <a
+         * <p>A list of fleet provisioning template versions.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplateVersions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListProvisioningTemplateVersions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListProvisioningTemplateVersionsOutcome ListProvisioningTemplateVersions(const Model::ListProvisioningTemplateVersionsRequest& request) const;
 
         /**
-         * <p>A list of fleet provisioning template versions.</p><p><h3>See Also:</h3>   <a
+         * <p>A list of fleet provisioning template versions.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplateVersions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListProvisioningTemplateVersions">AWS
          * API Reference</a></p>
          *
@@ -5622,7 +6882,10 @@ namespace Model
         virtual Model::ListProvisioningTemplateVersionsOutcomeCallable ListProvisioningTemplateVersionsCallable(const Model::ListProvisioningTemplateVersionsRequest& request) const;
 
         /**
-         * <p>A list of fleet provisioning template versions.</p><p><h3>See Also:</h3>   <a
+         * <p>A list of fleet provisioning template versions.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplateVersions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListProvisioningTemplateVersions">AWS
          * API Reference</a></p>
          *
@@ -5631,16 +6894,20 @@ namespace Model
         virtual void ListProvisioningTemplateVersionsAsync(const Model::ListProvisioningTemplateVersionsRequest& request, const ListProvisioningTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the fleet provisioning templates in your AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the fleet provisioning templates in your Amazon Web Services
+         * account.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListProvisioningTemplates">AWS
          * API Reference</a></p>
          */
         virtual Model::ListProvisioningTemplatesOutcome ListProvisioningTemplates(const Model::ListProvisioningTemplatesRequest& request) const;
 
         /**
-         * <p>Lists the fleet provisioning templates in your AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the fleet provisioning templates in your Amazon Web Services
+         * account.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListProvisioningTemplates">AWS
          * API Reference</a></p>
          *
@@ -5649,8 +6916,10 @@ namespace Model
         virtual Model::ListProvisioningTemplatesOutcomeCallable ListProvisioningTemplatesCallable(const Model::ListProvisioningTemplatesRequest& request) const;
 
         /**
-         * <p>Lists the fleet provisioning templates in your AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the fleet provisioning templates in your Amazon Web Services
+         * account.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplates</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListProvisioningTemplates">AWS
          * API Reference</a></p>
          *
@@ -5659,16 +6928,20 @@ namespace Model
         virtual void ListProvisioningTemplatesAsync(const Model::ListProvisioningTemplatesRequest& request, const ListProvisioningTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the role aliases registered in your account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the role aliases registered in your account.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListRoleAliases</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRoleAliases">AWS
          * API Reference</a></p>
          */
         virtual Model::ListRoleAliasesOutcome ListRoleAliases(const Model::ListRoleAliasesRequest& request) const;
 
         /**
-         * <p>Lists the role aliases registered in your account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the role aliases registered in your account.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListRoleAliases</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRoleAliases">AWS
          * API Reference</a></p>
          *
@@ -5677,8 +6950,10 @@ namespace Model
         virtual Model::ListRoleAliasesOutcomeCallable ListRoleAliasesCallable(const Model::ListRoleAliasesRequest& request) const;
 
         /**
-         * <p>Lists the role aliases registered in your account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the role aliases registered in your account.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListRoleAliases</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRoleAliases">AWS
          * API Reference</a></p>
          *
@@ -5687,14 +6962,20 @@ namespace Model
         virtual void ListRoleAliasesAsync(const Model::ListRoleAliasesRequest& request, const ListRoleAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all of your scheduled audits.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of your scheduled audits.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListScheduledAudits</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListScheduledAudits">AWS
          * API Reference</a></p>
          */
         virtual Model::ListScheduledAuditsOutcome ListScheduledAudits(const Model::ListScheduledAuditsRequest& request) const;
 
         /**
-         * <p>Lists all of your scheduled audits.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of your scheduled audits.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListScheduledAudits</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListScheduledAudits">AWS
          * API Reference</a></p>
          *
@@ -5703,7 +6984,10 @@ namespace Model
         virtual Model::ListScheduledAuditsOutcomeCallable ListScheduledAuditsCallable(const Model::ListScheduledAuditsRequest& request) const;
 
         /**
-         * <p>Lists all of your scheduled audits.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of your scheduled audits.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListScheduledAudits</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListScheduledAudits">AWS
          * API Reference</a></p>
          *
@@ -5713,9 +6997,11 @@ namespace Model
 
         /**
          * <p>Lists the Device Defender security profiles you've created. You can filter
-         * security profiles by dimension or custom metric.</p>  <p>
-         * <code>dimensionName</code> and <code>metricName</code> cannot be used in the
-         * same request.</p> <p><h3>See Also:</h3>   <a
+         * security profiles by dimension or custom metric.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfiles</a>
+         * action.</p>  <p> <code>dimensionName</code> and <code>metricName</code>
+         * cannot be used in the same request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSecurityProfiles">AWS
          * API Reference</a></p>
          */
@@ -5723,9 +7009,11 @@ namespace Model
 
         /**
          * <p>Lists the Device Defender security profiles you've created. You can filter
-         * security profiles by dimension or custom metric.</p>  <p>
-         * <code>dimensionName</code> and <code>metricName</code> cannot be used in the
-         * same request.</p> <p><h3>See Also:</h3>   <a
+         * security profiles by dimension or custom metric.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfiles</a>
+         * action.</p>  <p> <code>dimensionName</code> and <code>metricName</code>
+         * cannot be used in the same request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSecurityProfiles">AWS
          * API Reference</a></p>
          *
@@ -5735,9 +7023,11 @@ namespace Model
 
         /**
          * <p>Lists the Device Defender security profiles you've created. You can filter
-         * security profiles by dimension or custom metric.</p>  <p>
-         * <code>dimensionName</code> and <code>metricName</code> cannot be used in the
-         * same request.</p> <p><h3>See Also:</h3>   <a
+         * security profiles by dimension or custom metric.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfiles</a>
+         * action.</p>  <p> <code>dimensionName</code> and <code>metricName</code>
+         * cannot be used in the same request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSecurityProfiles">AWS
          * API Reference</a></p>
          *
@@ -5747,7 +7037,9 @@ namespace Model
 
         /**
          * <p>Lists the Device Defender security profiles attached to a target (thing
-         * group).</p><p><h3>See Also:</h3>   <a
+         * group).</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfilesForTarget</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSecurityProfilesForTarget">AWS
          * API Reference</a></p>
          */
@@ -5755,7 +7047,9 @@ namespace Model
 
         /**
          * <p>Lists the Device Defender security profiles attached to a target (thing
-         * group).</p><p><h3>See Also:</h3>   <a
+         * group).</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfilesForTarget</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSecurityProfilesForTarget">AWS
          * API Reference</a></p>
          *
@@ -5765,7 +7059,9 @@ namespace Model
 
         /**
          * <p>Lists the Device Defender security profiles attached to a target (thing
-         * group).</p><p><h3>See Also:</h3>   <a
+         * group).</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfilesForTarget</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSecurityProfilesForTarget">AWS
          * API Reference</a></p>
          *
@@ -5774,14 +7070,20 @@ namespace Model
         virtual void ListSecurityProfilesForTargetAsync(const Model::ListSecurityProfilesForTargetRequest& request, const ListSecurityProfilesForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all of the streams in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the streams in your Amazon Web Services account.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListStreams</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListStreams">AWS API
          * Reference</a></p>
          */
         virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
 
         /**
-         * <p>Lists all of the streams in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the streams in your Amazon Web Services account.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListStreams</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListStreams">AWS API
          * Reference</a></p>
          *
@@ -5790,7 +7092,10 @@ namespace Model
         virtual Model::ListStreamsOutcomeCallable ListStreamsCallable(const Model::ListStreamsRequest& request) const;
 
         /**
-         * <p>Lists all of the streams in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the streams in your Amazon Web Services account.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListStreams</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListStreams">AWS API
          * Reference</a></p>
          *
@@ -5799,16 +7104,20 @@ namespace Model
         virtual void ListStreamsAsync(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags (metadata) you have assigned to the resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags (metadata) you have assigned to the resource.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags (metadata) you have assigned to the resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags (metadata) you have assigned to the resource.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -5817,8 +7126,10 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags (metadata) you have assigned to the resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags (metadata) you have assigned to the resource.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -5827,14 +7138,20 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List targets for the specified policy.</p><p><h3>See Also:</h3>   <a
+         * <p>List targets for the specified policy.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForPolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTargetsForPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTargetsForPolicyOutcome ListTargetsForPolicy(const Model::ListTargetsForPolicyRequest& request) const;
 
         /**
-         * <p>List targets for the specified policy.</p><p><h3>See Also:</h3>   <a
+         * <p>List targets for the specified policy.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForPolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTargetsForPolicy">AWS
          * API Reference</a></p>
          *
@@ -5843,7 +7160,10 @@ namespace Model
         virtual Model::ListTargetsForPolicyOutcomeCallable ListTargetsForPolicyCallable(const Model::ListTargetsForPolicyRequest& request) const;
 
         /**
-         * <p>List targets for the specified policy.</p><p><h3>See Also:</h3>   <a
+         * <p>List targets for the specified policy.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForPolicy</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTargetsForPolicy">AWS
          * API Reference</a></p>
          *
@@ -5853,7 +7173,9 @@ namespace Model
 
         /**
          * <p>Lists the targets (thing groups) associated with a given Device Defender
-         * security profile.</p><p><h3>See Also:</h3>   <a
+         * security profile.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTargetsForSecurityProfile">AWS
          * API Reference</a></p>
          */
@@ -5861,7 +7183,9 @@ namespace Model
 
         /**
          * <p>Lists the targets (thing groups) associated with a given Device Defender
-         * security profile.</p><p><h3>See Also:</h3>   <a
+         * security profile.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTargetsForSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -5871,7 +7195,9 @@ namespace Model
 
         /**
          * <p>Lists the targets (thing groups) associated with a given Device Defender
-         * security profile.</p><p><h3>See Also:</h3>   <a
+         * security profile.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTargetsForSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -5880,14 +7206,20 @@ namespace Model
         virtual void ListTargetsForSecurityProfileAsync(const Model::ListTargetsForSecurityProfileRequest& request, const ListTargetsForSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List the thing groups in your account.</p><p><h3>See Also:</h3>   <a
+         * <p>List the thing groups in your account.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingGroups</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListThingGroupsOutcome ListThingGroups(const Model::ListThingGroupsRequest& request) const;
 
         /**
-         * <p>List the thing groups in your account.</p><p><h3>See Also:</h3>   <a
+         * <p>List the thing groups in your account.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingGroups</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroups">AWS
          * API Reference</a></p>
          *
@@ -5896,7 +7228,10 @@ namespace Model
         virtual Model::ListThingGroupsOutcomeCallable ListThingGroupsCallable(const Model::ListThingGroupsRequest& request) const;
 
         /**
-         * <p>List the thing groups in your account.</p><p><h3>See Also:</h3>   <a
+         * <p>List the thing groups in your account.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingGroups</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroups">AWS
          * API Reference</a></p>
          *
@@ -5905,16 +7240,20 @@ namespace Model
         virtual void ListThingGroupsAsync(const Model::ListThingGroupsRequest& request, const ListThingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List the thing groups to which the specified thing belongs.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>List the thing groups to which the specified thing belongs.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingGroupsForThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroupsForThing">AWS
          * API Reference</a></p>
          */
         virtual Model::ListThingGroupsForThingOutcome ListThingGroupsForThing(const Model::ListThingGroupsForThingRequest& request) const;
 
         /**
-         * <p>List the thing groups to which the specified thing belongs.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>List the thing groups to which the specified thing belongs.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingGroupsForThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroupsForThing">AWS
          * API Reference</a></p>
          *
@@ -5923,8 +7262,10 @@ namespace Model
         virtual Model::ListThingGroupsForThingOutcomeCallable ListThingGroupsForThingCallable(const Model::ListThingGroupsForThingRequest& request) const;
 
         /**
-         * <p>List the thing groups to which the specified thing belongs.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>List the thing groups to which the specified thing belongs.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingGroupsForThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroupsForThing">AWS
          * API Reference</a></p>
          *
@@ -5935,7 +7276,9 @@ namespace Model
         /**
          * <p>Lists the principals associated with the specified thing. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities.</p><p><h3>See Also:</h3>   <a
+         * federated identities.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingPrincipals</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">AWS
          * API Reference</a></p>
          */
@@ -5944,7 +7287,9 @@ namespace Model
         /**
          * <p>Lists the principals associated with the specified thing. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities.</p><p><h3>See Also:</h3>   <a
+         * federated identities.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingPrincipals</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">AWS
          * API Reference</a></p>
          *
@@ -5955,7 +7300,9 @@ namespace Model
         /**
          * <p>Lists the principals associated with the specified thing. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities.</p><p><h3>See Also:</h3>   <a
+         * federated identities.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingPrincipals</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">AWS
          * API Reference</a></p>
          *
@@ -5989,14 +7336,20 @@ namespace Model
         virtual void ListThingRegistrationTaskReportsAsync(const Model::ListThingRegistrationTaskReportsRequest& request, const ListThingRegistrationTaskReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List bulk thing provisioning tasks.</p><p><h3>See Also:</h3>   <a
+         * <p>List bulk thing provisioning tasks.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingRegistrationTasks</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingRegistrationTasks">AWS
          * API Reference</a></p>
          */
         virtual Model::ListThingRegistrationTasksOutcome ListThingRegistrationTasks(const Model::ListThingRegistrationTasksRequest& request) const;
 
         /**
-         * <p>List bulk thing provisioning tasks.</p><p><h3>See Also:</h3>   <a
+         * <p>List bulk thing provisioning tasks.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingRegistrationTasks</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingRegistrationTasks">AWS
          * API Reference</a></p>
          *
@@ -6005,7 +7358,10 @@ namespace Model
         virtual Model::ListThingRegistrationTasksOutcomeCallable ListThingRegistrationTasksCallable(const Model::ListThingRegistrationTasksRequest& request) const;
 
         /**
-         * <p>List bulk thing provisioning tasks.</p><p><h3>See Also:</h3>   <a
+         * <p>List bulk thing provisioning tasks.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingRegistrationTasks</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingRegistrationTasks">AWS
          * API Reference</a></p>
          *
@@ -6014,14 +7370,18 @@ namespace Model
         virtual void ListThingRegistrationTasksAsync(const Model::ListThingRegistrationTasksRequest& request, const ListThingRegistrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the existing thing types.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the existing thing types.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingTypes</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingTypes">AWS
          * API Reference</a></p>
          */
         virtual Model::ListThingTypesOutcome ListThingTypes(const Model::ListThingTypesRequest& request) const;
 
         /**
-         * <p>Lists the existing thing types.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the existing thing types.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingTypes</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingTypes">AWS
          * API Reference</a></p>
          *
@@ -6030,7 +7390,9 @@ namespace Model
         virtual Model::ListThingTypesOutcomeCallable ListThingTypesCallable(const Model::ListThingTypesRequest& request) const;
 
         /**
-         * <p>Lists the existing thing types.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the existing thing types.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingTypes</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingTypes">AWS
          * API Reference</a></p>
          *
@@ -6043,10 +7405,12 @@ namespace Model
          * parameters to filter your things. For example, calling <code>ListThings</code>
          * with attributeName=Color and attributeValue=Red retrieves all things in the
          * registry that contain an attribute <b>Color</b> with the value <b>Red</b>. </p>
-         *  <p>You will not be charged for calling this API if an <code>Access
-         * denied</code> error is returned. You will also not be charged if no attributes
-         * or pagination token was provided in request and no pagination token and no
-         * results were returned.</p> <p><h3>See Also:</h3>   <a
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThings</a>
+         * action.</p>  <p>You will not be charged for calling this API if an
+         * <code>Access denied</code> error is returned. You will also not be charged if no
+         * attributes or pagination token was provided in request and no pagination token
+         * and no results were returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">AWS API
          * Reference</a></p>
          */
@@ -6057,10 +7421,12 @@ namespace Model
          * parameters to filter your things. For example, calling <code>ListThings</code>
          * with attributeName=Color and attributeValue=Red retrieves all things in the
          * registry that contain an attribute <b>Color</b> with the value <b>Red</b>. </p>
-         *  <p>You will not be charged for calling this API if an <code>Access
-         * denied</code> error is returned. You will also not be charged if no attributes
-         * or pagination token was provided in request and no pagination token and no
-         * results were returned.</p> <p><h3>See Also:</h3>   <a
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThings</a>
+         * action.</p>  <p>You will not be charged for calling this API if an
+         * <code>Access denied</code> error is returned. You will also not be charged if no
+         * attributes or pagination token was provided in request and no pagination token
+         * and no results were returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">AWS API
          * Reference</a></p>
          *
@@ -6073,10 +7439,12 @@ namespace Model
          * parameters to filter your things. For example, calling <code>ListThings</code>
          * with attributeName=Color and attributeValue=Red retrieves all things in the
          * registry that contain an attribute <b>Color</b> with the value <b>Red</b>. </p>
-         *  <p>You will not be charged for calling this API if an <code>Access
-         * denied</code> error is returned. You will also not be charged if no attributes
-         * or pagination token was provided in request and no pagination token and no
-         * results were returned.</p> <p><h3>See Also:</h3>   <a
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThings</a>
+         * action.</p>  <p>You will not be charged for calling this API if an
+         * <code>Access denied</code> error is returned. You will also not be charged if no
+         * attributes or pagination token was provided in request and no pagination token
+         * and no results were returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">AWS API
          * Reference</a></p>
          *
@@ -6085,16 +7453,20 @@ namespace Model
         virtual void ListThingsAsync(const Model::ListThingsRequest& request, const ListThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the things you have added to the given billing group.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the things you have added to the given billing group.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInBillingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::ListThingsInBillingGroupOutcome ListThingsInBillingGroup(const Model::ListThingsInBillingGroupRequest& request) const;
 
         /**
-         * <p>Lists the things you have added to the given billing group.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the things you have added to the given billing group.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -6103,8 +7475,10 @@ namespace Model
         virtual Model::ListThingsInBillingGroupOutcomeCallable ListThingsInBillingGroupCallable(const Model::ListThingsInBillingGroupRequest& request) const;
 
         /**
-         * <p>Lists the things you have added to the given billing group.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the things you have added to the given billing group.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -6113,14 +7487,20 @@ namespace Model
         virtual void ListThingsInBillingGroupAsync(const Model::ListThingsInBillingGroupRequest& request, const ListThingsInBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the things in the specified group.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the things in the specified group.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInThingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::ListThingsInThingGroupOutcome ListThingsInThingGroup(const Model::ListThingsInThingGroupRequest& request) const;
 
         /**
-         * <p>Lists the things in the specified group.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the things in the specified group.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInThingGroup">AWS
          * API Reference</a></p>
          *
@@ -6129,7 +7509,10 @@ namespace Model
         virtual Model::ListThingsInThingGroupOutcomeCallable ListThingsInThingGroupCallable(const Model::ListThingsInThingGroupRequest& request) const;
 
         /**
-         * <p>Lists the things in the specified group.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the things in the specified group.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInThingGroup">AWS
          * API Reference</a></p>
          *
@@ -6138,16 +7521,20 @@ namespace Model
         virtual void ListThingsInThingGroupAsync(const Model::ListThingsInThingGroupRequest& request, const ListThingsInThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the topic rule destinations in your AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all the topic rule destinations in your Amazon Web Services
+         * account.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRuleDestinations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRuleDestinations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTopicRuleDestinationsOutcome ListTopicRuleDestinations(const Model::ListTopicRuleDestinationsRequest& request) const;
 
         /**
-         * <p>Lists all the topic rule destinations in your AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all the topic rule destinations in your Amazon Web Services
+         * account.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRuleDestinations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRuleDestinations">AWS
          * API Reference</a></p>
          *
@@ -6156,8 +7543,10 @@ namespace Model
         virtual Model::ListTopicRuleDestinationsOutcomeCallable ListTopicRuleDestinationsCallable(const Model::ListTopicRuleDestinationsRequest& request) const;
 
         /**
-         * <p>Lists all the topic rule destinations in your AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all the topic rule destinations in your Amazon Web Services
+         * account.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRuleDestinations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRuleDestinations">AWS
          * API Reference</a></p>
          *
@@ -6166,14 +7555,20 @@ namespace Model
         virtual void ListTopicRuleDestinationsAsync(const Model::ListTopicRuleDestinationsRequest& request, const ListTopicRuleDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the rules for the specific topic.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the rules for the specific topic.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRules</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTopicRulesOutcome ListTopicRules(const Model::ListTopicRulesRequest& request) const;
 
         /**
-         * <p>Lists the rules for the specific topic.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the rules for the specific topic.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRules</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">AWS
          * API Reference</a></p>
          *
@@ -6182,7 +7577,10 @@ namespace Model
         virtual Model::ListTopicRulesOutcomeCallable ListTopicRulesCallable(const Model::ListTopicRulesRequest& request) const;
 
         /**
-         * <p>Lists the rules for the specific topic.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the rules for the specific topic.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRules</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">AWS
          * API Reference</a></p>
          *
@@ -6191,14 +7589,18 @@ namespace Model
         virtual void ListTopicRulesAsync(const Model::ListTopicRulesRequest& request, const ListTopicRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists logging levels.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists logging levels.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListV2LoggingLevels</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListV2LoggingLevels">AWS
          * API Reference</a></p>
          */
         virtual Model::ListV2LoggingLevelsOutcome ListV2LoggingLevels(const Model::ListV2LoggingLevelsRequest& request) const;
 
         /**
-         * <p>Lists logging levels.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists logging levels.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListV2LoggingLevels</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListV2LoggingLevels">AWS
          * API Reference</a></p>
          *
@@ -6207,7 +7609,9 @@ namespace Model
         virtual Model::ListV2LoggingLevelsOutcomeCallable ListV2LoggingLevelsCallable(const Model::ListV2LoggingLevelsRequest& request) const;
 
         /**
-         * <p>Lists logging levels.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists logging levels.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListV2LoggingLevels</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListV2LoggingLevels">AWS
          * API Reference</a></p>
          *
@@ -6218,8 +7622,10 @@ namespace Model
         /**
          * <p>Lists the Device Defender security profile violations discovered during the
          * given time period. You can use filters to limit the results to those alerts
-         * issued for a particular security profile, behavior, or thing
-         * (device).</p><p><h3>See Also:</h3>   <a
+         * issued for a particular security profile, behavior, or thing (device).</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListViolationEvents</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListViolationEvents">AWS
          * API Reference</a></p>
          */
@@ -6228,8 +7634,10 @@ namespace Model
         /**
          * <p>Lists the Device Defender security profile violations discovered during the
          * given time period. You can use filters to limit the results to those alerts
-         * issued for a particular security profile, behavior, or thing
-         * (device).</p><p><h3>See Also:</h3>   <a
+         * issued for a particular security profile, behavior, or thing (device).</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListViolationEvents</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListViolationEvents">AWS
          * API Reference</a></p>
          *
@@ -6240,8 +7648,10 @@ namespace Model
         /**
          * <p>Lists the Device Defender security profile violations discovered during the
          * given time period. You can use filters to limit the results to those alerts
-         * issued for a particular security profile, behavior, or thing
-         * (device).</p><p><h3>See Also:</h3>   <a
+         * issued for a particular security profile, behavior, or thing (device).</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListViolationEvents</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListViolationEvents">AWS
          * API Reference</a></p>
          *
@@ -6250,26 +7660,60 @@ namespace Model
         virtual void ListViolationEventsAsync(const Model::ListViolationEventsRequest& request, const ListViolationEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers a CA certificate with AWS IoT. This CA certificate can then be used
-         * to sign device certificates, which can be then registered with AWS IoT. You can
-         * register up to 10 CA certificates per AWS account that have the same subject
-         * field. This enables you to have up to 10 certificate authorities sign your
-         * device certificates. If you have more than one CA certificate registered, make
-         * sure you pass the CA certificate when you register your device certificates with
-         * the RegisterCertificate API.</p><p><h3>See Also:</h3>   <a
+         * <p>Set a verification state and provide a description of that verification state
+         * on a violation (detect alarm).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PutVerificationStateOnViolation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutVerificationStateOnViolationOutcome PutVerificationStateOnViolation(const Model::PutVerificationStateOnViolationRequest& request) const;
+
+        /**
+         * <p>Set a verification state and provide a description of that verification state
+         * on a violation (detect alarm).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PutVerificationStateOnViolation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutVerificationStateOnViolationOutcomeCallable PutVerificationStateOnViolationCallable(const Model::PutVerificationStateOnViolationRequest& request) const;
+
+        /**
+         * <p>Set a verification state and provide a description of that verification state
+         * on a violation (detect alarm).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PutVerificationStateOnViolation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutVerificationStateOnViolationAsync(const Model::PutVerificationStateOnViolationRequest& request, const PutVerificationStateOnViolationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Registers a CA certificate with IoT. This CA certificate can then be used to
+         * sign device certificates, which can be then registered with IoT. You can
+         * register up to 10 CA certificates per Amazon Web Services account that have the
+         * same subject field. This enables you to have up to 10 certificate authorities
+         * sign your device certificates. If you have more than one CA certificate
+         * registered, make sure you pass the CA certificate when you register your device
+         * certificates with the <a>RegisterCertificate</a> action.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCACertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterCACertificateOutcome RegisterCACertificate(const Model::RegisterCACertificateRequest& request) const;
 
         /**
-         * <p>Registers a CA certificate with AWS IoT. This CA certificate can then be used
-         * to sign device certificates, which can be then registered with AWS IoT. You can
-         * register up to 10 CA certificates per AWS account that have the same subject
-         * field. This enables you to have up to 10 certificate authorities sign your
-         * device certificates. If you have more than one CA certificate registered, make
-         * sure you pass the CA certificate when you register your device certificates with
-         * the RegisterCertificate API.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers a CA certificate with IoT. This CA certificate can then be used to
+         * sign device certificates, which can be then registered with IoT. You can
+         * register up to 10 CA certificates per Amazon Web Services account that have the
+         * same subject field. This enables you to have up to 10 certificate authorities
+         * sign your device certificates. If you have more than one CA certificate
+         * registered, make sure you pass the CA certificate when you register your device
+         * certificates with the <a>RegisterCertificate</a> action.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCACertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">AWS
          * API Reference</a></p>
          *
@@ -6278,13 +7722,16 @@ namespace Model
         virtual Model::RegisterCACertificateOutcomeCallable RegisterCACertificateCallable(const Model::RegisterCACertificateRequest& request) const;
 
         /**
-         * <p>Registers a CA certificate with AWS IoT. This CA certificate can then be used
-         * to sign device certificates, which can be then registered with AWS IoT. You can
-         * register up to 10 CA certificates per AWS account that have the same subject
-         * field. This enables you to have up to 10 certificate authorities sign your
-         * device certificates. If you have more than one CA certificate registered, make
-         * sure you pass the CA certificate when you register your device certificates with
-         * the RegisterCertificate API.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers a CA certificate with IoT. This CA certificate can then be used to
+         * sign device certificates, which can be then registered with IoT. You can
+         * register up to 10 CA certificates per Amazon Web Services account that have the
+         * same subject field. This enables you to have up to 10 certificate authorities
+         * sign your device certificates. If you have more than one CA certificate
+         * registered, make sure you pass the CA certificate when you register your device
+         * certificates with the <a>RegisterCertificate</a> action.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCACertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">AWS
          * API Reference</a></p>
          *
@@ -6293,20 +7740,24 @@ namespace Model
         virtual void RegisterCACertificateAsync(const Model::RegisterCACertificateRequest& request, const RegisterCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers a device certificate with AWS IoT. If you have more than one CA
+         * <p>Registers a device certificate with IoT. If you have more than one CA
          * certificate that has the same subject field, you must specify the CA certificate
-         * that was used to sign the device certificate being registered.</p><p><h3>See
-         * Also:</h3>   <a
+         * that was used to sign the device certificate being registered.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterCertificateOutcome RegisterCertificate(const Model::RegisterCertificateRequest& request) const;
 
         /**
-         * <p>Registers a device certificate with AWS IoT. If you have more than one CA
+         * <p>Registers a device certificate with IoT. If you have more than one CA
          * certificate that has the same subject field, you must specify the CA certificate
-         * that was used to sign the device certificate being registered.</p><p><h3>See
-         * Also:</h3>   <a
+         * that was used to sign the device certificate being registered.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificate">AWS
          * API Reference</a></p>
          *
@@ -6315,10 +7766,12 @@ namespace Model
         virtual Model::RegisterCertificateOutcomeCallable RegisterCertificateCallable(const Model::RegisterCertificateRequest& request) const;
 
         /**
-         * <p>Registers a device certificate with AWS IoT. If you have more than one CA
+         * <p>Registers a device certificate with IoT. If you have more than one CA
          * certificate that has the same subject field, you must specify the CA certificate
-         * that was used to sign the device certificate being registered.</p><p><h3>See
-         * Also:</h3>   <a
+         * that was used to sign the device certificate being registered.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificate">AWS
          * API Reference</a></p>
          *
@@ -6327,16 +7780,22 @@ namespace Model
         virtual void RegisterCertificateAsync(const Model::RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Register a certificate that does not have a certificate authority
-         * (CA).</p><p><h3>See Also:</h3>   <a
+         * <p>Register a certificate that does not have a certificate authority (CA). For
+         * supported certificates, consult <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+         * Certificate signing algorithms supported by IoT</a>. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificateWithoutCA">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterCertificateWithoutCAOutcome RegisterCertificateWithoutCA(const Model::RegisterCertificateWithoutCARequest& request) const;
 
         /**
-         * <p>Register a certificate that does not have a certificate authority
-         * (CA).</p><p><h3>See Also:</h3>   <a
+         * <p>Register a certificate that does not have a certificate authority (CA). For
+         * supported certificates, consult <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+         * Certificate signing algorithms supported by IoT</a>. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificateWithoutCA">AWS
          * API Reference</a></p>
          *
@@ -6345,8 +7804,11 @@ namespace Model
         virtual Model::RegisterCertificateWithoutCAOutcomeCallable RegisterCertificateWithoutCACallable(const Model::RegisterCertificateWithoutCARequest& request) const;
 
         /**
-         * <p>Register a certificate that does not have a certificate authority
-         * (CA).</p><p><h3>See Also:</h3>   <a
+         * <p>Register a certificate that does not have a certificate authority (CA). For
+         * supported certificates, consult <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+         * Certificate signing algorithms supported by IoT</a>. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificateWithoutCA">AWS
          * API Reference</a></p>
          *
@@ -6355,24 +7817,30 @@ namespace Model
         virtual void RegisterCertificateWithoutCAAsync(const Model::RegisterCertificateWithoutCARequest& request, const RegisterCertificateWithoutCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provisions a thing in the device registry. RegisterThing calls other AWS IoT
+         * <p>Provisions a thing in the device registry. RegisterThing calls other IoT
          * control plane APIs. These calls might exceed your account level <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
-         * AWS IoT Throttling Limits</a> and cause throttle errors. Please contact <a
-         * href="https://console.aws.amazon.com/support/home">AWS Customer Support</a> to
-         * raise your throttling limits if necessary.</p><p><h3>See Also:</h3>   <a
+         * IoT Throttling Limits</a> and cause throttle errors. Please contact <a
+         * href="https://console.aws.amazon.com/support/home">Amazon Web Services Customer
+         * Support</a> to raise your throttling limits if necessary.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterThing">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterThingOutcome RegisterThing(const Model::RegisterThingRequest& request) const;
 
         /**
-         * <p>Provisions a thing in the device registry. RegisterThing calls other AWS IoT
+         * <p>Provisions a thing in the device registry. RegisterThing calls other IoT
          * control plane APIs. These calls might exceed your account level <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
-         * AWS IoT Throttling Limits</a> and cause throttle errors. Please contact <a
-         * href="https://console.aws.amazon.com/support/home">AWS Customer Support</a> to
-         * raise your throttling limits if necessary.</p><p><h3>See Also:</h3>   <a
+         * IoT Throttling Limits</a> and cause throttle errors. Please contact <a
+         * href="https://console.aws.amazon.com/support/home">Amazon Web Services Customer
+         * Support</a> to raise your throttling limits if necessary.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterThing">AWS
          * API Reference</a></p>
          *
@@ -6381,12 +7849,15 @@ namespace Model
         virtual Model::RegisterThingOutcomeCallable RegisterThingCallable(const Model::RegisterThingRequest& request) const;
 
         /**
-         * <p>Provisions a thing in the device registry. RegisterThing calls other AWS IoT
+         * <p>Provisions a thing in the device registry. RegisterThing calls other IoT
          * control plane APIs. These calls might exceed your account level <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
-         * AWS IoT Throttling Limits</a> and cause throttle errors. Please contact <a
-         * href="https://console.aws.amazon.com/support/home">AWS Customer Support</a> to
-         * raise your throttling limits if necessary.</p><p><h3>See Also:</h3>   <a
+         * IoT Throttling Limits</a> and cause throttle errors. Please contact <a
+         * href="https://console.aws.amazon.com/support/home">Amazon Web Services Customer
+         * Support</a> to raise your throttling limits if necessary.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterThing">AWS
          * API Reference</a></p>
          *
@@ -6395,26 +7866,30 @@ namespace Model
         virtual void RegisterThingAsync(const Model::RegisterThingRequest& request, const RegisterThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Rejects a pending certificate transfer. After AWS IoT rejects a certificate
+         * <p>Rejects a pending certificate transfer. After IoT rejects a certificate
          * transfer, the certificate status changes from <b>PENDING_TRANSFER</b> to
          * <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call
          * <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation
          * can only be called by the transfer destination. After it is called, the
-         * certificate will be returned to the source's account in the INACTIVE
-         * state.</p><p><h3>See Also:</h3>   <a
+         * certificate will be returned to the source's account in the INACTIVE state.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RejectCertificateTransfer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">AWS
          * API Reference</a></p>
          */
         virtual Model::RejectCertificateTransferOutcome RejectCertificateTransfer(const Model::RejectCertificateTransferRequest& request) const;
 
         /**
-         * <p>Rejects a pending certificate transfer. After AWS IoT rejects a certificate
+         * <p>Rejects a pending certificate transfer. After IoT rejects a certificate
          * transfer, the certificate status changes from <b>PENDING_TRANSFER</b> to
          * <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call
          * <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation
          * can only be called by the transfer destination. After it is called, the
-         * certificate will be returned to the source's account in the INACTIVE
-         * state.</p><p><h3>See Also:</h3>   <a
+         * certificate will be returned to the source's account in the INACTIVE state.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RejectCertificateTransfer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">AWS
          * API Reference</a></p>
          *
@@ -6423,13 +7898,15 @@ namespace Model
         virtual Model::RejectCertificateTransferOutcomeCallable RejectCertificateTransferCallable(const Model::RejectCertificateTransferRequest& request) const;
 
         /**
-         * <p>Rejects a pending certificate transfer. After AWS IoT rejects a certificate
+         * <p>Rejects a pending certificate transfer. After IoT rejects a certificate
          * transfer, the certificate status changes from <b>PENDING_TRANSFER</b> to
          * <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call
          * <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation
          * can only be called by the transfer destination. After it is called, the
-         * certificate will be returned to the source's account in the INACTIVE
-         * state.</p><p><h3>See Also:</h3>   <a
+         * certificate will be returned to the source's account in the INACTIVE state.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RejectCertificateTransfer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">AWS
          * API Reference</a></p>
          *
@@ -6438,14 +7915,22 @@ namespace Model
         virtual void RejectCertificateTransferAsync(const Model::RejectCertificateTransferRequest& request, const RejectCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the given thing from the billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the given thing from the billing group.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromBillingGroup</a>
+         * action.</p>  <p>This call is asynchronous. It might take several seconds
+         * for the detachment to propagate.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromBillingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::RemoveThingFromBillingGroupOutcome RemoveThingFromBillingGroup(const Model::RemoveThingFromBillingGroupRequest& request) const;
 
         /**
-         * <p>Removes the given thing from the billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the given thing from the billing group.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromBillingGroup</a>
+         * action.</p>  <p>This call is asynchronous. It might take several seconds
+         * for the detachment to propagate.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -6454,7 +7939,11 @@ namespace Model
         virtual Model::RemoveThingFromBillingGroupOutcomeCallable RemoveThingFromBillingGroupCallable(const Model::RemoveThingFromBillingGroupRequest& request) const;
 
         /**
-         * <p>Removes the given thing from the billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the given thing from the billing group.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromBillingGroup</a>
+         * action.</p>  <p>This call is asynchronous. It might take several seconds
+         * for the detachment to propagate.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -6466,8 +7955,10 @@ namespace Model
          * <p>Remove the specified thing from the specified group.</p> <p>You must specify
          * either a <code>thingGroupArn</code> or a <code>thingGroupName</code> to identify
          * the thing group and either a <code>thingArn</code> or a <code>thingName</code>
-         * to identify the thing to remove from the thing group. </p><p><h3>See Also:</h3> 
-         * <a
+         * to identify the thing to remove from the thing group. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromThingGroup">AWS
          * API Reference</a></p>
          */
@@ -6477,8 +7968,10 @@ namespace Model
          * <p>Remove the specified thing from the specified group.</p> <p>You must specify
          * either a <code>thingGroupArn</code> or a <code>thingGroupName</code> to identify
          * the thing group and either a <code>thingArn</code> or a <code>thingName</code>
-         * to identify the thing to remove from the thing group. </p><p><h3>See Also:</h3> 
-         * <a
+         * to identify the thing to remove from the thing group. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromThingGroup">AWS
          * API Reference</a></p>
          *
@@ -6490,8 +7983,10 @@ namespace Model
          * <p>Remove the specified thing from the specified group.</p> <p>You must specify
          * either a <code>thingGroupArn</code> or a <code>thingGroupName</code> to identify
          * the thing group and either a <code>thingArn</code> or a <code>thingName</code>
-         * to identify the thing to remove from the thing group. </p><p><h3>See Also:</h3> 
-         * <a
+         * to identify the thing to remove from the thing group. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromThingGroup">AWS
          * API Reference</a></p>
          *
@@ -6502,8 +7997,10 @@ namespace Model
         /**
          * <p>Replaces the rule. You must specify all parameters for the new rule. Creating
          * rules is an administrator-level action. Any user who has permission to create
-         * rules will be able to access data processed by the rule.</p><p><h3>See
-         * Also:</h3>   <a
+         * rules will be able to access data processed by the rule.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ReplaceTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceTopicRule">AWS
          * API Reference</a></p>
          */
@@ -6512,8 +8009,10 @@ namespace Model
         /**
          * <p>Replaces the rule. You must specify all parameters for the new rule. Creating
          * rules is an administrator-level action. Any user who has permission to create
-         * rules will be able to access data processed by the rule.</p><p><h3>See
-         * Also:</h3>   <a
+         * rules will be able to access data processed by the rule.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ReplaceTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceTopicRule">AWS
          * API Reference</a></p>
          *
@@ -6524,8 +8023,10 @@ namespace Model
         /**
          * <p>Replaces the rule. You must specify all parameters for the new rule. Creating
          * rules is an administrator-level action. Any user who has permission to create
-         * rules will be able to access data processed by the rule.</p><p><h3>See
-         * Also:</h3>   <a
+         * rules will be able to access data processed by the rule.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ReplaceTopicRule</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceTopicRule">AWS
          * API Reference</a></p>
          *
@@ -6534,14 +8035,18 @@ namespace Model
         virtual void ReplaceTopicRuleAsync(const Model::ReplaceTopicRuleRequest& request, const ReplaceTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The query search index.</p><p><h3>See Also:</h3>   <a
+         * <p>The query search index.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SearchIndex</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SearchIndex">AWS API
          * Reference</a></p>
          */
         virtual Model::SearchIndexOutcome SearchIndex(const Model::SearchIndexRequest& request) const;
 
         /**
-         * <p>The query search index.</p><p><h3>See Also:</h3>   <a
+         * <p>The query search index.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SearchIndex</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SearchIndex">AWS API
          * Reference</a></p>
          *
@@ -6550,7 +8055,9 @@ namespace Model
         virtual Model::SearchIndexOutcomeCallable SearchIndexCallable(const Model::SearchIndexRequest& request) const;
 
         /**
-         * <p>The query search index.</p><p><h3>See Also:</h3>   <a
+         * <p>The query search index.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SearchIndex</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SearchIndex">AWS API
          * Reference</a></p>
          *
@@ -6560,7 +8067,10 @@ namespace Model
 
         /**
          * <p>Sets the default authorizer. This will be used if a websocket connection is
-         * made without specifying an authorizer.</p><p><h3>See Also:</h3>   <a
+         * made without specifying an authorizer.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultAuthorizer">AWS
          * API Reference</a></p>
          */
@@ -6568,7 +8078,10 @@ namespace Model
 
         /**
          * <p>Sets the default authorizer. This will be used if a websocket connection is
-         * made without specifying an authorizer.</p><p><h3>See Also:</h3>   <a
+         * made without specifying an authorizer.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -6578,7 +8091,10 @@ namespace Model
 
         /**
          * <p>Sets the default authorizer. This will be used if a websocket connection is
-         * made without specifying an authorizer.</p><p><h3>See Also:</h3>   <a
+         * made without specifying an authorizer.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -6590,7 +8106,9 @@ namespace Model
          * <p>Sets the specified version of the specified policy as the policy's default
          * (operative) version. This action affects all certificates to which the policy is
          * attached. To list the principals the policy is attached to, use the
-         * ListPrincipalPolicy API.</p><p><h3>See Also:</h3>   <a
+         * <a>ListPrincipalPolicies</a> action.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultPolicyVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">AWS
          * API Reference</a></p>
          */
@@ -6600,7 +8118,9 @@ namespace Model
          * <p>Sets the specified version of the specified policy as the policy's default
          * (operative) version. This action affects all certificates to which the policy is
          * attached. To list the principals the policy is attached to, use the
-         * ListPrincipalPolicy API.</p><p><h3>See Also:</h3>   <a
+         * <a>ListPrincipalPolicies</a> action.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultPolicyVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">AWS
          * API Reference</a></p>
          *
@@ -6612,7 +8132,9 @@ namespace Model
          * <p>Sets the specified version of the specified policy as the policy's default
          * (operative) version. This action affects all certificates to which the policy is
          * attached. To list the principals the policy is attached to, use the
-         * ListPrincipalPolicy API.</p><p><h3>See Also:</h3>   <a
+         * <a>ListPrincipalPolicies</a> action.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultPolicyVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">AWS
          * API Reference</a></p>
          *
@@ -6622,8 +8144,10 @@ namespace Model
 
         /**
          * <p>Sets the logging options.</p> <p>NOTE: use of this command is not
-         * recommended. Use <code>SetV2LoggingOptions</code> instead.</p><p><h3>See
-         * Also:</h3>   <a
+         * recommended. Use <code>SetV2LoggingOptions</code> instead.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetLoggingOptions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">AWS
          * API Reference</a></p>
          */
@@ -6631,8 +8155,10 @@ namespace Model
 
         /**
          * <p>Sets the logging options.</p> <p>NOTE: use of this command is not
-         * recommended. Use <code>SetV2LoggingOptions</code> instead.</p><p><h3>See
-         * Also:</h3>   <a
+         * recommended. Use <code>SetV2LoggingOptions</code> instead.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetLoggingOptions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -6642,8 +8168,10 @@ namespace Model
 
         /**
          * <p>Sets the logging options.</p> <p>NOTE: use of this command is not
-         * recommended. Use <code>SetV2LoggingOptions</code> instead.</p><p><h3>See
-         * Also:</h3>   <a
+         * recommended. Use <code>SetV2LoggingOptions</code> instead.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetLoggingOptions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -6652,14 +8180,18 @@ namespace Model
         virtual void SetLoggingOptionsAsync(const Model::SetLoggingOptionsRequest& request, const SetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the logging level.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the logging level.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetV2LoggingLevel</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingLevel">AWS
          * API Reference</a></p>
          */
         virtual Model::SetV2LoggingLevelOutcome SetV2LoggingLevel(const Model::SetV2LoggingLevelRequest& request) const;
 
         /**
-         * <p>Sets the logging level.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the logging level.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetV2LoggingLevel</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingLevel">AWS
          * API Reference</a></p>
          *
@@ -6668,7 +8200,9 @@ namespace Model
         virtual Model::SetV2LoggingLevelOutcomeCallable SetV2LoggingLevelCallable(const Model::SetV2LoggingLevelRequest& request) const;
 
         /**
-         * <p>Sets the logging level.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the logging level.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetV2LoggingLevel</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingLevel">AWS
          * API Reference</a></p>
          *
@@ -6677,16 +8211,20 @@ namespace Model
         virtual void SetV2LoggingLevelAsync(const Model::SetV2LoggingLevelRequest& request, const SetV2LoggingLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the logging options for the V2 logging service.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Sets the logging options for the V2 logging service.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetV2LoggingOptions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingOptions">AWS
          * API Reference</a></p>
          */
         virtual Model::SetV2LoggingOptionsOutcome SetV2LoggingOptions(const Model::SetV2LoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets the logging options for the V2 logging service.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Sets the logging options for the V2 logging service.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetV2LoggingOptions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -6695,8 +8233,10 @@ namespace Model
         virtual Model::SetV2LoggingOptionsOutcomeCallable SetV2LoggingOptionsCallable(const Model::SetV2LoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets the logging options for the V2 logging service.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Sets the logging options for the V2 logging service.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetV2LoggingOptions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -6706,7 +8246,9 @@ namespace Model
 
         /**
          * <p>Starts a task that applies a set of mitigation actions to the specified
-         * target.</p><p><h3>See Also:</h3>   <a
+         * target.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartAuditMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartAuditMitigationActionsTask">AWS
          * API Reference</a></p>
          */
@@ -6714,7 +8256,9 @@ namespace Model
 
         /**
          * <p>Starts a task that applies a set of mitigation actions to the specified
-         * target.</p><p><h3>See Also:</h3>   <a
+         * target.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartAuditMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartAuditMitigationActionsTask">AWS
          * API Reference</a></p>
          *
@@ -6724,7 +8268,9 @@ namespace Model
 
         /**
          * <p>Starts a task that applies a set of mitigation actions to the specified
-         * target.</p><p><h3>See Also:</h3>   <a
+         * target.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartAuditMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartAuditMitigationActionsTask">AWS
          * API Reference</a></p>
          *
@@ -6733,16 +8279,20 @@ namespace Model
         virtual void StartAuditMitigationActionsTaskAsync(const Model::StartAuditMitigationActionsTaskRequest& request, const StartAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Starts a Device Defender ML Detect mitigation actions task. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Starts a Device Defender ML Detect mitigation actions task. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartDetectMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartDetectMitigationActionsTask">AWS
          * API Reference</a></p>
          */
         virtual Model::StartDetectMitigationActionsTaskOutcome StartDetectMitigationActionsTask(const Model::StartDetectMitigationActionsTaskRequest& request) const;
 
         /**
-         * <p> Starts a Device Defender ML Detect mitigation actions task. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Starts a Device Defender ML Detect mitigation actions task. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartDetectMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartDetectMitigationActionsTask">AWS
          * API Reference</a></p>
          *
@@ -6751,8 +8301,10 @@ namespace Model
         virtual Model::StartDetectMitigationActionsTaskOutcomeCallable StartDetectMitigationActionsTaskCallable(const Model::StartDetectMitigationActionsTaskRequest& request) const;
 
         /**
-         * <p> Starts a Device Defender ML Detect mitigation actions task. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Starts a Device Defender ML Detect mitigation actions task. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartDetectMitigationActionsTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartDetectMitigationActionsTask">AWS
          * API Reference</a></p>
          *
@@ -6761,14 +8313,20 @@ namespace Model
         virtual void StartDetectMitigationActionsTaskAsync(const Model::StartDetectMitigationActionsTaskRequest& request, const StartDetectMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts an on-demand Device Defender audit.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an on-demand Device Defender audit.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartOnDemandAuditTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartOnDemandAuditTask">AWS
          * API Reference</a></p>
          */
         virtual Model::StartOnDemandAuditTaskOutcome StartOnDemandAuditTask(const Model::StartOnDemandAuditTaskRequest& request) const;
 
         /**
-         * <p>Starts an on-demand Device Defender audit.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an on-demand Device Defender audit.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartOnDemandAuditTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartOnDemandAuditTask">AWS
          * API Reference</a></p>
          *
@@ -6777,7 +8335,10 @@ namespace Model
         virtual Model::StartOnDemandAuditTaskOutcomeCallable StartOnDemandAuditTaskCallable(const Model::StartOnDemandAuditTaskRequest& request) const;
 
         /**
-         * <p>Starts an on-demand Device Defender audit.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an on-demand Device Defender audit.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartOnDemandAuditTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartOnDemandAuditTask">AWS
          * API Reference</a></p>
          *
@@ -6786,14 +8347,20 @@ namespace Model
         virtual void StartOnDemandAuditTaskAsync(const Model::StartOnDemandAuditTaskRequest& request, const StartOnDemandAuditTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a bulk thing provisioning task.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a bulk thing provisioning task.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartThingRegistrationTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartThingRegistrationTask">AWS
          * API Reference</a></p>
          */
         virtual Model::StartThingRegistrationTaskOutcome StartThingRegistrationTask(const Model::StartThingRegistrationTaskRequest& request) const;
 
         /**
-         * <p>Creates a bulk thing provisioning task.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a bulk thing provisioning task.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartThingRegistrationTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartThingRegistrationTask">AWS
          * API Reference</a></p>
          *
@@ -6802,7 +8369,10 @@ namespace Model
         virtual Model::StartThingRegistrationTaskOutcomeCallable StartThingRegistrationTaskCallable(const Model::StartThingRegistrationTaskRequest& request) const;
 
         /**
-         * <p>Creates a bulk thing provisioning task.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a bulk thing provisioning task.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartThingRegistrationTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartThingRegistrationTask">AWS
          * API Reference</a></p>
          *
@@ -6811,14 +8381,20 @@ namespace Model
         virtual void StartThingRegistrationTaskAsync(const Model::StartThingRegistrationTaskRequest& request, const StartThingRegistrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Cancels a bulk thing provisioning task.</p><p><h3>See Also:</h3>   <a
+         * <p>Cancels a bulk thing provisioning task.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopThingRegistrationTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StopThingRegistrationTask">AWS
          * API Reference</a></p>
          */
         virtual Model::StopThingRegistrationTaskOutcome StopThingRegistrationTask(const Model::StopThingRegistrationTaskRequest& request) const;
 
         /**
-         * <p>Cancels a bulk thing provisioning task.</p><p><h3>See Also:</h3>   <a
+         * <p>Cancels a bulk thing provisioning task.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopThingRegistrationTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StopThingRegistrationTask">AWS
          * API Reference</a></p>
          *
@@ -6827,7 +8403,10 @@ namespace Model
         virtual Model::StopThingRegistrationTaskOutcomeCallable StopThingRegistrationTaskCallable(const Model::StopThingRegistrationTaskRequest& request) const;
 
         /**
-         * <p>Cancels a bulk thing provisioning task.</p><p><h3>See Also:</h3>   <a
+         * <p>Cancels a bulk thing provisioning task.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopThingRegistrationTask</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StopThingRegistrationTask">AWS
          * API Reference</a></p>
          *
@@ -6837,7 +8416,9 @@ namespace Model
 
         /**
          * <p>Adds to or modifies the tags of the given resource. Tags are metadata which
-         * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
+         * can be used to manage a resource.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TagResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TagResource">AWS API
          * Reference</a></p>
          */
@@ -6845,7 +8426,9 @@ namespace Model
 
         /**
          * <p>Adds to or modifies the tags of the given resource. Tags are metadata which
-         * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
+         * can be used to manage a resource.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TagResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TagResource">AWS API
          * Reference</a></p>
          *
@@ -6855,7 +8438,9 @@ namespace Model
 
         /**
          * <p>Adds to or modifies the tags of the given resource. Tags are metadata which
-         * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
+         * can be used to manage a resource.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TagResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TagResource">AWS API
          * Reference</a></p>
          *
@@ -6864,20 +8449,24 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Tests if a specified principal is authorized to perform an AWS IoT action on
-         * a specified resource. Use this to test and debug the authorization behavior of
-         * devices that connect to the AWS IoT device gateway.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Tests if a specified principal is authorized to perform an IoT action on a
+         * specified resource. Use this to test and debug the authorization behavior of
+         * devices that connect to the IoT device gateway.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TestAuthorization</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestAuthorization">AWS
          * API Reference</a></p>
          */
         virtual Model::TestAuthorizationOutcome TestAuthorization(const Model::TestAuthorizationRequest& request) const;
 
         /**
-         * <p>Tests if a specified principal is authorized to perform an AWS IoT action on
-         * a specified resource. Use this to test and debug the authorization behavior of
-         * devices that connect to the AWS IoT device gateway.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Tests if a specified principal is authorized to perform an IoT action on a
+         * specified resource. Use this to test and debug the authorization behavior of
+         * devices that connect to the IoT device gateway.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TestAuthorization</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestAuthorization">AWS
          * API Reference</a></p>
          *
@@ -6886,10 +8475,12 @@ namespace Model
         virtual Model::TestAuthorizationOutcomeCallable TestAuthorizationCallable(const Model::TestAuthorizationRequest& request) const;
 
         /**
-         * <p>Tests if a specified principal is authorized to perform an AWS IoT action on
-         * a specified resource. Use this to test and debug the authorization behavior of
-         * devices that connect to the AWS IoT device gateway.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Tests if a specified principal is authorized to perform an IoT action on a
+         * specified resource. Use this to test and debug the authorization behavior of
+         * devices that connect to the IoT device gateway.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TestAuthorization</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestAuthorization">AWS
          * API Reference</a></p>
          *
@@ -6900,8 +8491,10 @@ namespace Model
         /**
          * <p>Tests a custom authorization behavior by invoking a specified custom
          * authorizer. Use this to test and debug the custom authorization behavior of
-         * devices that connect to the AWS IoT device gateway.</p><p><h3>See Also:</h3>  
-         * <a
+         * devices that connect to the IoT device gateway.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TestInvokeAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestInvokeAuthorizer">AWS
          * API Reference</a></p>
          */
@@ -6910,8 +8503,10 @@ namespace Model
         /**
          * <p>Tests a custom authorization behavior by invoking a specified custom
          * authorizer. Use this to test and debug the custom authorization behavior of
-         * devices that connect to the AWS IoT device gateway.</p><p><h3>See Also:</h3>  
-         * <a
+         * devices that connect to the IoT device gateway.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TestInvokeAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestInvokeAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -6922,8 +8517,10 @@ namespace Model
         /**
          * <p>Tests a custom authorization behavior by invoking a specified custom
          * authorizer. Use this to test and debug the custom authorization behavior of
-         * devices that connect to the AWS IoT device gateway.</p><p><h3>See Also:</h3>  
-         * <a
+         * devices that connect to the IoT device gateway.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TestInvokeAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestInvokeAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -6932,28 +8529,32 @@ namespace Model
         virtual void TestInvokeAuthorizerAsync(const Model::TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Transfers the specified certificate to the specified AWS account.</p> <p>You
-         * can cancel the transfer until it is acknowledged by the recipient.</p> <p>No
-         * notification is sent to the transfer destination's account. It is up to the
-         * caller to notify the transfer target.</p> <p>The certificate being transferred
-         * must not be in the ACTIVE state. You can use the UpdateCertificate API to
-         * deactivate it.</p> <p>The certificate must not have any policies attached to it.
-         * You can use the DetachPrincipalPolicy API to detach them.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Transfers the specified certificate to the specified Amazon Web Services
+         * account.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TransferCertificate</a>
+         * action.</p> <p>You can cancel the transfer until it is acknowledged by the
+         * recipient.</p> <p>No notification is sent to the transfer destination's account.
+         * It is up to the caller to notify the transfer target.</p> <p>The certificate
+         * being transferred must not be in the ACTIVE state. You can use the
+         * <a>UpdateCertificate</a> action to deactivate it.</p> <p>The certificate must
+         * not have any policies attached to it. You can use the <a>DetachPolicy</a> action
+         * to detach them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::TransferCertificateOutcome TransferCertificate(const Model::TransferCertificateRequest& request) const;
 
         /**
-         * <p>Transfers the specified certificate to the specified AWS account.</p> <p>You
-         * can cancel the transfer until it is acknowledged by the recipient.</p> <p>No
-         * notification is sent to the transfer destination's account. It is up to the
-         * caller to notify the transfer target.</p> <p>The certificate being transferred
-         * must not be in the ACTIVE state. You can use the UpdateCertificate API to
-         * deactivate it.</p> <p>The certificate must not have any policies attached to it.
-         * You can use the DetachPrincipalPolicy API to detach them.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Transfers the specified certificate to the specified Amazon Web Services
+         * account.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TransferCertificate</a>
+         * action.</p> <p>You can cancel the transfer until it is acknowledged by the
+         * recipient.</p> <p>No notification is sent to the transfer destination's account.
+         * It is up to the caller to notify the transfer target.</p> <p>The certificate
+         * being transferred must not be in the ACTIVE state. You can use the
+         * <a>UpdateCertificate</a> action to deactivate it.</p> <p>The certificate must
+         * not have any policies attached to it. You can use the <a>DetachPolicy</a> action
+         * to detach them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">AWS
          * API Reference</a></p>
          *
@@ -6962,14 +8563,16 @@ namespace Model
         virtual Model::TransferCertificateOutcomeCallable TransferCertificateCallable(const Model::TransferCertificateRequest& request) const;
 
         /**
-         * <p>Transfers the specified certificate to the specified AWS account.</p> <p>You
-         * can cancel the transfer until it is acknowledged by the recipient.</p> <p>No
-         * notification is sent to the transfer destination's account. It is up to the
-         * caller to notify the transfer target.</p> <p>The certificate being transferred
-         * must not be in the ACTIVE state. You can use the UpdateCertificate API to
-         * deactivate it.</p> <p>The certificate must not have any policies attached to it.
-         * You can use the DetachPrincipalPolicy API to detach them.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Transfers the specified certificate to the specified Amazon Web Services
+         * account.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TransferCertificate</a>
+         * action.</p> <p>You can cancel the transfer until it is acknowledged by the
+         * recipient.</p> <p>No notification is sent to the transfer destination's account.
+         * It is up to the caller to notify the transfer target.</p> <p>The certificate
+         * being transferred must not be in the ACTIVE state. You can use the
+         * <a>UpdateCertificate</a> action to deactivate it.</p> <p>The certificate must
+         * not have any policies attached to it. You can use the <a>DetachPolicy</a> action
+         * to detach them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">AWS
          * API Reference</a></p>
          *
@@ -6978,16 +8581,20 @@ namespace Model
         virtual void TransferCertificateAsync(const Model::TransferCertificateRequest& request, const TransferCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the given tags (metadata) from the resource.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Removes the given tags (metadata) from the resource.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the given tags (metadata) from the resource.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Removes the given tags (metadata) from the resource.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -6996,8 +8603,10 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the given tags (metadata) from the resource.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Removes the given tags (metadata) from the resource.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -7008,7 +8617,9 @@ namespace Model
         /**
          * <p>Configures or reconfigures the Device Defender audit settings for this
          * account. Settings include how audit notifications are sent and which audit
-         * checks are enabled or disabled.</p><p><h3>See Also:</h3>   <a
+         * checks are enabled or disabled.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateAccountAuditConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAccountAuditConfiguration">AWS
          * API Reference</a></p>
          */
@@ -7017,7 +8628,9 @@ namespace Model
         /**
          * <p>Configures or reconfigures the Device Defender audit settings for this
          * account. Settings include how audit notifications are sent and which audit
-         * checks are enabled or disabled.</p><p><h3>See Also:</h3>   <a
+         * checks are enabled or disabled.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateAccountAuditConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAccountAuditConfiguration">AWS
          * API Reference</a></p>
          *
@@ -7028,7 +8641,9 @@ namespace Model
         /**
          * <p>Configures or reconfigures the Device Defender audit settings for this
          * account. Settings include how audit notifications are sent and which audit
-         * checks are enabled or disabled.</p><p><h3>See Also:</h3>   <a
+         * checks are enabled or disabled.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateAccountAuditConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAccountAuditConfiguration">AWS
          * API Reference</a></p>
          *
@@ -7062,14 +8677,18 @@ namespace Model
         virtual void UpdateAuditSuppressionAsync(const Model::UpdateAuditSuppressionRequest& request, const UpdateAuditSuppressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAuthorizer">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateAuthorizerOutcome UpdateAuthorizer(const Model::UpdateAuthorizerRequest& request) const;
 
         /**
-         * <p>Updates an authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -7078,7 +8697,9 @@ namespace Model
         virtual Model::UpdateAuthorizerOutcomeCallable UpdateAuthorizerCallable(const Model::UpdateAuthorizerRequest& request) const;
 
         /**
-         * <p>Updates an authorizer.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an authorizer.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateAuthorizer</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAuthorizer">AWS
          * API Reference</a></p>
          *
@@ -7087,14 +8708,20 @@ namespace Model
         virtual void UpdateAuthorizerAsync(const Model::UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates information about the billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates information about the billing group.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateBillingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateBillingGroupOutcome UpdateBillingGroup(const Model::UpdateBillingGroupRequest& request) const;
 
         /**
-         * <p>Updates information about the billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates information about the billing group.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -7103,7 +8730,10 @@ namespace Model
         virtual Model::UpdateBillingGroupOutcomeCallable UpdateBillingGroupCallable(const Model::UpdateBillingGroupRequest& request) const;
 
         /**
-         * <p>Updates information about the billing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates information about the billing group.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateBillingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -7112,14 +8742,20 @@ namespace Model
         virtual void UpdateBillingGroupAsync(const Model::UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a registered CA certificate.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a registered CA certificate.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCACertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCACertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateCACertificateOutcome UpdateCACertificate(const Model::UpdateCACertificateRequest& request) const;
 
         /**
-         * <p>Updates a registered CA certificate.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a registered CA certificate.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCACertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCACertificate">AWS
          * API Reference</a></p>
          *
@@ -7128,7 +8764,10 @@ namespace Model
         virtual Model::UpdateCACertificateOutcomeCallable UpdateCACertificateCallable(const Model::UpdateCACertificateRequest& request) const;
 
         /**
-         * <p>Updates a registered CA certificate.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a registered CA certificate.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCACertificate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCACertificate">AWS
          * API Reference</a></p>
          *
@@ -7138,12 +8777,14 @@ namespace Model
 
         /**
          * <p>Updates the status of the specified certificate. This operation is
-         * idempotent.</p> <p>Certificates must be in the ACTIVE state to authenticate
-         * devices that use a certificate to connect to AWS IoT.</p> <p>Within a few
-         * minutes of updating a certificate from the ACTIVE state to any other state, AWS
-         * IoT disconnects all devices that used that certificate to connect. Devices
-         * cannot use a certificate that is not in the ACTIVE state to
-         * reconnect.</p><p><h3>See Also:</h3>   <a
+         * idempotent.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCertificate</a>
+         * action.</p> <p>Certificates must be in the ACTIVE state to authenticate devices
+         * that use a certificate to connect to IoT.</p> <p>Within a few minutes of
+         * updating a certificate from the ACTIVE state to any other state, IoT disconnects
+         * all devices that used that certificate to connect. Devices cannot use a
+         * certificate that is not in the ACTIVE state to reconnect.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">AWS
          * API Reference</a></p>
          */
@@ -7151,12 +8792,14 @@ namespace Model
 
         /**
          * <p>Updates the status of the specified certificate. This operation is
-         * idempotent.</p> <p>Certificates must be in the ACTIVE state to authenticate
-         * devices that use a certificate to connect to AWS IoT.</p> <p>Within a few
-         * minutes of updating a certificate from the ACTIVE state to any other state, AWS
-         * IoT disconnects all devices that used that certificate to connect. Devices
-         * cannot use a certificate that is not in the ACTIVE state to
-         * reconnect.</p><p><h3>See Also:</h3>   <a
+         * idempotent.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCertificate</a>
+         * action.</p> <p>Certificates must be in the ACTIVE state to authenticate devices
+         * that use a certificate to connect to IoT.</p> <p>Within a few minutes of
+         * updating a certificate from the ACTIVE state to any other state, IoT disconnects
+         * all devices that used that certificate to connect. Devices cannot use a
+         * certificate that is not in the ACTIVE state to reconnect.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">AWS
          * API Reference</a></p>
          *
@@ -7166,12 +8809,14 @@ namespace Model
 
         /**
          * <p>Updates the status of the specified certificate. This operation is
-         * idempotent.</p> <p>Certificates must be in the ACTIVE state to authenticate
-         * devices that use a certificate to connect to AWS IoT.</p> <p>Within a few
-         * minutes of updating a certificate from the ACTIVE state to any other state, AWS
-         * IoT disconnects all devices that used that certificate to connect. Devices
-         * cannot use a certificate that is not in the ACTIVE state to
-         * reconnect.</p><p><h3>See Also:</h3>   <a
+         * idempotent.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCertificate</a>
+         * action.</p> <p>Certificates must be in the ACTIVE state to authenticate devices
+         * that use a certificate to connect to IoT.</p> <p>Within a few minutes of
+         * updating a certificate from the ACTIVE state to any other state, IoT disconnects
+         * all devices that used that certificate to connect. Devices cannot use a
+         * certificate that is not in the ACTIVE state to reconnect.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">AWS
          * API Reference</a></p>
          *
@@ -7180,16 +8825,20 @@ namespace Model
         virtual void UpdateCertificateAsync(const Model::UpdateCertificateRequest& request, const UpdateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a Device Defender detect custom metric. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates a Device Defender detect custom metric. </p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCustomMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCustomMetric">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateCustomMetricOutcome UpdateCustomMetric(const Model::UpdateCustomMetricRequest& request) const;
 
         /**
-         * <p>Updates a Device Defender detect custom metric. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates a Device Defender detect custom metric. </p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCustomMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCustomMetric">AWS
          * API Reference</a></p>
          *
@@ -7198,8 +8847,10 @@ namespace Model
         virtual Model::UpdateCustomMetricOutcomeCallable UpdateCustomMetricCallable(const Model::UpdateCustomMetricRequest& request) const;
 
         /**
-         * <p>Updates a Device Defender detect custom metric. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates a Device Defender detect custom metric. </p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCustomMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCustomMetric">AWS
          * API Reference</a></p>
          *
@@ -7209,8 +8860,10 @@ namespace Model
 
         /**
          * <p>Updates the definition for a dimension. You cannot change the type of a
-         * dimension after it is created (you can delete it and recreate it).</p><p><h3>See
-         * Also:</h3>   <a
+         * dimension after it is created (you can delete it and recreate it).</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDimension</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDimension">AWS
          * API Reference</a></p>
          */
@@ -7218,8 +8871,10 @@ namespace Model
 
         /**
          * <p>Updates the definition for a dimension. You cannot change the type of a
-         * dimension after it is created (you can delete it and recreate it).</p><p><h3>See
-         * Also:</h3>   <a
+         * dimension after it is created (you can delete it and recreate it).</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDimension</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDimension">AWS
          * API Reference</a></p>
          *
@@ -7229,8 +8884,10 @@ namespace Model
 
         /**
          * <p>Updates the definition for a dimension. You cannot change the type of a
-         * dimension after it is created (you can delete it and recreate it).</p><p><h3>See
-         * Also:</h3>   <a
+         * dimension after it is created (you can delete it and recreate it).</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDimension</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDimension">AWS
          * API Reference</a></p>
          *
@@ -7240,7 +8897,9 @@ namespace Model
 
         /**
          * <p>Updates values stored in the domain configuration. Domain configurations for
-         * default endpoints can't be updated.</p><p><h3>See Also:</h3>   <a
+         * default endpoints can't be updated.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDomainConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDomainConfiguration">AWS
          * API Reference</a></p>
          */
@@ -7248,7 +8907,9 @@ namespace Model
 
         /**
          * <p>Updates values stored in the domain configuration. Domain configurations for
-         * default endpoints can't be updated.</p><p><h3>See Also:</h3>   <a
+         * default endpoints can't be updated.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDomainConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDomainConfiguration">AWS
          * API Reference</a></p>
          *
@@ -7258,7 +8919,9 @@ namespace Model
 
         /**
          * <p>Updates values stored in the domain configuration. Domain configurations for
-         * default endpoints can't be updated.</p><p><h3>See Also:</h3>   <a
+         * default endpoints can't be updated.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDomainConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDomainConfiguration">AWS
          * API Reference</a></p>
          *
@@ -7267,14 +8930,18 @@ namespace Model
         virtual void UpdateDomainConfigurationAsync(const Model::UpdateDomainConfigurationRequest& request, const UpdateDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a dynamic thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a dynamic thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDynamicThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDynamicThingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDynamicThingGroupOutcome UpdateDynamicThingGroup(const Model::UpdateDynamicThingGroupRequest& request) const;
 
         /**
-         * <p>Updates a dynamic thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a dynamic thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDynamicThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDynamicThingGroup">AWS
          * API Reference</a></p>
          *
@@ -7283,7 +8950,9 @@ namespace Model
         virtual Model::UpdateDynamicThingGroupOutcomeCallable UpdateDynamicThingGroupCallable(const Model::UpdateDynamicThingGroupRequest& request) const;
 
         /**
-         * <p>Updates a dynamic thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a dynamic thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDynamicThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDynamicThingGroup">AWS
          * API Reference</a></p>
          *
@@ -7292,14 +8961,18 @@ namespace Model
         virtual void UpdateDynamicThingGroupAsync(const Model::UpdateDynamicThingGroupRequest& request, const UpdateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the event configurations.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the event configurations.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateEventConfigurations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateEventConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateEventConfigurationsOutcome UpdateEventConfigurations(const Model::UpdateEventConfigurationsRequest& request) const;
 
         /**
-         * <p>Updates the event configurations.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the event configurations.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateEventConfigurations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateEventConfigurations">AWS
          * API Reference</a></p>
          *
@@ -7308,7 +8981,9 @@ namespace Model
         virtual Model::UpdateEventConfigurationsOutcomeCallable UpdateEventConfigurationsCallable(const Model::UpdateEventConfigurationsRequest& request) const;
 
         /**
-         * <p>Updates the event configurations.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the event configurations.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateEventConfigurations</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateEventConfigurations">AWS
          * API Reference</a></p>
          *
@@ -7317,14 +8992,52 @@ namespace Model
         virtual void UpdateEventConfigurationsAsync(const Model::UpdateEventConfigurationsRequest& request, const UpdateEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the search configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the data for a fleet metric.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateFleetMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateFleetMetric">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFleetMetricOutcome UpdateFleetMetric(const Model::UpdateFleetMetricRequest& request) const;
+
+        /**
+         * <p>Updates the data for a fleet metric.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateFleetMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateFleetMetric">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFleetMetricOutcomeCallable UpdateFleetMetricCallable(const Model::UpdateFleetMetricRequest& request) const;
+
+        /**
+         * <p>Updates the data for a fleet metric.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateFleetMetric</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateFleetMetric">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFleetMetricAsync(const Model::UpdateFleetMetricRequest& request, const UpdateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the search configuration.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateIndexingConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateIndexingConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateIndexingConfigurationOutcome UpdateIndexingConfiguration(const Model::UpdateIndexingConfigurationRequest& request) const;
 
         /**
-         * <p>Updates the search configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the search configuration.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateIndexingConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateIndexingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -7333,7 +9046,9 @@ namespace Model
         virtual Model::UpdateIndexingConfigurationOutcomeCallable UpdateIndexingConfigurationCallable(const Model::UpdateIndexingConfigurationRequest& request) const;
 
         /**
-         * <p>Updates the search configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the search configuration.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateIndexingConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateIndexingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -7342,14 +9057,20 @@ namespace Model
         virtual void UpdateIndexingConfigurationAsync(const Model::UpdateIndexingConfigurationRequest& request, const UpdateIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates supported fields of the specified job.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates supported fields of the specified job.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateJob">AWS API
          * Reference</a></p>
          */
         virtual Model::UpdateJobOutcome UpdateJob(const Model::UpdateJobRequest& request) const;
 
         /**
-         * <p>Updates supported fields of the specified job.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates supported fields of the specified job.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateJob">AWS API
          * Reference</a></p>
          *
@@ -7358,7 +9079,10 @@ namespace Model
         virtual Model::UpdateJobOutcomeCallable UpdateJobCallable(const Model::UpdateJobRequest& request) const;
 
         /**
-         * <p>Updates supported fields of the specified job.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates supported fields of the specified job.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateJob</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateJob">AWS API
          * Reference</a></p>
          *
@@ -7367,16 +9091,20 @@ namespace Model
         virtual void UpdateJobAsync(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the definition for the specified mitigation action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the definition for the specified mitigation action.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateMitigationAction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateMitigationAction">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateMitigationActionOutcome UpdateMitigationAction(const Model::UpdateMitigationActionRequest& request) const;
 
         /**
-         * <p>Updates the definition for the specified mitigation action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the definition for the specified mitigation action.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateMitigationAction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateMitigationAction">AWS
          * API Reference</a></p>
          *
@@ -7385,8 +9113,10 @@ namespace Model
         virtual Model::UpdateMitigationActionOutcomeCallable UpdateMitigationActionCallable(const Model::UpdateMitigationActionRequest& request) const;
 
         /**
-         * <p>Updates the definition for the specified mitigation action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the definition for the specified mitigation action.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateMitigationAction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateMitigationAction">AWS
          * API Reference</a></p>
          *
@@ -7395,14 +9125,20 @@ namespace Model
         virtual void UpdateMitigationActionAsync(const Model::UpdateMitigationActionRequest& request, const UpdateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a fleet provisioning template.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a fleet provisioning template.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateProvisioningTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateProvisioningTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateProvisioningTemplateOutcome UpdateProvisioningTemplate(const Model::UpdateProvisioningTemplateRequest& request) const;
 
         /**
-         * <p>Updates a fleet provisioning template.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a fleet provisioning template.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateProvisioningTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateProvisioningTemplate">AWS
          * API Reference</a></p>
          *
@@ -7411,7 +9147,10 @@ namespace Model
         virtual Model::UpdateProvisioningTemplateOutcomeCallable UpdateProvisioningTemplateCallable(const Model::UpdateProvisioningTemplateRequest& request) const;
 
         /**
-         * <p>Updates a fleet provisioning template.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a fleet provisioning template.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateProvisioningTemplate</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateProvisioningTemplate">AWS
          * API Reference</a></p>
          *
@@ -7420,14 +9159,18 @@ namespace Model
         virtual void UpdateProvisioningTemplateAsync(const Model::UpdateProvisioningTemplateRequest& request, const UpdateProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a role alias.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a role alias.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateRoleAlias</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateRoleAlias">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateRoleAliasOutcome UpdateRoleAlias(const Model::UpdateRoleAliasRequest& request) const;
 
         /**
-         * <p>Updates a role alias.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a role alias.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateRoleAlias</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateRoleAlias">AWS
          * API Reference</a></p>
          *
@@ -7436,7 +9179,9 @@ namespace Model
         virtual Model::UpdateRoleAliasOutcomeCallable UpdateRoleAliasCallable(const Model::UpdateRoleAliasRequest& request) const;
 
         /**
-         * <p>Updates a role alias.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a role alias.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateRoleAlias</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateRoleAlias">AWS
          * API Reference</a></p>
          *
@@ -7446,7 +9191,9 @@ namespace Model
 
         /**
          * <p>Updates a scheduled audit, including which checks are performed and how often
-         * the audit takes place.</p><p><h3>See Also:</h3>   <a
+         * the audit takes place.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateScheduledAudit</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateScheduledAudit">AWS
          * API Reference</a></p>
          */
@@ -7454,7 +9201,9 @@ namespace Model
 
         /**
          * <p>Updates a scheduled audit, including which checks are performed and how often
-         * the audit takes place.</p><p><h3>See Also:</h3>   <a
+         * the audit takes place.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateScheduledAudit</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateScheduledAudit">AWS
          * API Reference</a></p>
          *
@@ -7464,7 +9213,9 @@ namespace Model
 
         /**
          * <p>Updates a scheduled audit, including which checks are performed and how often
-         * the audit takes place.</p><p><h3>See Also:</h3>   <a
+         * the audit takes place.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateScheduledAudit</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateScheduledAudit">AWS
          * API Reference</a></p>
          *
@@ -7473,14 +9224,20 @@ namespace Model
         virtual void UpdateScheduledAuditAsync(const Model::UpdateScheduledAuditRequest& request, const UpdateScheduledAuditResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a Device Defender security profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a Device Defender security profile.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateSecurityProfile">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateSecurityProfileOutcome UpdateSecurityProfile(const Model::UpdateSecurityProfileRequest& request) const;
 
         /**
-         * <p>Updates a Device Defender security profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a Device Defender security profile.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -7489,7 +9246,10 @@ namespace Model
         virtual Model::UpdateSecurityProfileOutcomeCallable UpdateSecurityProfileCallable(const Model::UpdateSecurityProfileRequest& request) const;
 
         /**
-         * <p>Updates a Device Defender security profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a Device Defender security profile.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSecurityProfile</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateSecurityProfile">AWS
          * API Reference</a></p>
          *
@@ -7499,7 +9259,9 @@ namespace Model
 
         /**
          * <p>Updates an existing stream. The stream version will be incremented by
-         * one.</p><p><h3>See Also:</h3>   <a
+         * one.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateStream</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateStream">AWS
          * API Reference</a></p>
          */
@@ -7507,7 +9269,9 @@ namespace Model
 
         /**
          * <p>Updates an existing stream. The stream version will be incremented by
-         * one.</p><p><h3>See Also:</h3>   <a
+         * one.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateStream</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateStream">AWS
          * API Reference</a></p>
          *
@@ -7517,7 +9281,9 @@ namespace Model
 
         /**
          * <p>Updates an existing stream. The stream version will be incremented by
-         * one.</p><p><h3>See Also:</h3>   <a
+         * one.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateStream</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateStream">AWS
          * API Reference</a></p>
          *
@@ -7526,14 +9292,18 @@ namespace Model
         virtual void UpdateStreamAsync(const Model::UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the data for a thing.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the data for a thing.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">AWS API
          * Reference</a></p>
          */
         virtual Model::UpdateThingOutcome UpdateThing(const Model::UpdateThingRequest& request) const;
 
         /**
-         * <p>Updates the data for a thing.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the data for a thing.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">AWS API
          * Reference</a></p>
          *
@@ -7542,7 +9312,9 @@ namespace Model
         virtual Model::UpdateThingOutcomeCallable UpdateThingCallable(const Model::UpdateThingRequest& request) const;
 
         /**
-         * <p>Updates the data for a thing.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the data for a thing.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">AWS API
          * Reference</a></p>
          *
@@ -7551,14 +9323,18 @@ namespace Model
         virtual void UpdateThingAsync(const Model::UpdateThingRequest& request, const UpdateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Update a thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateThingGroupOutcome UpdateThingGroup(const Model::UpdateThingGroupRequest& request) const;
 
         /**
-         * <p>Update a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Update a thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroup">AWS
          * API Reference</a></p>
          *
@@ -7567,7 +9343,9 @@ namespace Model
         virtual Model::UpdateThingGroupOutcomeCallable UpdateThingGroupCallable(const Model::UpdateThingGroupRequest& request) const;
 
         /**
-         * <p>Update a thing group.</p><p><h3>See Also:</h3>   <a
+         * <p>Update a thing group.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingGroup</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroup">AWS
          * API Reference</a></p>
          *
@@ -7576,14 +9354,20 @@ namespace Model
         virtual void UpdateThingGroupAsync(const Model::UpdateThingGroupRequest& request, const UpdateThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the groups to which the thing belongs.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the groups to which the thing belongs.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingGroupsForThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroupsForThing">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateThingGroupsForThingOutcome UpdateThingGroupsForThing(const Model::UpdateThingGroupsForThingRequest& request) const;
 
         /**
-         * <p>Updates the groups to which the thing belongs.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the groups to which the thing belongs.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingGroupsForThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroupsForThing">AWS
          * API Reference</a></p>
          *
@@ -7592,7 +9376,10 @@ namespace Model
         virtual Model::UpdateThingGroupsForThingOutcomeCallable UpdateThingGroupsForThingCallable(const Model::UpdateThingGroupsForThingRequest& request) const;
 
         /**
-         * <p>Updates the groups to which the thing belongs.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the groups to which the thing belongs.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingGroupsForThing</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroupsForThing">AWS
          * API Reference</a></p>
          *
@@ -7602,7 +9389,10 @@ namespace Model
 
         /**
          * <p>Updates a topic rule destination. You use this to change the status, endpoint
-         * URL, or confirmation URL of the destination.</p><p><h3>See Also:</h3>   <a
+         * URL, or confirmation URL of the destination.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateTopicRuleDestination">AWS
          * API Reference</a></p>
          */
@@ -7610,7 +9400,10 @@ namespace Model
 
         /**
          * <p>Updates a topic rule destination. You use this to change the status, endpoint
-         * URL, or confirmation URL of the destination.</p><p><h3>See Also:</h3>   <a
+         * URL, or confirmation URL of the destination.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateTopicRuleDestination">AWS
          * API Reference</a></p>
          *
@@ -7620,7 +9413,10 @@ namespace Model
 
         /**
          * <p>Updates a topic rule destination. You use this to change the status, endpoint
-         * URL, or confirmation URL of the destination.</p><p><h3>See Also:</h3>   <a
+         * URL, or confirmation URL of the destination.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateTopicRuleDestination</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateTopicRuleDestination">AWS
          * API Reference</a></p>
          *
@@ -7629,16 +9425,20 @@ namespace Model
         virtual void UpdateTopicRuleDestinationAsync(const Model::UpdateTopicRuleDestinationRequest& request, const UpdateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Validates a Device Defender security profile behaviors
-         * specification.</p><p><h3>See Also:</h3>   <a
+         * <p>Validates a Device Defender security profile behaviors specification.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ValidateSecurityProfileBehaviors</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ValidateSecurityProfileBehaviors">AWS
          * API Reference</a></p>
          */
         virtual Model::ValidateSecurityProfileBehaviorsOutcome ValidateSecurityProfileBehaviors(const Model::ValidateSecurityProfileBehaviorsRequest& request) const;
 
         /**
-         * <p>Validates a Device Defender security profile behaviors
-         * specification.</p><p><h3>See Also:</h3>   <a
+         * <p>Validates a Device Defender security profile behaviors specification.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ValidateSecurityProfileBehaviors</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ValidateSecurityProfileBehaviors">AWS
          * API Reference</a></p>
          *
@@ -7647,8 +9447,10 @@ namespace Model
         virtual Model::ValidateSecurityProfileBehaviorsOutcomeCallable ValidateSecurityProfileBehaviorsCallable(const Model::ValidateSecurityProfileBehaviorsRequest& request) const;
 
         /**
-         * <p>Validates a Device Defender security profile behaviors
-         * specification.</p><p><h3>See Also:</h3>   <a
+         * <p>Validates a Device Defender security profile behaviors specification.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ValidateSecurityProfileBehaviors</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ValidateSecurityProfileBehaviors">AWS
          * API Reference</a></p>
          *
@@ -7683,6 +9485,7 @@ namespace Model
         void CreateDimensionAsyncHelper(const Model::CreateDimensionRequest& request, const CreateDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDomainConfigurationAsyncHelper(const Model::CreateDomainConfigurationRequest& request, const CreateDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDynamicThingGroupAsyncHelper(const Model::CreateDynamicThingGroupRequest& request, const CreateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFleetMetricAsyncHelper(const Model::CreateFleetMetricRequest& request, const CreateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJobTemplateAsyncHelper(const Model::CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateKeysAndCertificateAsyncHelper(const Model::CreateKeysAndCertificateRequest& request, const CreateKeysAndCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -7712,6 +9515,7 @@ namespace Model
         void DeleteDimensionAsyncHelper(const Model::DeleteDimensionRequest& request, const DeleteDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDomainConfigurationAsyncHelper(const Model::DeleteDomainConfigurationRequest& request, const DeleteDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDynamicThingGroupAsyncHelper(const Model::DeleteDynamicThingGroupRequest& request, const DeleteDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFleetMetricAsyncHelper(const Model::DeleteFleetMetricRequest& request, const DeleteFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteJobAsyncHelper(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteJobExecutionAsyncHelper(const Model::DeleteJobExecutionRequest& request, const DeleteJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteJobTemplateAsyncHelper(const Model::DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -7749,10 +9553,12 @@ namespace Model
         void DescribeDomainConfigurationAsyncHelper(const Model::DescribeDomainConfigurationRequest& request, const DescribeDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointAsyncHelper(const Model::DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventConfigurationsAsyncHelper(const Model::DescribeEventConfigurationsRequest& request, const DescribeEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFleetMetricAsyncHelper(const Model::DescribeFleetMetricRequest& request, const DescribeFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIndexAsyncHelper(const Model::DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJobAsyncHelper(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJobExecutionAsyncHelper(const Model::DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJobTemplateAsyncHelper(const Model::DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeManagedJobTemplateAsyncHelper(const Model::DescribeManagedJobTemplateRequest& request, const DescribeManagedJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMitigationActionAsyncHelper(const Model::DescribeMitigationActionRequest& request, const DescribeMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProvisioningTemplateAsyncHelper(const Model::DescribeProvisioningTemplateRequest& request, const DescribeProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProvisioningTemplateVersionAsyncHelper(const Model::DescribeProvisioningTemplateVersionRequest& request, const DescribeProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -7770,6 +9576,7 @@ namespace Model
         void DisableTopicRuleAsyncHelper(const Model::DisableTopicRuleRequest& request, const DisableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableTopicRuleAsyncHelper(const Model::EnableTopicRuleRequest& request, const EnableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBehaviorModelTrainingSummariesAsyncHelper(const Model::GetBehaviorModelTrainingSummariesRequest& request, const GetBehaviorModelTrainingSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetBucketsAggregationAsyncHelper(const Model::GetBucketsAggregationRequest& request, const GetBucketsAggregationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCardinalityAsyncHelper(const Model::GetCardinalityRequest& request, const GetCardinalityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEffectivePoliciesAsyncHelper(const Model::GetEffectivePoliciesRequest& request, const GetEffectivePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIndexingConfigurationAsyncHelper(const Model::GetIndexingConfigurationRequest& request, const GetIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -7801,11 +9608,13 @@ namespace Model
         void ListDetectMitigationActionsTasksAsyncHelper(const Model::ListDetectMitigationActionsTasksRequest& request, const ListDetectMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDimensionsAsyncHelper(const Model::ListDimensionsRequest& request, const ListDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDomainConfigurationsAsyncHelper(const Model::ListDomainConfigurationsRequest& request, const ListDomainConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFleetMetricsAsyncHelper(const Model::ListFleetMetricsRequest& request, const ListFleetMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIndicesAsyncHelper(const Model::ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobExecutionsForJobAsyncHelper(const Model::ListJobExecutionsForJobRequest& request, const ListJobExecutionsForJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobExecutionsForThingAsyncHelper(const Model::ListJobExecutionsForThingRequest& request, const ListJobExecutionsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobTemplatesAsyncHelper(const Model::ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListManagedJobTemplatesAsyncHelper(const Model::ListManagedJobTemplatesRequest& request, const ListManagedJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMitigationActionsAsyncHelper(const Model::ListMitigationActionsRequest& request, const ListMitigationActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOTAUpdatesAsyncHelper(const Model::ListOTAUpdatesRequest& request, const ListOTAUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOutgoingCertificatesAsyncHelper(const Model::ListOutgoingCertificatesRequest& request, const ListOutgoingCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -7835,6 +9644,7 @@ namespace Model
         void ListTopicRulesAsyncHelper(const Model::ListTopicRulesRequest& request, const ListTopicRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListV2LoggingLevelsAsyncHelper(const Model::ListV2LoggingLevelsRequest& request, const ListV2LoggingLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListViolationEventsAsyncHelper(const Model::ListViolationEventsRequest& request, const ListViolationEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutVerificationStateOnViolationAsyncHelper(const Model::PutVerificationStateOnViolationRequest& request, const PutVerificationStateOnViolationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterCACertificateAsyncHelper(const Model::RegisterCACertificateRequest& request, const RegisterCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterCertificateAsyncHelper(const Model::RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterCertificateWithoutCAAsyncHelper(const Model::RegisterCertificateWithoutCARequest& request, const RegisterCertificateWithoutCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -7870,6 +9680,7 @@ namespace Model
         void UpdateDomainConfigurationAsyncHelper(const Model::UpdateDomainConfigurationRequest& request, const UpdateDomainConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDynamicThingGroupAsyncHelper(const Model::UpdateDynamicThingGroupRequest& request, const UpdateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEventConfigurationsAsyncHelper(const Model::UpdateEventConfigurationsRequest& request, const UpdateEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFleetMetricAsyncHelper(const Model::UpdateFleetMetricRequest& request, const UpdateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIndexingConfigurationAsyncHelper(const Model::UpdateIndexingConfigurationRequest& request, const UpdateIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateJobAsyncHelper(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMitigationActionAsyncHelper(const Model::UpdateMitigationActionRequest& request, const UpdateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -75,7 +75,9 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_maxAllocatedStorage(0),
     m_maxAllocatedStorageHasBeenSet(false),
     m_enableCustomerOwnedIp(false),
-    m_enableCustomerOwnedIpHasBeenSet(false)
+    m_enableCustomerOwnedIpHasBeenSet(false),
+    m_customIamInstanceProfileHasBeenSet(false),
+    m_backupTargetHasBeenSet(false)
 {
 }
 
@@ -349,6 +351,16 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_enableCustomerOwnedIpHasBeenSet)
   {
     ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
+  }
+
+  if(m_customIamInstanceProfileHasBeenSet)
+  {
+    ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
+  }
+
+  if(m_backupTargetHasBeenSet)
+  {
+    ss << "BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -15,11 +15,13 @@
 #include <aws/mediaconvert/model/HlsDirectoryStructure.h>
 #include <aws/mediaconvert/model/HlsEncryptionSettings.h>
 #include <aws/mediaconvert/model/HlsImageBasedTrickPlay.h>
+#include <aws/mediaconvert/model/HlsImageBasedTrickPlaySettings.h>
 #include <aws/mediaconvert/model/HlsManifestCompression.h>
 #include <aws/mediaconvert/model/HlsManifestDurationFormat.h>
 #include <aws/mediaconvert/model/HlsOutputSelection.h>
 #include <aws/mediaconvert/model/HlsProgramDateTime.h>
 #include <aws/mediaconvert/model/HlsSegmentControl.h>
+#include <aws/mediaconvert/model/HlsSegmentLengthControl.h>
 #include <aws/mediaconvert/model/HlsStreamInfResolution.h>
 #include <aws/mediaconvert/model/HlsTargetDurationCompatibilityMode.h>
 #include <aws/mediaconvert/model/HlsTimedMetadataId3Frame.h>
@@ -747,6 +749,37 @@ namespace Model
 
 
     /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline const HlsImageBasedTrickPlaySettings& GetImageBasedTrickPlaySettings() const{ return m_imageBasedTrickPlaySettings; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline bool ImageBasedTrickPlaySettingsHasBeenSet() const { return m_imageBasedTrickPlaySettingsHasBeenSet; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(const HlsImageBasedTrickPlaySettings& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = value; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(HlsImageBasedTrickPlaySettings&& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = std::move(value); }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline HlsGroupSettings& WithImageBasedTrickPlaySettings(const HlsImageBasedTrickPlaySettings& value) { SetImageBasedTrickPlaySettings(value); return *this;}
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline HlsGroupSettings& WithImageBasedTrickPlaySettings(HlsImageBasedTrickPlaySettings&& value) { SetImageBasedTrickPlaySettings(std::move(value)); return *this;}
+
+
+    /**
      * When set to GZIP, compresses HLS playlist.
      */
     inline const HlsManifestCompression& GetManifestCompression() const{ return m_manifestCompression; }
@@ -1045,32 +1078,99 @@ namespace Model
 
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (HlsSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline int GetSegmentLength() const{ return m_segmentLength; }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (HlsSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (HlsSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 10. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (HlsSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline HlsGroupSettings& WithSegmentLength(int value) { SetSegmentLength(value); return *this;}
+
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline const HlsSegmentLengthControl& GetSegmentLengthControl() const{ return m_segmentLengthControl; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline bool SegmentLengthControlHasBeenSet() const { return m_segmentLengthControlHasBeenSet; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline void SetSegmentLengthControl(const HlsSegmentLengthControl& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = value; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline void SetSegmentLengthControl(HlsSegmentLengthControl&& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = std::move(value); }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline HlsGroupSettings& WithSegmentLengthControl(const HlsSegmentLengthControl& value) { SetSegmentLengthControl(value); return *this;}
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline HlsGroupSettings& WithSegmentLengthControl(HlsSegmentLengthControl&& value) { SetSegmentLengthControl(std::move(value)); return *this;}
 
 
     /**
@@ -1327,6 +1427,9 @@ namespace Model
     HlsImageBasedTrickPlay m_imageBasedTrickPlay;
     bool m_imageBasedTrickPlayHasBeenSet;
 
+    HlsImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
+    bool m_imageBasedTrickPlaySettingsHasBeenSet;
+
     HlsManifestCompression m_manifestCompression;
     bool m_manifestCompressionHasBeenSet;
 
@@ -1353,6 +1456,9 @@ namespace Model
 
     int m_segmentLength;
     bool m_segmentLengthHasBeenSet;
+
+    HlsSegmentLengthControl m_segmentLengthControl;
+    bool m_segmentLengthControlHasBeenSet;
 
     int m_segmentsPerSubdirectory;
     bool m_segmentsPerSubdirectoryHasBeenSet;

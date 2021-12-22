@@ -160,11 +160,11 @@ namespace Model
      * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
      * For the first three nodes you can assign any positive integer value, including
      * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
-     * automatically assigns the build number, and that is not open for updates.</p>
-     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
-     * assignment requirements for the nodes that you can assign. For example, you
-     * might choose a software version pattern, such as 1.0.0, or a date, such as
-     * 2021.01.01.</p> 
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
 
@@ -175,11 +175,11 @@ namespace Model
      * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
      * For the first three nodes you can assign any positive integer value, including
      * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
-     * automatically assigns the build number, and that is not open for updates.</p>
-     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
-     * assignment requirements for the nodes that you can assign. For example, you
-     * might choose a software version pattern, such as 1.0.0, or a date, such as
-     * 2021.01.01.</p> 
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
@@ -190,11 +190,11 @@ namespace Model
      * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
      * For the first three nodes you can assign any positive integer value, including
      * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
-     * automatically assigns the build number, and that is not open for updates.</p>
-     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
-     * assignment requirements for the nodes that you can assign. For example, you
-     * might choose a software version pattern, such as 1.0.0, or a date, such as
-     * 2021.01.01.</p> 
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
 
@@ -205,11 +205,11 @@ namespace Model
      * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
      * For the first three nodes you can assign any positive integer value, including
      * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
-     * automatically assigns the build number, and that is not open for updates.</p>
-     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
-     * assignment requirements for the nodes that you can assign. For example, you
-     * might choose a software version pattern, such as 1.0.0, or a date, such as
-     * 2021.01.01.</p> 
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
 
@@ -220,11 +220,11 @@ namespace Model
      * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
      * For the first three nodes you can assign any positive integer value, including
      * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
-     * automatically assigns the build number, and that is not open for updates.</p>
-     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
-     * assignment requirements for the nodes that you can assign. For example, you
-     * might choose a software version pattern, such as 1.0.0, or a date, such as
-     * 2021.01.01.</p> 
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
 
@@ -235,11 +235,11 @@ namespace Model
      * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
      * For the first three nodes you can assign any positive integer value, including
      * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
-     * automatically assigns the build number, and that is not open for updates.</p>
-     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
-     * assignment requirements for the nodes that you can assign. For example, you
-     * might choose a software version pattern, such as 1.0.0, or a date, such as
-     * 2021.01.01.</p> 
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline CreateContainerRecipeRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
 
@@ -250,11 +250,11 @@ namespace Model
      * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
      * For the first three nodes you can assign any positive integer value, including
      * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
-     * automatically assigns the build number, and that is not open for updates.</p>
-     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
-     * assignment requirements for the nodes that you can assign. For example, you
-     * might choose a software version pattern, such as 1.0.0, or a date, such as
-     * 2021.01.01.</p> 
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline CreateContainerRecipeRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
 
@@ -265,11 +265,11 @@ namespace Model
      * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
      * For the first three nodes you can assign any positive integer value, including
      * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
-     * automatically assigns the build number, and that is not open for updates.</p>
-     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
-     * assignment requirements for the nodes that you can assign. For example, you
-     * might choose a software version pattern, such as 1.0.0, or a date, such as
-     * 2021.01.01.</p> 
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline CreateContainerRecipeRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
 
@@ -443,120 +443,114 @@ namespace Model
 
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline const Platform& GetPlatformOverride() const{ return m_platformOverride; }
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline bool PlatformOverrideHasBeenSet() const { return m_platformOverrideHasBeenSet; }
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline void SetPlatformOverride(const Platform& value) { m_platformOverrideHasBeenSet = true; m_platformOverride = value; }
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline void SetPlatformOverride(Platform&& value) { m_platformOverrideHasBeenSet = true; m_platformOverride = std::move(value); }
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline CreateContainerRecipeRequest& WithPlatformOverride(const Platform& value) { SetPlatformOverride(value); return *this;}
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline CreateContainerRecipeRequest& WithPlatformOverride(Platform&& value) { SetPlatformOverride(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline const Aws::String& GetImageOsVersionOverride() const{ return m_imageOsVersionOverride; }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline bool ImageOsVersionOverrideHasBeenSet() const { return m_imageOsVersionOverrideHasBeenSet; }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline void SetImageOsVersionOverride(const Aws::String& value) { m_imageOsVersionOverrideHasBeenSet = true; m_imageOsVersionOverride = value; }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline void SetImageOsVersionOverride(Aws::String&& value) { m_imageOsVersionOverrideHasBeenSet = true; m_imageOsVersionOverride = std::move(value); }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline void SetImageOsVersionOverride(const char* value) { m_imageOsVersionOverrideHasBeenSet = true; m_imageOsVersionOverride.assign(value); }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline CreateContainerRecipeRequest& WithImageOsVersionOverride(const Aws::String& value) { SetImageOsVersionOverride(value); return *this;}
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline CreateContainerRecipeRequest& WithImageOsVersionOverride(Aws::String&& value) { SetImageOsVersionOverride(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline CreateContainerRecipeRequest& WithImageOsVersionOverride(const char* value) { SetImageOsVersionOverride(value); return *this;}
 
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline const Aws::String& GetParentImage() const{ return m_parentImage; }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline void SetParentImage(const Aws::String& value) { m_parentImageHasBeenSet = true; m_parentImage = value; }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline void SetParentImage(Aws::String&& value) { m_parentImageHasBeenSet = true; m_parentImage = std::move(value); }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline void SetParentImage(const char* value) { m_parentImageHasBeenSet = true; m_parentImage.assign(value); }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline CreateContainerRecipeRequest& WithParentImage(const Aws::String& value) { SetParentImage(value); return *this;}
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline CreateContainerRecipeRequest& WithParentImage(Aws::String&& value) { SetParentImage(std::move(value)); return *this;}
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline CreateContainerRecipeRequest& WithParentImage(const char* value) { SetParentImage(value); return *this;}
 

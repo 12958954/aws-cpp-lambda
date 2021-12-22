@@ -23,6 +23,7 @@
 #include <aws/sagemaker/model/AddAssociationRequest.h>
 #include <aws/sagemaker/model/AddTagsRequest.h>
 #include <aws/sagemaker/model/AssociateTrialComponentRequest.h>
+#include <aws/sagemaker/model/BatchDescribeModelPackageRequest.h>
 #include <aws/sagemaker/model/CreateActionRequest.h>
 #include <aws/sagemaker/model/CreateAlgorithmRequest.h>
 #include <aws/sagemaker/model/CreateAppRequest.h>
@@ -45,6 +46,7 @@
 #include <aws/sagemaker/model/CreateHyperParameterTuningJobRequest.h>
 #include <aws/sagemaker/model/CreateImageRequest.h>
 #include <aws/sagemaker/model/CreateImageVersionRequest.h>
+#include <aws/sagemaker/model/CreateInferenceRecommendationsJobRequest.h>
 #include <aws/sagemaker/model/CreateLabelingJobRequest.h>
 #include <aws/sagemaker/model/CreateModelRequest.h>
 #include <aws/sagemaker/model/CreateModelBiasJobDefinitionRequest.h>
@@ -60,6 +62,7 @@
 #include <aws/sagemaker/model/CreatePresignedNotebookInstanceUrlRequest.h>
 #include <aws/sagemaker/model/CreateProcessingJobRequest.h>
 #include <aws/sagemaker/model/CreateProjectRequest.h>
+#include <aws/sagemaker/model/CreateStudioLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/CreateTrainingJobRequest.h>
 #include <aws/sagemaker/model/CreateTransformJobRequest.h>
 #include <aws/sagemaker/model/CreateTrialRequest.h>
@@ -98,6 +101,7 @@
 #include <aws/sagemaker/model/DeleteNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DeletePipelineRequest.h>
 #include <aws/sagemaker/model/DeleteProjectRequest.h>
+#include <aws/sagemaker/model/DeleteStudioLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DeleteTagsRequest.h>
 #include <aws/sagemaker/model/DeleteTrialRequest.h>
 #include <aws/sagemaker/model/DeleteTrialComponentRequest.h>
@@ -128,7 +132,9 @@
 #include <aws/sagemaker/model/DescribeHyperParameterTuningJobRequest.h>
 #include <aws/sagemaker/model/DescribeImageRequest.h>
 #include <aws/sagemaker/model/DescribeImageVersionRequest.h>
+#include <aws/sagemaker/model/DescribeInferenceRecommendationsJobRequest.h>
 #include <aws/sagemaker/model/DescribeLabelingJobRequest.h>
+#include <aws/sagemaker/model/DescribeLineageGroupRequest.h>
 #include <aws/sagemaker/model/DescribeModelRequest.h>
 #include <aws/sagemaker/model/DescribeModelBiasJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DescribeModelExplainabilityJobDefinitionRequest.h>
@@ -143,6 +149,7 @@
 #include <aws/sagemaker/model/DescribePipelineExecutionRequest.h>
 #include <aws/sagemaker/model/DescribeProcessingJobRequest.h>
 #include <aws/sagemaker/model/DescribeProjectRequest.h>
+#include <aws/sagemaker/model/DescribeStudioLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DescribeSubscribedWorkteamRequest.h>
 #include <aws/sagemaker/model/DescribeTrainingJobRequest.h>
 #include <aws/sagemaker/model/DescribeTransformJobRequest.h>
@@ -155,6 +162,7 @@
 #include <aws/sagemaker/model/DisassociateTrialComponentRequest.h>
 #include <aws/sagemaker/model/EnableSagemakerServicecatalogPortfolioRequest.h>
 #include <aws/sagemaker/model/GetDeviceFleetReportRequest.h>
+#include <aws/sagemaker/model/GetLineageGroupPolicyRequest.h>
 #include <aws/sagemaker/model/GetModelPackageGroupPolicyRequest.h>
 #include <aws/sagemaker/model/GetSagemakerServicecatalogPortfolioStatusRequest.h>
 #include <aws/sagemaker/model/GetSearchSuggestionsRequest.h>
@@ -183,10 +191,13 @@
 #include <aws/sagemaker/model/ListHyperParameterTuningJobsRequest.h>
 #include <aws/sagemaker/model/ListImageVersionsRequest.h>
 #include <aws/sagemaker/model/ListImagesRequest.h>
+#include <aws/sagemaker/model/ListInferenceRecommendationsJobsRequest.h>
 #include <aws/sagemaker/model/ListLabelingJobsRequest.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamRequest.h>
+#include <aws/sagemaker/model/ListLineageGroupsRequest.h>
 #include <aws/sagemaker/model/ListModelBiasJobDefinitionsRequest.h>
 #include <aws/sagemaker/model/ListModelExplainabilityJobDefinitionsRequest.h>
+#include <aws/sagemaker/model/ListModelMetadataRequest.h>
 #include <aws/sagemaker/model/ListModelPackageGroupsRequest.h>
 #include <aws/sagemaker/model/ListModelPackagesRequest.h>
 #include <aws/sagemaker/model/ListModelQualityJobDefinitionsRequest.h>
@@ -201,6 +212,7 @@
 #include <aws/sagemaker/model/ListPipelinesRequest.h>
 #include <aws/sagemaker/model/ListProcessingJobsRequest.h>
 #include <aws/sagemaker/model/ListProjectsRequest.h>
+#include <aws/sagemaker/model/ListStudioLifecycleConfigsRequest.h>
 #include <aws/sagemaker/model/ListSubscribedWorkteamsRequest.h>
 #include <aws/sagemaker/model/ListTagsRequest.h>
 #include <aws/sagemaker/model/ListTrainingJobsRequest.h>
@@ -212,8 +224,10 @@
 #include <aws/sagemaker/model/ListWorkforcesRequest.h>
 #include <aws/sagemaker/model/ListWorkteamsRequest.h>
 #include <aws/sagemaker/model/PutModelPackageGroupPolicyRequest.h>
+#include <aws/sagemaker/model/QueryLineageRequest.h>
 #include <aws/sagemaker/model/RegisterDevicesRequest.h>
 #include <aws/sagemaker/model/RenderUiTemplateRequest.h>
+#include <aws/sagemaker/model/RetryPipelineExecutionRequest.h>
 #include <aws/sagemaker/model/SearchRequest.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepFailureRequest.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepSuccessRequest.h>
@@ -224,6 +238,7 @@
 #include <aws/sagemaker/model/StopCompilationJobRequest.h>
 #include <aws/sagemaker/model/StopEdgePackagingJobRequest.h>
 #include <aws/sagemaker/model/StopHyperParameterTuningJobRequest.h>
+#include <aws/sagemaker/model/StopInferenceRecommendationsJobRequest.h>
 #include <aws/sagemaker/model/StopLabelingJobRequest.h>
 #include <aws/sagemaker/model/StopMonitoringScheduleRequest.h>
 #include <aws/sagemaker/model/StopNotebookInstanceRequest.h>
@@ -249,6 +264,7 @@
 #include <aws/sagemaker/model/UpdateNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/UpdatePipelineRequest.h>
 #include <aws/sagemaker/model/UpdatePipelineExecutionRequest.h>
+#include <aws/sagemaker/model/UpdateProjectRequest.h>
 #include <aws/sagemaker/model/UpdateTrainingJobRequest.h>
 #include <aws/sagemaker/model/UpdateTrialRequest.h>
 #include <aws/sagemaker/model/UpdateTrialComponentRequest.h>
@@ -399,6 +415,30 @@ void SageMakerClient::AssociateTrialComponentAsync(const AssociateTrialComponent
 void SageMakerClient::AssociateTrialComponentAsyncHelper(const AssociateTrialComponentRequest& request, const AssociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateTrialComponent(request), context);
+}
+
+BatchDescribeModelPackageOutcome SageMakerClient::BatchDescribeModelPackage(const BatchDescribeModelPackageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return BatchDescribeModelPackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchDescribeModelPackageOutcomeCallable SageMakerClient::BatchDescribeModelPackageCallable(const BatchDescribeModelPackageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDescribeModelPackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDescribeModelPackage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::BatchDescribeModelPackageAsync(const BatchDescribeModelPackageRequest& request, const BatchDescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchDescribeModelPackageAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::BatchDescribeModelPackageAsyncHelper(const BatchDescribeModelPackageRequest& request, const BatchDescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchDescribeModelPackage(request), context);
 }
 
 CreateActionOutcome SageMakerClient::CreateAction(const CreateActionRequest& request) const
@@ -929,6 +969,30 @@ void SageMakerClient::CreateImageVersionAsyncHelper(const CreateImageVersionRequ
   handler(this, request, CreateImageVersion(request), context);
 }
 
+CreateInferenceRecommendationsJobOutcome SageMakerClient::CreateInferenceRecommendationsJob(const CreateInferenceRecommendationsJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateInferenceRecommendationsJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateInferenceRecommendationsJobOutcomeCallable SageMakerClient::CreateInferenceRecommendationsJobCallable(const CreateInferenceRecommendationsJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateInferenceRecommendationsJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInferenceRecommendationsJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateInferenceRecommendationsJobAsync(const CreateInferenceRecommendationsJobRequest& request, const CreateInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateInferenceRecommendationsJobAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::CreateInferenceRecommendationsJobAsyncHelper(const CreateInferenceRecommendationsJobRequest& request, const CreateInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateInferenceRecommendationsJob(request), context);
+}
+
 CreateLabelingJobOutcome SageMakerClient::CreateLabelingJob(const CreateLabelingJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1287,6 +1351,30 @@ void SageMakerClient::CreateProjectAsync(const CreateProjectRequest& request, co
 void SageMakerClient::CreateProjectAsyncHelper(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateProject(request), context);
+}
+
+CreateStudioLifecycleConfigOutcome SageMakerClient::CreateStudioLifecycleConfig(const CreateStudioLifecycleConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateStudioLifecycleConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateStudioLifecycleConfigOutcomeCallable SageMakerClient::CreateStudioLifecycleConfigCallable(const CreateStudioLifecycleConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateStudioLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStudioLifecycleConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateStudioLifecycleConfigAsync(const CreateStudioLifecycleConfigRequest& request, const CreateStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateStudioLifecycleConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::CreateStudioLifecycleConfigAsyncHelper(const CreateStudioLifecycleConfigRequest& request, const CreateStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateStudioLifecycleConfig(request), context);
 }
 
 CreateTrainingJobOutcome SageMakerClient::CreateTrainingJob(const CreateTrainingJobRequest& request) const
@@ -2201,6 +2289,30 @@ void SageMakerClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& reque
   handler(this, request, DeleteProject(request), context);
 }
 
+DeleteStudioLifecycleConfigOutcome SageMakerClient::DeleteStudioLifecycleConfig(const DeleteStudioLifecycleConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteStudioLifecycleConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteStudioLifecycleConfigOutcomeCallable SageMakerClient::DeleteStudioLifecycleConfigCallable(const DeleteStudioLifecycleConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStudioLifecycleConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteStudioLifecycleConfigAsync(const DeleteStudioLifecycleConfigRequest& request, const DeleteStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteStudioLifecycleConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DeleteStudioLifecycleConfigAsyncHelper(const DeleteStudioLifecycleConfigRequest& request, const DeleteStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteStudioLifecycleConfig(request), context);
+}
+
 DeleteTagsOutcome SageMakerClient::DeleteTags(const DeleteTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2921,6 +3033,30 @@ void SageMakerClient::DescribeImageVersionAsyncHelper(const DescribeImageVersion
   handler(this, request, DescribeImageVersion(request), context);
 }
 
+DescribeInferenceRecommendationsJobOutcome SageMakerClient::DescribeInferenceRecommendationsJob(const DescribeInferenceRecommendationsJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeInferenceRecommendationsJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeInferenceRecommendationsJobOutcomeCallable SageMakerClient::DescribeInferenceRecommendationsJobCallable(const DescribeInferenceRecommendationsJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInferenceRecommendationsJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInferenceRecommendationsJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeInferenceRecommendationsJobAsync(const DescribeInferenceRecommendationsJobRequest& request, const DescribeInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeInferenceRecommendationsJobAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DescribeInferenceRecommendationsJobAsyncHelper(const DescribeInferenceRecommendationsJobRequest& request, const DescribeInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeInferenceRecommendationsJob(request), context);
+}
+
 DescribeLabelingJobOutcome SageMakerClient::DescribeLabelingJob(const DescribeLabelingJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2943,6 +3079,30 @@ void SageMakerClient::DescribeLabelingJobAsync(const DescribeLabelingJobRequest&
 void SageMakerClient::DescribeLabelingJobAsyncHelper(const DescribeLabelingJobRequest& request, const DescribeLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeLabelingJob(request), context);
+}
+
+DescribeLineageGroupOutcome SageMakerClient::DescribeLineageGroup(const DescribeLineageGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeLineageGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLineageGroupOutcomeCallable SageMakerClient::DescribeLineageGroupCallable(const DescribeLineageGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLineageGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLineageGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeLineageGroupAsync(const DescribeLineageGroupRequest& request, const DescribeLineageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLineageGroupAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DescribeLineageGroupAsyncHelper(const DescribeLineageGroupRequest& request, const DescribeLineageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLineageGroup(request), context);
 }
 
 DescribeModelOutcome SageMakerClient::DescribeModel(const DescribeModelRequest& request) const
@@ -3281,6 +3441,30 @@ void SageMakerClient::DescribeProjectAsyncHelper(const DescribeProjectRequest& r
   handler(this, request, DescribeProject(request), context);
 }
 
+DescribeStudioLifecycleConfigOutcome SageMakerClient::DescribeStudioLifecycleConfig(const DescribeStudioLifecycleConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeStudioLifecycleConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeStudioLifecycleConfigOutcomeCallable SageMakerClient::DescribeStudioLifecycleConfigCallable(const DescribeStudioLifecycleConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStudioLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStudioLifecycleConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeStudioLifecycleConfigAsync(const DescribeStudioLifecycleConfigRequest& request, const DescribeStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeStudioLifecycleConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DescribeStudioLifecycleConfigAsyncHelper(const DescribeStudioLifecycleConfigRequest& request, const DescribeStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeStudioLifecycleConfig(request), context);
+}
+
 DescribeSubscribedWorkteamOutcome SageMakerClient::DescribeSubscribedWorkteam(const DescribeSubscribedWorkteamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3567,6 +3751,30 @@ void SageMakerClient::GetDeviceFleetReportAsync(const GetDeviceFleetReportReques
 void SageMakerClient::GetDeviceFleetReportAsyncHelper(const GetDeviceFleetReportRequest& request, const GetDeviceFleetReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDeviceFleetReport(request), context);
+}
+
+GetLineageGroupPolicyOutcome SageMakerClient::GetLineageGroupPolicy(const GetLineageGroupPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetLineageGroupPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetLineageGroupPolicyOutcomeCallable SageMakerClient::GetLineageGroupPolicyCallable(const GetLineageGroupPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLineageGroupPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLineageGroupPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::GetLineageGroupPolicyAsync(const GetLineageGroupPolicyRequest& request, const GetLineageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLineageGroupPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::GetLineageGroupPolicyAsyncHelper(const GetLineageGroupPolicyRequest& request, const GetLineageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLineageGroupPolicy(request), context);
 }
 
 GetModelPackageGroupPolicyOutcome SageMakerClient::GetModelPackageGroupPolicy(const GetModelPackageGroupPolicyRequest& request) const
@@ -4241,6 +4449,30 @@ void SageMakerClient::ListImagesAsyncHelper(const ListImagesRequest& request, co
   handler(this, request, ListImages(request), context);
 }
 
+ListInferenceRecommendationsJobsOutcome SageMakerClient::ListInferenceRecommendationsJobs(const ListInferenceRecommendationsJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListInferenceRecommendationsJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListInferenceRecommendationsJobsOutcomeCallable SageMakerClient::ListInferenceRecommendationsJobsCallable(const ListInferenceRecommendationsJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListInferenceRecommendationsJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInferenceRecommendationsJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListInferenceRecommendationsJobsAsync(const ListInferenceRecommendationsJobsRequest& request, const ListInferenceRecommendationsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListInferenceRecommendationsJobsAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListInferenceRecommendationsJobsAsyncHelper(const ListInferenceRecommendationsJobsRequest& request, const ListInferenceRecommendationsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListInferenceRecommendationsJobs(request), context);
+}
+
 ListLabelingJobsOutcome SageMakerClient::ListLabelingJobs(const ListLabelingJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -4289,6 +4521,30 @@ void SageMakerClient::ListLabelingJobsForWorkteamAsyncHelper(const ListLabelingJ
   handler(this, request, ListLabelingJobsForWorkteam(request), context);
 }
 
+ListLineageGroupsOutcome SageMakerClient::ListLineageGroups(const ListLineageGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListLineageGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListLineageGroupsOutcomeCallable SageMakerClient::ListLineageGroupsCallable(const ListLineageGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLineageGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLineageGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListLineageGroupsAsync(const ListLineageGroupsRequest& request, const ListLineageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLineageGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListLineageGroupsAsyncHelper(const ListLineageGroupsRequest& request, const ListLineageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLineageGroups(request), context);
+}
+
 ListModelBiasJobDefinitionsOutcome SageMakerClient::ListModelBiasJobDefinitions(const ListModelBiasJobDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -4335,6 +4591,30 @@ void SageMakerClient::ListModelExplainabilityJobDefinitionsAsync(const ListModel
 void SageMakerClient::ListModelExplainabilityJobDefinitionsAsyncHelper(const ListModelExplainabilityJobDefinitionsRequest& request, const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListModelExplainabilityJobDefinitions(request), context);
+}
+
+ListModelMetadataOutcome SageMakerClient::ListModelMetadata(const ListModelMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListModelMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListModelMetadataOutcomeCallable SageMakerClient::ListModelMetadataCallable(const ListModelMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListModelMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListModelMetadataAsync(const ListModelMetadataRequest& request, const ListModelMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListModelMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListModelMetadataAsyncHelper(const ListModelMetadataRequest& request, const ListModelMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListModelMetadata(request), context);
 }
 
 ListModelPackageGroupsOutcome SageMakerClient::ListModelPackageGroups(const ListModelPackageGroupsRequest& request) const
@@ -4673,6 +4953,30 @@ void SageMakerClient::ListProjectsAsyncHelper(const ListProjectsRequest& request
   handler(this, request, ListProjects(request), context);
 }
 
+ListStudioLifecycleConfigsOutcome SageMakerClient::ListStudioLifecycleConfigs(const ListStudioLifecycleConfigsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListStudioLifecycleConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStudioLifecycleConfigsOutcomeCallable SageMakerClient::ListStudioLifecycleConfigsCallable(const ListStudioLifecycleConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStudioLifecycleConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStudioLifecycleConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListStudioLifecycleConfigsAsync(const ListStudioLifecycleConfigsRequest& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListStudioLifecycleConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListStudioLifecycleConfigsAsyncHelper(const ListStudioLifecycleConfigsRequest& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListStudioLifecycleConfigs(request), context);
+}
+
 ListSubscribedWorkteamsOutcome SageMakerClient::ListSubscribedWorkteams(const ListSubscribedWorkteamsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -4937,6 +5241,30 @@ void SageMakerClient::PutModelPackageGroupPolicyAsyncHelper(const PutModelPackag
   handler(this, request, PutModelPackageGroupPolicy(request), context);
 }
 
+QueryLineageOutcome SageMakerClient::QueryLineage(const QueryLineageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return QueryLineageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+QueryLineageOutcomeCallable SageMakerClient::QueryLineageCallable(const QueryLineageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< QueryLineageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->QueryLineage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::QueryLineageAsync(const QueryLineageRequest& request, const QueryLineageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->QueryLineageAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::QueryLineageAsyncHelper(const QueryLineageRequest& request, const QueryLineageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, QueryLineage(request), context);
+}
+
 RegisterDevicesOutcome SageMakerClient::RegisterDevices(const RegisterDevicesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -4983,6 +5311,30 @@ void SageMakerClient::RenderUiTemplateAsync(const RenderUiTemplateRequest& reque
 void SageMakerClient::RenderUiTemplateAsyncHelper(const RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RenderUiTemplate(request), context);
+}
+
+RetryPipelineExecutionOutcome SageMakerClient::RetryPipelineExecution(const RetryPipelineExecutionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RetryPipelineExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RetryPipelineExecutionOutcomeCallable SageMakerClient::RetryPipelineExecutionCallable(const RetryPipelineExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RetryPipelineExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RetryPipelineExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::RetryPipelineExecutionAsync(const RetryPipelineExecutionRequest& request, const RetryPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RetryPipelineExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::RetryPipelineExecutionAsyncHelper(const RetryPipelineExecutionRequest& request, const RetryPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RetryPipelineExecution(request), context);
 }
 
 SearchOutcome SageMakerClient::Search(const SearchRequest& request) const
@@ -5223,6 +5575,30 @@ void SageMakerClient::StopHyperParameterTuningJobAsync(const StopHyperParameterT
 void SageMakerClient::StopHyperParameterTuningJobAsyncHelper(const StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopHyperParameterTuningJob(request), context);
+}
+
+StopInferenceRecommendationsJobOutcome SageMakerClient::StopInferenceRecommendationsJob(const StopInferenceRecommendationsJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StopInferenceRecommendationsJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopInferenceRecommendationsJobOutcomeCallable SageMakerClient::StopInferenceRecommendationsJobCallable(const StopInferenceRecommendationsJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopInferenceRecommendationsJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopInferenceRecommendationsJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::StopInferenceRecommendationsJobAsync(const StopInferenceRecommendationsJobRequest& request, const StopInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopInferenceRecommendationsJobAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::StopInferenceRecommendationsJobAsyncHelper(const StopInferenceRecommendationsJobRequest& request, const StopInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopInferenceRecommendationsJob(request), context);
 }
 
 StopLabelingJobOutcome SageMakerClient::StopLabelingJob(const StopLabelingJobRequest& request) const
@@ -5823,6 +6199,30 @@ void SageMakerClient::UpdatePipelineExecutionAsync(const UpdatePipelineExecution
 void SageMakerClient::UpdatePipelineExecutionAsyncHelper(const UpdatePipelineExecutionRequest& request, const UpdatePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdatePipelineExecution(request), context);
+}
+
+UpdateProjectOutcome SageMakerClient::UpdateProject(const UpdateProjectRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateProjectOutcomeCallable SageMakerClient::UpdateProjectCallable(const UpdateProjectRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateProject(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateProjectAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateProject(request), context);
 }
 
 UpdateTrainingJobOutcome SageMakerClient::UpdateTrainingJob(const UpdateTrainingJobRequest& request) const

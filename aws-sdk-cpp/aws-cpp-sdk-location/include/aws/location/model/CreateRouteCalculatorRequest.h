@@ -110,16 +110,17 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
-     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
-     * <a
+     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
+     * a data source only calculate routes that are shorter than 400 km.</p> 
+     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
+     * information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
      * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
      * <code>Here</code> – For additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
      * car routing coverage</a> and <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
@@ -133,16 +134,17 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
-     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
-     * <a
+     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
+     * a data source only calculate routes that are shorter than 400 km.</p> 
+     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
+     * information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
      * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
      * <code>Here</code> – For additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
      * car routing coverage</a> and <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
@@ -156,16 +158,17 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
-     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
-     * <a
+     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
+     * a data source only calculate routes that are shorter than 400 km.</p> 
+     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
+     * information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
      * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
      * <code>Here</code> – For additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
      * car routing coverage</a> and <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
@@ -179,16 +182,17 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
-     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
-     * <a
+     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
+     * a data source only calculate routes that are shorter than 400 km.</p> 
+     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
+     * information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
      * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
      * <code>Here</code> – For additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
      * car routing coverage</a> and <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
@@ -202,16 +206,17 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
-     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
-     * <a
+     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
+     * a data source only calculate routes that are shorter than 400 km.</p> 
+     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
+     * information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
      * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
      * <code>Here</code> – For additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
      * car routing coverage</a> and <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
@@ -225,16 +230,17 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
-     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
-     * <a
+     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
+     * a data source only calculate routes that are shorter than 400 km.</p> 
+     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
+     * information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
      * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
      * <code>Here</code> – For additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
      * car routing coverage</a> and <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
@@ -248,16 +254,17 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
-     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
-     * <a
+     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
+     * a data source only calculate routes that are shorter than 400 km.</p> 
+     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
+     * information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
      * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
      * <code>Here</code> – For additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
      * car routing coverage</a> and <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
@@ -271,16 +278,17 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
-     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
-     * <a
+     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
+     * a data source only calculate routes that are shorter than 400 km.</p> 
+     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
+     * information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
      * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
      * <code>Here</code> – For additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
      * car routing coverage</a> and <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
@@ -334,48 +342,54 @@ namespace Model
 
 
     /**
-     * <p>Specifies the pricing plan for your route calculator resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
+     * <p>Optionally specifies the pricing plan for the route calculator resource.
+     * Defaults to <code>RequestBasedUsage</code>.</p> <p>For additional details and
+     * restrictions on each pricing plan option, see <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * pricing</a>.</p>
      */
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
-     * <p>Specifies the pricing plan for your route calculator resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
+     * <p>Optionally specifies the pricing plan for the route calculator resource.
+     * Defaults to <code>RequestBasedUsage</code>.</p> <p>For additional details and
+     * restrictions on each pricing plan option, see <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * pricing</a>.</p>
      */
     inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
 
     /**
-     * <p>Specifies the pricing plan for your route calculator resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
+     * <p>Optionally specifies the pricing plan for the route calculator resource.
+     * Defaults to <code>RequestBasedUsage</code>.</p> <p>For additional details and
+     * restrictions on each pricing plan option, see <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * pricing</a>.</p>
      */
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
 
     /**
-     * <p>Specifies the pricing plan for your route calculator resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
+     * <p>Optionally specifies the pricing plan for the route calculator resource.
+     * Defaults to <code>RequestBasedUsage</code>.</p> <p>For additional details and
+     * restrictions on each pricing plan option, see <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * pricing</a>.</p>
      */
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
 
     /**
-     * <p>Specifies the pricing plan for your route calculator resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
+     * <p>Optionally specifies the pricing plan for the route calculator resource.
+     * Defaults to <code>RequestBasedUsage</code>.</p> <p>For additional details and
+     * restrictions on each pricing plan option, see <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * pricing</a>.</p>
      */
     inline CreateRouteCalculatorRequest& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
-     * <p>Specifies the pricing plan for your route calculator resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
+     * <p>Optionally specifies the pricing plan for the route calculator resource.
+     * Defaults to <code>RequestBasedUsage</code>.</p> <p>For additional details and
+     * restrictions on each pricing plan option, see <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * pricing</a>.</p>
      */
@@ -392,7 +406,8 @@ namespace Model
      * one value.</p> </li> <li> <p>Maximum key length: 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the
-     * following characters: + - = . _ : / @. </p> </li> </ul>
+     * following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot use "aws:" as a
+     * prefix for a key.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -406,7 +421,8 @@ namespace Model
      * one value.</p> </li> <li> <p>Maximum key length: 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the
-     * following characters: + - = . _ : / @. </p> </li> </ul>
+     * following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot use "aws:" as a
+     * prefix for a key.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -420,7 +436,8 @@ namespace Model
      * one value.</p> </li> <li> <p>Maximum key length: 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the
-     * following characters: + - = . _ : / @. </p> </li> </ul>
+     * following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot use "aws:" as a
+     * prefix for a key.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -434,7 +451,8 @@ namespace Model
      * one value.</p> </li> <li> <p>Maximum key length: 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the
-     * following characters: + - = . _ : / @. </p> </li> </ul>
+     * following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot use "aws:" as a
+     * prefix for a key.</p> </li> </ul>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -448,7 +466,8 @@ namespace Model
      * one value.</p> </li> <li> <p>Maximum key length: 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the
-     * following characters: + - = . _ : / @. </p> </li> </ul>
+     * following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot use "aws:" as a
+     * prefix for a key.</p> </li> </ul>
      */
     inline CreateRouteCalculatorRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -462,7 +481,8 @@ namespace Model
      * one value.</p> </li> <li> <p>Maximum key length: 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the
-     * following characters: + - = . _ : / @. </p> </li> </ul>
+     * following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot use "aws:" as a
+     * prefix for a key.</p> </li> </ul>
      */
     inline CreateRouteCalculatorRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -476,7 +496,8 @@ namespace Model
      * one value.</p> </li> <li> <p>Maximum key length: 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the
-     * following characters: + - = . _ : / @. </p> </li> </ul>
+     * following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot use "aws:" as a
+     * prefix for a key.</p> </li> </ul>
      */
     inline CreateRouteCalculatorRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -490,7 +511,8 @@ namespace Model
      * one value.</p> </li> <li> <p>Maximum key length: 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the
-     * following characters: + - = . _ : / @. </p> </li> </ul>
+     * following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot use "aws:" as a
+     * prefix for a key.</p> </li> </ul>
      */
     inline CreateRouteCalculatorRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -504,7 +526,8 @@ namespace Model
      * one value.</p> </li> <li> <p>Maximum key length: 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the
-     * following characters: + - = . _ : / @. </p> </li> </ul>
+     * following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot use "aws:" as a
+     * prefix for a key.</p> </li> </ul>
      */
     inline CreateRouteCalculatorRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -518,7 +541,8 @@ namespace Model
      * one value.</p> </li> <li> <p>Maximum key length: 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the
-     * following characters: + - = . _ : / @. </p> </li> </ul>
+     * following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot use "aws:" as a
+     * prefix for a key.</p> </li> </ul>
      */
     inline CreateRouteCalculatorRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -532,7 +556,8 @@ namespace Model
      * one value.</p> </li> <li> <p>Maximum key length: 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the
-     * following characters: + - = . _ : / @. </p> </li> </ul>
+     * following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot use "aws:" as a
+     * prefix for a key.</p> </li> </ul>
      */
     inline CreateRouteCalculatorRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -546,7 +571,8 @@ namespace Model
      * one value.</p> </li> <li> <p>Maximum key length: 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the
-     * following characters: + - = . _ : / @. </p> </li> </ul>
+     * following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot use "aws:" as a
+     * prefix for a key.</p> </li> </ul>
      */
     inline CreateRouteCalculatorRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -560,7 +586,8 @@ namespace Model
      * one value.</p> </li> <li> <p>Maximum key length: 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the
-     * following characters: + - = . _ : / @. </p> </li> </ul>
+     * following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot use "aws:" as a
+     * prefix for a key.</p> </li> </ul>
      */
     inline CreateRouteCalculatorRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

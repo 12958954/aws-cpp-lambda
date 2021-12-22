@@ -10,10 +10,13 @@
 #include <aws/transcribe/model/LanguageCode.h>
 #include <aws/transcribe/model/MediaFormat.h>
 #include <aws/transcribe/model/Media.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/transcribe/model/MedicalTranscriptionSetting.h>
 #include <aws/transcribe/model/MedicalContentIdentificationType.h>
 #include <aws/transcribe/model/Specialty.h>
 #include <aws/transcribe/model/Type.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -540,13 +543,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline const Aws::String& GetOutputEncryptionKMSKeyId() const{ return m_outputEncryptionKMSKeyId; }
 
@@ -560,13 +564,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline bool OutputEncryptionKMSKeyIdHasBeenSet() const { return m_outputEncryptionKMSKeyIdHasBeenSet; }
 
@@ -580,13 +585,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline void SetOutputEncryptionKMSKeyId(const Aws::String& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = value; }
 
@@ -600,13 +606,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline void SetOutputEncryptionKMSKeyId(Aws::String&& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = std::move(value); }
 
@@ -620,13 +627,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline void SetOutputEncryptionKMSKeyId(const char* value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId.assign(value); }
 
@@ -640,13 +648,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(const Aws::String& value) { SetOutputEncryptionKMSKeyId(value); return *this;}
 
@@ -660,13 +669,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(Aws::String&& value) { SetOutputEncryptionKMSKeyId(std::move(value)); return *this;}
 
@@ -680,15 +690,95 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(const char* value) { SetOutputEncryptionKMSKeyId(value); return *this;}
+
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetKMSEncryptionContext() const{ return m_kMSEncryptionContext; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline bool KMSEncryptionContextHasBeenSet() const { return m_kMSEncryptionContextHasBeenSet; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline void SetKMSEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext = value; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline void SetKMSEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext = std::move(value); }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithKMSEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetKMSEncryptionContext(value); return *this;}
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithKMSEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetKMSEncryptionContext(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(const Aws::String& key, const Aws::String& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(Aws::String&& key, const Aws::String& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(const Aws::String& key, Aws::String&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(Aws::String&& key, Aws::String&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(const char* key, Aws::String&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(Aws::String&& key, const char* value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(const char* key, const char* value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, value); return *this; }
 
 
     /**
@@ -806,7 +896,7 @@ namespace Model
      * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
      * conversations between two or more speakers, e.g., a conversations between
      * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
-     * speech, e.g., for clinical notes.</p>
+     * speech, such as clinical notes.</p>
      */
     inline const Type& GetType() const{ return m_type; }
 
@@ -814,7 +904,7 @@ namespace Model
      * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
      * conversations between two or more speakers, e.g., a conversations between
      * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
-     * speech, e.g., for clinical notes.</p>
+     * speech, such as clinical notes.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -822,7 +912,7 @@ namespace Model
      * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
      * conversations between two or more speakers, e.g., a conversations between
      * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
-     * speech, e.g., for clinical notes.</p>
+     * speech, such as clinical notes.</p>
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -830,7 +920,7 @@ namespace Model
      * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
      * conversations between two or more speakers, e.g., a conversations between
      * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
-     * speech, e.g., for clinical notes.</p>
+     * speech, such as clinical notes.</p>
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -838,7 +928,7 @@ namespace Model
      * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
      * conversations between two or more speakers, e.g., a conversations between
      * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
-     * speech, e.g., for clinical notes.</p>
+     * speech, such as clinical notes.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithType(const Type& value) { SetType(value); return *this;}
 
@@ -846,9 +936,50 @@ namespace Model
      * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
      * conversations between two or more speakers, e.g., a conversations between
      * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
-     * speech, e.g., for clinical notes.</p>
+     * speech, such as clinical notes.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -876,6 +1007,9 @@ namespace Model
     Aws::String m_outputEncryptionKMSKeyId;
     bool m_outputEncryptionKMSKeyIdHasBeenSet;
 
+    Aws::Map<Aws::String, Aws::String> m_kMSEncryptionContext;
+    bool m_kMSEncryptionContextHasBeenSet;
+
     MedicalTranscriptionSetting m_settings;
     bool m_settingsHasBeenSet;
 
@@ -887,6 +1021,9 @@ namespace Model
 
     Type m_type;
     bool m_typeHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

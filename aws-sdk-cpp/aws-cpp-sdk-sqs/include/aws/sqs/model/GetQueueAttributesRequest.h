@@ -156,8 +156,14 @@ namespace Model
      * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
@@ -260,8 +266,14 @@ namespace Model
      * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
@@ -364,8 +376,14 @@ namespace Model
      * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
@@ -468,8 +486,14 @@ namespace Model
      * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
@@ -572,8 +596,14 @@ namespace Model
      * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
@@ -676,8 +706,14 @@ namespace Model
      * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
@@ -780,8 +816,14 @@ namespace Model
      * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see
@@ -884,8 +926,14 @@ namespace Model
      * key to encrypt or decrypt messages before calling KMS again. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
-     * attributes apply only to <a
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
+     * <code>SqsManagedSseEnabled</code> – Returns information about whether the queue
+     * is using SSE-SQS encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> –
      * Returns information about whether the queue is FIFO. For more information, see

@@ -86,13 +86,75 @@ p {
   background-color: #eceff1;
   padding: 1em;
 }
+.command-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.command-id-link{
+  flex-grow: 0;
+}
+.command-id-link a {
+  font-size: xx-large;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px  1px 0px #000000bb,
+              -1px -1px 0px #ffffffbb;
+  text-decoration: none;
+  margin-left: 0.2em;
+}
+.command-id-link a:link {
+  text-shadow: 1px  1px 0px #000000bb,
+              -1px -1px 0px #ffffffbb;
+}
+.command-id-link a:visited {
+  text-shadow: 1px  1px 0px #000000bb,
+              -1px -1px 0px #ffffffbb;
+}
+.command-id-link a:visited:hover {
+  color: #ec407a;
+  background-color: #00000000;
+  text-shadow: 1px  1px 0px #000000bb,
+              -1px -1px 0px #ffffffbb,
+               0px 0px 10px #fff,
+               0px 0px 5px #ec407a,
+               0px 0px 5px #ec407a;
+}
+.command-id-link a:hover {
+  color: #ec407a;
+  background-color: #00000000;
+  text-shadow: 1px  1px 0px #000000bb,
+              -1px -1px 0px #ffffffbb
+               0px 0px 10px #fff,
+               0px 0px 5px #ec407a,
+               0px 0px 5px #ec407a;
+}
+.command-id-link a:active {
+  color: #ffeb3b;
+  background-color: #00000000;
+  text-shadow: 1px  1px 0px #000000bb,
+              -1px -1px 0px #ffffffbb,
+                 0px 0px 10px #fff,
+                 0px 0px 5px #ffeb3b,
+                 0px 0px 5px #ffeb3b;
+}
+.command-id-link a:visited:active {
+  color: #ffeb3b;
+  background-color: #00000000;
+  text-shadow: 1px  1px 0px #000000bb,
+              -1px -1px 0px #ffffffbb,
+                 0px 0px 10px #fff,
+                 0px 0px 5px #ffeb3b,
+                 0px 0px 5px #ffeb3b;
+}
 .command-description {
   color: #26323899;
   font-size: smaller;
   text-align: center;
-  margin-bottom: 1em;
   font-weight: bold;
+  flex-grow: 1;
 }
+
 .command-invocation {
   padding: 1em;
   color: #fff;
@@ -167,10 +229,239 @@ p {
   margin-bottom: 3em;
 }
 
+.outcome-table-info-box {
+  margin-top: 0.4em;
+  margin-bottom: 0.2em;
+  padding: 1em;
+  color: #000a12;
+  background-color: #ffee58;
+  border-radius: 0.5em;
+}
+.outcome-table-info-box .outcome{
+  font-weight: bold;
+}
+#toc {
+  margin-bottom: 6em;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  margin-right: 3em;
+}
+.toc-title {
+  text-align: center;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  margin-bottom: -1em;
+}
+.toc-section{
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  text-transform: capitalize;
+}
+.toc-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.toc-row-icon {
+  padding-right: 8px;
+}
+.status-icon-cross {
+  fill: #f44336;
+    width: 16px;
+    height: 16px;
+}
+.status-icon-tick {
+  fill: #3f51b5;
+  stroke: #ffffff77;
+  stroke-width: 1px;
+  width: 16px;
+  height: 16px;
+}
+
+.status-icon-in-progress {
+  fill: #333;
+  width: 16px;
+  height: 16px;
+}
+
+.status-icon-in-progress circle {
+  stroke: #333;
+  stroke-width: 2px;
+  fill: none
+}
+a:link {
+  color: #1e88e5;
+}
+a:visited {
+  color: #1e88e5;
+}
+a:visited:hover {
+  background-color: #1e88e5;
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  background-color: #1e88e5;
+  color: #fff;
+  text-decoration: none;
+}
+a:active {
+  background-color: #ec407a;
+  color: #fff;
+  text-decoration: none;
+}
+a:visited:active {
+  background-color: #ec407a;
+  color: #fff;
+  text-decoration: none;
+}
+
+#contents-container {
+  margin-top: 6em;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+#depgraph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: flex-start;
+  flex-shrink: 7;
+}
+
+#depgraph-title p {
+  text-align: center;
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
+
+#depgraph-preview img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#depgraph-preview {
+  padding: 1em;
+}
+
+.memory-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+  align-items: center;
+}
+.memory-preview {
+  width: 75%;
+}
+.memory-preview svg {
+  margin-left: -1em;
+  margin-right: -2em;
+}
+.memory-table {
+}
+.memory-title {
+  text-align: center;
+  font-style: bold;
+}
+.memory-subtitle {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  text-align: center;
+  opacity: 0.8;
+}
+.memory-pad {
+  width: 1.5em;
+}
+.memory-value {
+  text-align: center;
+  margin-right: 2em;
+}
+.rss {
+  color: #ab47bc;
+}
+.vsz {
+  color: #4caf50;
+}
+
+
 @media (prefers-color-scheme: dark){
+  a:link {
+    color: #29b6f6;
+  }
+  a:visited {
+    color: #29b6f6;
+  }
+  a:visited:hover {
+    color: #263238;
+    background-color: #29b6f6;
+  }
+  a:hover {
+    color: #263238;
+    background-color: #29b6f6;
+  }
+  a:active {
+    color: #263238;
+    background-color: #ec407a;
+  }
+  a:visited:active {
+    color: #263238;
+    background-color: #ec407a;
+  }
+  .command-id-link a:link {
+    text-shadow: 1px  1px 0px #000000bb,
+                -1px -1px 0px #ffffffbb;
+  }
+  .command-id-link a:visited {
+    text-shadow: 1px  1px 0px #000000bb,
+                -1px -1px 0px #ffffffbb;
+  }
+  .command-id-link a:visited:hover {
+    color: #ec407a;
+    background-color: #00000000;
+    text-shadow: 1px  1px 0px #000000bb,
+                -1px -1px 0px #ffffffbb.
+                 0px 0px 10px #fff,
+                 0px 0px 5px #ec407a,
+                 0px 0px 5px #ec407a;
+  }
+  .command-id-link a:hover {
+    color: #ec407a;
+    background-color: #00000000;
+    text-shadow: 1px  1px 0px #000000bb,
+                -1px -1px 0px #ffffffbb,
+                 0px 0px 10px #fff,
+                 0px 0px 5px #ec407a,
+                 0px 0px 5px #ec407a;
+  }
+  .command-id-link a:active {
+    color: #ffeb3b;
+    background-color: #00000000;
+    text-shadow: 1px  1px 0px #000000bb,
+                -1px -1px 0px #ffffffbb,
+                 0px 0px 10px #fff,
+                 0px 0px 5px #ffeb3b,
+                 0px 0px 5px #ffeb3b;
+  }
+  .command-id-link a:visited:active {
+    color: #ffeb3b;
+    background-color: #00000000;
+    text-shadow: 1px  1px 0px #000000bb,
+                -1px -1px 0px #ffffffbb,
+                 0px 0px 10px #fff,
+                 0px 0px 5px #ffeb3b,
+                 0px 0px 5px #ffeb3b;
+  }
   body {
     color: #babdbe;
     background-color: #263238;
+  }
+  .outcome-table-info-box p{
+    color: #000a12;
   }
   p {
     color: #babdbe;
@@ -203,6 +494,14 @@ p {
                  -2px  0px 0px #26323899,
                  -1px  1px 0px #26323899;
   }
+  .status-icon-in-progress { fill: #ddd; }
+  .status-icon-in-progress circle { stroke: #ddd; }
+
+  /* SVG graphs */
+  g text {
+    fill: #eceff1;
+    stroke: #fff0;
+  }
 }
 </style>
 </head>
@@ -226,6 +525,78 @@ p {
     </ul>
   </div><!-- class=run-info -->
 
+  <div id="contents-container">
+
+    <div id="toc">
+      <div class="toc-title">
+        <p>Summary of jobs for this pipeline</p>
+      </div><!-- class="toc-title" -->
+
+      {% for stage in pipe["ci_stages"] %}
+        <div class="toc-section">
+          <p>{{ stage["name"] }}</p>
+        </div><!-- class="toc-section" -->
+        {% for job in stage["jobs"] %}
+          <div class="toc-row">
+
+            <div class="toc-row-icon">
+              {% if job["complete"] and job["outcome"] == "success" %}
+                <svg height="16px" width="16px" class="status-icon-tick">
+                  <polygon points="1,11 6,15 15,3 13,1 6,12 3,8"></polygon>
+                </svg>
+              {% elif job["complete"] %}
+                <svg height="16px" width="16px" class="status-icon-cross">
+                  <polygon points="
+                      1,3 7,8 1,13 3,15 8,9 13,15 15,13 9,8 15,3 13,1 8,7 3,1">
+                  </polygon>
+                </svg>
+              {% else %}
+                <svg height="16px" width="16px" class="status-icon-in-progress">
+                  <polygon points="7,8 8,9 9,8 8,1"> </polygon>
+                  <polygon points="8,8 8,9 11,11 9,8"> </polygon>
+                  <circle cx="8" cy="8" r="7"></circle>
+                </svg>
+              {% endif %}{# job["complete"] #}
+            </div><!-- class="toc-row-icon" -->
+
+            <div class="toc-row-job-name">
+              <p>
+              <a href="#job-{{ job['wrapper_arguments']['job_id'] }}">
+              {% if job["wrapper_arguments"]["description"] %}
+              {{ job["wrapper_arguments"]["description"] }}
+              {% else %}
+              [no description]
+              {% endif %}{# job["description"] #}
+              </a>
+              </p>
+            </div><!-- class="toc-row-job-name" -->
+
+          </div><!-- class="toc-row" -->
+
+        {% endfor %}{# job in stage["jobs"] #}
+      {% endfor %}{# stage in pipe["ci_stages"] #}
+    </div><!-- id="toc" -->
+
+
+    {% if "dependencies_url" in pipe %}
+    <div id="depgraph">
+      <div id="depgraph-title">
+        <p>Dependency graph for pipeline</p>
+        <p>(click for larger version)</p>
+      </div><!-- id="depgraph-title" -->
+      <a href="{{ pipe['dependencies_url'] }}">
+        <div id="depgraph-preview">
+          <img
+             src="{{ pipe['dependencies_url'] }}"
+             alt="pipeline dependency graph" />
+        </div><!-- id="depgraph-preview" -->
+      </a><!-- href="{{ dependencies_url }}" -->
+    </div><!-- id="depgraph" -->
+    {% endif %}{# "depgraph_preview" in job #}
+
+  </div><!-- id="contents-container" -->
+
+
   {% for stage in pipe["ci_stages"] %}
   <div class="stage">
     <div class="stage-name">
@@ -234,22 +605,29 @@ p {
     </div><!-- class="stage-name" -->
 
     {% for job in stage["jobs"] %}
-    <div class="command-table">
+    <div class="command-table" id="job-{{ job['wrapper_arguments']['job_id'] }}">
       {% if not job["complete"] %}
       <div class="in-progress">
-      {% elif not job["command_return_code"] %}
+      {% elif job["outcome"] == "success" %}
       <div class="success">
       {% else %}
       <div class="fail">
       {% endif %}{# not job["complete"] #}
         <div class="command-content">
-          <div class="command-description">
-            {% if "description" in job["wrapper_arguments"] %}
-            <p>
-              {{ job["wrapper_arguments"]["description"] }}
-            </p>
-            {% endif %}{# "description" in job #}
-          </div><!-- class="command-description" -->
+          <div class="command-header">
+            <div class="command-id-link">
+              <p>
+                <a href="#job-{{ job['wrapper_arguments']['job_id'] }}">#</a>
+              </p>
+            </div><!-- class="command-id-link" -->
+            <div class="command-description">
+              {% if "description" in job["wrapper_arguments"] %}
+              <p>
+                {{ job["wrapper_arguments"]["description"] }}
+              </p>
+              {% endif %}{# "description" in job #}
+            </div><!-- class="command-description" -->
+          </div><!-- class="command-header" -->
           <div class="command-invocation">
             <p>
             {{ job["wrapper_arguments"]["command"] }}
@@ -307,15 +685,73 @@ p {
             <div class="command-stats-row">
               <p>Command successful:
               <span class="value">
-              {% if job["command_return_code"] %}
-              no
-              {% else %}
+              {% if job["outcome"] == "success" %}
               yes
-              {% endif %}{# job["command_return_code"] #}
+              {% else %}
+              no
+              {% endif %}{# job["outcome"] == "success"#}
               </span></p>
             </div><!-- class="command-stats-row" -->
           </div><!-- class="command-stats-table" -->
           {% endif %}{# job["complete"] #}
+
+          {% if job["complete"] and job["loaded_outcome_dict"] %}
+          <div class="outcome-table-info-box">
+            <p>
+              An outcome table decided the outcome
+              &lsquo;<span class="outcome">{{ job["outcome"] }}</span>&rsquo;
+              for this job. View the table
+              <a href="{{ job['outcome_table_html_url'] }}">here</a>
+              (or view the
+              <a href="{{ job['outcome_table_json_url'] }}">raw JSON</a>).
+            </p>
+          </div><!-- class="outcome-table-info-box" -->
+          {% endif %}{# job["loaded_outcome_dict"] #}
+
+
+          {% if  job["memory_trace"] and "peak" in job["memory_trace"] %}
+            <div class="memory-box">
+              <div class="memory-preview">
+              {% if "memory_trace_preview" in job %}
+              {% for line in job["memory_trace_preview"] %}
+                {{ line }}
+              {% endfor %}{# line in job["memory_trace_preview"] #}
+              {% else %}
+              <p style="text-align: center; font-size: smaller">
+              [No memory graph; job did not run for long enough]
+              </p>
+              {% endif %}{# "memory_trace_preview" in job #}
+              </div><!--  class="memory-preview" -->
+              <div class="memory-table">
+                <table>
+                  <tr>
+                    <td class="memory-title" colspan="3">
+                      <p>Peak Memory Usage</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="memory-subtitle"><p>Resident</p></td>
+                    <td class="memory-pad"></td>
+                    <td class="memory-subtitle"><p>Virtual</p></td>
+                  </tr>
+                  <tr>
+                    <td class="memory-value">
+                      <p class="rss">
+                        {{ job["memory_trace"]["peak"]["human_readable_rss"] }}
+                      </p>
+                    </td>
+                    <td class="memory-pad"></td>
+                    <td class="memory-value">
+                      <p class="vsz">
+                        {{ job["memory_trace"]["peak"]["human_readable_vsz"] }}
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </div><!--  class="memory-table" -->
+            </div><!--  class="memory-box" -->
+          {% endif %}{# job["memory_trace"] and "peak" in job["memory_trace"] #}
+
 
           {% if job["stdout"] %}
           <div class="output-box"><xmp>stdout:

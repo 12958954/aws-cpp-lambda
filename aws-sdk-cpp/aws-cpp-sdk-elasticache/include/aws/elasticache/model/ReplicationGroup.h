@@ -14,6 +14,7 @@
 #include <aws/elasticache/model/MultiAZStatus.h>
 #include <aws/elasticache/model/Endpoint.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/elasticache/model/DataTieringStatus.h>
 #include <aws/elasticache/model/NodeGroup.h>
 #include <aws/elasticache/model/LogDeliveryConfiguration.h>
 #include <utility>
@@ -1021,47 +1022,47 @@ namespace Model
 
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserGroupIds() const{ return m_userGroupIds; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline bool UserGroupIdsHasBeenSet() const { return m_userGroupIdsHasBeenSet; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline void SetUserGroupIds(const Aws::Vector<Aws::String>& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = value; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline void SetUserGroupIds(Aws::Vector<Aws::String>&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = std::move(value); }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& WithUserGroupIds(const Aws::Vector<Aws::String>& value) { SetUserGroupIds(value); return *this;}
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& WithUserGroupIds(Aws::Vector<Aws::String>&& value) { SetUserGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& AddUserGroupIds(const Aws::String& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& AddUserGroupIds(Aws::String&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& AddUserGroupIds(const char* value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
 
@@ -1136,6 +1137,61 @@ namespace Model
      * <p>The date and time when the cluster was created.</p>
      */
     inline ReplicationGroup& WithReplicationGroupCreateTime(Aws::Utils::DateTime&& value) { SetReplicationGroupCreateTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline const DataTieringStatus& GetDataTiering() const{ return m_dataTiering; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline bool DataTieringHasBeenSet() const { return m_dataTieringHasBeenSet; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTiering(const DataTieringStatus& value) { m_dataTieringHasBeenSet = true; m_dataTiering = value; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTiering(DataTieringStatus&& value) { m_dataTieringHasBeenSet = true; m_dataTiering = std::move(value); }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline ReplicationGroup& WithDataTiering(const DataTieringStatus& value) { SetDataTiering(value); return *this;}
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline ReplicationGroup& WithDataTiering(DataTieringStatus&& value) { SetDataTiering(std::move(value)); return *this;}
 
   private:
 
@@ -1213,6 +1269,9 @@ namespace Model
 
     Aws::Utils::DateTime m_replicationGroupCreateTime;
     bool m_replicationGroupCreateTimeHasBeenSet;
+
+    DataTieringStatus m_dataTiering;
+    bool m_dataTieringHasBeenSet;
   };
 
 } // namespace Model

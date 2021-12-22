@@ -38,6 +38,7 @@ HlsGroupSettings::HlsGroupSettings() :
     m_encryptionHasBeenSet(false),
     m_imageBasedTrickPlay(HlsImageBasedTrickPlay::NOT_SET),
     m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_manifestCompression(HlsManifestCompression::NOT_SET),
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(HlsManifestDurationFormat::NOT_SET),
@@ -56,6 +57,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(HlsSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_segmentsPerSubdirectory(0),
     m_segmentsPerSubdirectoryHasBeenSet(false),
     m_streamInfResolution(HlsStreamInfResolution::NOT_SET),
@@ -91,6 +94,7 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_encryptionHasBeenSet(false),
     m_imageBasedTrickPlay(HlsImageBasedTrickPlay::NOT_SET),
     m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_manifestCompression(HlsManifestCompression::NOT_SET),
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(HlsManifestDurationFormat::NOT_SET),
@@ -109,6 +113,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(HlsSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_segmentsPerSubdirectory(0),
     m_segmentsPerSubdirectoryHasBeenSet(false),
     m_streamInfResolution(HlsStreamInfResolution::NOT_SET),
@@ -227,6 +233,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_imageBasedTrickPlayHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageBasedTrickPlaySettings"))
+  {
+    m_imageBasedTrickPlaySettings = jsonValue.GetObject("imageBasedTrickPlaySettings");
+
+    m_imageBasedTrickPlaySettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("manifestCompression"))
   {
     m_manifestCompression = HlsManifestCompressionMapper::GetHlsManifestCompressionForName(jsonValue.GetString("manifestCompression"));
@@ -288,6 +301,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_segmentLength = jsonValue.GetInteger("segmentLength");
 
     m_segmentLengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("segmentLengthControl"))
+  {
+    m_segmentLengthControl = HlsSegmentLengthControlMapper::GetHlsSegmentLengthControlForName(jsonValue.GetString("segmentLengthControl"));
+
+    m_segmentLengthControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("segmentsPerSubdirectory"))
@@ -426,6 +446,12 @@ JsonValue HlsGroupSettings::Jsonize() const
    payload.WithString("imageBasedTrickPlay", HlsImageBasedTrickPlayMapper::GetNameForHlsImageBasedTrickPlay(m_imageBasedTrickPlay));
   }
 
+  if(m_imageBasedTrickPlaySettingsHasBeenSet)
+  {
+   payload.WithObject("imageBasedTrickPlaySettings", m_imageBasedTrickPlaySettings.Jsonize());
+
+  }
+
   if(m_manifestCompressionHasBeenSet)
   {
    payload.WithString("manifestCompression", HlsManifestCompressionMapper::GetNameForHlsManifestCompression(m_manifestCompression));
@@ -473,6 +499,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   {
    payload.WithInteger("segmentLength", m_segmentLength);
 
+  }
+
+  if(m_segmentLengthControlHasBeenSet)
+  {
+   payload.WithString("segmentLengthControl", HlsSegmentLengthControlMapper::GetNameForHlsSegmentLengthControl(m_segmentLengthControl));
   }
 
   if(m_segmentsPerSubdirectoryHasBeenSet)

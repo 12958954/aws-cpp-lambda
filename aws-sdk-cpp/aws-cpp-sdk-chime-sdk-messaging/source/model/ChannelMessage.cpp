@@ -32,7 +32,9 @@ ChannelMessage::ChannelMessage() :
     m_redacted(false),
     m_redactedHasBeenSet(false),
     m_persistence(ChannelMessagePersistenceType::NOT_SET),
-    m_persistenceHasBeenSet(false)
+    m_persistenceHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_messageAttributesHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ ChannelMessage::ChannelMessage(JsonView jsonValue) :
     m_redacted(false),
     m_redactedHasBeenSet(false),
     m_persistence(ChannelMessagePersistenceType::NOT_SET),
-    m_persistenceHasBeenSet(false)
+    m_persistenceHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_messageAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -134,6 +138,23 @@ ChannelMessage& ChannelMessage::operator =(JsonView jsonValue)
     m_persistenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = jsonValue.GetObject("Status");
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MessageAttributes"))
+  {
+    Aws::Map<Aws::String, JsonView> messageAttributesJsonMap = jsonValue.GetObject("MessageAttributes").GetAllObjects();
+    for(auto& messageAttributesItem : messageAttributesJsonMap)
+    {
+      m_messageAttributes[messageAttributesItem.first] = messageAttributesItem.second.AsObject();
+    }
+    m_messageAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -200,6 +221,23 @@ JsonValue ChannelMessage::Jsonize() const
   if(m_persistenceHasBeenSet)
   {
    payload.WithString("Persistence", ChannelMessagePersistenceTypeMapper::GetNameForChannelMessagePersistenceType(m_persistence));
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithObject("Status", m_status.Jsonize());
+
+  }
+
+  if(m_messageAttributesHasBeenSet)
+  {
+   JsonValue messageAttributesJsonMap;
+   for(auto& messageAttributesItem : m_messageAttributes)
+   {
+     messageAttributesJsonMap.WithObject(messageAttributesItem.first, messageAttributesItem.second.Jsonize());
+   }
+   payload.WithObject("MessageAttributes", std::move(messageAttributesJsonMap));
+
   }
 
   return payload;

@@ -44,42 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The ID of the account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
-     * <p>The ID of the account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>The ID of the account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The ID of the account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>The ID of the account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline VirtualInterface& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The ID of the account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline VirtualInterface& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline VirtualInterface& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
@@ -967,42 +975,42 @@ namespace Model
 
 
     /**
-     * <p>The Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline VirtualInterface& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline VirtualInterface& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline VirtualInterface& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -1145,6 +1153,27 @@ namespace Model
      */
     inline VirtualInterface& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline bool GetSiteLinkEnabled() const{ return m_siteLinkEnabled; }
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline bool SiteLinkEnabledHasBeenSet() const { return m_siteLinkEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline void SetSiteLinkEnabled(bool value) { m_siteLinkEnabledHasBeenSet = true; m_siteLinkEnabled = value; }
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline VirtualInterface& WithSiteLinkEnabled(bool value) { SetSiteLinkEnabled(value); return *this;}
+
   private:
 
     Aws::String m_ownerAccount;
@@ -1221,6 +1250,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_siteLinkEnabled;
+    bool m_siteLinkEnabledHasBeenSet;
   };
 
 } // namespace Model

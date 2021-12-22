@@ -32,29 +32,19 @@ namespace Model
     UpdateStreamingImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    /**
-     * <p></p>
-     */
+    
     inline const StreamingImage& GetStreamingImage() const{ return m_streamingImage; }
 
-    /**
-     * <p></p>
-     */
+    
     inline void SetStreamingImage(const StreamingImage& value) { m_streamingImage = value; }
 
-    /**
-     * <p></p>
-     */
+    
     inline void SetStreamingImage(StreamingImage&& value) { m_streamingImage = std::move(value); }
 
-    /**
-     * <p></p>
-     */
+    
     inline UpdateStreamingImageResult& WithStreamingImage(const StreamingImage& value) { SetStreamingImage(value); return *this;}
 
-    /**
-     * <p></p>
-     */
+    
     inline UpdateStreamingImageResult& WithStreamingImage(StreamingImage&& value) { SetStreamingImage(std::move(value)); return *this;}
 
   private:

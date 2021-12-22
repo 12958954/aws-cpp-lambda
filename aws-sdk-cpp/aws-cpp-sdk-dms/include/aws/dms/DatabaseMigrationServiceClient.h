@@ -641,7 +641,10 @@ namespace Model
 
         /**
          * <p>Creates a replication subnet group given a list of the subnet IDs in a
-         * VPC.</p><p><h3>See Also:</h3>   <a
+         * VPC.</p> <p>The VPC needs to have at least one subnet in at least two
+         * availability zones in the Amazon Web Services Region, otherwise the service will
+         * throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
+         * exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">AWS
          * API Reference</a></p>
          */
@@ -649,7 +652,10 @@ namespace Model
 
         /**
          * <p>Creates a replication subnet group given a list of the subnet IDs in a
-         * VPC.</p><p><h3>See Also:</h3>   <a
+         * VPC.</p> <p>The VPC needs to have at least one subnet in at least two
+         * availability zones in the Amazon Web Services Region, otherwise the service will
+         * throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
+         * exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -659,7 +665,10 @@ namespace Model
 
         /**
          * <p>Creates a replication subnet group given a list of the subnet IDs in a
-         * VPC.</p><p><h3>See Also:</h3>   <a
+         * VPC.</p> <p>The VPC needs to have at least one subnet in at least two
+         * availability zones in the Amazon Web Services Region, otherwise the service will
+         * throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
+         * exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -1462,12 +1471,11 @@ namespace Model
 
         /**
          * <p>Returns the task assessment results from the Amazon S3 bucket that DMS
-         * creates in your account. This action always returns the latest results.</p>
-         * <p>For more information about DMS task assessments, see <a
+         * creates in your Amazon Web Services account. This action always returns the
+         * latest results.</p> <p>For more information about DMS task assessments, see <a
          * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
-         * a task assessment report</a> in the <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
-         * Database Migration Service User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * a task assessment report</a> in the <i>Database Migration Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">AWS
          * API Reference</a></p>
          */
@@ -1475,12 +1483,11 @@ namespace Model
 
         /**
          * <p>Returns the task assessment results from the Amazon S3 bucket that DMS
-         * creates in your account. This action always returns the latest results.</p>
-         * <p>For more information about DMS task assessments, see <a
+         * creates in your Amazon Web Services account. This action always returns the
+         * latest results.</p> <p>For more information about DMS task assessments, see <a
          * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
-         * a task assessment report</a> in the <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
-         * Database Migration Service User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * a task assessment report</a> in the <i>Database Migration Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">AWS
          * API Reference</a></p>
          *
@@ -1490,12 +1497,11 @@ namespace Model
 
         /**
          * <p>Returns the task assessment results from the Amazon S3 bucket that DMS
-         * creates in your account. This action always returns the latest results.</p>
-         * <p>For more information about DMS task assessments, see <a
+         * creates in your Amazon Web Services account. This action always returns the
+         * latest results.</p> <p>For more information about DMS task assessments, see <a
          * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
-         * a task assessment report</a> in the <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
-         * Database Migration Service User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * a task assessment report</a> in the <i>Database Migration Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">AWS
          * API Reference</a></p>
          *
@@ -2005,16 +2011,20 @@ namespace Model
         virtual void RefreshSchemasAsync(const Model::RefreshSchemasRequest& request, const RefreshSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Reloads the target database table with the source data. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Reloads the target database table with the source data. </p> <p>You can only
+         * use this operation with a task in the <code>RUNNING</code> state, otherwise the
+         * service will throw an <code>InvalidResourceStateFault</code>
+         * exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">AWS
          * API Reference</a></p>
          */
         virtual Model::ReloadTablesOutcome ReloadTables(const Model::ReloadTablesRequest& request) const;
 
         /**
-         * <p>Reloads the target database table with the source data. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Reloads the target database table with the source data. </p> <p>You can only
+         * use this operation with a task in the <code>RUNNING</code> state, otherwise the
+         * service will throw an <code>InvalidResourceStateFault</code>
+         * exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">AWS
          * API Reference</a></p>
          *
@@ -2023,8 +2033,10 @@ namespace Model
         virtual Model::ReloadTablesOutcomeCallable ReloadTablesCallable(const Model::ReloadTablesRequest& request) const;
 
         /**
-         * <p>Reloads the target database table with the source data. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Reloads the target database table with the source data. </p> <p>You can only
+         * use this operation with a task in the <code>RUNNING</code> state, otherwise the
+         * service will throw an <code>InvalidResourceStateFault</code>
+         * exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">AWS
          * API Reference</a></p>
          *
@@ -2105,7 +2117,15 @@ namespace Model
 
         /**
          * <p> Starts the replication task assessment for unsupported data types in the
-         * source database. </p><p><h3>See Also:</h3>   <a
+         * source database. </p> <p>You can only use this operation for a task if the
+         * following conditions are true:</p> <ul> <li> <p>The task must be in the
+         * <code>stopped</code> state.</p> </li> <li> <p>The task must have successful
+         * connections to the source and target.</p> </li> </ul> <p>If either of these
+         * conditions are not met, an <code>InvalidResourceStateFault</code> error will
+         * result. </p> <p>For information about DMS task assessments, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
+         * a task assessment report</a> in the <i>Database Migration Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment">AWS
          * API Reference</a></p>
          */
@@ -2113,7 +2133,15 @@ namespace Model
 
         /**
          * <p> Starts the replication task assessment for unsupported data types in the
-         * source database. </p><p><h3>See Also:</h3>   <a
+         * source database. </p> <p>You can only use this operation for a task if the
+         * following conditions are true:</p> <ul> <li> <p>The task must be in the
+         * <code>stopped</code> state.</p> </li> <li> <p>The task must have successful
+         * connections to the source and target.</p> </li> </ul> <p>If either of these
+         * conditions are not met, an <code>InvalidResourceStateFault</code> error will
+         * result. </p> <p>For information about DMS task assessments, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
+         * a task assessment report</a> in the <i>Database Migration Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment">AWS
          * API Reference</a></p>
          *
@@ -2123,7 +2151,15 @@ namespace Model
 
         /**
          * <p> Starts the replication task assessment for unsupported data types in the
-         * source database. </p><p><h3>See Also:</h3>   <a
+         * source database. </p> <p>You can only use this operation for a task if the
+         * following conditions are true:</p> <ul> <li> <p>The task must be in the
+         * <code>stopped</code> state.</p> </li> <li> <p>The task must have successful
+         * connections to the source and target.</p> </li> </ul> <p>If either of these
+         * conditions are not met, an <code>InvalidResourceStateFault</code> error will
+         * result. </p> <p>For information about DMS task assessments, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
+         * a task assessment report</a> in the <i>Database Migration Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment">AWS
          * API Reference</a></p>
          *

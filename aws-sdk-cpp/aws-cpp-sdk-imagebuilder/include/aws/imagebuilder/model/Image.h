@@ -16,6 +16,7 @@
 #include <aws/imagebuilder/model/ImageTestsConfiguration.h>
 #include <aws/imagebuilder/model/OutputResources.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/imagebuilder/model/BuildType.h>
 #include <utility>
 
 namespace Aws
@@ -233,17 +234,15 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Assignment:</b> For the first three nodes you can assign any positive integer
      * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
-     * node. Image Builder automatically assigns the build number, and that is not open
-     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
-     * adheres to the assignment requirements for the nodes that you can assign. For
-     * example, you might choose a software version pattern, such as 1.0.0, or a date,
-     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
-     * resource with a semantic version, you can use wildcards (x) to filter your
-     * results. When you use a wildcard in any node, all nodes to the right of the
-     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
-     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
-     * work. You do not have to specify the build - Image Builder automatically uses a
-     * wildcard for that, if applicable.</p> 
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
@@ -253,17 +252,15 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Assignment:</b> For the first three nodes you can assign any positive integer
      * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
-     * node. Image Builder automatically assigns the build number, and that is not open
-     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
-     * adheres to the assignment requirements for the nodes that you can assign. For
-     * example, you might choose a software version pattern, such as 1.0.0, or a date,
-     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
-     * resource with a semantic version, you can use wildcards (x) to filter your
-     * results. When you use a wildcard in any node, all nodes to the right of the
-     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
-     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
-     * work. You do not have to specify the build - Image Builder automatically uses a
-     * wildcard for that, if applicable.</p> 
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
@@ -273,17 +270,15 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Assignment:</b> For the first three nodes you can assign any positive integer
      * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
-     * node. Image Builder automatically assigns the build number, and that is not open
-     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
-     * adheres to the assignment requirements for the nodes that you can assign. For
-     * example, you might choose a software version pattern, such as 1.0.0, or a date,
-     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
-     * resource with a semantic version, you can use wildcards (x) to filter your
-     * results. When you use a wildcard in any node, all nodes to the right of the
-     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
-     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
-     * work. You do not have to specify the build - Image Builder automatically uses a
-     * wildcard for that, if applicable.</p> 
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
@@ -293,17 +288,15 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Assignment:</b> For the first three nodes you can assign any positive integer
      * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
-     * node. Image Builder automatically assigns the build number, and that is not open
-     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
-     * adheres to the assignment requirements for the nodes that you can assign. For
-     * example, you might choose a software version pattern, such as 1.0.0, or a date,
-     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
-     * resource with a semantic version, you can use wildcards (x) to filter your
-     * results. When you use a wildcard in any node, all nodes to the right of the
-     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
-     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
-     * work. You do not have to specify the build - Image Builder automatically uses a
-     * wildcard for that, if applicable.</p> 
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
@@ -313,17 +306,15 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Assignment:</b> For the first three nodes you can assign any positive integer
      * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
-     * node. Image Builder automatically assigns the build number, and that is not open
-     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
-     * adheres to the assignment requirements for the nodes that you can assign. For
-     * example, you might choose a software version pattern, such as 1.0.0, or a date,
-     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
-     * resource with a semantic version, you can use wildcards (x) to filter your
-     * results. When you use a wildcard in any node, all nodes to the right of the
-     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
-     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
-     * work. You do not have to specify the build - Image Builder automatically uses a
-     * wildcard for that, if applicable.</p> 
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
@@ -333,17 +324,15 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Assignment:</b> For the first three nodes you can assign any positive integer
      * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
-     * node. Image Builder automatically assigns the build number, and that is not open
-     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
-     * adheres to the assignment requirements for the nodes that you can assign. For
-     * example, you might choose a software version pattern, such as 1.0.0, or a date,
-     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
-     * resource with a semantic version, you can use wildcards (x) to filter your
-     * results. When you use a wildcard in any node, all nodes to the right of the
-     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
-     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
-     * work. You do not have to specify the build - Image Builder automatically uses a
-     * wildcard for that, if applicable.</p> 
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline Image& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
@@ -353,17 +342,15 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Assignment:</b> For the first three nodes you can assign any positive integer
      * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
-     * node. Image Builder automatically assigns the build number, and that is not open
-     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
-     * adheres to the assignment requirements for the nodes that you can assign. For
-     * example, you might choose a software version pattern, such as 1.0.0, or a date,
-     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
-     * resource with a semantic version, you can use wildcards (x) to filter your
-     * results. When you use a wildcard in any node, all nodes to the right of the
-     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
-     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
-     * work. You do not have to specify the build - Image Builder automatically uses a
-     * wildcard for that, if applicable.</p> 
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline Image& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
@@ -373,17 +360,15 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Assignment:</b> For the first three nodes you can assign any positive integer
      * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
-     * node. Image Builder automatically assigns the build number, and that is not open
-     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
-     * adheres to the assignment requirements for the nodes that you can assign. For
-     * example, you might choose a software version pattern, such as 1.0.0, or a date,
-     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
-     * resource with a semantic version, you can use wildcards (x) to filter your
-     * results. When you use a wildcard in any node, all nodes to the right of the
-     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
-     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
-     * work. You do not have to specify the build - Image Builder automatically uses a
-     * wildcard for that, if applicable.</p> 
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline Image& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -914,6 +899,67 @@ namespace Model
      */
     inline Image& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline const BuildType& GetBuildType() const{ return m_buildType; }
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline bool BuildTypeHasBeenSet() const { return m_buildTypeHasBeenSet; }
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline void SetBuildType(const BuildType& value) { m_buildTypeHasBeenSet = true; m_buildType = value; }
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline void SetBuildType(BuildType&& value) { m_buildTypeHasBeenSet = true; m_buildType = std::move(value); }
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline Image& WithBuildType(const BuildType& value) { SetBuildType(value); return *this;}
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline Image& WithBuildType(BuildType&& value) { SetBuildType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -969,6 +1015,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    BuildType m_buildType;
+    bool m_buildTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -199,10 +199,10 @@ namespace Model
 
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
@@ -210,10 +210,10 @@ namespace Model
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
@@ -221,10 +221,10 @@ namespace Model
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
@@ -232,10 +232,10 @@ namespace Model
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
@@ -243,10 +243,10 @@ namespace Model
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
@@ -254,10 +254,10 @@ namespace Model
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
@@ -265,10 +265,10 @@ namespace Model
     inline RestoreDBInstanceFromS3Request& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
@@ -276,10 +276,10 @@ namespace Model
     inline RestoreDBInstanceFromS3Request& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
@@ -1294,53 +1294,57 @@ namespace Model
 
     /**
      * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
-     * private IP address from within the DB instance's VPC, and to the public IP
-     * address from outside of the DB instance's VPC. Access to the DB instance is
-     * ultimately controlled by the security group it uses, and that public access is
-     * not permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
-     * information, see <a>CreateDBInstance</a>.</p>
+     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
+     * endpoint resolves to the private IP address from within the DB instance's
+     * virtual private cloud (VPC). It resolves to the public IP address from outside
+     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
+     * the security group it uses. That public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
+     * isn't publicly accessible, it is an internal DB instance with a DNS name that
+     * resolves to a private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
      * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
-     * private IP address from within the DB instance's VPC, and to the public IP
-     * address from outside of the DB instance's VPC. Access to the DB instance is
-     * ultimately controlled by the security group it uses, and that public access is
-     * not permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
-     * information, see <a>CreateDBInstance</a>.</p>
+     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
+     * endpoint resolves to the private IP address from within the DB instance's
+     * virtual private cloud (VPC). It resolves to the public IP address from outside
+     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
+     * the security group it uses. That public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
+     * isn't publicly accessible, it is an internal DB instance with a DNS name that
+     * resolves to a private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
-     * private IP address from within the DB instance's VPC, and to the public IP
-     * address from outside of the DB instance's VPC. Access to the DB instance is
-     * ultimately controlled by the security group it uses, and that public access is
-     * not permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
-     * information, see <a>CreateDBInstance</a>.</p>
+     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
+     * endpoint resolves to the private IP address from within the DB instance's
+     * virtual private cloud (VPC). It resolves to the public IP address from outside
+     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
+     * the security group it uses. That public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
+     * isn't publicly accessible, it is an internal DB instance with a DNS name that
+     * resolves to a private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
      * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
-     * private IP address from within the DB instance's VPC, and to the public IP
-     * address from outside of the DB instance's VPC. Access to the DB instance is
-     * ultimately controlled by the security group it uses, and that public access is
-     * not permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
-     * information, see <a>CreateDBInstance</a>.</p>
+     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
+     * endpoint resolves to the private IP address from within the DB instance's
+     * virtual private cloud (VPC). It resolves to the public IP address from outside
+     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
+     * the security group it uses. That public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
+     * isn't publicly accessible, it is an internal DB instance with a DNS name that
+     * resolves to a private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -1507,104 +1511,104 @@ namespace Model
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance. </p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the <code>StorageEncrypted</code> parameter is enabled, and you
-     * do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS
-     * will use your default CMK. There is a default CMK for your Amazon Web Services
-     * account. Your Amazon Web Services account has a different default CMK for each
-     * Amazon Web Services Region. </p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
+     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance. </p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the <code>StorageEncrypted</code> parameter is enabled, and you
-     * do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS
-     * will use your default CMK. There is a default CMK for your Amazon Web Services
-     * account. Your Amazon Web Services account has a different default CMK for each
-     * Amazon Web Services Region. </p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
+     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance. </p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the <code>StorageEncrypted</code> parameter is enabled, and you
-     * do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS
-     * will use your default CMK. There is a default CMK for your Amazon Web Services
-     * account. Your Amazon Web Services account has a different default CMK for each
-     * Amazon Web Services Region. </p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
+     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance. </p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the <code>StorageEncrypted</code> parameter is enabled, and you
-     * do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS
-     * will use your default CMK. There is a default CMK for your Amazon Web Services
-     * account. Your Amazon Web Services account has a different default CMK for each
-     * Amazon Web Services Region. </p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
+     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance. </p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the <code>StorageEncrypted</code> parameter is enabled, and you
-     * do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS
-     * will use your default CMK. There is a default CMK for your Amazon Web Services
-     * account. Your Amazon Web Services account has a different default CMK for each
-     * Amazon Web Services Region. </p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
+     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance. </p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the <code>StorageEncrypted</code> parameter is enabled, and you
-     * do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS
-     * will use your default CMK. There is a default CMK for your Amazon Web Services
-     * account. Your Amazon Web Services account has a different default CMK for each
-     * Amazon Web Services Region. </p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
+     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance. </p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the <code>StorageEncrypted</code> parameter is enabled, and you
-     * do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS
-     * will use your default CMK. There is a default CMK for your Amazon Web Services
-     * account. Your Amazon Web Services account has a different default CMK for each
-     * Amazon Web Services Region. </p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
+     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance. </p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the <code>StorageEncrypted</code> parameter is enabled, and you
-     * do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS
-     * will use your default CMK. There is a default CMK for your Amazon Web Services
-     * account. Your Amazon Web Services account has a different default CMK for each
-     * Amazon Web Services Region. </p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
+     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1771,7 +1775,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>For more information about IAM database
+     * mapping isn't enabled.</p> <p>For more information about IAM database
      * authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
@@ -1782,7 +1786,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>For more information about IAM database
+     * mapping isn't enabled.</p> <p>For more information about IAM database
      * authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
@@ -1793,7 +1797,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>For more information about IAM database
+     * mapping isn't enabled.</p> <p>For more information about IAM database
      * authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
@@ -1804,7 +1808,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>For more information about IAM database
+     * mapping isn't enabled.</p> <p>For more information about IAM database
      * authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
@@ -2098,96 +2102,88 @@ namespace Model
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -2385,7 +2381,7 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
@@ -2394,7 +2390,7 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
@@ -2403,7 +2399,7 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
@@ -2412,7 +2408,7 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */

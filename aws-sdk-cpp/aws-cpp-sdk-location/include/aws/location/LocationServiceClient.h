@@ -53,6 +53,7 @@
 #include <aws/location/model/ListTrackersResult.h>
 #include <aws/location/model/PutGeofenceResult.h>
 #include <aws/location/model/SearchPlaceIndexForPositionResult.h>
+#include <aws/location/model/SearchPlaceIndexForSuggestionsResult.h>
 #include <aws/location/model/SearchPlaceIndexForTextResult.h>
 #include <aws/location/model/TagResourceResult.h>
 #include <aws/location/model/UntagResourceResult.h>
@@ -142,6 +143,7 @@ namespace Model
         class ListTrackersRequest;
         class PutGeofenceRequest;
         class SearchPlaceIndexForPositionRequest;
+        class SearchPlaceIndexForSuggestionsRequest;
         class SearchPlaceIndexForTextRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -193,6 +195,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTrackersResult, LocationServiceError> ListTrackersOutcome;
         typedef Aws::Utils::Outcome<PutGeofenceResult, LocationServiceError> PutGeofenceOutcome;
         typedef Aws::Utils::Outcome<SearchPlaceIndexForPositionResult, LocationServiceError> SearchPlaceIndexForPositionOutcome;
+        typedef Aws::Utils::Outcome<SearchPlaceIndexForSuggestionsResult, LocationServiceError> SearchPlaceIndexForSuggestionsOutcome;
         typedef Aws::Utils::Outcome<SearchPlaceIndexForTextResult, LocationServiceError> SearchPlaceIndexForTextOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, LocationServiceError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, LocationServiceError> UntagResourceOutcome;
@@ -244,6 +247,7 @@ namespace Model
         typedef std::future<ListTrackersOutcome> ListTrackersOutcomeCallable;
         typedef std::future<PutGeofenceOutcome> PutGeofenceOutcomeCallable;
         typedef std::future<SearchPlaceIndexForPositionOutcome> SearchPlaceIndexForPositionOutcomeCallable;
+        typedef std::future<SearchPlaceIndexForSuggestionsOutcome> SearchPlaceIndexForSuggestionsOutcomeCallable;
         typedef std::future<SearchPlaceIndexForTextOutcome> SearchPlaceIndexForTextOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -298,6 +302,7 @@ namespace Model
     typedef std::function<void(const LocationServiceClient*, const Model::ListTrackersRequest&, const Model::ListTrackersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrackersResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::PutGeofenceRequest&, const Model::PutGeofenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutGeofenceResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::SearchPlaceIndexForPositionRequest&, const Model::SearchPlaceIndexForPositionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchPlaceIndexForPositionResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::SearchPlaceIndexForSuggestionsRequest&, const Model::SearchPlaceIndexForSuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchPlaceIndexForSuggestionsResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::SearchPlaceIndexForTextRequest&, const Model::SearchPlaceIndexForTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchPlaceIndexForTextResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -450,7 +455,10 @@ namespace Model
          * area.</p> </li> <li> <p> <code>EXIT</code> if Amazon Location determines that
          * the tracked device has exited a geofenced area.</p> </li> </ul>  <p>The
          * last geofence that a device was observed within is tracked for 30 days after the
-         * most recent device position update.</p> <p><h3>See Also:</h3>   <a
+         * most recent device position update.</p>   <p>Geofence evaluation
+         * uses the given device position. It does not account for the optional
+         * <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofences">AWS
          * API Reference</a></p>
          */
@@ -466,7 +474,10 @@ namespace Model
          * area.</p> </li> <li> <p> <code>EXIT</code> if Amazon Location determines that
          * the tracked device has exited a geofenced area.</p> </li> </ul>  <p>The
          * last geofence that a device was observed within is tracked for 30 days after the
-         * most recent device position update.</p> <p><h3>See Also:</h3>   <a
+         * most recent device position update.</p>   <p>Geofence evaluation
+         * uses the given device position. It does not account for the optional
+         * <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofences">AWS
          * API Reference</a></p>
          *
@@ -484,7 +495,10 @@ namespace Model
          * area.</p> </li> <li> <p> <code>EXIT</code> if Amazon Location determines that
          * the tracked device has exited a geofenced area.</p> </li> </ul>  <p>The
          * last geofence that a device was observed within is tracked for 30 days after the
-         * most recent device position update.</p> <p><h3>See Also:</h3>   <a
+         * most recent device position update.</p>   <p>Geofence evaluation
+         * uses the given device position. It does not account for the optional
+         * <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofences">AWS
          * API Reference</a></p>
          *
@@ -553,11 +567,26 @@ namespace Model
 
         /**
          * <p>Uploads position update data for one or more devices to a tracker resource.
-         * Amazon Location uses the data when reporting the last known device position and
-         * position history.</p>  <p>Only one position update is stored per sample
-         * time. Location data is sampled at a fixed rate of one position per 30-second
-         * interval and retained for 30 days before it's deleted.</p> <p><h3>See
-         * Also:</h3>   <a
+         * Amazon Location uses the data when it reports the last known device position and
+         * position history. Amazon Location retains location data for 30 days.</p> 
+         * <p>Position updates are handled based on the <code>PositionFiltering</code>
+         * property of the tracker. When <code>PositionFiltering</code> is set to
+         * <code>TimeBased</code>, updates are evaluated against linked geofence
+         * collections, and location data is stored at a maximum of one position per 30
+         * second interval. If your update frequency is more often than every 30 seconds,
+         * only one update per 30 seconds is stored for each unique device ID.</p> <p>When
+         * <code>PositionFiltering</code> is set to <code>DistanceBased</code> filtering,
+         * location data is stored and evaluated against linked geofence collections only
+         * if the device has moved more than 30 m (98.4 ft).</p> <p>When
+         * <code>PositionFiltering</code> is set to <code>AccuracyBased</code> filtering,
+         * location data is stored and evaluated against linked geofence collections only
+         * if the device has moved more than the measured accuracy. For example, if two
+         * consecutive updates from a device have a horizontal accuracy of 5 m and 10 m,
+         * the second update is neither stored or evaluated if the device has moved less
+         * than 15 m. If <code>PositionFiltering</code> is set to
+         * <code>AccuracyBased</code> filtering, Amazon Location uses the default value
+         * <code>{ "Horizontal": 0}</code> when accuracy is not provided on a
+         * <code>DevicePositionUpdate</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchUpdateDevicePosition">AWS
          * API Reference</a></p>
          */
@@ -565,11 +594,26 @@ namespace Model
 
         /**
          * <p>Uploads position update data for one or more devices to a tracker resource.
-         * Amazon Location uses the data when reporting the last known device position and
-         * position history.</p>  <p>Only one position update is stored per sample
-         * time. Location data is sampled at a fixed rate of one position per 30-second
-         * interval and retained for 30 days before it's deleted.</p> <p><h3>See
-         * Also:</h3>   <a
+         * Amazon Location uses the data when it reports the last known device position and
+         * position history. Amazon Location retains location data for 30 days.</p> 
+         * <p>Position updates are handled based on the <code>PositionFiltering</code>
+         * property of the tracker. When <code>PositionFiltering</code> is set to
+         * <code>TimeBased</code>, updates are evaluated against linked geofence
+         * collections, and location data is stored at a maximum of one position per 30
+         * second interval. If your update frequency is more often than every 30 seconds,
+         * only one update per 30 seconds is stored for each unique device ID.</p> <p>When
+         * <code>PositionFiltering</code> is set to <code>DistanceBased</code> filtering,
+         * location data is stored and evaluated against linked geofence collections only
+         * if the device has moved more than 30 m (98.4 ft).</p> <p>When
+         * <code>PositionFiltering</code> is set to <code>AccuracyBased</code> filtering,
+         * location data is stored and evaluated against linked geofence collections only
+         * if the device has moved more than the measured accuracy. For example, if two
+         * consecutive updates from a device have a horizontal accuracy of 5 m and 10 m,
+         * the second update is neither stored or evaluated if the device has moved less
+         * than 15 m. If <code>PositionFiltering</code> is set to
+         * <code>AccuracyBased</code> filtering, Amazon Location uses the default value
+         * <code>{ "Horizontal": 0}</code> when accuracy is not provided on a
+         * <code>DevicePositionUpdate</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchUpdateDevicePosition">AWS
          * API Reference</a></p>
          *
@@ -579,11 +623,26 @@ namespace Model
 
         /**
          * <p>Uploads position update data for one or more devices to a tracker resource.
-         * Amazon Location uses the data when reporting the last known device position and
-         * position history.</p>  <p>Only one position update is stored per sample
-         * time. Location data is sampled at a fixed rate of one position per 30-second
-         * interval and retained for 30 days before it's deleted.</p> <p><h3>See
-         * Also:</h3>   <a
+         * Amazon Location uses the data when it reports the last known device position and
+         * position history. Amazon Location retains location data for 30 days.</p> 
+         * <p>Position updates are handled based on the <code>PositionFiltering</code>
+         * property of the tracker. When <code>PositionFiltering</code> is set to
+         * <code>TimeBased</code>, updates are evaluated against linked geofence
+         * collections, and location data is stored at a maximum of one position per 30
+         * second interval. If your update frequency is more often than every 30 seconds,
+         * only one update per 30 seconds is stored for each unique device ID.</p> <p>When
+         * <code>PositionFiltering</code> is set to <code>DistanceBased</code> filtering,
+         * location data is stored and evaluated against linked geofence collections only
+         * if the device has moved more than 30 m (98.4 ft).</p> <p>When
+         * <code>PositionFiltering</code> is set to <code>AccuracyBased</code> filtering,
+         * location data is stored and evaluated against linked geofence collections only
+         * if the device has moved more than the measured accuracy. For example, if two
+         * consecutive updates from a device have a horizontal accuracy of 5 m and 10 m,
+         * the second update is neither stored or evaluated if the device has moved less
+         * than 15 m. If <code>PositionFiltering</code> is set to
+         * <code>AccuracyBased</code> filtering, Amazon Location uses the default value
+         * <code>{ "Horizontal": 0}</code> when accuracy is not provided on a
+         * <code>DevicePositionUpdate</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchUpdateDevicePosition">AWS
          * API Reference</a></p>
          *
@@ -598,7 +657,7 @@ namespace Model
          * <code>DeparturePostiton</code> and <code>DestinationPosition</code>. Requires
          * that you first <a
          * href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-         * a route calculator resource</a> </p> <p>By default, a request that doesn't
+         * a route calculator resource</a>.</p> <p>By default, a request that doesn't
          * specify a departure time uses the best time of day to travel with the best
          * traffic conditions when calculating the route.</p> <p>Additional options
          * include:</p> <ul> <li> <p> <a
@@ -607,8 +666,8 @@ namespace Model
          * <code>DepartureNow</code>. This calculates a route based on predictive traffic
          * data at the given time. </p>  <p>You can't specify both
          * <code>DepartureTime</code> and <code>DepartureNow</code> in a single request.
-         * Specifying both parameters returns an error message.</p>  </li> <li> <p>
-         * <a
+         * Specifying both parameters returns a validation error.</p>  </li> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
          * a travel mode</a> using TravelMode. This lets you specify an additional route
          * preference such as <code>CarModeOptions</code> if traveling by <code>Car</code>,
@@ -626,7 +685,7 @@ namespace Model
          * <code>DeparturePostiton</code> and <code>DestinationPosition</code>. Requires
          * that you first <a
          * href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-         * a route calculator resource</a> </p> <p>By default, a request that doesn't
+         * a route calculator resource</a>.</p> <p>By default, a request that doesn't
          * specify a departure time uses the best time of day to travel with the best
          * traffic conditions when calculating the route.</p> <p>Additional options
          * include:</p> <ul> <li> <p> <a
@@ -635,8 +694,8 @@ namespace Model
          * <code>DepartureNow</code>. This calculates a route based on predictive traffic
          * data at the given time. </p>  <p>You can't specify both
          * <code>DepartureTime</code> and <code>DepartureNow</code> in a single request.
-         * Specifying both parameters returns an error message.</p>  </li> <li> <p>
-         * <a
+         * Specifying both parameters returns a validation error.</p>  </li> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
          * a travel mode</a> using TravelMode. This lets you specify an additional route
          * preference such as <code>CarModeOptions</code> if traveling by <code>Car</code>,
@@ -656,7 +715,7 @@ namespace Model
          * <code>DeparturePostiton</code> and <code>DestinationPosition</code>. Requires
          * that you first <a
          * href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-         * a route calculator resource</a> </p> <p>By default, a request that doesn't
+         * a route calculator resource</a>.</p> <p>By default, a request that doesn't
          * specify a departure time uses the best time of day to travel with the best
          * traffic conditions when calculating the route.</p> <p>Additional options
          * include:</p> <ul> <li> <p> <a
@@ -665,8 +724,8 @@ namespace Model
          * <code>DepartureNow</code>. This calculates a route based on predictive traffic
          * data at the given time. </p>  <p>You can't specify both
          * <code>DepartureTime</code> and <code>DepartureNow</code> in a single request.
-         * Specifying both parameters returns an error message.</p>  </li> <li> <p>
-         * <a
+         * Specifying both parameters returns a validation error.</p>  </li> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
          * a travel mode</a> using TravelMode. This lets you specify an additional route
          * preference such as <code>CarModeOptions</code> if traveling by <code>Car</code>,
@@ -739,18 +798,24 @@ namespace Model
         virtual void CreateMapAsync(const Model::CreateMapRequest& request, const CreateMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a place index resource in your AWS account, which supports functions
-         * with geospatial data sourced from your chosen data provider.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a place index resource in your AWS account. Use a place index
+         * resource to geocode addresses and other text queries by using the
+         * <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates
+         * by using the <code>SearchPlaceIndexForPosition</code> operation, and enable
+         * autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreatePlaceIndex">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePlaceIndexOutcome CreatePlaceIndex(const Model::CreatePlaceIndexRequest& request) const;
 
         /**
-         * <p>Creates a place index resource in your AWS account, which supports functions
-         * with geospatial data sourced from your chosen data provider.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a place index resource in your AWS account. Use a place index
+         * resource to geocode addresses and other text queries by using the
+         * <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates
+         * by using the <code>SearchPlaceIndexForPosition</code> operation, and enable
+         * autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreatePlaceIndex">AWS
          * API Reference</a></p>
          *
@@ -759,9 +824,12 @@ namespace Model
         virtual Model::CreatePlaceIndexOutcomeCallable CreatePlaceIndexCallable(const Model::CreatePlaceIndexRequest& request) const;
 
         /**
-         * <p>Creates a place index resource in your AWS account, which supports functions
-         * with geospatial data sourced from your chosen data provider.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a place index resource in your AWS account. Use a place index
+         * resource to geocode addresses and other text queries by using the
+         * <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates
+         * by using the <code>SearchPlaceIndexForPosition</code> operation, and enable
+         * autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreatePlaceIndex">AWS
          * API Reference</a></p>
          *
@@ -1689,13 +1757,66 @@ namespace Model
         virtual void SearchPlaceIndexForPositionAsync(const Model::SearchPlaceIndexForPositionRequest& request, const SearchPlaceIndexForPositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Generates suggestions for addresses and points of interest based on partial
+         * or misspelled free-form text. This operation is also known as autocomplete,
+         * autosuggest, or fuzzy matching.</p> <p>Optional parameters let you narrow your
+         * search results by bounding box or country, or bias your search toward a specific
+         * position on the globe.</p>  <p>You can search for suggested place names
+         * near a specified position by using <code>BiasPosition</code>, or filter results
+         * within a bounding box by using <code>FilterBBox</code>. These parameters are
+         * mutually exclusive; using both <code>BiasPosition</code> and
+         * <code>FilterBBox</code> in the same command returns an error.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForSuggestions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchPlaceIndexForSuggestionsOutcome SearchPlaceIndexForSuggestions(const Model::SearchPlaceIndexForSuggestionsRequest& request) const;
+
+        /**
+         * <p>Generates suggestions for addresses and points of interest based on partial
+         * or misspelled free-form text. This operation is also known as autocomplete,
+         * autosuggest, or fuzzy matching.</p> <p>Optional parameters let you narrow your
+         * search results by bounding box or country, or bias your search toward a specific
+         * position on the globe.</p>  <p>You can search for suggested place names
+         * near a specified position by using <code>BiasPosition</code>, or filter results
+         * within a bounding box by using <code>FilterBBox</code>. These parameters are
+         * mutually exclusive; using both <code>BiasPosition</code> and
+         * <code>FilterBBox</code> in the same command returns an error.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForSuggestions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchPlaceIndexForSuggestionsOutcomeCallable SearchPlaceIndexForSuggestionsCallable(const Model::SearchPlaceIndexForSuggestionsRequest& request) const;
+
+        /**
+         * <p>Generates suggestions for addresses and points of interest based on partial
+         * or misspelled free-form text. This operation is also known as autocomplete,
+         * autosuggest, or fuzzy matching.</p> <p>Optional parameters let you narrow your
+         * search results by bounding box or country, or bias your search toward a specific
+         * position on the globe.</p>  <p>You can search for suggested place names
+         * near a specified position by using <code>BiasPosition</code>, or filter results
+         * within a bounding box by using <code>FilterBBox</code>. These parameters are
+         * mutually exclusive; using both <code>BiasPosition</code> and
+         * <code>FilterBBox</code> in the same command returns an error.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForSuggestions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchPlaceIndexForSuggestionsAsync(const Model::SearchPlaceIndexForSuggestionsRequest& request, const SearchPlaceIndexForSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Geocodes free-form text, such as an address, name, city, or region to allow
-         * you to search for Places or points of interest. </p> <p>Includes the option to
-         * apply additional parameters to narrow your list of results.</p>  <p>You
-         * can search for places near a given position using <code>BiasPosition</code>, or
-         * filter results within a bounding box using <code>FilterBBox</code>. Providing
-         * both parameters simultaneously returns an error.</p> <p><h3>See
-         * Also:</h3>   <a
+         * you to search for Places or points of interest. </p> <p>Optional parameters let
+         * you narrow your search results by bounding box or country, or bias your search
+         * toward a specific position on the globe.</p>  <p>You can search for places
+         * near a given position using <code>BiasPosition</code>, or filter results within
+         * a bounding box using <code>FilterBBox</code>. Providing both parameters
+         * simultaneously returns an error.</p>  <p>Search results are returned in
+         * order of highest to lowest relevance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForText">AWS
          * API Reference</a></p>
          */
@@ -1703,12 +1824,13 @@ namespace Model
 
         /**
          * <p>Geocodes free-form text, such as an address, name, city, or region to allow
-         * you to search for Places or points of interest. </p> <p>Includes the option to
-         * apply additional parameters to narrow your list of results.</p>  <p>You
-         * can search for places near a given position using <code>BiasPosition</code>, or
-         * filter results within a bounding box using <code>FilterBBox</code>. Providing
-         * both parameters simultaneously returns an error.</p> <p><h3>See
-         * Also:</h3>   <a
+         * you to search for Places or points of interest. </p> <p>Optional parameters let
+         * you narrow your search results by bounding box or country, or bias your search
+         * toward a specific position on the globe.</p>  <p>You can search for places
+         * near a given position using <code>BiasPosition</code>, or filter results within
+         * a bounding box using <code>FilterBBox</code>. Providing both parameters
+         * simultaneously returns an error.</p>  <p>Search results are returned in
+         * order of highest to lowest relevance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForText">AWS
          * API Reference</a></p>
          *
@@ -1718,12 +1840,13 @@ namespace Model
 
         /**
          * <p>Geocodes free-form text, such as an address, name, city, or region to allow
-         * you to search for Places or points of interest. </p> <p>Includes the option to
-         * apply additional parameters to narrow your list of results.</p>  <p>You
-         * can search for places near a given position using <code>BiasPosition</code>, or
-         * filter results within a bounding box using <code>FilterBBox</code>. Providing
-         * both parameters simultaneously returns an error.</p> <p><h3>See
-         * Also:</h3>   <a
+         * you to search for Places or points of interest. </p> <p>Optional parameters let
+         * you narrow your search results by bounding box or country, or bias your search
+         * toward a specific position on the globe.</p>  <p>You can search for places
+         * near a given position using <code>BiasPosition</code>, or filter results within
+         * a bounding box using <code>FilterBBox</code>. Providing both parameters
+         * simultaneously returns an error.</p>  <p>Search results are returned in
+         * order of highest to lowest relevance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForText">AWS
          * API Reference</a></p>
          *
@@ -2000,6 +2123,7 @@ namespace Model
         void ListTrackersAsyncHelper(const Model::ListTrackersRequest& request, const ListTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutGeofenceAsyncHelper(const Model::PutGeofenceRequest& request, const PutGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchPlaceIndexForPositionAsyncHelper(const Model::SearchPlaceIndexForPositionRequest& request, const SearchPlaceIndexForPositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchPlaceIndexForSuggestionsAsyncHelper(const Model::SearchPlaceIndexForSuggestionsRequest& request, const SearchPlaceIndexForSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchPlaceIndexForTextAsyncHelper(const Model::SearchPlaceIndexForTextRequest& request, const SearchPlaceIndexForTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

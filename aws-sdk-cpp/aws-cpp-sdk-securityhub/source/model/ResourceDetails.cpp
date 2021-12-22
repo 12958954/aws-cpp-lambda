@@ -67,7 +67,20 @@ ResourceDetails::ResourceDetails() :
     m_containerHasBeenSet(false),
     m_otherHasBeenSet(false),
     m_awsRdsEventSubscriptionHasBeenSet(false),
-    m_awsEcsServiceHasBeenSet(false)
+    m_awsEcsServiceHasBeenSet(false),
+    m_awsAutoScalingLaunchConfigurationHasBeenSet(false),
+    m_awsEc2VpnConnectionHasBeenSet(false),
+    m_awsEcrContainerImageHasBeenSet(false),
+    m_awsOpenSearchServiceDomainHasBeenSet(false),
+    m_awsEc2VpcEndpointServiceHasBeenSet(false),
+    m_awsXrayEncryptionConfigHasBeenSet(false),
+    m_awsWafRateBasedRuleHasBeenSet(false),
+    m_awsWafRegionalRateBasedRuleHasBeenSet(false),
+    m_awsEcrRepositoryHasBeenSet(false),
+    m_awsEksClusterHasBeenSet(false),
+    m_awsNetworkFirewallFirewallPolicyHasBeenSet(false),
+    m_awsNetworkFirewallFirewallHasBeenSet(false),
+    m_awsNetworkFirewallRuleGroupHasBeenSet(false)
 {
 }
 
@@ -120,7 +133,20 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_containerHasBeenSet(false),
     m_otherHasBeenSet(false),
     m_awsRdsEventSubscriptionHasBeenSet(false),
-    m_awsEcsServiceHasBeenSet(false)
+    m_awsEcsServiceHasBeenSet(false),
+    m_awsAutoScalingLaunchConfigurationHasBeenSet(false),
+    m_awsEc2VpnConnectionHasBeenSet(false),
+    m_awsEcrContainerImageHasBeenSet(false),
+    m_awsOpenSearchServiceDomainHasBeenSet(false),
+    m_awsEc2VpcEndpointServiceHasBeenSet(false),
+    m_awsXrayEncryptionConfigHasBeenSet(false),
+    m_awsWafRateBasedRuleHasBeenSet(false),
+    m_awsWafRegionalRateBasedRuleHasBeenSet(false),
+    m_awsEcrRepositoryHasBeenSet(false),
+    m_awsEksClusterHasBeenSet(false),
+    m_awsNetworkFirewallFirewallPolicyHasBeenSet(false),
+    m_awsNetworkFirewallFirewallHasBeenSet(false),
+    m_awsNetworkFirewallRuleGroupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -473,6 +499,97 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEcsServiceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsAutoScalingLaunchConfiguration"))
+  {
+    m_awsAutoScalingLaunchConfiguration = jsonValue.GetObject("AwsAutoScalingLaunchConfiguration");
+
+    m_awsAutoScalingLaunchConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2VpnConnection"))
+  {
+    m_awsEc2VpnConnection = jsonValue.GetObject("AwsEc2VpnConnection");
+
+    m_awsEc2VpnConnectionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEcrContainerImage"))
+  {
+    m_awsEcrContainerImage = jsonValue.GetObject("AwsEcrContainerImage");
+
+    m_awsEcrContainerImageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsOpenSearchServiceDomain"))
+  {
+    m_awsOpenSearchServiceDomain = jsonValue.GetObject("AwsOpenSearchServiceDomain");
+
+    m_awsOpenSearchServiceDomainHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2VpcEndpointService"))
+  {
+    m_awsEc2VpcEndpointService = jsonValue.GetObject("AwsEc2VpcEndpointService");
+
+    m_awsEc2VpcEndpointServiceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsXrayEncryptionConfig"))
+  {
+    m_awsXrayEncryptionConfig = jsonValue.GetObject("AwsXrayEncryptionConfig");
+
+    m_awsXrayEncryptionConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsWafRateBasedRule"))
+  {
+    m_awsWafRateBasedRule = jsonValue.GetObject("AwsWafRateBasedRule");
+
+    m_awsWafRateBasedRuleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsWafRegionalRateBasedRule"))
+  {
+    m_awsWafRegionalRateBasedRule = jsonValue.GetObject("AwsWafRegionalRateBasedRule");
+
+    m_awsWafRegionalRateBasedRuleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEcrRepository"))
+  {
+    m_awsEcrRepository = jsonValue.GetObject("AwsEcrRepository");
+
+    m_awsEcrRepositoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEksCluster"))
+  {
+    m_awsEksCluster = jsonValue.GetObject("AwsEksCluster");
+
+    m_awsEksClusterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsNetworkFirewallFirewallPolicy"))
+  {
+    m_awsNetworkFirewallFirewallPolicy = jsonValue.GetObject("AwsNetworkFirewallFirewallPolicy");
+
+    m_awsNetworkFirewallFirewallPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsNetworkFirewallFirewall"))
+  {
+    m_awsNetworkFirewallFirewall = jsonValue.GetObject("AwsNetworkFirewallFirewall");
+
+    m_awsNetworkFirewallFirewallHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsNetworkFirewallRuleGroup"))
+  {
+    m_awsNetworkFirewallRuleGroup = jsonValue.GetObject("AwsNetworkFirewallRuleGroup");
+
+    m_awsNetworkFirewallRuleGroupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -776,6 +893,84 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsEcsServiceHasBeenSet)
   {
    payload.WithObject("AwsEcsService", m_awsEcsService.Jsonize());
+
+  }
+
+  if(m_awsAutoScalingLaunchConfigurationHasBeenSet)
+  {
+   payload.WithObject("AwsAutoScalingLaunchConfiguration", m_awsAutoScalingLaunchConfiguration.Jsonize());
+
+  }
+
+  if(m_awsEc2VpnConnectionHasBeenSet)
+  {
+   payload.WithObject("AwsEc2VpnConnection", m_awsEc2VpnConnection.Jsonize());
+
+  }
+
+  if(m_awsEcrContainerImageHasBeenSet)
+  {
+   payload.WithObject("AwsEcrContainerImage", m_awsEcrContainerImage.Jsonize());
+
+  }
+
+  if(m_awsOpenSearchServiceDomainHasBeenSet)
+  {
+   payload.WithObject("AwsOpenSearchServiceDomain", m_awsOpenSearchServiceDomain.Jsonize());
+
+  }
+
+  if(m_awsEc2VpcEndpointServiceHasBeenSet)
+  {
+   payload.WithObject("AwsEc2VpcEndpointService", m_awsEc2VpcEndpointService.Jsonize());
+
+  }
+
+  if(m_awsXrayEncryptionConfigHasBeenSet)
+  {
+   payload.WithObject("AwsXrayEncryptionConfig", m_awsXrayEncryptionConfig.Jsonize());
+
+  }
+
+  if(m_awsWafRateBasedRuleHasBeenSet)
+  {
+   payload.WithObject("AwsWafRateBasedRule", m_awsWafRateBasedRule.Jsonize());
+
+  }
+
+  if(m_awsWafRegionalRateBasedRuleHasBeenSet)
+  {
+   payload.WithObject("AwsWafRegionalRateBasedRule", m_awsWafRegionalRateBasedRule.Jsonize());
+
+  }
+
+  if(m_awsEcrRepositoryHasBeenSet)
+  {
+   payload.WithObject("AwsEcrRepository", m_awsEcrRepository.Jsonize());
+
+  }
+
+  if(m_awsEksClusterHasBeenSet)
+  {
+   payload.WithObject("AwsEksCluster", m_awsEksCluster.Jsonize());
+
+  }
+
+  if(m_awsNetworkFirewallFirewallPolicyHasBeenSet)
+  {
+   payload.WithObject("AwsNetworkFirewallFirewallPolicy", m_awsNetworkFirewallFirewallPolicy.Jsonize());
+
+  }
+
+  if(m_awsNetworkFirewallFirewallHasBeenSet)
+  {
+   payload.WithObject("AwsNetworkFirewallFirewall", m_awsNetworkFirewallFirewall.Jsonize());
+
+  }
+
+  if(m_awsNetworkFirewallRuleGroupHasBeenSet)
+  {
+   payload.WithObject("AwsNetworkFirewallRuleGroup", m_awsNetworkFirewallRuleGroup.Jsonize());
 
   }
 

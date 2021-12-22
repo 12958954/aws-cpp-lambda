@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * 
+     * <p>The streaming image.</p>
      */
     inline const StreamingImage& GetStreamingImage() const{ return m_streamingImage; }
 
     /**
-     * 
+     * <p>The streaming image.</p>
      */
     inline void SetStreamingImage(const StreamingImage& value) { m_streamingImage = value; }
 
     /**
-     * 
+     * <p>The streaming image.</p>
      */
     inline void SetStreamingImage(StreamingImage&& value) { m_streamingImage = std::move(value); }
 
     /**
-     * 
+     * <p>The streaming image.</p>
      */
     inline CreateStreamingImageResult& WithStreamingImage(const StreamingImage& value) { SetStreamingImage(value); return *this;}
 
     /**
-     * 
+     * <p>The streaming image.</p>
      */
     inline CreateStreamingImageResult& WithStreamingImage(StreamingImage&& value) { SetStreamingImage(std::move(value)); return *this;}
 

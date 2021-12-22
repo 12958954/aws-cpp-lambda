@@ -41,49 +41,49 @@ namespace Model
 
 
     /**
-     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID for the Amazon Web Services account that contains the dashboard that
      * you're embedding.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID for the Amazon Web Services account that contains the dashboard that
      * you're embedding.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID for the Amazon Web Services account that contains the dashboard that
      * you're embedding.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID for the Amazon Web Services account that contains the dashboard that
      * you're embedding.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID for the Amazon Web Services account that contains the dashboard that
      * you're embedding.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID for the Amazon Web Services account that contains the dashboard that
      * you're embedding.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID for the Amazon Web Services account that contains the dashboard that
      * you're embedding.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID for the Amazon Web Services account that contains the dashboard that
      * you're embedding.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
@@ -247,44 +247,44 @@ namespace Model
     /**
      * <p>Adds persistence of state for the user session in an embedded dashboard.
      * Persistence applies to the sheet and the parameter settings. These are control
-     * settings that the dashboard subscriber (QuickSight reader) chooses while viewing
-     * the dashboard. If this is set to <code>TRUE</code>, the settings are the same
-     * when the subscriber reopens the same dashboard URL. The state is stored in
-     * QuickSight, not in a browser cookie. If this is set to FALSE, the state of the
-     * user session is not persisted. The default is <code>FALSE</code>.</p>
+     * settings that the dashboard subscriber (Amazon QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the
+     * same when the subscriber reopens the same dashboard URL. The state is stored in
+     * Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state
+     * of the user session is not persisted. The default is <code>FALSE</code>.</p>
      */
     inline bool GetStatePersistenceEnabled() const{ return m_statePersistenceEnabled; }
 
     /**
      * <p>Adds persistence of state for the user session in an embedded dashboard.
      * Persistence applies to the sheet and the parameter settings. These are control
-     * settings that the dashboard subscriber (QuickSight reader) chooses while viewing
-     * the dashboard. If this is set to <code>TRUE</code>, the settings are the same
-     * when the subscriber reopens the same dashboard URL. The state is stored in
-     * QuickSight, not in a browser cookie. If this is set to FALSE, the state of the
-     * user session is not persisted. The default is <code>FALSE</code>.</p>
+     * settings that the dashboard subscriber (Amazon QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the
+     * same when the subscriber reopens the same dashboard URL. The state is stored in
+     * Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state
+     * of the user session is not persisted. The default is <code>FALSE</code>.</p>
      */
     inline bool StatePersistenceEnabledHasBeenSet() const { return m_statePersistenceEnabledHasBeenSet; }
 
     /**
      * <p>Adds persistence of state for the user session in an embedded dashboard.
      * Persistence applies to the sheet and the parameter settings. These are control
-     * settings that the dashboard subscriber (QuickSight reader) chooses while viewing
-     * the dashboard. If this is set to <code>TRUE</code>, the settings are the same
-     * when the subscriber reopens the same dashboard URL. The state is stored in
-     * QuickSight, not in a browser cookie. If this is set to FALSE, the state of the
-     * user session is not persisted. The default is <code>FALSE</code>.</p>
+     * settings that the dashboard subscriber (Amazon QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the
+     * same when the subscriber reopens the same dashboard URL. The state is stored in
+     * Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state
+     * of the user session is not persisted. The default is <code>FALSE</code>.</p>
      */
     inline void SetStatePersistenceEnabled(bool value) { m_statePersistenceEnabledHasBeenSet = true; m_statePersistenceEnabled = value; }
 
     /**
      * <p>Adds persistence of state for the user session in an embedded dashboard.
      * Persistence applies to the sheet and the parameter settings. These are control
-     * settings that the dashboard subscriber (QuickSight reader) chooses while viewing
-     * the dashboard. If this is set to <code>TRUE</code>, the settings are the same
-     * when the subscriber reopens the same dashboard URL. The state is stored in
-     * QuickSight, not in a browser cookie. If this is set to FALSE, the state of the
-     * user session is not persisted. The default is <code>FALSE</code>.</p>
+     * settings that the dashboard subscriber (Amazon QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the
+     * same when the subscriber reopens the same dashboard URL. The state is stored in
+     * Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state
+     * of the user session is not persisted. The default is <code>FALSE</code>.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithStatePersistenceEnabled(bool value) { SetStatePersistenceEnabled(value); return *this;}
 
@@ -387,58 +387,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
-     * are not using an Amazon QuickSight custom namespace, set this to
-     * <code>default</code>.</p>
+     * <p>The Amazon QuickSight namespace that contains the dashboard IDs in this
+     * request. If you're not using a custom namespace, set <code>Namespace =
+     * default</code>.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
-     * are not using an Amazon QuickSight custom namespace, set this to
-     * <code>default</code>.</p>
+     * <p>The Amazon QuickSight namespace that contains the dashboard IDs in this
+     * request. If you're not using a custom namespace, set <code>Namespace =
+     * default</code>.</p>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
-     * are not using an Amazon QuickSight custom namespace, set this to
-     * <code>default</code>.</p>
+     * <p>The Amazon QuickSight namespace that contains the dashboard IDs in this
+     * request. If you're not using a custom namespace, set <code>Namespace =
+     * default</code>.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
-     * are not using an Amazon QuickSight custom namespace, set this to
-     * <code>default</code>.</p>
+     * <p>The Amazon QuickSight namespace that contains the dashboard IDs in this
+     * request. If you're not using a custom namespace, set <code>Namespace =
+     * default</code>.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
-     * are not using an Amazon QuickSight custom namespace, set this to
-     * <code>default</code>.</p>
+     * <p>The Amazon QuickSight namespace that contains the dashboard IDs in this
+     * request. If you're not using a custom namespace, set <code>Namespace =
+     * default</code>.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
-     * are not using an Amazon QuickSight custom namespace, set this to
-     * <code>default</code>.</p>
+     * <p>The Amazon QuickSight namespace that contains the dashboard IDs in this
+     * request. If you're not using a custom namespace, set <code>Namespace =
+     * default</code>.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
-     * are not using an Amazon QuickSight custom namespace, set this to
-     * <code>default</code>.</p>
+     * <p>The Amazon QuickSight namespace that contains the dashboard IDs in this
+     * request. If you're not using a custom namespace, set <code>Namespace =
+     * default</code>.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
-     * are not using an Amazon QuickSight custom namespace, set this to
-     * <code>default</code>.</p>
+     * <p>The Amazon QuickSight namespace that contains the dashboard IDs in this
+     * request. If you're not using a custom namespace, set <code>Namespace =
+     * default</code>.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
@@ -447,7 +447,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as QuickSight or IAM users. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -457,7 +457,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as QuickSight or IAM users. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -467,7 +467,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as QuickSight or IAM users. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -477,7 +477,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as QuickSight or IAM users. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -487,7 +487,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as QuickSight or IAM users. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -497,7 +497,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as QuickSight or IAM users. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -507,7 +507,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as QuickSight or IAM users. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -517,7 +517,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as QuickSight or IAM users. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -527,7 +527,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as QuickSight or IAM users. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */

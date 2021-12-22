@@ -11,6 +11,8 @@
 #include <aws/sagemaker/model/UserSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/AppNetworkAccessType.h>
+#include <aws/sagemaker/model/AppSecurityGroupManagement.h>
+#include <aws/sagemaker/model/DomainSettings.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -401,59 +403,145 @@ namespace Model
 
     /**
      * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed customer master key (CMK) by
-     * default. For more control, specify a customer managed CMK.</p>
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed customer master key (CMK) by
-     * default. For more control, specify a customer managed CMK.</p>
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed customer master key (CMK) by
-     * default. For more control, specify a customer managed CMK.</p>
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed customer master key (CMK) by
-     * default. For more control, specify a customer managed CMK.</p>
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed customer master key (CMK) by
-     * default. For more control, specify a customer managed CMK.</p>
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed customer master key (CMK) by
-     * default. For more control, specify a customer managed CMK.</p>
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
      */
     inline CreateDomainRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed customer master key (CMK) by
-     * default. For more control, specify a customer managed CMK.</p>
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
      */
     inline CreateDomainRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed customer master key (CMK) by
-     * default. For more control, specify a customer managed CMK.</p>
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
      */
     inline CreateDomainRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline const AppSecurityGroupManagement& GetAppSecurityGroupManagement() const{ return m_appSecurityGroupManagement; }
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline bool AppSecurityGroupManagementHasBeenSet() const { return m_appSecurityGroupManagementHasBeenSet; }
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline void SetAppSecurityGroupManagement(const AppSecurityGroupManagement& value) { m_appSecurityGroupManagementHasBeenSet = true; m_appSecurityGroupManagement = value; }
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline void SetAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { m_appSecurityGroupManagementHasBeenSet = true; m_appSecurityGroupManagement = std::move(value); }
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline CreateDomainRequest& WithAppSecurityGroupManagement(const AppSecurityGroupManagement& value) { SetAppSecurityGroupManagement(value); return *this;}
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline CreateDomainRequest& WithAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { SetAppSecurityGroupManagement(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline const DomainSettings& GetDomainSettings() const{ return m_domainSettings; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline bool DomainSettingsHasBeenSet() const { return m_domainSettingsHasBeenSet; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(const DomainSettings& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = value; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(DomainSettings&& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = std::move(value); }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline CreateDomainRequest& WithDomainSettings(const DomainSettings& value) { SetDomainSettings(value); return *this;}
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline CreateDomainRequest& WithDomainSettings(DomainSettings&& value) { SetDomainSettings(std::move(value)); return *this;}
 
   private:
 
@@ -480,6 +568,12 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    AppSecurityGroupManagement m_appSecurityGroupManagement;
+    bool m_appSecurityGroupManagementHasBeenSet;
+
+    DomainSettings m_domainSettings;
+    bool m_domainSettingsHasBeenSet;
   };
 
 } // namespace Model

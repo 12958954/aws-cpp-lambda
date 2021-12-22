@@ -19,6 +19,15 @@ _CAPABILITIES = {
     "report_expire": "Old report directories will contain a .litani-expired file",
     "dir_lock_api": "Deprecated",
     "dir_lock_api_v2": "lib.litani contains the LockableDirectory API",
+    "outcome_table": "The --outcome-table flag is supported",
+    "output_directory_flags": "The --output-directory --output-symlink and "
+        "--output-prefix flags are supported",
+    "pools": "Jobs can be added to task pools to limit parallelism",
+    "memory_profile": "Litani can measure the memory usage of specific jobs",
+    "aux": "Run contains an aux field for custom user data",
+    "parallelism_metric": "Run contains process parallelism measurements",
+    "phony_outputs": "The --phony-outputs flag is supported",
+    "dump_run": "The dump-run command is supported",
 }
 
 
@@ -37,7 +46,7 @@ def _machine_readable_dump():
     print(json.dumps(list(_CAPABILITIES.keys()), indent=2))
 
 
-def dump(args):
+async def dump(args):
     if args.human_readable:
         _human_readable_dump()
     else:

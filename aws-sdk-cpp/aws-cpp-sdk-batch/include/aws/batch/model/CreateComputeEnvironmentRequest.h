@@ -41,50 +41,58 @@ namespace Model
 
 
     /**
-     * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name for your compute environment. It can be up to 128 letters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline const Aws::String& GetComputeEnvironmentName() const{ return m_computeEnvironmentName; }
 
     /**
-     * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name for your compute environment. It can be up to 128 letters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline bool ComputeEnvironmentNameHasBeenSet() const { return m_computeEnvironmentNameHasBeenSet; }
 
     /**
-     * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name for your compute environment. It can be up to 128 letters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline void SetComputeEnvironmentName(const Aws::String& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = value; }
 
     /**
-     * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name for your compute environment. It can be up to 128 letters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline void SetComputeEnvironmentName(Aws::String&& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = std::move(value); }
 
     /**
-     * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name for your compute environment. It can be up to 128 letters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline void SetComputeEnvironmentName(const char* value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName.assign(value); }
 
     /**
-     * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name for your compute environment. It can be up to 128 letters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(const Aws::String& value) { SetComputeEnvironmentName(value); return *this;}
 
     /**
-     * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name for your compute environment. It can be up to 128 letters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(Aws::String&& value) { SetComputeEnvironmentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name for your compute environment. It can be up to 128 letters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(const char* value) { SetComputeEnvironmentName(value); return *this;}
 
@@ -233,6 +241,47 @@ namespace Model
      * become idle.</p>
      */
     inline CreateComputeEnvironmentRequest& WithState(CEState&& value) { SetState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The maximum number of vCPUs for an unmanaged compute environment. This
+     * parameter is only used for fair share scheduling to reserve vCPU capacity for
+     * new share identifiers. If this parameter isn't provided for a fair share job
+     * queue, no vCPU capacity is reserved.</p>  <p>This parameter is only
+     * supported when the <code>type</code> parameter is set to
+     * <code>UNMANAGED</code>/</p> 
+     */
+    inline int GetUnmanagedvCpus() const{ return m_unmanagedvCpus; }
+
+    /**
+     * <p>The maximum number of vCPUs for an unmanaged compute environment. This
+     * parameter is only used for fair share scheduling to reserve vCPU capacity for
+     * new share identifiers. If this parameter isn't provided for a fair share job
+     * queue, no vCPU capacity is reserved.</p>  <p>This parameter is only
+     * supported when the <code>type</code> parameter is set to
+     * <code>UNMANAGED</code>/</p> 
+     */
+    inline bool UnmanagedvCpusHasBeenSet() const { return m_unmanagedvCpusHasBeenSet; }
+
+    /**
+     * <p>The maximum number of vCPUs for an unmanaged compute environment. This
+     * parameter is only used for fair share scheduling to reserve vCPU capacity for
+     * new share identifiers. If this parameter isn't provided for a fair share job
+     * queue, no vCPU capacity is reserved.</p>  <p>This parameter is only
+     * supported when the <code>type</code> parameter is set to
+     * <code>UNMANAGED</code>/</p> 
+     */
+    inline void SetUnmanagedvCpus(int value) { m_unmanagedvCpusHasBeenSet = true; m_unmanagedvCpus = value; }
+
+    /**
+     * <p>The maximum number of vCPUs for an unmanaged compute environment. This
+     * parameter is only used for fair share scheduling to reserve vCPU capacity for
+     * new share identifiers. If this parameter isn't provided for a fair share job
+     * queue, no vCPU capacity is reserved.</p>  <p>This parameter is only
+     * supported when the <code>type</code> parameter is set to
+     * <code>UNMANAGED</code>/</p> 
+     */
+    inline CreateComputeEnvironmentRequest& WithUnmanagedvCpus(int value) { SetUnmanagedvCpus(value); return *this;}
 
 
     /**
@@ -704,6 +753,9 @@ namespace Model
 
     CEState m_state;
     bool m_stateHasBeenSet;
+
+    int m_unmanagedvCpus;
+    bool m_unmanagedvCpusHasBeenSet;
 
     ComputeResource m_computeResources;
     bool m_computeResourcesHasBeenSet;

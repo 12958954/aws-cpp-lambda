@@ -1623,6 +1623,145 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithAquaConfigurationStatus(AquaConfigurationStatus&& value) { SetAquaConfigurationStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline const Aws::String& GetDefaultIamRoleArn() const{ return m_defaultIamRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline bool DefaultIamRoleArnHasBeenSet() const { return m_defaultIamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline void SetDefaultIamRoleArn(const Aws::String& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline void SetDefaultIamRoleArn(Aws::String&& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline void SetDefaultIamRoleArn(const char* value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithDefaultIamRoleArn(const Aws::String& value) { SetDefaultIamRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithDefaultIamRoleArn(Aws::String&& value) { SetDefaultIamRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithDefaultIamRoleArn(const char* value) { SetDefaultIamRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline const Aws::String& GetReservedNodeId() const{ return m_reservedNodeId; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline bool ReservedNodeIdHasBeenSet() const { return m_reservedNodeIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetReservedNodeId(const Aws::String& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetReservedNodeId(Aws::String&& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = std::move(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetReservedNodeId(const char* value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId.assign(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithReservedNodeId(const Aws::String& value) { SetReservedNodeId(value); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithReservedNodeId(Aws::String&& value) { SetReservedNodeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithReservedNodeId(const char* value) { SetReservedNodeId(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline const Aws::String& GetTargetReservedNodeOfferingId() const{ return m_targetReservedNodeOfferingId; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline bool TargetReservedNodeOfferingIdHasBeenSet() const { return m_targetReservedNodeOfferingIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetTargetReservedNodeOfferingId(const Aws::String& value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId = value; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetTargetReservedNodeOfferingId(Aws::String&& value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId = std::move(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetTargetReservedNodeOfferingId(const char* value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId.assign(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithTargetReservedNodeOfferingId(const Aws::String& value) { SetTargetReservedNodeOfferingId(value); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithTargetReservedNodeOfferingId(Aws::String&& value) { SetTargetReservedNodeOfferingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithTargetReservedNodeOfferingId(const char* value) { SetTargetReservedNodeOfferingId(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1708,6 +1847,15 @@ namespace Model
 
     AquaConfigurationStatus m_aquaConfigurationStatus;
     bool m_aquaConfigurationStatusHasBeenSet;
+
+    Aws::String m_defaultIamRoleArn;
+    bool m_defaultIamRoleArnHasBeenSet;
+
+    Aws::String m_reservedNodeId;
+    bool m_reservedNodeIdHasBeenSet;
+
+    Aws::String m_targetReservedNodeOfferingId;
+    bool m_targetReservedNodeOfferingIdHasBeenSet;
   };
 
 } // namespace Model

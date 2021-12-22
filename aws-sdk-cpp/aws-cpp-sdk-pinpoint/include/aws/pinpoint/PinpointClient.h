@@ -16,6 +16,7 @@
 #include <aws/pinpoint/model/CreateEmailTemplateResult.h>
 #include <aws/pinpoint/model/CreateExportJobResult.h>
 #include <aws/pinpoint/model/CreateImportJobResult.h>
+#include <aws/pinpoint/model/CreateInAppTemplateResult.h>
 #include <aws/pinpoint/model/CreateJourneyResult.h>
 #include <aws/pinpoint/model/CreatePushTemplateResult.h>
 #include <aws/pinpoint/model/CreateRecommenderConfigurationResult.h>
@@ -35,6 +36,7 @@
 #include <aws/pinpoint/model/DeleteEndpointResult.h>
 #include <aws/pinpoint/model/DeleteEventStreamResult.h>
 #include <aws/pinpoint/model/DeleteGcmChannelResult.h>
+#include <aws/pinpoint/model/DeleteInAppTemplateResult.h>
 #include <aws/pinpoint/model/DeleteJourneyResult.h>
 #include <aws/pinpoint/model/DeletePushTemplateResult.h>
 #include <aws/pinpoint/model/DeleteRecommenderConfigurationResult.h>
@@ -70,6 +72,8 @@
 #include <aws/pinpoint/model/GetGcmChannelResult.h>
 #include <aws/pinpoint/model/GetImportJobResult.h>
 #include <aws/pinpoint/model/GetImportJobsResult.h>
+#include <aws/pinpoint/model/GetInAppMessagesResult.h>
+#include <aws/pinpoint/model/GetInAppTemplateResult.h>
 #include <aws/pinpoint/model/GetJourneyResult.h>
 #include <aws/pinpoint/model/GetJourneyDateRangeKpiResult.h>
 #include <aws/pinpoint/model/GetJourneyExecutionActivityMetricsResult.h>
@@ -97,6 +101,7 @@
 #include <aws/pinpoint/model/PutEventsResult.h>
 #include <aws/pinpoint/model/RemoveAttributesResult.h>
 #include <aws/pinpoint/model/SendMessagesResult.h>
+#include <aws/pinpoint/model/SendOTPMessageResult.h>
 #include <aws/pinpoint/model/SendUsersMessagesResult.h>
 #include <aws/pinpoint/model/UpdateAdmChannelResult.h>
 #include <aws/pinpoint/model/UpdateApnsChannelResult.h>
@@ -111,6 +116,7 @@
 #include <aws/pinpoint/model/UpdateEndpointResult.h>
 #include <aws/pinpoint/model/UpdateEndpointsBatchResult.h>
 #include <aws/pinpoint/model/UpdateGcmChannelResult.h>
+#include <aws/pinpoint/model/UpdateInAppTemplateResult.h>
 #include <aws/pinpoint/model/UpdateJourneyResult.h>
 #include <aws/pinpoint/model/UpdateJourneyStateResult.h>
 #include <aws/pinpoint/model/UpdatePushTemplateResult.h>
@@ -121,6 +127,7 @@
 #include <aws/pinpoint/model/UpdateTemplateActiveVersionResult.h>
 #include <aws/pinpoint/model/UpdateVoiceChannelResult.h>
 #include <aws/pinpoint/model/UpdateVoiceTemplateResult.h>
+#include <aws/pinpoint/model/VerifyOTPMessageResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -166,6 +173,7 @@ namespace Model
         class CreateEmailTemplateRequest;
         class CreateExportJobRequest;
         class CreateImportJobRequest;
+        class CreateInAppTemplateRequest;
         class CreateJourneyRequest;
         class CreatePushTemplateRequest;
         class CreateRecommenderConfigurationRequest;
@@ -185,6 +193,7 @@ namespace Model
         class DeleteEndpointRequest;
         class DeleteEventStreamRequest;
         class DeleteGcmChannelRequest;
+        class DeleteInAppTemplateRequest;
         class DeleteJourneyRequest;
         class DeletePushTemplateRequest;
         class DeleteRecommenderConfigurationRequest;
@@ -220,6 +229,8 @@ namespace Model
         class GetGcmChannelRequest;
         class GetImportJobRequest;
         class GetImportJobsRequest;
+        class GetInAppMessagesRequest;
+        class GetInAppTemplateRequest;
         class GetJourneyRequest;
         class GetJourneyDateRangeKpiRequest;
         class GetJourneyExecutionActivityMetricsRequest;
@@ -247,6 +258,7 @@ namespace Model
         class PutEventsRequest;
         class RemoveAttributesRequest;
         class SendMessagesRequest;
+        class SendOTPMessageRequest;
         class SendUsersMessagesRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -263,6 +275,7 @@ namespace Model
         class UpdateEndpointRequest;
         class UpdateEndpointsBatchRequest;
         class UpdateGcmChannelRequest;
+        class UpdateInAppTemplateRequest;
         class UpdateJourneyRequest;
         class UpdateJourneyStateRequest;
         class UpdatePushTemplateRequest;
@@ -273,12 +286,14 @@ namespace Model
         class UpdateTemplateActiveVersionRequest;
         class UpdateVoiceChannelRequest;
         class UpdateVoiceTemplateRequest;
+        class VerifyOTPMessageRequest;
 
         typedef Aws::Utils::Outcome<CreateAppResult, PinpointError> CreateAppOutcome;
         typedef Aws::Utils::Outcome<CreateCampaignResult, PinpointError> CreateCampaignOutcome;
         typedef Aws::Utils::Outcome<CreateEmailTemplateResult, PinpointError> CreateEmailTemplateOutcome;
         typedef Aws::Utils::Outcome<CreateExportJobResult, PinpointError> CreateExportJobOutcome;
         typedef Aws::Utils::Outcome<CreateImportJobResult, PinpointError> CreateImportJobOutcome;
+        typedef Aws::Utils::Outcome<CreateInAppTemplateResult, PinpointError> CreateInAppTemplateOutcome;
         typedef Aws::Utils::Outcome<CreateJourneyResult, PinpointError> CreateJourneyOutcome;
         typedef Aws::Utils::Outcome<CreatePushTemplateResult, PinpointError> CreatePushTemplateOutcome;
         typedef Aws::Utils::Outcome<CreateRecommenderConfigurationResult, PinpointError> CreateRecommenderConfigurationOutcome;
@@ -298,6 +313,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteEndpointResult, PinpointError> DeleteEndpointOutcome;
         typedef Aws::Utils::Outcome<DeleteEventStreamResult, PinpointError> DeleteEventStreamOutcome;
         typedef Aws::Utils::Outcome<DeleteGcmChannelResult, PinpointError> DeleteGcmChannelOutcome;
+        typedef Aws::Utils::Outcome<DeleteInAppTemplateResult, PinpointError> DeleteInAppTemplateOutcome;
         typedef Aws::Utils::Outcome<DeleteJourneyResult, PinpointError> DeleteJourneyOutcome;
         typedef Aws::Utils::Outcome<DeletePushTemplateResult, PinpointError> DeletePushTemplateOutcome;
         typedef Aws::Utils::Outcome<DeleteRecommenderConfigurationResult, PinpointError> DeleteRecommenderConfigurationOutcome;
@@ -333,6 +349,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetGcmChannelResult, PinpointError> GetGcmChannelOutcome;
         typedef Aws::Utils::Outcome<GetImportJobResult, PinpointError> GetImportJobOutcome;
         typedef Aws::Utils::Outcome<GetImportJobsResult, PinpointError> GetImportJobsOutcome;
+        typedef Aws::Utils::Outcome<GetInAppMessagesResult, PinpointError> GetInAppMessagesOutcome;
+        typedef Aws::Utils::Outcome<GetInAppTemplateResult, PinpointError> GetInAppTemplateOutcome;
         typedef Aws::Utils::Outcome<GetJourneyResult, PinpointError> GetJourneyOutcome;
         typedef Aws::Utils::Outcome<GetJourneyDateRangeKpiResult, PinpointError> GetJourneyDateRangeKpiOutcome;
         typedef Aws::Utils::Outcome<GetJourneyExecutionActivityMetricsResult, PinpointError> GetJourneyExecutionActivityMetricsOutcome;
@@ -360,6 +378,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutEventsResult, PinpointError> PutEventsOutcome;
         typedef Aws::Utils::Outcome<RemoveAttributesResult, PinpointError> RemoveAttributesOutcome;
         typedef Aws::Utils::Outcome<SendMessagesResult, PinpointError> SendMessagesOutcome;
+        typedef Aws::Utils::Outcome<SendOTPMessageResult, PinpointError> SendOTPMessageOutcome;
         typedef Aws::Utils::Outcome<SendUsersMessagesResult, PinpointError> SendUsersMessagesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, PinpointError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, PinpointError> UntagResourceOutcome;
@@ -376,6 +395,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateEndpointResult, PinpointError> UpdateEndpointOutcome;
         typedef Aws::Utils::Outcome<UpdateEndpointsBatchResult, PinpointError> UpdateEndpointsBatchOutcome;
         typedef Aws::Utils::Outcome<UpdateGcmChannelResult, PinpointError> UpdateGcmChannelOutcome;
+        typedef Aws::Utils::Outcome<UpdateInAppTemplateResult, PinpointError> UpdateInAppTemplateOutcome;
         typedef Aws::Utils::Outcome<UpdateJourneyResult, PinpointError> UpdateJourneyOutcome;
         typedef Aws::Utils::Outcome<UpdateJourneyStateResult, PinpointError> UpdateJourneyStateOutcome;
         typedef Aws::Utils::Outcome<UpdatePushTemplateResult, PinpointError> UpdatePushTemplateOutcome;
@@ -386,12 +406,14 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateTemplateActiveVersionResult, PinpointError> UpdateTemplateActiveVersionOutcome;
         typedef Aws::Utils::Outcome<UpdateVoiceChannelResult, PinpointError> UpdateVoiceChannelOutcome;
         typedef Aws::Utils::Outcome<UpdateVoiceTemplateResult, PinpointError> UpdateVoiceTemplateOutcome;
+        typedef Aws::Utils::Outcome<VerifyOTPMessageResult, PinpointError> VerifyOTPMessageOutcome;
 
         typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
         typedef std::future<CreateCampaignOutcome> CreateCampaignOutcomeCallable;
         typedef std::future<CreateEmailTemplateOutcome> CreateEmailTemplateOutcomeCallable;
         typedef std::future<CreateExportJobOutcome> CreateExportJobOutcomeCallable;
         typedef std::future<CreateImportJobOutcome> CreateImportJobOutcomeCallable;
+        typedef std::future<CreateInAppTemplateOutcome> CreateInAppTemplateOutcomeCallable;
         typedef std::future<CreateJourneyOutcome> CreateJourneyOutcomeCallable;
         typedef std::future<CreatePushTemplateOutcome> CreatePushTemplateOutcomeCallable;
         typedef std::future<CreateRecommenderConfigurationOutcome> CreateRecommenderConfigurationOutcomeCallable;
@@ -411,6 +433,7 @@ namespace Model
         typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
         typedef std::future<DeleteEventStreamOutcome> DeleteEventStreamOutcomeCallable;
         typedef std::future<DeleteGcmChannelOutcome> DeleteGcmChannelOutcomeCallable;
+        typedef std::future<DeleteInAppTemplateOutcome> DeleteInAppTemplateOutcomeCallable;
         typedef std::future<DeleteJourneyOutcome> DeleteJourneyOutcomeCallable;
         typedef std::future<DeletePushTemplateOutcome> DeletePushTemplateOutcomeCallable;
         typedef std::future<DeleteRecommenderConfigurationOutcome> DeleteRecommenderConfigurationOutcomeCallable;
@@ -446,6 +469,8 @@ namespace Model
         typedef std::future<GetGcmChannelOutcome> GetGcmChannelOutcomeCallable;
         typedef std::future<GetImportJobOutcome> GetImportJobOutcomeCallable;
         typedef std::future<GetImportJobsOutcome> GetImportJobsOutcomeCallable;
+        typedef std::future<GetInAppMessagesOutcome> GetInAppMessagesOutcomeCallable;
+        typedef std::future<GetInAppTemplateOutcome> GetInAppTemplateOutcomeCallable;
         typedef std::future<GetJourneyOutcome> GetJourneyOutcomeCallable;
         typedef std::future<GetJourneyDateRangeKpiOutcome> GetJourneyDateRangeKpiOutcomeCallable;
         typedef std::future<GetJourneyExecutionActivityMetricsOutcome> GetJourneyExecutionActivityMetricsOutcomeCallable;
@@ -473,6 +498,7 @@ namespace Model
         typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
         typedef std::future<RemoveAttributesOutcome> RemoveAttributesOutcomeCallable;
         typedef std::future<SendMessagesOutcome> SendMessagesOutcomeCallable;
+        typedef std::future<SendOTPMessageOutcome> SendOTPMessageOutcomeCallable;
         typedef std::future<SendUsersMessagesOutcome> SendUsersMessagesOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -489,6 +515,7 @@ namespace Model
         typedef std::future<UpdateEndpointOutcome> UpdateEndpointOutcomeCallable;
         typedef std::future<UpdateEndpointsBatchOutcome> UpdateEndpointsBatchOutcomeCallable;
         typedef std::future<UpdateGcmChannelOutcome> UpdateGcmChannelOutcomeCallable;
+        typedef std::future<UpdateInAppTemplateOutcome> UpdateInAppTemplateOutcomeCallable;
         typedef std::future<UpdateJourneyOutcome> UpdateJourneyOutcomeCallable;
         typedef std::future<UpdateJourneyStateOutcome> UpdateJourneyStateOutcomeCallable;
         typedef std::future<UpdatePushTemplateOutcome> UpdatePushTemplateOutcomeCallable;
@@ -499,6 +526,7 @@ namespace Model
         typedef std::future<UpdateTemplateActiveVersionOutcome> UpdateTemplateActiveVersionOutcomeCallable;
         typedef std::future<UpdateVoiceChannelOutcome> UpdateVoiceChannelOutcomeCallable;
         typedef std::future<UpdateVoiceTemplateOutcome> UpdateVoiceTemplateOutcomeCallable;
+        typedef std::future<VerifyOTPMessageOutcome> VerifyOTPMessageOutcomeCallable;
 } // namespace Model
 
   class PinpointClient;
@@ -508,6 +536,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::CreateEmailTemplateRequest&, const Model::CreateEmailTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEmailTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::CreateExportJobRequest&, const Model::CreateExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExportJobResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::CreateImportJobRequest&, const Model::CreateImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImportJobResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::CreateInAppTemplateRequest&, const Model::CreateInAppTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInAppTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::CreateJourneyRequest&, const Model::CreateJourneyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJourneyResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::CreatePushTemplateRequest&, const Model::CreatePushTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePushTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::CreateRecommenderConfigurationRequest&, const Model::CreateRecommenderConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRecommenderConfigurationResponseReceivedHandler;
@@ -527,6 +556,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteEventStreamRequest&, const Model::DeleteEventStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventStreamResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteGcmChannelRequest&, const Model::DeleteGcmChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGcmChannelResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::DeleteInAppTemplateRequest&, const Model::DeleteInAppTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInAppTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteJourneyRequest&, const Model::DeleteJourneyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJourneyResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeletePushTemplateRequest&, const Model::DeletePushTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePushTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteRecommenderConfigurationRequest&, const Model::DeleteRecommenderConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecommenderConfigurationResponseReceivedHandler;
@@ -562,6 +592,8 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::GetGcmChannelRequest&, const Model::GetGcmChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGcmChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetImportJobRequest&, const Model::GetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImportJobResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetImportJobsRequest&, const Model::GetImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImportJobsResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::GetInAppMessagesRequest&, const Model::GetInAppMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInAppMessagesResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::GetInAppTemplateRequest&, const Model::GetInAppTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInAppTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetJourneyRequest&, const Model::GetJourneyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJourneyResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetJourneyDateRangeKpiRequest&, const Model::GetJourneyDateRangeKpiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJourneyDateRangeKpiResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetJourneyExecutionActivityMetricsRequest&, const Model::GetJourneyExecutionActivityMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJourneyExecutionActivityMetricsResponseReceivedHandler;
@@ -589,6 +621,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::PutEventsRequest&, const Model::PutEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::RemoveAttributesRequest&, const Model::RemoveAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveAttributesResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::SendMessagesRequest&, const Model::SendMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessagesResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::SendOTPMessageRequest&, const Model::SendOTPMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendOTPMessageResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::SendUsersMessagesRequest&, const Model::SendUsersMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendUsersMessagesResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -605,6 +638,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::UpdateEndpointRequest&, const Model::UpdateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateEndpointsBatchRequest&, const Model::UpdateEndpointsBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointsBatchResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateGcmChannelRequest&, const Model::UpdateGcmChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGcmChannelResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::UpdateInAppTemplateRequest&, const Model::UpdateInAppTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInAppTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateJourneyRequest&, const Model::UpdateJourneyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJourneyResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateJourneyStateRequest&, const Model::UpdateJourneyStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJourneyStateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdatePushTemplateRequest&, const Model::UpdatePushTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePushTemplateResponseReceivedHandler;
@@ -615,6 +649,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::UpdateTemplateActiveVersionRequest&, const Model::UpdateTemplateActiveVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateActiveVersionResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateVoiceChannelRequest&, const Model::UpdateVoiceChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVoiceChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateVoiceTemplateRequest&, const Model::UpdateVoiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVoiceTemplateResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::VerifyOTPMessageRequest&, const Model::VerifyOTPMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyOTPMessageResponseReceivedHandler;
 
   /**
    * <p>Doc Engage API - Amazon Pinpoint API</p>
@@ -776,6 +811,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateImportJobAsync(const Model::CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new message template for messages using the in-app message
+         * channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateInAppTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateInAppTemplateOutcome CreateInAppTemplate(const Model::CreateInAppTemplateRequest& request) const;
+
+        /**
+         * <p>Creates a new message template for messages using the in-app message
+         * channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateInAppTemplate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateInAppTemplateOutcomeCallable CreateInAppTemplateCallable(const Model::CreateInAppTemplateRequest& request) const;
+
+        /**
+         * <p>Creates a new message template for messages using the in-app message
+         * channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateInAppTemplate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateInAppTemplateAsync(const Model::CreateInAppTemplateRequest& request, const CreateInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a journey for an application.</p><p><h3>See Also:</h3>   <a
@@ -1296,6 +1359,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteGcmChannelAsync(const Model::DeleteGcmChannelRequest& request, const DeleteGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a message template for messages sent using the in-app message
+         * channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteInAppTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteInAppTemplateOutcome DeleteInAppTemplate(const Model::DeleteInAppTemplateRequest& request) const;
+
+        /**
+         * <p>Deletes a message template for messages sent using the in-app message
+         * channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteInAppTemplate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteInAppTemplateOutcomeCallable DeleteInAppTemplateCallable(const Model::DeleteInAppTemplateRequest& request) const;
+
+        /**
+         * <p>Deletes a message template for messages sent using the in-app message
+         * channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteInAppTemplate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteInAppTemplateAsync(const Model::DeleteInAppTemplateRequest& request, const DeleteInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a journey from an application.</p><p><h3>See Also:</h3>   <a
@@ -2272,6 +2363,62 @@ namespace Model
         virtual void GetImportJobsAsync(const Model::GetImportJobsRequest& request, const GetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the in-app messages targeted for the provided endpoint
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppMessages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInAppMessagesOutcome GetInAppMessages(const Model::GetInAppMessagesRequest& request) const;
+
+        /**
+         * <p>Retrieves the in-app messages targeted for the provided endpoint
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppMessages">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInAppMessagesOutcomeCallable GetInAppMessagesCallable(const Model::GetInAppMessagesRequest& request) const;
+
+        /**
+         * <p>Retrieves the in-app messages targeted for the provided endpoint
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppMessages">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInAppMessagesAsync(const Model::GetInAppMessagesRequest& request, const GetInAppMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the content and settings of a message template for messages sent
+         * through the in-app channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInAppTemplateOutcome GetInAppTemplate(const Model::GetInAppTemplateRequest& request) const;
+
+        /**
+         * <p>Retrieves the content and settings of a message template for messages sent
+         * through the in-app channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppTemplate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInAppTemplateOutcomeCallable GetInAppTemplateCallable(const Model::GetInAppTemplateRequest& request) const;
+
+        /**
+         * <p>Retrieves the content and settings of a message template for messages sent
+         * through the in-app channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppTemplate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInAppTemplateAsync(const Model::GetInAppTemplateRequest& request, const GetInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves information about the status, configuration, and other settings for
          * a journey.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourney">AWS
@@ -3040,6 +3187,31 @@ namespace Model
         virtual void SendMessagesAsync(const Model::SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Send an OTP message</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendOTPMessageOutcome SendOTPMessage(const Model::SendOTPMessageRequest& request) const;
+
+        /**
+         * <p>Send an OTP message</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SendOTPMessageOutcomeCallable SendOTPMessageCallable(const Model::SendOTPMessageRequest& request) const;
+
+        /**
+         * <p>Send an OTP message</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SendOTPMessageAsync(const Model::SendOTPMessageRequest& request, const SendOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates and sends a message to a list of users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">AWS
          * API Reference</a></p>
@@ -3512,6 +3684,34 @@ namespace Model
         virtual void UpdateGcmChannelAsync(const Model::UpdateGcmChannelRequest& request, const UpdateGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an existing message template for messages sent through the in-app
+         * message channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateInAppTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateInAppTemplateOutcome UpdateInAppTemplate(const Model::UpdateInAppTemplateRequest& request) const;
+
+        /**
+         * <p>Updates an existing message template for messages sent through the in-app
+         * message channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateInAppTemplate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateInAppTemplateOutcomeCallable UpdateInAppTemplateCallable(const Model::UpdateInAppTemplateRequest& request) const;
+
+        /**
+         * <p>Updates an existing message template for messages sent through the in-app
+         * message channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateInAppTemplate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateInAppTemplateAsync(const Model::UpdateInAppTemplateRequest& request, const UpdateInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the configuration and other settings for a journey.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourney">AWS
@@ -3791,6 +3991,31 @@ namespace Model
          */
         virtual void UpdateVoiceTemplateAsync(const Model::UpdateVoiceTemplateRequest& request, const UpdateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Verify an OTP</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::VerifyOTPMessageOutcome VerifyOTPMessage(const Model::VerifyOTPMessageRequest& request) const;
+
+        /**
+         * <p>Verify an OTP</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::VerifyOTPMessageOutcomeCallable VerifyOTPMessageCallable(const Model::VerifyOTPMessageRequest& request) const;
+
+        /**
+         * <p>Verify an OTP</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void VerifyOTPMessageAsync(const Model::VerifyOTPMessageRequest& request, const VerifyOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -3800,6 +4025,7 @@ namespace Model
         void CreateEmailTemplateAsyncHelper(const Model::CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateExportJobAsyncHelper(const Model::CreateExportJobRequest& request, const CreateExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateImportJobAsyncHelper(const Model::CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateInAppTemplateAsyncHelper(const Model::CreateInAppTemplateRequest& request, const CreateInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJourneyAsyncHelper(const Model::CreateJourneyRequest& request, const CreateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePushTemplateAsyncHelper(const Model::CreatePushTemplateRequest& request, const CreatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRecommenderConfigurationAsyncHelper(const Model::CreateRecommenderConfigurationRequest& request, const CreateRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3819,6 +4045,7 @@ namespace Model
         void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventStreamAsyncHelper(const Model::DeleteEventStreamRequest& request, const DeleteEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGcmChannelAsyncHelper(const Model::DeleteGcmChannelRequest& request, const DeleteGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteInAppTemplateAsyncHelper(const Model::DeleteInAppTemplateRequest& request, const DeleteInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteJourneyAsyncHelper(const Model::DeleteJourneyRequest& request, const DeleteJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePushTemplateAsyncHelper(const Model::DeletePushTemplateRequest& request, const DeletePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRecommenderConfigurationAsyncHelper(const Model::DeleteRecommenderConfigurationRequest& request, const DeleteRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3854,6 +4081,8 @@ namespace Model
         void GetGcmChannelAsyncHelper(const Model::GetGcmChannelRequest& request, const GetGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetImportJobAsyncHelper(const Model::GetImportJobRequest& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetImportJobsAsyncHelper(const Model::GetImportJobsRequest& request, const GetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInAppMessagesAsyncHelper(const Model::GetInAppMessagesRequest& request, const GetInAppMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInAppTemplateAsyncHelper(const Model::GetInAppTemplateRequest& request, const GetInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJourneyAsyncHelper(const Model::GetJourneyRequest& request, const GetJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJourneyDateRangeKpiAsyncHelper(const Model::GetJourneyDateRangeKpiRequest& request, const GetJourneyDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJourneyExecutionActivityMetricsAsyncHelper(const Model::GetJourneyExecutionActivityMetricsRequest& request, const GetJourneyExecutionActivityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3881,6 +4110,7 @@ namespace Model
         void PutEventsAsyncHelper(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveAttributesAsyncHelper(const Model::RemoveAttributesRequest& request, const RemoveAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendMessagesAsyncHelper(const Model::SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendOTPMessageAsyncHelper(const Model::SendOTPMessageRequest& request, const SendOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendUsersMessagesAsyncHelper(const Model::SendUsersMessagesRequest& request, const SendUsersMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3897,6 +4127,7 @@ namespace Model
         void UpdateEndpointAsyncHelper(const Model::UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEndpointsBatchAsyncHelper(const Model::UpdateEndpointsBatchRequest& request, const UpdateEndpointsBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGcmChannelAsyncHelper(const Model::UpdateGcmChannelRequest& request, const UpdateGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateInAppTemplateAsyncHelper(const Model::UpdateInAppTemplateRequest& request, const UpdateInAppTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateJourneyAsyncHelper(const Model::UpdateJourneyRequest& request, const UpdateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateJourneyStateAsyncHelper(const Model::UpdateJourneyStateRequest& request, const UpdateJourneyStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePushTemplateAsyncHelper(const Model::UpdatePushTemplateRequest& request, const UpdatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3907,6 +4138,7 @@ namespace Model
         void UpdateTemplateActiveVersionAsyncHelper(const Model::UpdateTemplateActiveVersionRequest& request, const UpdateTemplateActiveVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVoiceChannelAsyncHelper(const Model::UpdateVoiceChannelRequest& request, const UpdateVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVoiceTemplateAsyncHelper(const Model::UpdateVoiceTemplateRequest& request, const UpdateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void VerifyOTPMessageAsyncHelper(const Model::VerifyOTPMessageRequest& request, const VerifyOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

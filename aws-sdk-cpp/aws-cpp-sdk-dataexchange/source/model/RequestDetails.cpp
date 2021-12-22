@@ -23,7 +23,9 @@ RequestDetails::RequestDetails() :
     m_exportAssetsToS3HasBeenSet(false),
     m_exportRevisionsToS3HasBeenSet(false),
     m_importAssetFromSignedUrlHasBeenSet(false),
-    m_importAssetsFromS3HasBeenSet(false)
+    m_importAssetsFromS3HasBeenSet(false),
+    m_importAssetsFromRedshiftDataSharesHasBeenSet(false),
+    m_importAssetFromApiGatewayApiHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ RequestDetails::RequestDetails(JsonView jsonValue) :
     m_exportAssetsToS3HasBeenSet(false),
     m_exportRevisionsToS3HasBeenSet(false),
     m_importAssetFromSignedUrlHasBeenSet(false),
-    m_importAssetsFromS3HasBeenSet(false)
+    m_importAssetsFromS3HasBeenSet(false),
+    m_importAssetsFromRedshiftDataSharesHasBeenSet(false),
+    m_importAssetFromApiGatewayApiHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +78,20 @@ RequestDetails& RequestDetails::operator =(JsonView jsonValue)
     m_importAssetsFromS3HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ImportAssetsFromRedshiftDataShares"))
+  {
+    m_importAssetsFromRedshiftDataShares = jsonValue.GetObject("ImportAssetsFromRedshiftDataShares");
+
+    m_importAssetsFromRedshiftDataSharesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImportAssetFromApiGatewayApi"))
+  {
+    m_importAssetFromApiGatewayApi = jsonValue.GetObject("ImportAssetFromApiGatewayApi");
+
+    m_importAssetFromApiGatewayApiHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +126,18 @@ JsonValue RequestDetails::Jsonize() const
   if(m_importAssetsFromS3HasBeenSet)
   {
    payload.WithObject("ImportAssetsFromS3", m_importAssetsFromS3.Jsonize());
+
+  }
+
+  if(m_importAssetsFromRedshiftDataSharesHasBeenSet)
+  {
+   payload.WithObject("ImportAssetsFromRedshiftDataShares", m_importAssetsFromRedshiftDataShares.Jsonize());
+
+  }
+
+  if(m_importAssetFromApiGatewayApiHasBeenSet)
+  {
+   payload.WithObject("ImportAssetFromApiGatewayApi", m_importAssetFromApiGatewayApi.Jsonize());
 
   }
 

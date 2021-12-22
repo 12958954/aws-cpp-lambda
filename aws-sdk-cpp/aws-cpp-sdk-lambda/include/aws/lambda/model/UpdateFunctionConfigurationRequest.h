@@ -180,8 +180,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -189,8 +190,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -198,8 +200,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -207,8 +210,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -216,8 +220,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -225,8 +230,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -234,8 +240,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -243,8 +250,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -293,36 +301,36 @@ namespace Model
 
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
@@ -466,37 +474,43 @@ namespace Model
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline UpdateFunctionConfigurationRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline UpdateFunctionConfigurationRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
@@ -831,7 +845,7 @@ namespace Model
      * <p> <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
      * image configuration values</a> that override the values in the container image
-     * Dockerfile.</p>
+     * Docker file.</p>
      */
     inline const ImageConfig& GetImageConfig() const{ return m_imageConfig; }
 
@@ -839,7 +853,7 @@ namespace Model
      * <p> <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
      * image configuration values</a> that override the values in the container image
-     * Dockerfile.</p>
+     * Docker file.</p>
      */
     inline bool ImageConfigHasBeenSet() const { return m_imageConfigHasBeenSet; }
 
@@ -847,7 +861,7 @@ namespace Model
      * <p> <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
      * image configuration values</a> that override the values in the container image
-     * Dockerfile.</p>
+     * Docker file.</p>
      */
     inline void SetImageConfig(const ImageConfig& value) { m_imageConfigHasBeenSet = true; m_imageConfig = value; }
 
@@ -855,7 +869,7 @@ namespace Model
      * <p> <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
      * image configuration values</a> that override the values in the container image
-     * Dockerfile.</p>
+     * Docker file.</p>
      */
     inline void SetImageConfig(ImageConfig&& value) { m_imageConfigHasBeenSet = true; m_imageConfig = std::move(value); }
 
@@ -863,7 +877,7 @@ namespace Model
      * <p> <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
      * image configuration values</a> that override the values in the container image
-     * Dockerfile.</p>
+     * Docker file.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithImageConfig(const ImageConfig& value) { SetImageConfig(value); return *this;}
 
@@ -871,7 +885,7 @@ namespace Model
      * <p> <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
      * image configuration values</a> that override the values in the container image
-     * Dockerfile.</p>
+     * Docker file.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithImageConfig(ImageConfig&& value) { SetImageConfig(std::move(value)); return *this;}
 

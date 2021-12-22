@@ -90,8 +90,11 @@ namespace FSxErrorMapper
 {
 
 static const int INCOMPATIBLE_PARAMETER_HASH = HashingUtils::HashString("IncompatibleParameterError");
+static const int SNAPSHOT_NOT_FOUND_HASH = HashingUtils::HashString("SnapshotNotFound");
+static const int DATA_REPOSITORY_ASSOCIATION_NOT_FOUND_HASH = HashingUtils::HashString("DataRepositoryAssociationNotFound");
 static const int ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("ActiveDirectoryError");
 static const int FILE_SYSTEM_NOT_FOUND_HASH = HashingUtils::HashString("FileSystemNotFound");
+static const int INVALID_DATA_REPOSITORY_TYPE_HASH = HashingUtils::HashString("InvalidDataRepositoryType");
 static const int INVALID_NETWORK_SETTINGS_HASH = HashingUtils::HashString("InvalidNetworkSettings");
 static const int INVALID_SOURCE_KMS_KEY_HASH = HashingUtils::HashString("InvalidSourceKmsKey");
 static const int INVALID_IMPORT_PATH_HASH = HashingUtils::HashString("InvalidImportPath");
@@ -112,6 +115,9 @@ static const int NOT_SERVICE_RESOURCE_HASH = HashingUtils::HashString("NotServic
 static const int INVALID_DESTINATION_KMS_KEY_HASH = HashingUtils::HashString("InvalidDestinationKmsKey");
 static const int RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH = HashingUtils::HashString("ResourceDoesNotSupportTagging");
 static const int DATA_REPOSITORY_TASK_EXECUTING_HASH = HashingUtils::HashString("DataRepositoryTaskExecuting");
+static const int STORAGE_VIRTUAL_MACHINE_NOT_FOUND_HASH = HashingUtils::HashString("StorageVirtualMachineNotFound");
+static const int VOLUME_NOT_FOUND_HASH = HashingUtils::HashString("VolumeNotFound");
+static const int MISSING_VOLUME_CONFIGURATION_HASH = HashingUtils::HashString("MissingVolumeConfiguration");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequest");
 static const int MISSING_FILE_SYSTEM_CONFIGURATION_HASH = HashingUtils::HashString("MissingFileSystemConfiguration");
 
@@ -124,6 +130,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INCOMPATIBLE_PARAMETER), false);
   }
+  else if (hashCode == SNAPSHOT_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SNAPSHOT_NOT_FOUND), false);
+  }
+  else if (hashCode == DATA_REPOSITORY_ASSOCIATION_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_ASSOCIATION_NOT_FOUND), false);
+  }
   else if (hashCode == ACTIVE_DIRECTORY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::ACTIVE_DIRECTORY), false);
@@ -131,6 +145,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == FILE_SYSTEM_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::FILE_SYSTEM_NOT_FOUND), false);
+  }
+  else if (hashCode == INVALID_DATA_REPOSITORY_TYPE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_DATA_REPOSITORY_TYPE), false);
   }
   else if (hashCode == INVALID_NETWORK_SETTINGS_HASH)
   {
@@ -211,6 +229,18 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DATA_REPOSITORY_TASK_EXECUTING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_TASK_EXECUTING), false);
+  }
+  else if (hashCode == STORAGE_VIRTUAL_MACHINE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::STORAGE_VIRTUAL_MACHINE_NOT_FOUND), false);
+  }
+  else if (hashCode == VOLUME_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::VOLUME_NOT_FOUND), false);
+  }
+  else if (hashCode == MISSING_VOLUME_CONFIGURATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::MISSING_VOLUME_CONFIGURATION), false);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {

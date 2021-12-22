@@ -898,64 +898,64 @@ namespace Model
     /**
      * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline DBSnapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline DBSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline DBSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1250,6 +1250,55 @@ namespace Model
      */
     inline DBSnapshot& WithOriginalSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetOriginalSnapshotCreateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline const Aws::String& GetSnapshotTarget() const{ return m_snapshotTarget; }
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline bool SnapshotTargetHasBeenSet() const { return m_snapshotTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline void SetSnapshotTarget(const Aws::String& value) { m_snapshotTargetHasBeenSet = true; m_snapshotTarget = value; }
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline void SetSnapshotTarget(Aws::String&& value) { m_snapshotTargetHasBeenSet = true; m_snapshotTarget = std::move(value); }
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline void SetSnapshotTarget(const char* value) { m_snapshotTargetHasBeenSet = true; m_snapshotTarget.assign(value); }
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline DBSnapshot& WithSnapshotTarget(const Aws::String& value) { SetSnapshotTarget(value); return *this;}
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline DBSnapshot& WithSnapshotTarget(Aws::String&& value) { SetSnapshotTarget(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline DBSnapshot& WithSnapshotTarget(const char* value) { SetSnapshotTarget(value); return *this;}
+
   private:
 
     Aws::String m_dBSnapshotIdentifier;
@@ -1341,6 +1390,9 @@ namespace Model
 
     Aws::Utils::DateTime m_originalSnapshotCreateTime;
     bool m_originalSnapshotCreateTimeHasBeenSet;
+
+    Aws::String m_snapshotTarget;
+    bool m_snapshotTargetHasBeenSet;
   };
 
 } // namespace Model

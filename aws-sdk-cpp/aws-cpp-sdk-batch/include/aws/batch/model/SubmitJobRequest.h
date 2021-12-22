@@ -45,58 +45,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline SubmitJobRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline SubmitJobRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job. The first character must be alphanumeric, and up to 128
-     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p>
+     * <p>The name of the job. It can be up to 128 letters long. The first character
+     * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
+     * hyphens (-), and underscores (_).</p>
      */
     inline SubmitJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
 
@@ -148,6 +148,84 @@ namespace Model
      * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline SubmitJobRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
+
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline const Aws::String& GetShareIdentifier() const{ return m_shareIdentifier; }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline void SetShareIdentifier(const Aws::String& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = value; }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline void SetShareIdentifier(Aws::String&& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = std::move(value); }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline void SetShareIdentifier(const char* value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier.assign(value); }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline SubmitJobRequest& WithShareIdentifier(const Aws::String& value) { SetShareIdentifier(value); return *this;}
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline SubmitJobRequest& WithShareIdentifier(Aws::String&& value) { SetShareIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline SubmitJobRequest& WithShareIdentifier(const char* value) { SetShareIdentifier(value); return *this;}
+
+
+    /**
+     * <p>The scheduling priority for the job. This will only affect jobs in job queues
+     * with a fair share policy. Jobs with a higher scheduling priority will be
+     * scheduled before jobs with a lower scheduling priority. This will override any
+     * scheduling priority in the job definition.</p> <p>The minimum supported value is
+     * 0 and the maximum supported value is 9999.</p>
+     */
+    inline int GetSchedulingPriorityOverride() const{ return m_schedulingPriorityOverride; }
+
+    /**
+     * <p>The scheduling priority for the job. This will only affect jobs in job queues
+     * with a fair share policy. Jobs with a higher scheduling priority will be
+     * scheduled before jobs with a lower scheduling priority. This will override any
+     * scheduling priority in the job definition.</p> <p>The minimum supported value is
+     * 0 and the maximum supported value is 9999.</p>
+     */
+    inline bool SchedulingPriorityOverrideHasBeenSet() const { return m_schedulingPriorityOverrideHasBeenSet; }
+
+    /**
+     * <p>The scheduling priority for the job. This will only affect jobs in job queues
+     * with a fair share policy. Jobs with a higher scheduling priority will be
+     * scheduled before jobs with a lower scheduling priority. This will override any
+     * scheduling priority in the job definition.</p> <p>The minimum supported value is
+     * 0 and the maximum supported value is 9999.</p>
+     */
+    inline void SetSchedulingPriorityOverride(int value) { m_schedulingPriorityOverrideHasBeenSet = true; m_schedulingPriorityOverride = value; }
+
+    /**
+     * <p>The scheduling priority for the job. This will only affect jobs in job queues
+     * with a fair share policy. Jobs with a higher scheduling priority will be
+     * scheduled before jobs with a lower scheduling priority. This will override any
+     * scheduling priority in the job definition.</p> <p>The minimum supported value is
+     * 0 and the maximum supported value is 9999.</p>
+     */
+    inline SubmitJobRequest& WithSchedulingPriorityOverride(int value) { SetSchedulingPriorityOverride(value); return *this;}
 
 
     /**
@@ -878,6 +956,12 @@ namespace Model
 
     Aws::String m_jobQueue;
     bool m_jobQueueHasBeenSet;
+
+    Aws::String m_shareIdentifier;
+    bool m_shareIdentifierHasBeenSet;
+
+    int m_schedulingPriorityOverride;
+    bool m_schedulingPriorityOverrideHasBeenSet;
 
     ArrayProperties m_arrayProperties;
     bool m_arrayPropertiesHasBeenSet;

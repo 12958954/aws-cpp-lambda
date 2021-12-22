@@ -43,8 +43,8 @@ namespace Model
 
     /**
      * <p>The name of the SSM Command document or Automation runbook that contains the
-     * configuration information for the instance.</p> <p>You can specify Amazon Web
-     * Services-predefined documents, documents you created, or a document that is
+     * configuration information for the managed node.</p> <p>You can specify Amazon
+     * Web Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
      * documents) that are shared with you from other Amazon Web Services accounts, you
      * must specify the complete SSM document ARN, in the following format:</p> <p>
@@ -59,8 +59,8 @@ namespace Model
 
     /**
      * <p>The name of the SSM Command document or Automation runbook that contains the
-     * configuration information for the instance.</p> <p>You can specify Amazon Web
-     * Services-predefined documents, documents you created, or a document that is
+     * configuration information for the managed node.</p> <p>You can specify Amazon
+     * Web Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
      * documents) that are shared with you from other Amazon Web Services accounts, you
      * must specify the complete SSM document ARN, in the following format:</p> <p>
@@ -75,8 +75,8 @@ namespace Model
 
     /**
      * <p>The name of the SSM Command document or Automation runbook that contains the
-     * configuration information for the instance.</p> <p>You can specify Amazon Web
-     * Services-predefined documents, documents you created, or a document that is
+     * configuration information for the managed node.</p> <p>You can specify Amazon
+     * Web Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
      * documents) that are shared with you from other Amazon Web Services accounts, you
      * must specify the complete SSM document ARN, in the following format:</p> <p>
@@ -91,8 +91,8 @@ namespace Model
 
     /**
      * <p>The name of the SSM Command document or Automation runbook that contains the
-     * configuration information for the instance.</p> <p>You can specify Amazon Web
-     * Services-predefined documents, documents you created, or a document that is
+     * configuration information for the managed node.</p> <p>You can specify Amazon
+     * Web Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
      * documents) that are shared with you from other Amazon Web Services accounts, you
      * must specify the complete SSM document ARN, in the following format:</p> <p>
@@ -107,8 +107,8 @@ namespace Model
 
     /**
      * <p>The name of the SSM Command document or Automation runbook that contains the
-     * configuration information for the instance.</p> <p>You can specify Amazon Web
-     * Services-predefined documents, documents you created, or a document that is
+     * configuration information for the managed node.</p> <p>You can specify Amazon
+     * Web Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
      * documents) that are shared with you from other Amazon Web Services accounts, you
      * must specify the complete SSM document ARN, in the following format:</p> <p>
@@ -123,8 +123,8 @@ namespace Model
 
     /**
      * <p>The name of the SSM Command document or Automation runbook that contains the
-     * configuration information for the instance.</p> <p>You can specify Amazon Web
-     * Services-predefined documents, documents you created, or a document that is
+     * configuration information for the managed node.</p> <p>You can specify Amazon
+     * Web Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
      * documents) that are shared with you from other Amazon Web Services accounts, you
      * must specify the complete SSM document ARN, in the following format:</p> <p>
@@ -139,8 +139,8 @@ namespace Model
 
     /**
      * <p>The name of the SSM Command document or Automation runbook that contains the
-     * configuration information for the instance.</p> <p>You can specify Amazon Web
-     * Services-predefined documents, documents you created, or a document that is
+     * configuration information for the managed node.</p> <p>You can specify Amazon
+     * Web Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
      * documents) that are shared with you from other Amazon Web Services accounts, you
      * must specify the complete SSM document ARN, in the following format:</p> <p>
@@ -155,8 +155,8 @@ namespace Model
 
     /**
      * <p>The name of the SSM Command document or Automation runbook that contains the
-     * configuration information for the instance.</p> <p>You can specify Amazon Web
-     * Services-predefined documents, documents you created, or a document that is
+     * configuration information for the managed node.</p> <p>You can specify Amazon
+     * Web Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
      * documents) that are shared with you from other Amazon Web Services accounts, you
      * must specify the complete SSM document ARN, in the following format:</p> <p>
@@ -220,114 +220,114 @@ namespace Model
 
 
     /**
-     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
-     * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. Requests that include the parameter <code>InstanceID</code> with
-     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
-     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
-     * can't use the parameters <code>AssociationName</code>,
-     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
-     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
-     * <code>ScheduleExpression</code>. To use these parameters, you must use the
-     * <code>Targets</code> parameter.</p> 
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
-     * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. Requests that include the parameter <code>InstanceID</code> with
-     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
-     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
-     * can't use the parameters <code>AssociationName</code>,
-     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
-     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
-     * <code>ScheduleExpression</code>. To use these parameters, you must use the
-     * <code>Targets</code> parameter.</p> 
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
-     * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. Requests that include the parameter <code>InstanceID</code> with
-     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
-     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
-     * can't use the parameters <code>AssociationName</code>,
-     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
-     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
-     * <code>ScheduleExpression</code>. To use these parameters, you must use the
-     * <code>Targets</code> parameter.</p> 
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
-     * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. Requests that include the parameter <code>InstanceID</code> with
-     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
-     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
-     * can't use the parameters <code>AssociationName</code>,
-     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
-     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
-     * <code>ScheduleExpression</code>. To use these parameters, you must use the
-     * <code>Targets</code> parameter.</p> 
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
-     * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. Requests that include the parameter <code>InstanceID</code> with
-     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
-     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
-     * can't use the parameters <code>AssociationName</code>,
-     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
-     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
-     * <code>ScheduleExpression</code>. To use these parameters, you must use the
-     * <code>Targets</code> parameter.</p> 
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
-     * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. Requests that include the parameter <code>InstanceID</code> with
-     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
-     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
-     * can't use the parameters <code>AssociationName</code>,
-     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
-     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
-     * <code>ScheduleExpression</code>. To use these parameters, you must use the
-     * <code>Targets</code> parameter.</p> 
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline CreateAssociationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
-     * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. Requests that include the parameter <code>InstanceID</code> with
-     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
-     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
-     * can't use the parameters <code>AssociationName</code>,
-     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
-     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
-     * <code>ScheduleExpression</code>. To use these parameters, you must use the
-     * <code>Targets</code> parameter.</p> 
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline CreateAssociationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
-     * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. Requests that include the parameter <code>InstanceID</code> with
-     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
-     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
-     * can't use the parameters <code>AssociationName</code>,
-     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
-     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
-     * <code>ScheduleExpression</code>. To use these parameters, you must use the
-     * <code>Targets</code> parameter.</p> 
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline CreateAssociationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -394,10 +394,12 @@ namespace Model
 
 
     /**
-     * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an Amazon Web Services
-     * account, or individual instance IDs. For more information about choosing targets
-     * for an association, see <a
+     * <p>The targets for the association. You can target managed nodes by using tags,
+     * Amazon Web Services resource groups, all managed nodes in an Amazon Web Services
+     * account, or individual managed node IDs. You can target all managed nodes in an
+     * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
+     * a value of <code>*</code>. For more information about choosing targets for an
+     * association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -405,10 +407,12 @@ namespace Model
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an Amazon Web Services
-     * account, or individual instance IDs. For more information about choosing targets
-     * for an association, see <a
+     * <p>The targets for the association. You can target managed nodes by using tags,
+     * Amazon Web Services resource groups, all managed nodes in an Amazon Web Services
+     * account, or individual managed node IDs. You can target all managed nodes in an
+     * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
+     * a value of <code>*</code>. For more information about choosing targets for an
+     * association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -416,10 +420,12 @@ namespace Model
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an Amazon Web Services
-     * account, or individual instance IDs. For more information about choosing targets
-     * for an association, see <a
+     * <p>The targets for the association. You can target managed nodes by using tags,
+     * Amazon Web Services resource groups, all managed nodes in an Amazon Web Services
+     * account, or individual managed node IDs. You can target all managed nodes in an
+     * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
+     * a value of <code>*</code>. For more information about choosing targets for an
+     * association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -427,10 +433,12 @@ namespace Model
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an Amazon Web Services
-     * account, or individual instance IDs. For more information about choosing targets
-     * for an association, see <a
+     * <p>The targets for the association. You can target managed nodes by using tags,
+     * Amazon Web Services resource groups, all managed nodes in an Amazon Web Services
+     * account, or individual managed node IDs. You can target all managed nodes in an
+     * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
+     * a value of <code>*</code>. For more information about choosing targets for an
+     * association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -438,10 +446,12 @@ namespace Model
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an Amazon Web Services
-     * account, or individual instance IDs. For more information about choosing targets
-     * for an association, see <a
+     * <p>The targets for the association. You can target managed nodes by using tags,
+     * Amazon Web Services resource groups, all managed nodes in an Amazon Web Services
+     * account, or individual managed node IDs. You can target all managed nodes in an
+     * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
+     * a value of <code>*</code>. For more information about choosing targets for an
+     * association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -449,10 +459,12 @@ namespace Model
     inline CreateAssociationRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an Amazon Web Services
-     * account, or individual instance IDs. For more information about choosing targets
-     * for an association, see <a
+     * <p>The targets for the association. You can target managed nodes by using tags,
+     * Amazon Web Services resource groups, all managed nodes in an Amazon Web Services
+     * account, or individual managed node IDs. You can target all managed nodes in an
+     * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
+     * a value of <code>*</code>. For more information about choosing targets for an
+     * association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -460,10 +472,12 @@ namespace Model
     inline CreateAssociationRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an Amazon Web Services
-     * account, or individual instance IDs. For more information about choosing targets
-     * for an association, see <a
+     * <p>The targets for the association. You can target managed nodes by using tags,
+     * Amazon Web Services resource groups, all managed nodes in an Amazon Web Services
+     * account, or individual managed node IDs. You can target all managed nodes in an
+     * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
+     * a value of <code>*</code>. For more information about choosing targets for an
+     * association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -471,10 +485,12 @@ namespace Model
     inline CreateAssociationRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an Amazon Web Services
-     * account, or individual instance IDs. For more information about choosing targets
-     * for an association, see <a
+     * <p>The targets for the association. You can target managed nodes by using tags,
+     * Amazon Web Services resource groups, all managed nodes in an Amazon Web Services
+     * account, or individual managed node IDs. You can target all managed nodes in an
+     * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
+     * a value of <code>*</code>. For more information about choosing targets for an
+     * association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -602,58 +618,66 @@ namespace Model
 
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline const Aws::String& GetAutomationTargetParameterName() const{ return m_automationTargetParameterName; }
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline bool AutomationTargetParameterNameHasBeenSet() const { return m_automationTargetParameterNameHasBeenSet; }
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline void SetAutomationTargetParameterName(const Aws::String& value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName = value; }
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline void SetAutomationTargetParameterName(Aws::String&& value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName = std::move(value); }
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline void SetAutomationTargetParameterName(const char* value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName.assign(value); }
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline CreateAssociationRequest& WithAutomationTargetParameterName(const Aws::String& value) { SetAutomationTargetParameterName(value); return *this;}
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline CreateAssociationRequest& WithAutomationTargetParameterName(Aws::String&& value) { SetAutomationTargetParameterName(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline CreateAssociationRequest& WithAutomationTargetParameterName(const char* value) { SetAutomationTargetParameterName(value); return *this;}
 
@@ -665,7 +689,7 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set <code>MaxError</code> to 10%, then the
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
      * system stops sending the request when the sixth error is received.</p>
      * <p>Executions that are already running an association when
      * <code>MaxErrors</code> is reached are allowed to complete, but some of these
@@ -682,7 +706,7 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set <code>MaxError</code> to 10%, then the
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
      * system stops sending the request when the sixth error is received.</p>
      * <p>Executions that are already running an association when
      * <code>MaxErrors</code> is reached are allowed to complete, but some of these
@@ -699,7 +723,7 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set <code>MaxError</code> to 10%, then the
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
      * system stops sending the request when the sixth error is received.</p>
      * <p>Executions that are already running an association when
      * <code>MaxErrors</code> is reached are allowed to complete, but some of these
@@ -716,7 +740,7 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set <code>MaxError</code> to 10%, then the
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
      * system stops sending the request when the sixth error is received.</p>
      * <p>Executions that are already running an association when
      * <code>MaxErrors</code> is reached are allowed to complete, but some of these
@@ -733,7 +757,7 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set <code>MaxError</code> to 10%, then the
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
      * system stops sending the request when the sixth error is received.</p>
      * <p>Executions that are already running an association when
      * <code>MaxErrors</code> is reached are allowed to complete, but some of these
@@ -750,7 +774,7 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set <code>MaxError</code> to 10%, then the
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
      * system stops sending the request when the sixth error is received.</p>
      * <p>Executions that are already running an association when
      * <code>MaxErrors</code> is reached are allowed to complete, but some of these
@@ -767,7 +791,7 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set <code>MaxError</code> to 10%, then the
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
      * system stops sending the request when the sixth error is received.</p>
      * <p>Executions that are already running an association when
      * <code>MaxErrors</code> is reached are allowed to complete, but some of these
@@ -784,7 +808,7 @@ namespace Model
      * for example 10%. If you specify 3, for example, the system stops sending
      * requests when the fourth error is received. If you specify 0, then the system
      * stops sending requests after the first error is returned. If you run an
-     * association on 50 instances and set <code>MaxError</code> to 10%, then the
+     * association on 50 managed nodes and set <code>MaxError</code> to 10%, then the
      * system stops sending the request when the sixth error is received.</p>
      * <p>Executions that are already running an association when
      * <code>MaxErrors</code> is reached are allowed to complete, but some of these
@@ -799,11 +823,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running <code>MaxConcurrency</code>
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for <code>MaxConcurrency</code>.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
@@ -811,11 +835,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running <code>MaxConcurrency</code>
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for <code>MaxConcurrency</code>.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
@@ -823,11 +847,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running <code>MaxConcurrency</code>
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for <code>MaxConcurrency</code>.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
@@ -835,11 +859,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running <code>MaxConcurrency</code>
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for <code>MaxConcurrency</code>.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
@@ -847,11 +871,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running <code>MaxConcurrency</code>
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for <code>MaxConcurrency</code>.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
@@ -859,11 +883,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running <code>MaxConcurrency</code>
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for <code>MaxConcurrency</code>.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline CreateAssociationRequest& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
@@ -871,11 +895,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running <code>MaxConcurrency</code>
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for <code>MaxConcurrency</code>.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline CreateAssociationRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
@@ -883,11 +907,11 @@ namespace Model
      * <p>The maximum number of targets allowed to run the association at the same
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
-     * association at the same time.</p> <p>If a new instance starts and attempts to
-     * run an association while Systems Manager is running <code>MaxConcurrency</code>
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for <code>MaxConcurrency</code>.</p>
+     * association at the same time.</p> <p>If a new managed node starts and attempts
+     * to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run.
+     * During the next association interval, the new managed node will process its
+     * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
     inline CreateAssociationRequest& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 

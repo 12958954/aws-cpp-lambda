@@ -32,6 +32,7 @@ DashIsoGroupSettings::DashIsoGroupSettings() :
     m_hbbtvComplianceHasBeenSet(false),
     m_imageBasedTrickPlay(DashIsoImageBasedTrickPlay::NOT_SET),
     m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_minBufferTime(0),
     m_minBufferTimeHasBeenSet(false),
     m_minFinalSegmentLength(0.0),
@@ -44,6 +45,8 @@ DashIsoGroupSettings::DashIsoGroupSettings() :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(DashIsoSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_writeSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation::NOT_SET),
     m_writeSegmentTimelineInRepresentationHasBeenSet(false)
 {
@@ -63,6 +66,7 @@ DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue) :
     m_hbbtvComplianceHasBeenSet(false),
     m_imageBasedTrickPlay(DashIsoImageBasedTrickPlay::NOT_SET),
     m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_minBufferTime(0),
     m_minBufferTimeHasBeenSet(false),
     m_minFinalSegmentLength(0.0),
@@ -75,6 +79,8 @@ DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue) :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(DashIsoSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_writeSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation::NOT_SET),
     m_writeSegmentTimelineInRepresentationHasBeenSet(false)
 {
@@ -149,6 +155,13 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
     m_imageBasedTrickPlayHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageBasedTrickPlaySettings"))
+  {
+    m_imageBasedTrickPlaySettings = jsonValue.GetObject("imageBasedTrickPlaySettings");
+
+    m_imageBasedTrickPlaySettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("minBufferTime"))
   {
     m_minBufferTime = jsonValue.GetInteger("minBufferTime");
@@ -189,6 +202,13 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
     m_segmentLength = jsonValue.GetInteger("segmentLength");
 
     m_segmentLengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("segmentLengthControl"))
+  {
+    m_segmentLengthControl = DashIsoSegmentLengthControlMapper::GetDashIsoSegmentLengthControlForName(jsonValue.GetString("segmentLengthControl"));
+
+    m_segmentLengthControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("writeSegmentTimelineInRepresentation"))
@@ -261,6 +281,12 @@ JsonValue DashIsoGroupSettings::Jsonize() const
    payload.WithString("imageBasedTrickPlay", DashIsoImageBasedTrickPlayMapper::GetNameForDashIsoImageBasedTrickPlay(m_imageBasedTrickPlay));
   }
 
+  if(m_imageBasedTrickPlaySettingsHasBeenSet)
+  {
+   payload.WithObject("imageBasedTrickPlaySettings", m_imageBasedTrickPlaySettings.Jsonize());
+
+  }
+
   if(m_minBufferTimeHasBeenSet)
   {
    payload.WithInteger("minBufferTime", m_minBufferTime);
@@ -292,6 +318,11 @@ JsonValue DashIsoGroupSettings::Jsonize() const
   {
    payload.WithInteger("segmentLength", m_segmentLength);
 
+  }
+
+  if(m_segmentLengthControlHasBeenSet)
+  {
+   payload.WithString("segmentLengthControl", DashIsoSegmentLengthControlMapper::GetNameForDashIsoSegmentLengthControl(m_segmentLengthControl));
   }
 
   if(m_writeSegmentTimelineInRepresentationHasBeenSet)

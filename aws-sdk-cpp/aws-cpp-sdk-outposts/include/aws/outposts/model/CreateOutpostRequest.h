@@ -8,6 +8,7 @@
 #include <aws/outposts/OutpostsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/outposts/model/SupportedHardwareType.h>
 #include <utility>
 
 namespace Aws
@@ -83,28 +84,44 @@ namespace Model
     inline CreateOutpostRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+     */
     inline const Aws::String& GetSiteId() const{ return m_siteId; }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+     */
     inline bool SiteIdHasBeenSet() const { return m_siteIdHasBeenSet; }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+     */
     inline void SetSiteId(const Aws::String& value) { m_siteIdHasBeenSet = true; m_siteId = value; }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+     */
     inline void SetSiteId(Aws::String&& value) { m_siteIdHasBeenSet = true; m_siteId = std::move(value); }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+     */
     inline void SetSiteId(const char* value) { m_siteIdHasBeenSet = true; m_siteId.assign(value); }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+     */
     inline CreateOutpostRequest& WithSiteId(const Aws::String& value) { SetSiteId(value); return *this;}
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+     */
     inline CreateOutpostRequest& WithSiteId(Aws::String&& value) { SetSiteId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+     */
     inline CreateOutpostRequest& WithSiteId(const char* value) { SetSiteId(value); return *this;}
 
 
@@ -223,6 +240,37 @@ namespace Model
      */
     inline CreateOutpostRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p> The type of hardware for this Outpost. </p>
+     */
+    inline const SupportedHardwareType& GetSupportedHardwareType() const{ return m_supportedHardwareType; }
+
+    /**
+     * <p> The type of hardware for this Outpost. </p>
+     */
+    inline bool SupportedHardwareTypeHasBeenSet() const { return m_supportedHardwareTypeHasBeenSet; }
+
+    /**
+     * <p> The type of hardware for this Outpost. </p>
+     */
+    inline void SetSupportedHardwareType(const SupportedHardwareType& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = value; }
+
+    /**
+     * <p> The type of hardware for this Outpost. </p>
+     */
+    inline void SetSupportedHardwareType(SupportedHardwareType&& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = std::move(value); }
+
+    /**
+     * <p> The type of hardware for this Outpost. </p>
+     */
+    inline CreateOutpostRequest& WithSupportedHardwareType(const SupportedHardwareType& value) { SetSupportedHardwareType(value); return *this;}
+
+    /**
+     * <p> The type of hardware for this Outpost. </p>
+     */
+    inline CreateOutpostRequest& WithSupportedHardwareType(SupportedHardwareType&& value) { SetSupportedHardwareType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -242,6 +290,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    SupportedHardwareType m_supportedHardwareType;
+    bool m_supportedHardwareTypeHasBeenSet;
   };
 
 } // namespace Model

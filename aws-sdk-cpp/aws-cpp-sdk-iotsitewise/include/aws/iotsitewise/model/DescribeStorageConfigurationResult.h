@@ -7,6 +7,8 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/StorageType.h>
 #include <aws/iotsitewise/model/MultiLayerStorage.h>
+#include <aws/iotsitewise/model/DisassociatedDataStorageState.h>
+#include <aws/iotsitewise/model/RetentionPeriod.h>
 #include <aws/iotsitewise/model/ConfigurationStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -36,57 +38,57 @@ namespace Model
 
 
     /**
-     * <p>The type of storage that you specified for your data. The storage type can be
-     * one of the following values:</p> <ul> <li> <p>
-     * <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a
-     * service managed database.</p> </li> <li> <p> <code>MULTI_LAYER_STORAGE</code> –
-     * IoT SiteWise replicates your data into a service managed database and saves a
-     * copy of your raw data and metadata in an Amazon S3 object that you
-     * specified.</p> </li> </ul>
+     * <p>The storage tier that you specified for your data. The
+     * <code>storageType</code> parameter can be one of the following values:</p> <ul>
+     * <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data
+     * into the hot tier. The hot tier is a service-managed database.</p> </li> <li>
+     * <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the
+     * cold tier and the cold tier. The cold tier is a customer-managed Amazon S3
+     * bucket.</p> </li> </ul>
      */
     inline const StorageType& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>The type of storage that you specified for your data. The storage type can be
-     * one of the following values:</p> <ul> <li> <p>
-     * <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a
-     * service managed database.</p> </li> <li> <p> <code>MULTI_LAYER_STORAGE</code> –
-     * IoT SiteWise replicates your data into a service managed database and saves a
-     * copy of your raw data and metadata in an Amazon S3 object that you
-     * specified.</p> </li> </ul>
+     * <p>The storage tier that you specified for your data. The
+     * <code>storageType</code> parameter can be one of the following values:</p> <ul>
+     * <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data
+     * into the hot tier. The hot tier is a service-managed database.</p> </li> <li>
+     * <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the
+     * cold tier and the cold tier. The cold tier is a customer-managed Amazon S3
+     * bucket.</p> </li> </ul>
      */
     inline void SetStorageType(const StorageType& value) { m_storageType = value; }
 
     /**
-     * <p>The type of storage that you specified for your data. The storage type can be
-     * one of the following values:</p> <ul> <li> <p>
-     * <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a
-     * service managed database.</p> </li> <li> <p> <code>MULTI_LAYER_STORAGE</code> –
-     * IoT SiteWise replicates your data into a service managed database and saves a
-     * copy of your raw data and metadata in an Amazon S3 object that you
-     * specified.</p> </li> </ul>
+     * <p>The storage tier that you specified for your data. The
+     * <code>storageType</code> parameter can be one of the following values:</p> <ul>
+     * <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data
+     * into the hot tier. The hot tier is a service-managed database.</p> </li> <li>
+     * <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the
+     * cold tier and the cold tier. The cold tier is a customer-managed Amazon S3
+     * bucket.</p> </li> </ul>
      */
     inline void SetStorageType(StorageType&& value) { m_storageType = std::move(value); }
 
     /**
-     * <p>The type of storage that you specified for your data. The storage type can be
-     * one of the following values:</p> <ul> <li> <p>
-     * <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a
-     * service managed database.</p> </li> <li> <p> <code>MULTI_LAYER_STORAGE</code> –
-     * IoT SiteWise replicates your data into a service managed database and saves a
-     * copy of your raw data and metadata in an Amazon S3 object that you
-     * specified.</p> </li> </ul>
+     * <p>The storage tier that you specified for your data. The
+     * <code>storageType</code> parameter can be one of the following values:</p> <ul>
+     * <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data
+     * into the hot tier. The hot tier is a service-managed database.</p> </li> <li>
+     * <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the
+     * cold tier and the cold tier. The cold tier is a customer-managed Amazon S3
+     * bucket.</p> </li> </ul>
      */
     inline DescribeStorageConfigurationResult& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>The type of storage that you specified for your data. The storage type can be
-     * one of the following values:</p> <ul> <li> <p>
-     * <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a
-     * service managed database.</p> </li> <li> <p> <code>MULTI_LAYER_STORAGE</code> –
-     * IoT SiteWise replicates your data into a service managed database and saves a
-     * copy of your raw data and metadata in an Amazon S3 object that you
-     * specified.</p> </li> </ul>
+     * <p>The storage tier that you specified for your data. The
+     * <code>storageType</code> parameter can be one of the following values:</p> <ul>
+     * <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data
+     * into the hot tier. The hot tier is a service-managed database.</p> </li> <li>
+     * <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the
+     * cold tier and the cold tier. The cold tier is a customer-managed Amazon S3
+     * bucket.</p> </li> </ul>
      */
     inline DescribeStorageConfigurationResult& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -115,6 +117,108 @@ namespace Model
      * <p>Contains information about the storage destination.</p>
      */
     inline DescribeStorageConfigurationResult& WithMultiLayerStorage(MultiLayerStorage&& value) { SetMultiLayerStorage(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains the storage configuration for time series (data streams) that aren't
+     * associated with asset properties. The <code>disassociatedDataStorage</code> can
+     * be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> – IoT
+     * SiteWise accepts time series that aren't associated with asset properties.</p>
+     *  <p>After the <code>disassociatedDataStorage</code> is enabled, you
+     * can't disable it.</p>  </li> <li> <p> <code>DISABLED</code> – IoT
+     * SiteWise doesn't accept time series (data streams) that aren't associated with
+     * asset properties.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data
+     * streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const DisassociatedDataStorageState& GetDisassociatedDataStorage() const{ return m_disassociatedDataStorage; }
+
+    /**
+     * <p>Contains the storage configuration for time series (data streams) that aren't
+     * associated with asset properties. The <code>disassociatedDataStorage</code> can
+     * be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> – IoT
+     * SiteWise accepts time series that aren't associated with asset properties.</p>
+     *  <p>After the <code>disassociatedDataStorage</code> is enabled, you
+     * can't disable it.</p>  </li> <li> <p> <code>DISABLED</code> – IoT
+     * SiteWise doesn't accept time series (data streams) that aren't associated with
+     * asset properties.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data
+     * streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetDisassociatedDataStorage(const DisassociatedDataStorageState& value) { m_disassociatedDataStorage = value; }
+
+    /**
+     * <p>Contains the storage configuration for time series (data streams) that aren't
+     * associated with asset properties. The <code>disassociatedDataStorage</code> can
+     * be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> – IoT
+     * SiteWise accepts time series that aren't associated with asset properties.</p>
+     *  <p>After the <code>disassociatedDataStorage</code> is enabled, you
+     * can't disable it.</p>  </li> <li> <p> <code>DISABLED</code> – IoT
+     * SiteWise doesn't accept time series (data streams) that aren't associated with
+     * asset properties.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data
+     * streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetDisassociatedDataStorage(DisassociatedDataStorageState&& value) { m_disassociatedDataStorage = std::move(value); }
+
+    /**
+     * <p>Contains the storage configuration for time series (data streams) that aren't
+     * associated with asset properties. The <code>disassociatedDataStorage</code> can
+     * be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> – IoT
+     * SiteWise accepts time series that aren't associated with asset properties.</p>
+     *  <p>After the <code>disassociatedDataStorage</code> is enabled, you
+     * can't disable it.</p>  </li> <li> <p> <code>DISABLED</code> – IoT
+     * SiteWise doesn't accept time series (data streams) that aren't associated with
+     * asset properties.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data
+     * streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline DescribeStorageConfigurationResult& WithDisassociatedDataStorage(const DisassociatedDataStorageState& value) { SetDisassociatedDataStorage(value); return *this;}
+
+    /**
+     * <p>Contains the storage configuration for time series (data streams) that aren't
+     * associated with asset properties. The <code>disassociatedDataStorage</code> can
+     * be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> – IoT
+     * SiteWise accepts time series that aren't associated with asset properties.</p>
+     *  <p>After the <code>disassociatedDataStorage</code> is enabled, you
+     * can't disable it.</p>  </li> <li> <p> <code>DISABLED</code> – IoT
+     * SiteWise doesn't accept time series (data streams) that aren't associated with
+     * asset properties.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data
+     * streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline DescribeStorageConfigurationResult& WithDisassociatedDataStorage(DisassociatedDataStorageState&& value) { SetDisassociatedDataStorage(std::move(value)); return *this;}
+
+
+    /**
+     * <p>How many days your data is kept in the hot tier. By default, your data is
+     * kept indefinitely in the hot tier.</p>
+     */
+    inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+
+    /**
+     * <p>How many days your data is kept in the hot tier. By default, your data is
+     * kept indefinitely in the hot tier.</p>
+     */
+    inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriod = value; }
+
+    /**
+     * <p>How many days your data is kept in the hot tier. By default, your data is
+     * kept indefinitely in the hot tier.</p>
+     */
+    inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriod = std::move(value); }
+
+    /**
+     * <p>How many days your data is kept in the hot tier. By default, your data is
+     * kept indefinitely in the hot tier.</p>
+     */
+    inline DescribeStorageConfigurationResult& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
+
+    /**
+     * <p>How many days your data is kept in the hot tier. By default, your data is
+     * kept indefinitely in the hot tier.</p>
+     */
+    inline DescribeStorageConfigurationResult& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
 
 
     
@@ -163,6 +267,10 @@ namespace Model
     StorageType m_storageType;
 
     MultiLayerStorage m_multiLayerStorage;
+
+    DisassociatedDataStorageState m_disassociatedDataStorage;
+
+    RetentionPeriod m_retentionPeriod;
 
     ConfigurationStatus m_configurationStatus;
 

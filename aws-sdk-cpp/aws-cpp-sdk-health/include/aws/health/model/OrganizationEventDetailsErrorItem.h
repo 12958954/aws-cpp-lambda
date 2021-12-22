@@ -223,12 +223,14 @@ namespace Model
      * <code>DescribeEventDetailsForOrganization</code> operation and receive one of
      * the following errors, follow the recommendations in the message:</p> <ul> <li>
      * <p>We couldn't find a public event that matches your request. To find an event
-     * that is account specific, you must enter an AWS account ID in the request.</p>
-     * </li> <li> <p>We couldn't find an account specific event for the specified AWS
-     * account. To find an event that is public, you must enter a null value for the
-     * AWS account ID in the request.</p> </li> <li> <p>Your AWS account doesn't
-     * include the AWS Support plan required to use the AWS Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * that is account specific, you must enter an Amazon Web Services account ID in
+     * the request.</p> </li> <li> <p>We couldn't find an account specific event for
+     * the specified Amazon Web Services account. To find an event that is public, you
+     * must enter a null value for the Amazon Web Services account ID in the
+     * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
+     * Amazon Web Services Support plan required to use the Health API. You must have
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
@@ -237,12 +239,14 @@ namespace Model
      * <code>DescribeEventDetailsForOrganization</code> operation and receive one of
      * the following errors, follow the recommendations in the message:</p> <ul> <li>
      * <p>We couldn't find a public event that matches your request. To find an event
-     * that is account specific, you must enter an AWS account ID in the request.</p>
-     * </li> <li> <p>We couldn't find an account specific event for the specified AWS
-     * account. To find an event that is public, you must enter a null value for the
-     * AWS account ID in the request.</p> </li> <li> <p>Your AWS account doesn't
-     * include the AWS Support plan required to use the AWS Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * that is account specific, you must enter an Amazon Web Services account ID in
+     * the request.</p> </li> <li> <p>We couldn't find an account specific event for
+     * the specified Amazon Web Services account. To find an event that is public, you
+     * must enter a null value for the Amazon Web Services account ID in the
+     * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
+     * Amazon Web Services Support plan required to use the Health API. You must have
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
@@ -251,12 +255,14 @@ namespace Model
      * <code>DescribeEventDetailsForOrganization</code> operation and receive one of
      * the following errors, follow the recommendations in the message:</p> <ul> <li>
      * <p>We couldn't find a public event that matches your request. To find an event
-     * that is account specific, you must enter an AWS account ID in the request.</p>
-     * </li> <li> <p>We couldn't find an account specific event for the specified AWS
-     * account. To find an event that is public, you must enter a null value for the
-     * AWS account ID in the request.</p> </li> <li> <p>Your AWS account doesn't
-     * include the AWS Support plan required to use the AWS Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * that is account specific, you must enter an Amazon Web Services account ID in
+     * the request.</p> </li> <li> <p>We couldn't find an account specific event for
+     * the specified Amazon Web Services account. To find an event that is public, you
+     * must enter a null value for the Amazon Web Services account ID in the
+     * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
+     * Amazon Web Services Support plan required to use the Health API. You must have
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
@@ -265,12 +271,14 @@ namespace Model
      * <code>DescribeEventDetailsForOrganization</code> operation and receive one of
      * the following errors, follow the recommendations in the message:</p> <ul> <li>
      * <p>We couldn't find a public event that matches your request. To find an event
-     * that is account specific, you must enter an AWS account ID in the request.</p>
-     * </li> <li> <p>We couldn't find an account specific event for the specified AWS
-     * account. To find an event that is public, you must enter a null value for the
-     * AWS account ID in the request.</p> </li> <li> <p>Your AWS account doesn't
-     * include the AWS Support plan required to use the AWS Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * that is account specific, you must enter an Amazon Web Services account ID in
+     * the request.</p> </li> <li> <p>We couldn't find an account specific event for
+     * the specified Amazon Web Services account. To find an event that is public, you
+     * must enter a null value for the Amazon Web Services account ID in the
+     * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
+     * Amazon Web Services Support plan required to use the Health API. You must have
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
@@ -279,12 +287,14 @@ namespace Model
      * <code>DescribeEventDetailsForOrganization</code> operation and receive one of
      * the following errors, follow the recommendations in the message:</p> <ul> <li>
      * <p>We couldn't find a public event that matches your request. To find an event
-     * that is account specific, you must enter an AWS account ID in the request.</p>
-     * </li> <li> <p>We couldn't find an account specific event for the specified AWS
-     * account. To find an event that is public, you must enter a null value for the
-     * AWS account ID in the request.</p> </li> <li> <p>Your AWS account doesn't
-     * include the AWS Support plan required to use the AWS Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * that is account specific, you must enter an Amazon Web Services account ID in
+     * the request.</p> </li> <li> <p>We couldn't find an account specific event for
+     * the specified Amazon Web Services account. To find an event that is public, you
+     * must enter a null value for the Amazon Web Services account ID in the
+     * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
+     * Amazon Web Services Support plan required to use the Health API. You must have
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
@@ -293,12 +303,14 @@ namespace Model
      * <code>DescribeEventDetailsForOrganization</code> operation and receive one of
      * the following errors, follow the recommendations in the message:</p> <ul> <li>
      * <p>We couldn't find a public event that matches your request. To find an event
-     * that is account specific, you must enter an AWS account ID in the request.</p>
-     * </li> <li> <p>We couldn't find an account specific event for the specified AWS
-     * account. To find an event that is public, you must enter a null value for the
-     * AWS account ID in the request.</p> </li> <li> <p>Your AWS account doesn't
-     * include the AWS Support plan required to use the AWS Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * that is account specific, you must enter an Amazon Web Services account ID in
+     * the request.</p> </li> <li> <p>We couldn't find an account specific event for
+     * the specified Amazon Web Services account. To find an event that is public, you
+     * must enter a null value for the Amazon Web Services account ID in the
+     * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
+     * Amazon Web Services Support plan required to use the Health API. You must have
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline OrganizationEventDetailsErrorItem& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
@@ -307,12 +319,14 @@ namespace Model
      * <code>DescribeEventDetailsForOrganization</code> operation and receive one of
      * the following errors, follow the recommendations in the message:</p> <ul> <li>
      * <p>We couldn't find a public event that matches your request. To find an event
-     * that is account specific, you must enter an AWS account ID in the request.</p>
-     * </li> <li> <p>We couldn't find an account specific event for the specified AWS
-     * account. To find an event that is public, you must enter a null value for the
-     * AWS account ID in the request.</p> </li> <li> <p>Your AWS account doesn't
-     * include the AWS Support plan required to use the AWS Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * that is account specific, you must enter an Amazon Web Services account ID in
+     * the request.</p> </li> <li> <p>We couldn't find an account specific event for
+     * the specified Amazon Web Services account. To find an event that is public, you
+     * must enter a null value for the Amazon Web Services account ID in the
+     * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
+     * Amazon Web Services Support plan required to use the Health API. You must have
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline OrganizationEventDetailsErrorItem& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
@@ -321,12 +335,14 @@ namespace Model
      * <code>DescribeEventDetailsForOrganization</code> operation and receive one of
      * the following errors, follow the recommendations in the message:</p> <ul> <li>
      * <p>We couldn't find a public event that matches your request. To find an event
-     * that is account specific, you must enter an AWS account ID in the request.</p>
-     * </li> <li> <p>We couldn't find an account specific event for the specified AWS
-     * account. To find an event that is public, you must enter a null value for the
-     * AWS account ID in the request.</p> </li> <li> <p>Your AWS account doesn't
-     * include the AWS Support plan required to use the AWS Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * that is account specific, you must enter an Amazon Web Services account ID in
+     * the request.</p> </li> <li> <p>We couldn't find an account specific event for
+     * the specified Amazon Web Services account. To find an event that is public, you
+     * must enter a null value for the Amazon Web Services account ID in the
+     * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
+     * Amazon Web Services Support plan required to use the Health API. You must have
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline OrganizationEventDetailsErrorItem& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of admin members.</p>
      */
     inline const Aws::Vector<StudioMembership>& GetMembers() const{ return m_members; }
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of admin members.</p>
      */
     inline void SetMembers(const Aws::Vector<StudioMembership>& value) { m_members = value; }
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of admin members.</p>
      */
     inline void SetMembers(Aws::Vector<StudioMembership>&& value) { m_members = std::move(value); }
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of admin members.</p>
      */
     inline ListStudioMembersResult& WithMembers(const Aws::Vector<StudioMembership>& value) { SetMembers(value); return *this;}
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of admin members.</p>
      */
     inline ListStudioMembersResult& WithMembers(Aws::Vector<StudioMembership>&& value) { SetMembers(std::move(value)); return *this;}
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of admin members.</p>
      */
     inline ListStudioMembersResult& AddMembers(const StudioMembership& value) { m_members.push_back(value); return *this; }
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of admin members.</p>
      */
     inline ListStudioMembersResult& AddMembers(StudioMembership&& value) { m_members.push_back(std::move(value)); return *this; }
 

@@ -14,6 +14,7 @@
 #include <aws/awstransfer/model/IdentityProviderType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/awstransfer/model/State.h>
+#include <aws/awstransfer/model/WorkflowDetails.h>
 #include <aws/awstransfer/model/Protocol.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <utility>
@@ -442,7 +443,11 @@ namespace Model
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
-     * <code>IdentityProviderDetails</code> parameter.</p>
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
 
@@ -458,7 +463,11 @@ namespace Model
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
-     * <code>IdentityProviderDetails</code> parameter.</p>
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
 
@@ -474,7 +483,11 @@ namespace Model
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
-     * <code>IdentityProviderDetails</code> parameter.</p>
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
 
@@ -490,7 +503,11 @@ namespace Model
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
-     * <code>IdentityProviderDetails</code> parameter.</p>
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(IdentityProviderType&& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = std::move(value); }
 
@@ -506,7 +523,11 @@ namespace Model
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
-     * <code>IdentityProviderDetails</code> parameter.</p>
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline DescribedServer& WithIdentityProviderType(const IdentityProviderType& value) { SetIdentityProviderType(value); return *this;}
 
@@ -522,7 +543,11 @@ namespace Model
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
-     * <code>IdentityProviderDetails</code> parameter.</p>
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline DescribedServer& WithIdentityProviderType(IdentityProviderType&& value) { SetIdentityProviderType(std::move(value)); return *this;}
 
@@ -917,6 +942,43 @@ namespace Model
      */
     inline DescribedServer& WithUserCount(int value) { SetUserCount(value); return *this;}
 
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline const WorkflowDetails& GetWorkflowDetails() const{ return m_workflowDetails; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline bool WorkflowDetailsHasBeenSet() const { return m_workflowDetailsHasBeenSet; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline void SetWorkflowDetails(const WorkflowDetails& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = value; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline void SetWorkflowDetails(WorkflowDetails&& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = std::move(value); }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline DescribedServer& WithWorkflowDetails(const WorkflowDetails& value) { SetWorkflowDetails(value); return *this;}
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline DescribedServer& WithWorkflowDetails(WorkflowDetails&& value) { SetWorkflowDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -966,6 +1028,9 @@ namespace Model
 
     int m_userCount;
     bool m_userCountHasBeenSet;
+
+    WorkflowDetails m_workflowDetails;
+    bool m_workflowDetailsHasBeenSet;
   };
 
 } // namespace Model

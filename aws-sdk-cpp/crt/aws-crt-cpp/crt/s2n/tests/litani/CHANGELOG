@@ -1,6 +1,83 @@
                               CHANGELOG
                               `````````
 
+Version 1.11.1 -- 2021-08-16
+----------------------------
+
+- Make dependency on graphviz optional
+
+
+
+Version 1.11.0 -- 2021-08-13
+----------------------------
+
+- Added --phony-outputs flag to litani add-job
+- Added litani dump-run command
+- Added auto-generated documentation for run.json schema
+- Added more documentation
+
+
+
+Version 1.10.0 -- 2021-07-11
+----------------------------
+
+- "aux" key added to run API
+    This is intended for users to fill out their own custom data when
+    processing the run.json file. The run.json file has a tightly
+    specified schema that allows for no additions, but the "aux" key
+    provides a way to add arbitrary data to a run.
+
+- UI improvements
+    The parallelism graph now shows the number of processing cores as a
+    horizontal line, and the job memory usage section of the dashboard
+    now displays a message if no memory trace was captured.
+
+
+
+Version 1.9.0 -- 2021-06-29
+---------------------------
+
+- Manual pages
+    Litani now has work-in-progress documentation, currently including
+    man pages for the three most commonly-used subcommands
+
+- Gnuplot dependency is now optional
+    This is to support users who run Litani in minimal containers
+
+- Improved usability of output directory symlink
+    Litani init now prints the path to the symlink by default, unless
+    the new --no-print-out-dir flag was passed
+
+
+
+Version 1.8.0 -- 2021-06-24
+---------------------------
+
+- Job pool
+    Users can now add jobs to a particular "job pool", which limits the
+    parallelism of those jobs. Multiple pools can be created, each with
+    their own parallelism limits. This is intended to inhibit the
+    parallelism of jobs that use a contended resource, like disk I/O or
+    network bandwidth.
+
+- UI improvement on pipeline page
+    Each job on the pipeline page now has a hyperlink to that job,
+    making it easy to link to particularly interesting jobs hosted on
+    the web.
+
+- Memory profiler
+    Litani can now profile the memory of particular jobs and display
+    graphs of those jobs' memory use on the dashboard. This can be
+    helpful when deciding when to place particular jobs into a job pool.
+
+- Parallelism measurement
+    Litani now tracks how many jobs are running in parallel at any one
+    moment, and displays that as a graph on the dashboard. This can be
+    helpful when trying to increase CPU core utilization or trying to
+    use cloud resources as efficiently as possible.
+
+
+
 Version 1.7.1 -- 2021-05-13
 ---------------------------
 

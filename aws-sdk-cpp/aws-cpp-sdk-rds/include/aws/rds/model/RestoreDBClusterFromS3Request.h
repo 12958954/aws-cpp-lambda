@@ -1175,104 +1175,104 @@ namespace Model
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the StorageEncrypted parameter is enabled, and you do not specify
-     * a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default CMK. There is a default CMK for your Amazon Web Services account. Your
-     * Amazon Web Services account has a different default CMK for each Amazon Web
-     * Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the StorageEncrypted parameter is enabled, and you do not specify
-     * a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default CMK. There is a default CMK for your Amazon Web Services account. Your
-     * Amazon Web Services account has a different default CMK for each Amazon Web
-     * Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the StorageEncrypted parameter is enabled, and you do not specify
-     * a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default CMK. There is a default CMK for your Amazon Web Services account. Your
-     * Amazon Web Services account has a different default CMK for each Amazon Web
-     * Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the StorageEncrypted parameter is enabled, and you do not specify
-     * a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default CMK. There is a default CMK for your Amazon Web Services account. Your
-     * Amazon Web Services account has a different default CMK for each Amazon Web
-     * Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the StorageEncrypted parameter is enabled, and you do not specify
-     * a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default CMK. There is a default CMK for your Amazon Web Services account. Your
-     * Amazon Web Services account has a different default CMK for each Amazon Web
-     * Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the StorageEncrypted parameter is enabled, and you do not specify
-     * a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default CMK. There is a default CMK for your Amazon Web Services account. Your
-     * Amazon Web Services account has a different default CMK for each Amazon Web
-     * Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline RestoreDBClusterFromS3Request& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the StorageEncrypted parameter is enabled, and you do not specify
-     * a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default CMK. There is a default CMK for your Amazon Web Services account. Your
-     * Amazon Web Services account has a different default CMK for each Amazon Web
-     * Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline RestoreDBClusterFromS3Request& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p>If the StorageEncrypted parameter is enabled, and you do not specify
-     * a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default CMK. There is a default CMK for your Amazon Web Services account. Your
-     * Amazon Web Services account has a different default CMK for each Amazon Web
-     * Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p>If the
+     * StorageEncrypted parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * Region.</p>
      */
     inline RestoreDBClusterFromS3Request& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1280,7 +1280,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>For more information, see <a
+     * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
@@ -1289,7 +1289,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>For more information, see <a
+     * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
@@ -1298,7 +1298,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>For more information, see <a
+     * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
@@ -1307,7 +1307,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>For more information, see <a
+     * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
@@ -1722,28 +1722,28 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB cluster has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p>
+     * default, deletion protection isn't enabled. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
      * <p>A value that indicates whether the DB cluster has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p>
+     * default, deletion protection isn't enabled. </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB cluster has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p>
+     * default, deletion protection isn't enabled. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
      * <p>A value that indicates whether the DB cluster has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p>
+     * default, deletion protection isn't enabled. </p>
      */
     inline RestoreDBClusterFromS3Request& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 

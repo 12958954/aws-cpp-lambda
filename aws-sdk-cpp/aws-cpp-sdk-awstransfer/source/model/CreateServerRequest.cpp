@@ -25,8 +25,10 @@ CreateServerRequest::CreateServerRequest() :
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
     m_protocolsHasBeenSet(false),
+    m_protocolDetailsHasBeenSet(false),
     m_securityPolicyNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_workflowDetailsHasBeenSet(false)
 {
 }
 
@@ -90,6 +92,12 @@ Aws::String CreateServerRequest::SerializePayload() const
 
   }
 
+  if(m_protocolDetailsHasBeenSet)
+  {
+   payload.WithObject("ProtocolDetails", m_protocolDetails.Jsonize());
+
+  }
+
   if(m_securityPolicyNameHasBeenSet)
   {
    payload.WithString("SecurityPolicyName", m_securityPolicyName);
@@ -104,6 +112,12 @@ Aws::String CreateServerRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_workflowDetailsHasBeenSet)
+  {
+   payload.WithObject("WorkflowDetails", m_workflowDetails.Jsonize());
 
   }
 

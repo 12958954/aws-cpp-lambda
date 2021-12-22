@@ -44,50 +44,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the compute environment. It can be up to 128 letters long. It can
+     * contain uppercase and lowercase letters, numbers, hyphens (-), and underscores
+     * (_).</p>
      */
     inline const Aws::String& GetComputeEnvironmentName() const{ return m_computeEnvironmentName; }
 
     /**
-     * <p>The name of the compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the compute environment. It can be up to 128 letters long. It can
+     * contain uppercase and lowercase letters, numbers, hyphens (-), and underscores
+     * (_).</p>
      */
     inline bool ComputeEnvironmentNameHasBeenSet() const { return m_computeEnvironmentNameHasBeenSet; }
 
     /**
-     * <p>The name of the compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the compute environment. It can be up to 128 letters long. It can
+     * contain uppercase and lowercase letters, numbers, hyphens (-), and underscores
+     * (_).</p>
      */
     inline void SetComputeEnvironmentName(const Aws::String& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = value; }
 
     /**
-     * <p>The name of the compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the compute environment. It can be up to 128 letters long. It can
+     * contain uppercase and lowercase letters, numbers, hyphens (-), and underscores
+     * (_).</p>
      */
     inline void SetComputeEnvironmentName(Aws::String&& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = std::move(value); }
 
     /**
-     * <p>The name of the compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the compute environment. It can be up to 128 letters long. It can
+     * contain uppercase and lowercase letters, numbers, hyphens (-), and underscores
+     * (_).</p>
      */
     inline void SetComputeEnvironmentName(const char* value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName.assign(value); }
 
     /**
-     * <p>The name of the compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the compute environment. It can be up to 128 letters long. It can
+     * contain uppercase and lowercase letters, numbers, hyphens (-), and underscores
+     * (_).</p>
      */
     inline ComputeEnvironmentDetail& WithComputeEnvironmentName(const Aws::String& value) { SetComputeEnvironmentName(value); return *this;}
 
     /**
-     * <p>The name of the compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the compute environment. It can be up to 128 letters long. It can
+     * contain uppercase and lowercase letters, numbers, hyphens (-), and underscores
+     * (_).</p>
      */
     inline ComputeEnvironmentDetail& WithComputeEnvironmentName(Aws::String&& value) { SetComputeEnvironmentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the compute environment. It can be up to 128 letters long. It can
+     * contain uppercase and lowercase letters, numbers, hyphens (-), and underscores
+     * (_).</p>
      */
     inline ComputeEnvironmentDetail& WithComputeEnvironmentName(const char* value) { SetComputeEnvironmentName(value); return *this;}
 
@@ -131,6 +139,31 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
     inline ComputeEnvironmentDetail& WithComputeEnvironmentArn(const char* value) { SetComputeEnvironmentArn(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of VCPUs expected to be used for an unmanaged compute
+     * environment.</p>
+     */
+    inline int GetUnmanagedvCpus() const{ return m_unmanagedvCpus; }
+
+    /**
+     * <p>The maximum number of VCPUs expected to be used for an unmanaged compute
+     * environment.</p>
+     */
+    inline bool UnmanagedvCpusHasBeenSet() const { return m_unmanagedvCpusHasBeenSet; }
+
+    /**
+     * <p>The maximum number of VCPUs expected to be used for an unmanaged compute
+     * environment.</p>
+     */
+    inline void SetUnmanagedvCpus(int value) { m_unmanagedvCpusHasBeenSet = true; m_unmanagedvCpus = value; }
+
+    /**
+     * <p>The maximum number of VCPUs expected to be used for an unmanaged compute
+     * environment.</p>
+     */
+    inline ComputeEnvironmentDetail& WithUnmanagedvCpus(int value) { SetUnmanagedvCpus(value); return *this;}
 
 
     /**
@@ -602,6 +635,9 @@ namespace Model
 
     Aws::String m_computeEnvironmentArn;
     bool m_computeEnvironmentArnHasBeenSet;
+
+    int m_unmanagedvCpus;
+    bool m_unmanagedvCpusHasBeenSet;
 
     Aws::String m_ecsClusterArn;
     bool m_ecsClusterArnHasBeenSet;

@@ -13,6 +13,7 @@
 #include <aws/iot/model/JobExecutionsRolloutConfig.h>
 #include <aws/iot/model/AbortConfig.h>
 #include <aws/iot/model/TimeoutConfig.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iot/model/Tag.h>
 #include <utility>
 
@@ -40,50 +41,58 @@ namespace Model
 
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline CreateJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline CreateJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline CreateJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 
@@ -565,9 +574,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -576,9 +585,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -587,9 +596,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -598,9 +607,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -609,9 +618,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -620,9 +629,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -631,9 +640,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -642,9 +651,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -692,6 +701,85 @@ namespace Model
      */
     inline CreateJobRequest& WithJobTemplateArn(const char* value) { SetJobTemplateArn(value); return *this;}
 
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetDocumentParameters() const{ return m_documentParameters; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline bool DocumentParametersHasBeenSet() const { return m_documentParametersHasBeenSet; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline void SetDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_documentParametersHasBeenSet = true; m_documentParameters = value; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline void SetDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_documentParametersHasBeenSet = true; m_documentParameters = std::move(value); }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& WithDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetDocumentParameters(value); return *this;}
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& WithDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetDocumentParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(const Aws::String& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(Aws::String&& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(const Aws::String& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(Aws::String&& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(const char* key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(Aws::String&& key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(const char* key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_jobId;
@@ -732,6 +820,9 @@ namespace Model
 
     Aws::String m_jobTemplateArn;
     bool m_jobTemplateArnHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_documentParameters;
+    bool m_documentParametersHasBeenSet;
   };
 
 } // namespace Model

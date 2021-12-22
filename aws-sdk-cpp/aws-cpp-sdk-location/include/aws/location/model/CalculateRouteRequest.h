@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline bool CalculatorNameHasBeenSet() const { return m_calculatorNameHasBeenSet; }
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline void SetCalculatorName(const Aws::String& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = value; }
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline void SetCalculatorName(Aws::String&& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = std::move(value); }
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline void SetCalculatorName(const char* value) { m_calculatorNameHasBeenSet = true; m_calculatorName.assign(value); }
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline CalculateRouteRequest& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline CalculateRouteRequest& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline CalculateRouteRequest& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
 
@@ -174,7 +174,9 @@ namespace Model
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
-     * the position to the nearest road</a>.</p>  <p>Valid Values: <code>[-180
+     * the position to the nearest road</a>. If Esri is the provider for your route
+     * calculator, specifying a route that is longer than 400 km returns a <code>400
+     * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
     inline const Aws::Vector<double>& GetDeparturePosition() const{ return m_departurePosition; }
@@ -186,7 +188,9 @@ namespace Model
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
-     * the position to the nearest road</a>.</p>  <p>Valid Values: <code>[-180
+     * the position to the nearest road</a>. If Esri is the provider for your route
+     * calculator, specifying a route that is longer than 400 km returns a <code>400
+     * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
     inline bool DeparturePositionHasBeenSet() const { return m_departurePositionHasBeenSet; }
@@ -198,7 +202,9 @@ namespace Model
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
-     * the position to the nearest road</a>.</p>  <p>Valid Values: <code>[-180
+     * the position to the nearest road</a>. If Esri is the provider for your route
+     * calculator, specifying a route that is longer than 400 km returns a <code>400
+     * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
     inline void SetDeparturePosition(const Aws::Vector<double>& value) { m_departurePositionHasBeenSet = true; m_departurePosition = value; }
@@ -210,7 +216,9 @@ namespace Model
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
-     * the position to the nearest road</a>.</p>  <p>Valid Values: <code>[-180
+     * the position to the nearest road</a>. If Esri is the provider for your route
+     * calculator, specifying a route that is longer than 400 km returns a <code>400
+     * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
     inline void SetDeparturePosition(Aws::Vector<double>&& value) { m_departurePositionHasBeenSet = true; m_departurePosition = std::move(value); }
@@ -222,7 +230,9 @@ namespace Model
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
-     * the position to the nearest road</a>.</p>  <p>Valid Values: <code>[-180
+     * the position to the nearest road</a>. If Esri is the provider for your route
+     * calculator, specifying a route that is longer than 400 km returns a <code>400
+     * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
     inline CalculateRouteRequest& WithDeparturePosition(const Aws::Vector<double>& value) { SetDeparturePosition(value); return *this;}
@@ -234,7 +244,9 @@ namespace Model
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
-     * the position to the nearest road</a>.</p>  <p>Valid Values: <code>[-180
+     * the position to the nearest road</a>. If Esri is the provider for your route
+     * calculator, specifying a route that is longer than 400 km returns a <code>400
+     * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
     inline CalculateRouteRequest& WithDeparturePosition(Aws::Vector<double>&& value) { SetDeparturePosition(std::move(value)); return *this;}
@@ -246,14 +258,16 @@ namespace Model
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
-     * the position to the nearest road</a>.</p>  <p>Valid Values: <code>[-180
+     * the position to the nearest road</a>. If Esri is the provider for your route
+     * calculator, specifying a route that is longer than 400 km returns a <code>400
+     * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
     inline CalculateRouteRequest& AddDeparturePosition(double value) { m_departurePositionHasBeenSet = true; m_departurePosition.push_back(value); return *this; }
 
 
     /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate a
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
      * conditions is used to calculate the route.</p>  <p>Setting a departure
      * time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -265,7 +279,7 @@ namespace Model
     inline const Aws::Utils::DateTime& GetDepartureTime() const{ return m_departureTime; }
 
     /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate a
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
      * conditions is used to calculate the route.</p>  <p>Setting a departure
      * time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -277,7 +291,7 @@ namespace Model
     inline bool DepartureTimeHasBeenSet() const { return m_departureTimeHasBeenSet; }
 
     /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate a
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
      * conditions is used to calculate the route.</p>  <p>Setting a departure
      * time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -289,7 +303,7 @@ namespace Model
     inline void SetDepartureTime(const Aws::Utils::DateTime& value) { m_departureTimeHasBeenSet = true; m_departureTime = value; }
 
     /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate a
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
      * conditions is used to calculate the route.</p>  <p>Setting a departure
      * time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -301,7 +315,7 @@ namespace Model
     inline void SetDepartureTime(Aws::Utils::DateTime&& value) { m_departureTimeHasBeenSet = true; m_departureTime = std::move(value); }
 
     /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate a
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
      * conditions is used to calculate the route.</p>  <p>Setting a departure
      * time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -313,7 +327,7 @@ namespace Model
     inline CalculateRouteRequest& WithDepartureTime(const Aws::Utils::DateTime& value) { SetDepartureTime(value); return *this;}
 
     /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate a
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
      * conditions is used to calculate the route.</p>  <p>Setting a departure
      * time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -602,8 +616,10 @@ namespace Model
      * Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
-     * returns a <code>400 ValidationException</code> error.</p>  <p>Valid
-     * Values: <code>[-180 to 180,-90 to 90]</code> </p>
+     * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
+     * provider for your route calculator, specifying a route that is longer than 400
+     * km returns a <code>400 RoutesValidationException</code> error.</p> 
+     * <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
      */
     inline const Aws::Vector<Aws::Vector<double>>& GetWaypointPositions() const{ return m_waypointPositions; }
 
@@ -617,8 +633,10 @@ namespace Model
      * Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
-     * returns a <code>400 ValidationException</code> error.</p>  <p>Valid
-     * Values: <code>[-180 to 180,-90 to 90]</code> </p>
+     * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
+     * provider for your route calculator, specifying a route that is longer than 400
+     * km returns a <code>400 RoutesValidationException</code> error.</p> 
+     * <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
      */
     inline bool WaypointPositionsHasBeenSet() const { return m_waypointPositionsHasBeenSet; }
 
@@ -632,8 +650,10 @@ namespace Model
      * Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
-     * returns a <code>400 ValidationException</code> error.</p>  <p>Valid
-     * Values: <code>[-180 to 180,-90 to 90]</code> </p>
+     * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
+     * provider for your route calculator, specifying a route that is longer than 400
+     * km returns a <code>400 RoutesValidationException</code> error.</p> 
+     * <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
      */
     inline void SetWaypointPositions(const Aws::Vector<Aws::Vector<double>>& value) { m_waypointPositionsHasBeenSet = true; m_waypointPositions = value; }
 
@@ -647,8 +667,10 @@ namespace Model
      * Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
-     * returns a <code>400 ValidationException</code> error.</p>  <p>Valid
-     * Values: <code>[-180 to 180,-90 to 90]</code> </p>
+     * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
+     * provider for your route calculator, specifying a route that is longer than 400
+     * km returns a <code>400 RoutesValidationException</code> error.</p> 
+     * <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
      */
     inline void SetWaypointPositions(Aws::Vector<Aws::Vector<double>>&& value) { m_waypointPositionsHasBeenSet = true; m_waypointPositions = std::move(value); }
 
@@ -662,8 +684,10 @@ namespace Model
      * Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
-     * returns a <code>400 ValidationException</code> error.</p>  <p>Valid
-     * Values: <code>[-180 to 180,-90 to 90]</code> </p>
+     * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
+     * provider for your route calculator, specifying a route that is longer than 400
+     * km returns a <code>400 RoutesValidationException</code> error.</p> 
+     * <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
      */
     inline CalculateRouteRequest& WithWaypointPositions(const Aws::Vector<Aws::Vector<double>>& value) { SetWaypointPositions(value); return *this;}
 
@@ -677,8 +701,10 @@ namespace Model
      * Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
-     * returns a <code>400 ValidationException</code> error.</p>  <p>Valid
-     * Values: <code>[-180 to 180,-90 to 90]</code> </p>
+     * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
+     * provider for your route calculator, specifying a route that is longer than 400
+     * km returns a <code>400 RoutesValidationException</code> error.</p> 
+     * <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
      */
     inline CalculateRouteRequest& WithWaypointPositions(Aws::Vector<Aws::Vector<double>>&& value) { SetWaypointPositions(std::move(value)); return *this;}
 
@@ -692,8 +718,10 @@ namespace Model
      * Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
-     * returns a <code>400 ValidationException</code> error.</p>  <p>Valid
-     * Values: <code>[-180 to 180,-90 to 90]</code> </p>
+     * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
+     * provider for your route calculator, specifying a route that is longer than 400
+     * km returns a <code>400 RoutesValidationException</code> error.</p> 
+     * <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
      */
     inline CalculateRouteRequest& AddWaypointPositions(const Aws::Vector<double>& value) { m_waypointPositionsHasBeenSet = true; m_waypointPositions.push_back(value); return *this; }
 
@@ -707,8 +735,10 @@ namespace Model
      * Amazon Location <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
-     * returns a <code>400 ValidationException</code> error.</p>  <p>Valid
-     * Values: <code>[-180 to 180,-90 to 90]</code> </p>
+     * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
+     * provider for your route calculator, specifying a route that is longer than 400
+     * km returns a <code>400 RoutesValidationException</code> error.</p> 
+     * <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
      */
     inline CalculateRouteRequest& AddWaypointPositions(Aws::Vector<double>&& value) { m_waypointPositionsHasBeenSet = true; m_waypointPositions.push_back(std::move(value)); return *this; }
 

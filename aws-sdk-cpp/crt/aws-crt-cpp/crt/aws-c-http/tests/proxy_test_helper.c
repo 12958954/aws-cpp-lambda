@@ -235,7 +235,8 @@ int proxy_tester_clean_up(struct proxy_tester *tester) {
             if (i + 1 < channel_count) {
                 wrapper.bootstrap->on_shutdown(tester->client_connection, 0, wrapper.bootstrap->user_data);
             }
-            aws_mem_release(tester->alloc, wrapper.bootstrap);
+
+            aws_http_client_bootstrap_destroy(wrapper.bootstrap);
         }
     }
 
@@ -307,7 +308,8 @@ int proxy_tester_create_testing_channel_connection(
 
     /* Use small window so that we can observe it opening in tests.
      * Channel may wait until the window is small before issuing the increment command. */
-    struct aws_http1_connection_options http1_options = AWS_HTTP1_CONNECTION_OPTIONS_INIT;
+    struct aws_http1_connection_options http1_options;
+    AWS_ZERO_STRUCT(http1_options);
     struct aws_http_connection *connection =
         aws_http_connection_new_http1_1_client(tester->alloc, true, 256, &http1_options);
     ASSERT_NOT_NULL(connection);

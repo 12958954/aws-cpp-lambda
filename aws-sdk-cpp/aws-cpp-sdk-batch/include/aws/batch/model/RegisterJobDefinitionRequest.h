@@ -45,50 +45,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the job definition to register. It can be up to 128 letters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline const Aws::String& GetJobDefinitionName() const{ return m_jobDefinitionName; }
 
     /**
-     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the job definition to register. It can be up to 128 letters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline bool JobDefinitionNameHasBeenSet() const { return m_jobDefinitionNameHasBeenSet; }
 
     /**
-     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the job definition to register. It can be up to 128 letters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline void SetJobDefinitionName(const Aws::String& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = value; }
 
     /**
-     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the job definition to register. It can be up to 128 letters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline void SetJobDefinitionName(Aws::String&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = std::move(value); }
 
     /**
-     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the job definition to register. It can be up to 128 letters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline void SetJobDefinitionName(const char* value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName.assign(value); }
 
     /**
-     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the job definition to register. It can be up to 128 letters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline RegisterJobDefinitionRequest& WithJobDefinitionName(const Aws::String& value) { SetJobDefinitionName(value); return *this;}
 
     /**
-     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the job definition to register. It can be up to 128 letters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline RegisterJobDefinitionRequest& WithJobDefinitionName(Aws::String&& value) { SetJobDefinitionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
-     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     * <p>The name of the job definition to register. It can be up to 128 letters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline RegisterJobDefinitionRequest& WithJobDefinitionName(const char* value) { SetJobDefinitionName(value); return *this;}
 
@@ -257,6 +265,43 @@ namespace Model
      * from the job definition.</p>
      */
     inline RegisterJobDefinitionRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The scheduling priority for jobs that are submitted with this job definition.
+     * This will only affect jobs in job queues with a fair share policy. Jobs with a
+     * higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * priority.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
+     */
+    inline int GetSchedulingPriority() const{ return m_schedulingPriority; }
+
+    /**
+     * <p>The scheduling priority for jobs that are submitted with this job definition.
+     * This will only affect jobs in job queues with a fair share policy. Jobs with a
+     * higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * priority.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
+     */
+    inline bool SchedulingPriorityHasBeenSet() const { return m_schedulingPriorityHasBeenSet; }
+
+    /**
+     * <p>The scheduling priority for jobs that are submitted with this job definition.
+     * This will only affect jobs in job queues with a fair share policy. Jobs with a
+     * higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * priority.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
+     */
+    inline void SetSchedulingPriority(int value) { m_schedulingPriorityHasBeenSet = true; m_schedulingPriority = value; }
+
+    /**
+     * <p>The scheduling priority for jobs that are submitted with this job definition.
+     * This will only affect jobs in job queues with a fair share policy. Jobs with a
+     * higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * priority.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
+     */
+    inline RegisterJobDefinitionRequest& WithSchedulingPriority(int value) { SetSchedulingPriority(value); return *this;}
 
 
     /**
@@ -758,6 +803,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
+    int m_schedulingPriority;
+    bool m_schedulingPriorityHasBeenSet;
 
     ContainerProperties m_containerProperties;
     bool m_containerPropertiesHasBeenSet;

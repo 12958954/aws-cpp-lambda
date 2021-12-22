@@ -7,6 +7,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/model/FilterCriteria.h>
 #include <aws/lambda/model/EventSourcePosition.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/lambda/model/DestinationConfig.h>
@@ -234,96 +235,173 @@ namespace Model
 
 
     /**
-     * <p>If true, the event source mapping is active. Set to false to pause polling
-     * and invocation.</p>
+     * <p>When true, the event source mapping is active. When false, Lambda pauses
+     * polling and invocation.</p> <p>Default: True</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>If true, the event source mapping is active. Set to false to pause polling
-     * and invocation.</p>
+     * <p>When true, the event source mapping is active. When false, Lambda pauses
+     * polling and invocation.</p> <p>Default: True</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>If true, the event source mapping is active. Set to false to pause polling
-     * and invocation.</p>
+     * <p>When true, the event source mapping is active. When false, Lambda pauses
+     * polling and invocation.</p> <p>Default: True</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>If true, the event source mapping is active. Set to false to pause polling
-     * and invocation.</p>
+     * <p>When true, the event source mapping is active. When false, Lambda pauses
+     * polling and invocation.</p> <p>Default: True</p>
      */
     inline CreateEventSourceMappingRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
 
     /**
-     * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
-     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
-     * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
-     * For FIFO queues the max is 10.</p> </li> <li> <p> <b>Amazon Managed Streaming
-     * for Apache Kafka</b> - Default 100. Max 10,000.</p> </li> <li> <p>
-     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li> </ul>
+     * <p>The maximum number of records in each batch that Lambda pulls from your
+     * stream or queue and sends to your function. Lambda passes all of the records in
+     * the batch to the function in a single call, up to the payload limit for
+     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
+     * 100. Max 1,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
+     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
 
     /**
-     * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
-     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
-     * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
-     * For FIFO queues the max is 10.</p> </li> <li> <p> <b>Amazon Managed Streaming
-     * for Apache Kafka</b> - Default 100. Max 10,000.</p> </li> <li> <p>
-     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li> </ul>
+     * <p>The maximum number of records in each batch that Lambda pulls from your
+     * stream or queue and sends to your function. Lambda passes all of the records in
+     * the batch to the function in a single call, up to the payload limit for
+     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
+     * 100. Max 1,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
+     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
 
     /**
-     * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
-     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
-     * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
-     * For FIFO queues the max is 10.</p> </li> <li> <p> <b>Amazon Managed Streaming
-     * for Apache Kafka</b> - Default 100. Max 10,000.</p> </li> <li> <p>
-     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li> </ul>
+     * <p>The maximum number of records in each batch that Lambda pulls from your
+     * stream or queue and sends to your function. Lambda passes all of the records in
+     * the batch to the function in a single call, up to the payload limit for
+     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
+     * 100. Max 1,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
+     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
     /**
-     * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
-     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
-     * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
-     * For FIFO queues the max is 10.</p> </li> <li> <p> <b>Amazon Managed Streaming
-     * for Apache Kafka</b> - Default 100. Max 10,000.</p> </li> <li> <p>
-     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li> </ul>
+     * <p>The maximum number of records in each batch that Lambda pulls from your
+     * stream or queue and sends to your function. Lambda passes all of the records in
+     * the batch to the function in a single call, up to the payload limit for
+     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
+     * 100. Max 1,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
+     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline CreateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
 
     /**
-     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
-     * records before invoking the function, in seconds.</p>
+     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+     * determine whether Lambda should process an event. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.</p>
+     */
+    inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
+
+    /**
+     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+     * determine whether Lambda should process an event. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.</p>
+     */
+    inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
+
+    /**
+     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+     * determine whether Lambda should process an event. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.</p>
+     */
+    inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
+
+    /**
+     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+     * determine whether Lambda should process an event. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.</p>
+     */
+    inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
+
+    /**
+     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+     * determine whether Lambda should process an event. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.</p>
+     */
+    inline CreateEventSourceMappingRequest& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
+
+    /**
+     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+     * determine whether Lambda should process an event. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.</p>
+     */
+    inline CreateEventSourceMappingRequest& WithFilterCriteria(FilterCriteria&& value) { SetFilterCriteria(std::move(value)); return *this;}
+
+
+    /**
+     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
+     * seconds, that Lambda spends gathering records before invoking the function.</p>
+     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
+     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
+     * to at least 1.</p>
      */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
 
     /**
-     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
-     * records before invoking the function, in seconds.</p>
+     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
+     * seconds, that Lambda spends gathering records before invoking the function.</p>
+     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
+     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
+     * to at least 1.</p>
      */
     inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
-     * records before invoking the function, in seconds.</p>
+     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
+     * seconds, that Lambda spends gathering records before invoking the function.</p>
+     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
+     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
+     * to at least 1.</p>
      */
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
 
     /**
-     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
-     * records before invoking the function, in seconds.</p>
+     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
+     * seconds, that Lambda spends gathering records before invoking the function.</p>
+     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
+     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
+     * to at least 1.</p>
      */
     inline CreateEventSourceMappingRequest& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
 
@@ -747,50 +825,50 @@ namespace Model
 
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const{ return m_functionResponseTypes; }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline bool FunctionResponseTypesHasBeenSet() const { return m_functionResponseTypesHasBeenSet; }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline void SetFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = value; }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline void SetFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = std::move(value); }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline CreateEventSourceMappingRequest& WithFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { SetFunctionResponseTypes(value); return *this;}
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline CreateEventSourceMappingRequest& WithFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { SetFunctionResponseTypes(std::move(value)); return *this;}
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline CreateEventSourceMappingRequest& AddFunctionResponseTypes(const FunctionResponseType& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(value); return *this; }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline CreateEventSourceMappingRequest& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(std::move(value)); return *this; }
 
@@ -807,6 +885,9 @@ namespace Model
 
     int m_batchSize;
     bool m_batchSizeHasBeenSet;
+
+    FilterCriteria m_filterCriteria;
+    bool m_filterCriteriaHasBeenSet;
 
     int m_maximumBatchingWindowInSeconds;
     bool m_maximumBatchingWindowInSecondsHasBeenSet;
